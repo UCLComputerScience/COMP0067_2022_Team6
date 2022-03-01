@@ -1,11 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
---
--- Host: localhost:8889
--- Generation Time: Feb 25, 2022 at 11:28 PM
--- Server version: 5.7.34
--- PHP Version: 8.0.8
+CREATE DATABASE ancssc_database
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+
+GRANT SELECT, UPDATE, INSERT, DELETE
+    ON ancssc_database.*
+    TO 'user'@'localhost'
+    IDENTIFIED BY 'password';
+
+USE ancssc_database;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +31,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `country_of_operation` (
                                         `country_of_operation` varchar(255) NOT NULL,
-                                        `user_id` int(11) NOT NULL,
+                                        `id` int(11) NOT NULL,
                                         `country_of_origin` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,7 +43,7 @@ CREATE TABLE `country_of_operation` (
 
 CREATE TABLE `events` (
                           `event_id` int(11) NOT NULL,
-                          `user_id` int(11) NOT NULL,
+                          `id` int(11) NOT NULL,
                           `event_title` varchar(255) NOT NULL,
                           `event_description` text,
                           `event_language` varchar(100) DEFAULT NULL,
@@ -71,7 +73,7 @@ CREATE TABLE `event_picture` (
 
 CREATE TABLE `projects` (
                             `project_id` int(11) NOT NULL,
-                            `user_id` int(11) NOT NULL,
+                            `id` int(11) NOT NULL,
                             `project_name` varchar(255) NOT NULL,
                             `project_language` varchar(100) DEFAULT NULL,
                             `project_description` text,
@@ -104,7 +106,7 @@ CREATE TABLE `project_picture` (
 
 CREATE TABLE `resource` (
                             `resource_id` int(11) NOT NULL,
-                            `user_id` int(11) NOT NULL,
+                            `id` int(11) NOT NULL,
                             `resource_title` varchar(255) NOT NULL,
                             `resource_sdg` varchar(255) DEFAULT NULL,
                             `resource_language` varchar(100) DEFAULT NULL,
@@ -134,21 +136,23 @@ CREATE TABLE `resource_picture` (
 --
 
 CREATE TABLE `users` (
-                         `user_id` int(15) NOT NULL,
-                         `username` varchar(255) NOT NULL,
+                         `id` int(15) DEFAULT NULL,
+                         `username` varchar(255) DEFAULT NULL,
+                         `name` varchar(255) NOT NULL,
                          `password` varchar(255) NOT NULL,
                          `email` varchar(255) NOT NULL,
                          `phone` varchar(255) DEFAULT NULL,
-                         `address` text,
+                         `address` text DEFAULT NULL,
                          `city` varchar(100) DEFAULT NULL,
                          `country` varchar(100) DEFAULT NULL,
                          `postcode` varchar(100) DEFAULT NULL,
                          `number_of_employees` int(10) DEFAULT NULL,
                          `number_of_volunteers` int(10) DEFAULT NULL,
                          `website` varchar(255) DEFAULT NULL,
-                         `date_registered` date NOT NULL,
+                         `created_at` timestamp NOT NULL,
+                         `updated_at` timestamp NOT NULL,
                          `subscription_type` tinyint(5) DEFAULT NULL,
-                         `user_status` tinyint(5) NOT NULL
+                         `user_status` tinyint(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -160,14 +164,14 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `country_of_operation`
     ADD PRIMARY KEY (`country_of_operation`),
-    ADD KEY `user_id` (`user_id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
     ADD PRIMARY KEY (`event_id`),
-    ADD KEY `user_id` (`user_id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `event_picture`
@@ -181,7 +185,7 @@ ALTER TABLE `event_picture`
 --
 ALTER TABLE `projects`
     ADD PRIMARY KEY (`project_id`),
-    ADD KEY `user_id` (`user_id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `project_picture`
@@ -195,7 +199,7 @@ ALTER TABLE `project_picture`
 --
 ALTER TABLE `resource`
     ADD PRIMARY KEY (`resource_id`),
-    ADD KEY `user_id` (`user_id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `resource_picture`
@@ -208,7 +212,7 @@ ALTER TABLE `resource_picture`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-    ADD PRIMARY KEY (`user_id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -254,7 +258,7 @@ ALTER TABLE `resource_picture`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-    MODIFY `user_id` int(15) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -264,13 +268,13 @@ ALTER TABLE `users`
 -- Constraints for table `country_of_operation`
 --
 ALTER TABLE `country_of_operation`
-    ADD CONSTRAINT `country_of_operation_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+    ADD CONSTRAINT `country_of_operation_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `events`
 --
 ALTER TABLE `events`
-    ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+    ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `event_picture`
@@ -282,7 +286,7 @@ ALTER TABLE `event_picture`
 -- Constraints for table `projects`
 --
 ALTER TABLE `projects`
-    ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+    ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `project_picture`
@@ -294,7 +298,7 @@ ALTER TABLE `project_picture`
 -- Constraints for table `resource`
 --
 ALTER TABLE `resource`
-    ADD CONSTRAINT `resource_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+    ADD CONSTRAINT `resource_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `resource_picture`
