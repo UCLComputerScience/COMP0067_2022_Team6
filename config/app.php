@@ -167,7 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        // PayPal
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class, 
         /*
          * Application Service Providers...
          */
@@ -191,7 +192,13 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+    
+       
         // ...
     ])->toArray(),
+    //PayPal
+    'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
+
+    
 
 ];

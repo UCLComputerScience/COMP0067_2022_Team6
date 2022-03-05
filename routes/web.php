@@ -26,10 +26,16 @@ Route::get('/demo', function () {
     return view('demo');
 });
 
+//Paypal
+
+Route::get('handle-payment', 'PayPalPaymentController@handlePayment')->name('make.payment');
+Route::get('cancel-payment', 'PayPalPaymentController@paymentCancel')->name('cancel.payment');
+Route::get('payment-success', 'PayPalPaymentController@paymentSuccess')->name('success.payment');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home-logged-in', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

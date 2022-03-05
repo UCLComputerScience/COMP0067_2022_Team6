@@ -1,8 +1,10 @@
+DROP DATABASE ancssc_database;
+
 CREATE DATABASE ancssc_database
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
 
-GRANT SELECT, UPDATE, INSERT, DELETE
+GRANT ALL PRIVILEGES
     ON ancssc_database.*
     TO 'user'@'localhost'
     IDENTIFIED BY 'password';
@@ -152,7 +154,8 @@ CREATE TABLE `users` (
                          `created_at` timestamp NOT NULL,
                          `updated_at` timestamp NOT NULL,
                          `subscription_type` tinyint(5) DEFAULT NULL,
-                         `user_status` tinyint(5) DEFAULT NULL
+                         `user_status` tinyint(5) DEFAULT NULL,
+                         `remember_token` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

@@ -2,6 +2,11 @@
 
 Repository for storing COMP0067 code
 
+# Tech Stack
+
+- Laravel Framework 9.0.2
+- PHP
+
 # Team members
 
 - Jiahui Shi
@@ -13,3 +18,7 @@ Repository for storing COMP0067 code
 
 - London, 🇬🇧
   
+  # Learning material
+  Laravel - http://xn--webducation-dbb.com/wp-content/uploads/2019/08/Matt-Stauffer-Laravel_-Up-Running_-A-Framework-for-Building-Modern-PHP-Apps-O%E2%80%99Reilly-Media-2019.pdf 
+  PayPal - https://dev.to/alamriku/how-to-integrate-paypal-payment-gateway-in-laravel-8-x-ba6
+
