@@ -7,7 +7,7 @@
 
   @include('layouts.partials.nav')
 
-    @include('layouts.partials.header')
+  
 
   @yield('content')
 

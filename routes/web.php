@@ -25,12 +25,16 @@ Route::get('/posts', function () {
 Route::get('/demo', function () {
     return view('demo');
 });
+Route::get('/maps', function () {
+    return view('maps');
+});
 
-//Paypal
+//Stripe
 
-Route::get('handle-payment', 'PayPalPaymentController@handlePayment')->name('make.payment');
-Route::get('cancel-payment', 'PayPalPaymentController@paymentCancel')->name('cancel.payment');
-Route::get('payment-success', 'PayPalPaymentController@paymentSuccess')->name('success.payment');
+Route::get('/subscribe', 'SubscriptionController@showSubscription');
+      Route::post('/subscribe', 'SubscriptionController@processSubscription');
+      // welcome page only for subscribed users
+      Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

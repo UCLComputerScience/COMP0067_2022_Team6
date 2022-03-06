@@ -1,4 +1,7 @@
+
 @extends('layouts.mainlayout')
+@extends('layouts.partials.header')
+
 
 @section('content')
 <!-- About section one-->
