@@ -37,7 +37,7 @@
                     @endif
                     
                     <form action="/seller/subscribe" method="POST" id="subscribe-form">
-                    
+                    <input type="number" name="amount" id="amount" class="form-control"> <br>
                         <input id="card-holder-name" type="text"><label for="card-holder-name">Card Holder Name</label>
                         @csrf
                         <div class="form-row">
@@ -56,8 +56,8 @@
                         </div>
                         @endif
                     
-                        <div class="form-group text-center">
-                            <button  id="card-button" data-secret="{{ $intent->client_secret }}" class="btn btn-lg btn-success btn-block">SUBMIT</button>
+                        <div class="col-md-15 text-centre">
+                            <button type="submit" id="card-button" data-secret="{{ $intent->client_secret }}" class="btn-primary">SUBMIT</button>
                         </div>
                     </form>
                 </div>

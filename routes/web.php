@@ -14,9 +14,9 @@ use App\Http\Controllers\FileUpload;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('home');
+//});
 Route::get('/homepage', function () {
     return view('welcome');
 });
@@ -42,7 +42,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-//Route::get('/home-logged-in', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //File Upload
 Route::get('/upload-file', [FileUpload::class, 'createForm']);
