@@ -30,19 +30,22 @@ Route::get('/maps', function () {
     return view('maps');
 });
 
-//Stripe
-
-Route::get('/subscribe', 'SubscriptionController@showSubscription');
-      Route::post('/subscribe', 'SubscriptionController@processSubscription');
-      // welcome page only for subscribed users
-      Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+// Stripe subscription 
+Route::get('/subscribe', 'SubscriptionController@showSubscription');
+Route::post('/seller/subscribe', 'SubscriptionController@processSubscription');
+// welcome page only for subscribed users
+Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
+
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //File Upload
 Route::get('/upload-file', [FileUpload::class, 'createForm']);
