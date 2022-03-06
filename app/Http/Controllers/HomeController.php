@@ -29,9 +29,4 @@ class HomeController extends Controller
             'intent' => $user->createSetupIntent(),
         ]);
     }
-    public function gmaps()
-    {
-    	$locations = DB::table('locations')->get();
-    	return view('gmaps',compact('locations'));
-    }
 }

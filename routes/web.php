@@ -40,9 +40,6 @@ Route::get('/subscribe', 'SubscriptionController@showSubscription');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Auth::routes();
-
 //Route::get('/home-logged-in', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //File Upload
