@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('styles')
 <style>
     .StripeElement {
@@ -56,6 +55,7 @@
                             @endforeach
                         </div>
                         @endif
+                    
                         <div class="form-group text-center">
                             <button  id="card-button" data-secret="{{ $intent->client_secret }}" class="btn btn-lg btn-success btn-block">SUBMIT</button>
                         </div>
