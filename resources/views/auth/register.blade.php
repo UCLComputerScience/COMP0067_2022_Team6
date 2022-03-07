@@ -1,3 +1,8 @@
+<!-- TODO: implement radio buttons for subscription types
+implement country code and phone number validation
+(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
+add website field -->
+
 @extends('layouts.app')
 
 @section('content')
@@ -12,16 +17,16 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="username" type="username" class="form-control @error('email') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
-                                @error('name')
+                                <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror -->
                             </div>
                         </div>
 
@@ -38,6 +43,119 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name of Organisation') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>                        
+
+                        <div class="row mb-3">
+                            <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control @error('name') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+
+                                @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>        
+
+                        <div class="row mb-3">
+                            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control @error('name') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+
+                                @error('country')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>  
+
+                        <div class="row mb-3">
+                            <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" required autocomplete="postcode" autofocus>
+
+                                @error('postcode')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" required autocomplete="number_of_employees" autofocus>
+
+                                @error('number_of_employees')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
+
+                                @error('number_of_volunteers')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="subscription_type" type="radio" class="form-control @error('subscription_type') is-invalid @enderror" name="subscription_type" required autocomplete="subscription_type">
+
+                                @error('subscription_type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
