@@ -14,9 +14,9 @@ use App\Http\Controllers\FileUpload;
 |
 */
 
-//Route::get('/', function () {
-//    return view('home');
-//});
+Route::get('/', function () {
+    return view('notlogin');
+});
 Route::get('/homepage', function () {
     return view('welcome');
 });
