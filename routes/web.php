@@ -29,6 +29,9 @@ Route::get('/demo', function () {
 Route::get('/maps', function () {
     return view('maps');
 });
+Route::get('/membership', function () {
+    return view('membership');
+});
 
 
 
