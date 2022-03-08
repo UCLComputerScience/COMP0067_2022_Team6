@@ -1,3 +1,8 @@
+<!-- TODO: implement radio buttons for subscription types
+implement country code and phone number validation
+(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
+add website field -->
+
 @extends('layouts.app')
 
 @section('content')
@@ -12,16 +17,16 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="username" type="username" class="form-control @error('email') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
-                                @error('name')
+                                <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror -->
                             </div>
                         </div>
 
@@ -38,6 +43,119 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name of Organisation') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>                        
+
+                        <div class="row mb-3">
+                            <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control @error('name') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+
+                                @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>        
+
+                        <div class="row mb-3">
+                            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control @error('name') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+
+                                @error('country')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>  
+
+                        <div class="row mb-3">
+                            <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" required autocomplete="postcode" autofocus>
+
+                                @error('postcode')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" required autocomplete="number_of_employees" autofocus>
+
+                                @error('number_of_employees')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
+
+                                @error('number_of_volunteers')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="subscription_type" type="radio" class="form-control @error('subscription_type') is-invalid @enderror" name="subscription_type" required autocomplete="subscription_type">
+
+                                @error('subscription_type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -74,128 +192,7 @@
         </div>
     </div>
 </div>
-
-
 </body>
-
-@endsection
-
-// Stripe //
-
-@section('styles')
-<style>
-    .StripeElement {
-        background-color: white;
-        padding: 8px 12px;
-        border-radius: 4px;
-        border: 1px solid transparent;
-        box-shadow: 0 1px 3px 0 #e6ebf1;
-        -webkit-transition: box-shadow 150ms ease;
-        transition: box-shadow 150ms ease;
-    }
-    .StripeElement--focus {
-        box-shadow: 0 1px 3px 0 #cfd7df;
-    }
-    .StripeElement--invalid {
-        border-color: #fa755a;
-    }
-    .StripeElement--webkit-autofill {
-        background-color: #fefde5 !important;
-    }
-</style>
-@endsection
-
-@section('stripeform')
-    
 @endsection
 
 
-    <input id="card-holder-name" type="text"><label for="card-holder-name">Card Holder Name</label>
-    @csrf
-    <div class="form-row">
-        <label for="card-element">Credit or debit card</label>
-        <div id="card-element" class="form-control">
-        </div>
-        <!-- Used to display form errors. -->
-        <div id="card-errors" role="alert"></div>
-    </div>
-    <div class="stripe-errors"></div>
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        @foreach ($errors->all() as $error)
-        {{ $error }}<br>
-        @endforeach
-    </div>
-    @endif
-    <div class="form-group text-center">
-        <button  id="card-button" data-secret="{{ $intent->client_secret }}" class="btn btn-lg btn-success btn-block">SUBMIT</button>
-    </div>
-</form>
-
-@endsection
-
-@section('stripescript')
-    
-@endsection
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-    var stripe = Stripe('{{ env('STRIPE_KEY') }}');
-    var elements = stripe.elements();
-    var style = {
-        base: {
-            color: '#32325d',
-            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-            fontSmoothing: 'antialiased',
-            fontSize: '16px',
-            '::placeholder': {
-                color: '#aab7c4'
-            }
-        },
-        invalid: {
-            color: '#fa755a',
-            iconColor: '#fa755a'
-        }
-    };
-    var card = elements.create('card', {hidePostalCode: true,
-        style: style});
-    card.mount('#card-element');
-    card.addEventListener('change', function(event) {
-        var displayError = document.getElementById('card-errors');
-        if (event.error) {
-            displayError.textContent = event.error.message;
-        } else {
-            displayError.textContent = '';
-        }
-    });
-    const cardHolderName = document.getElementById('card-holder-name');
-    const cardButton = document.getElementById('card-button');
-    const clientSecret = cardButton.dataset.secret;
-    cardButton.addEventListener('click', async (e) => {
-        console.log("attempting");
-        const { setupIntent, error } = await stripe.confirmCardSetup(
-            clientSecret, {
-                payment_method: {
-                    card: card,
-                    billing_details: { name: cardHolderName.value }
-                }
-            }
-            );
-        if (error) {
-            var errorElement = document.getElementById('card-errors');
-            errorElement.textContent = error.message;
-        } else {
-            paymentMethodHandler(setupIntent.payment_method);
-        }
-    });
-    function paymentMethodHandler(payment_method) {
-        var form = document.getElementById('subscribe-form');
-        var hiddenInput = document.createElement('input');
-        hiddenInput.setAttribute('type', 'hidden');
-        hiddenInput.setAttribute('name', 'payment_method');
-        hiddenInput.setAttribute('value', payment_method);
-        form.appendChild(hiddenInput);
-        form.submit();
-    }
-</script>
-
-@endsection

@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
-require_once('vendor/autoload.php');
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Cashier;
 use \Stripe\Stripe;
-class SubscriptionController extends Controller
-{
-public function __construct() {
+class SubscriptionController extends Controller {
+
+    public function __construct() {
         $this->middleware('auth');
     }
     public function retrievePlans() {
@@ -30,7 +28,7 @@ public function __construct() {
         $plans = $this->retrievePlans();
         $user = Auth::user();
         
-        return view('seller.pages.subscribe', [
+        return view('subscribe', [
             'user'=>$user,
             'intent' => $user->createSetupIntent(),
             'plans' => $plans
@@ -52,6 +50,11 @@ public function __construct() {
             return back()->withErrors(['message' => 'Error creating subscription. ' . $e->getMessage()]);
         }
         
-        return redirect('dashboard');
+        return redirect('home');
     }
+ 
+
+
+
 }
+

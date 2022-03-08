@@ -7,6 +7,22 @@
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
+<<<<<<< HEAD
+=======
+DROP DATABASE ancssc_database;
+
+CREATE DATABASE ancssc_database
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL PRIVILEGES
+    ON ancssc_database.*
+    TO 'user'@'localhost'
+        IDENTIFIED BY 'password';
+
+USE ancssc_database;
+
+>>>>>>> origin/main
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";

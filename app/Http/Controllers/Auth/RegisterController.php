@@ -8,25 +8,10 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request; // New
-use DB; //New
 
 class RegisterController extends Controller
 
 {
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */    
-    public function index()
-    {
-        $user = auth()->user();
-        return view('auth.register',[
-            'intent' => $user->createSetupIntent(),
-        ]);
-    }
     /*
     |--------------------------------------------------------------------------
     | Register Controller

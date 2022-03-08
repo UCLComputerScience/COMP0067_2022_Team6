@@ -80,8 +80,6 @@
             @yield('content')
         </main>
     </div>
-    @yield('stripeform')
     @yield('stripescript')
-
 </body>
 </html>

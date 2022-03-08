@@ -1,5 +1,3 @@
-@extends('layouts.app')
-@section('styles')
 <style>
     .StripeElement {
         background-color: white;
@@ -20,54 +18,44 @@
         background-color: #fefde5 !important;
     }
 </style>
-@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                         {{ session('status') }}
-                         <div class="Welcome" role="alert">
-                        </div>
-                    @endif
-                    
-                    <form action="/seller/subscribe" method="POST" id="subscribe-form">
-                    <input type="number" name="amount" id="amount" class="form-control"> <br>
-                        <input id="card-holder-name" type="text"><label for="card-holder-name">Card Holder Name</label>
-                        @csrf
-                        <div class="form-row">
-                            <label for="card-element">Credit or debit card</label>
-                            <div id="card-element" class="form-control">
-                            </div>
-                            <!-- Used to display form errors. -->
-                            <div id="card-errors" role="alert"></div>
-                        </div>
-                        <div class="stripe-errors"></div>
-                        @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                            {{ $error }}<br>
-                            @endforeach
-                        </div>
-                        @endif
-                    
-                        <div class="col-md-15 text-centre">
-                            <button type="submit" id="card-button" data-secret="{{ $intent->client_secret }}" class="btn-primary">SUBMIT</button>
-                        </div>
-                    </form>
+<form action="/subscribe" method="POST" id="subscribe-form">
+    <div class="form-group">
+        <div class="row">
+            @foreach($plans as $plan)
+            <div class="col-md-4">
+                <div class="subscription-option">
+                    <input type="radio" id="plan-silver" name="plan" value='{{$plan->id}}'>
+                    <label for="plan-silver">
+                        <span class="plan-price">{{$plan->currency}}{{$plan->amount/100}}<small> /{{$plan->interval}}</small></span>
+                        <span class="plan-name">{{$plan->product->name}}</span>
+                    </label>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
-</div>
-@endsection
-
-@section('stripescript')
+    <input id="card-holder-name" type="text"><label for="card-holder-name">Card Holder Name</label>
+    @csrf
+    <div class="form-row">
+        <label for="card-element">Credit or debit card</label>
+        <div id="card-element" class="form-control">
+        </div>
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+    </div>
+    <div class="stripe-errors"></div>
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+        {{ $error }}<br>
+        @endforeach
+    </div>
+    @endif
+    <div class="form-group text-center">
+        <button  id="card-button" data-secret="{{ $intent->client_secret }}" class="btn btn-lg btn-success btn-block">SUBMIT</button>
+    </div>
+</form>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
@@ -129,4 +117,3 @@
         form.submit();
     }
 </script>
-@endsection
