@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileUpload;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('home');
+//});
 Route::get('/homepage', function () {
     return view('welcome');
 });
@@ -29,17 +30,23 @@ Route::get('/maps', function () {
     return view('maps');
 });
 
-//Stripe
 
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+// Stripe subscription
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
-      Route::post('/subscribe', 'SubscriptionController@processSubscription');
-      // welcome page only for subscribed users
-      Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
+Route::post('/seller/subscribe', 'SubscriptionController@processSubscription');
+// welcome page only for subscribed users
+Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Auth::routes();
-
-//Route::get('/home-logged-in', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//File Upload
+Route::get('/upload-file', [FileUpload::class, 'createForm']);
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
