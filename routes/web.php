@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\ImageUpload;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //File Upload
 Route::get('/upload-file', [FileUpload::class, 'createForm']);
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+
+//Image Upload
+Route::get('/image-upload', [ImageUpload::class, 'createForm']);
+Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUpload');
