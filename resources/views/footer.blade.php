@@ -66,7 +66,7 @@
                         <h4 class="py-2">Quick Links</h4>
                         <div class="d-flex align-items-center py-2">
                             <i class="fas fa-caret-right"></i>
-                            <a href="home#about"><p class="ms-3">About</p></a>
+                            <a href="http://127.0.0.1:8000/#about"><p class="ms-3">About</p></a>
                         </div>
                         <div class="d-flex align-items-center py-2">
                             <i class="fas fa-caret-right"></i>
@@ -74,11 +74,11 @@
                         </div>
                         <div class="d-flex align-items-center py-2">
                             <i class="fas fa-caret-right"></i>
-                            <a href="#"><p class="ms-3">Register</p></a>
+                            <a href="register"><p class="ms-3">Register</p></a>
                         </div>
                         <div class="d-flex align-items-center py-2">
                             <i class="fas fa-caret-right"></i>
-                            <a href="home#contact"><p class="ms-3">Contact</p></a>
+                            <a href="http://127.0.0.1:8000/#contact"><p class="ms-3">Contact</p></a>
                         </div>
                     </div>
                 </div> <!-- end of col -->

@@ -43,7 +43,7 @@
             <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <a class="navbar-brand logo-text" href="http://127.0.0.1:8000/home">ANCSSC</a>
+            <a class="navbar-brand logo-text" href="http://127.0.0.1:8000">ANCSSC</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
             <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault" >
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home#about">About Us</a>
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/#about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="membership">Membership</a>
@@ -73,7 +73,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/home#contact">Contact Us</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/#contact">Contact Us</a>
                     </li>
                 </ul>
                 <span class="nav-item social-icons">

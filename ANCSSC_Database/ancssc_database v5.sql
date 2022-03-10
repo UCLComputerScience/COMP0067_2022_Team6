@@ -3,26 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 06, 2022 at 04:36 PM
+-- Generation Time: Mar 09, 2022 at 05:03 PM
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
-<<<<<<< HEAD
-=======
-DROP DATABASE ancssc_database;
-
-CREATE DATABASE ancssc_database
-    DEFAULT CHARACTER SET utf8
-    DEFAULT COLLATE utf8_general_ci;
-
-GRANT ALL PRIVILEGES
-    ON ancssc_database.*
-    TO 'user'@'localhost'
-        IDENTIFIED BY 'password';
-
-USE ancssc_database;
-
->>>>>>> origin/main
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -112,6 +96,20 @@ CREATE TABLE `files` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+                          `id` bigint(20) UNSIGNED NOT NULL,
+                          `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                          `image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                          `created_at` timestamp NULL DEFAULT NULL,
+                          `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -133,7 +131,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
                                                           (5, '2019_08_19_000000_create_failed_jobs_table', 1),
                                                           (6, '2019_12_14_000001_create_personal_access_tokens_table', 1),
                                                           (7, '2022_03_04_180315_create_password_resets_table', 2),
-                                                          (8, '2022_03_06_160406_create_files_table', 2);
+                                                          (8, '2022_03_06_160406_create_files_table', 2),
+                                                          (9, '2022_03_06_184948_create_images_table', 3),
+                                                          (10, '2022_03_09_154541_create_images_table', 4);
 
 -- --------------------------------------------------------
 
@@ -313,33 +313,39 @@ INSERT INTO `users` (`id`, `username`, `name`, `password`, `email`, `phone`, `ad
 --
 ALTER TABLE `country_of_operation`
     ADD PRIMARY KEY (`country_of_operation`),
-  ADD KEY `id` (`id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
     ADD PRIMARY KEY (`event_id`),
-  ADD KEY `id` (`id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `event_picture`
 --
 ALTER TABLE `event_picture`
     ADD PRIMARY KEY (`event_picture_id`),
-  ADD KEY `event_id` (`event_id`);
+    ADD KEY `event_id` (`event_id`);
 
 --
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
     ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+    ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
 -- Indexes for table `files`
 --
 ALTER TABLE `files`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
     ADD PRIMARY KEY (`id`);
 
 --
@@ -359,59 +365,59 @@ ALTER TABLE `password_resets`
 --
 ALTER TABLE `personal_access_tokens`
     ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+    ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+    ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
     ADD PRIMARY KEY (`project_id`),
-  ADD KEY `id` (`id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `project_picture`
 --
 ALTER TABLE `project_picture`
     ADD PRIMARY KEY (`project_picture_id`),
-  ADD KEY `project_id` (`project_id`);
+    ADD KEY `project_id` (`project_id`);
 
 --
 -- Indexes for table `resource`
 --
 ALTER TABLE `resource`
     ADD PRIMARY KEY (`resource_id`),
-  ADD KEY `id` (`id`);
+    ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `resource_picture`
 --
 ALTER TABLE `resource_picture`
     ADD PRIMARY KEY (`resource_picture_id`),
-  ADD KEY `resource_id` (`resource_id`);
+    ADD KEY `resource_id` (`resource_id`);
 
 --
 -- Indexes for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
     ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `subscriptions_stripe_id_unique` (`stripe_id`),
-  ADD KEY `subscriptions_user_id_stripe_status_index` (`user_id`,`stripe_status`);
+    ADD UNIQUE KEY `subscriptions_stripe_id_unique` (`stripe_id`),
+    ADD KEY `subscriptions_user_id_stripe_status_index` (`user_id`,`stripe_status`);
 
 --
 -- Indexes for table `subscription_items`
 --
 ALTER TABLE `subscription_items`
     ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `subscription_items_subscription_id_stripe_price_unique` (`subscription_id`,`stripe_price`),
-  ADD UNIQUE KEY `subscription_items_stripe_id_unique` (`stripe_id`);
+    ADD UNIQUE KEY `subscription_items_subscription_id_stripe_price_unique` (`subscription_id`,`stripe_price`),
+    ADD UNIQUE KEY `subscription_items_stripe_id_unique` (`stripe_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
     ADD PRIMARY KEY (`id`),
-  ADD KEY `users_stripe_id_index` (`stripe_id`);
+    ADD KEY `users_stripe_id_index` (`stripe_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -442,10 +448,16 @@ ALTER TABLE `files`
     MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `password_resets`

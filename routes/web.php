@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\ImageUpload;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('/maps', function () {
 
 Auth::routes();
 
-// Stripe subscription 
+// Stripe subscription
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
 Route::post('/seller/subscribe', 'SubscriptionController@processSubscription');
 // welcome page only for subscribed users
@@ -50,3 +51,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //File Upload
 Route::get('/upload-file', [FileUpload::class, 'createForm']);
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+
+//Image Upload
+Route::get('/image-upload', [ImageUpload::class, 'createForm']);
+Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUpload');
