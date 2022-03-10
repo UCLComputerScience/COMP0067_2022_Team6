@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ee37eddd183a20bd295daacc911de8f1902a0a7e',
+        'reference' => 'ee4c38942516b227378648401ca52e2eaa4c0876',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -17,6 +17,15 @@
             'install_path' => __DIR__ . '/../asm89/stack-cors',
             'aliases' => array(),
             'reference' => '73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
+            'dev_requirement' => false,
+        ),
+        'blade-ui-kit/blade-ui-kit' => array(
+            'pretty_version' => '0.3.3',
+            'version' => '0.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../blade-ui-kit/blade-ui-kit',
+            'aliases' => array(),
+            'reference' => 'c31e388b033efdb07e84961b372189b02800e522',
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -406,7 +415,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ee37eddd183a20bd295daacc911de8f1902a0a7e',
+            'reference' => 'ee4c38942516b227378648401ca52e2eaa4c0876',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
