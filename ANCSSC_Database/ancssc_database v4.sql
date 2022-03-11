@@ -7,8 +7,6 @@
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
-<<<<<<< HEAD
-=======
 DROP DATABASE ancssc_database;
 
 CREATE DATABASE ancssc_database
@@ -22,7 +20,6 @@ GRANT ALL PRIVILEGES
 
 USE ancssc_database;
 
->>>>>>> origin/main
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
