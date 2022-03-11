@@ -65,7 +65,9 @@ Route::get('/projects', function () {
 Route::get('/projects-detail', function () {
     return view('projects-detail');
 });
-
+Route::get('/members', function () {
+    return view('members');
+});
 
 // Stripe subscription
 
