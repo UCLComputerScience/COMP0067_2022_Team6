@@ -41,6 +41,18 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+-- Table structure for table `Member Locations`
+
+CREATE TABLE `locations` (
+`id` INT(10) NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(150) NOT NULL,
+`address` VARCHAR(255) NOT NULL,
+`lat` FLOAT(10,6) NOT NULL,
+`lon` FLOAT(10,6) NOT NULL,
+`description` TEXT NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Table structure for table `country_of_operation`
 --
