@@ -16,6 +16,12 @@
       </div>
   </div>
 </section>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button">Button</button>
+    <button class="btn btn-primary" type="button">Button</button>
+  </div>
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+
 <!-- About section two-->
 <section class="py-5">
   <div class="container px-5 my-5">
