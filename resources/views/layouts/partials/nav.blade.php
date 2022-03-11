@@ -13,7 +13,6 @@
                       <li><a class="dropdown-item" href="portfolio-item.html">Past Events</a></li>
                     </ul>     </li>
               <li class="nav-item"><a class="nav-link" href="faq.html">Contact Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="faq.html"></a></li>
               <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="register">Register</a></li>
               
