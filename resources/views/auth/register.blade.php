@@ -185,9 +185,9 @@ implement country code and phone number validation
                         <div class="row mb-3">
                             <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>
 
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <input id="subscription_type" type="radio">
-                                <label class=
+                                <label class= -->
 
                                 @error('subscription_type')
                                     <span class="invalid-feedback" role="alert">
