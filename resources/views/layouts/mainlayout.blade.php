@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   @include('layouts.partials.head')
+@include('layouts.partials.nav')
+
 </head>
- <body>
+<body>
 
-  @include('layouts.partials.nav')
-
+@include('layouts.partials.head')
   
 
-  @yield('content')
+@yield('content')
 
-  @include('layouts.partials.footer')
+@include('layouts.partials.footer')
 
-  @include('layouts.partials.footer-scripts')
+@include('layouts.partials.footer-scripts')
 
  </body>
 </html>
