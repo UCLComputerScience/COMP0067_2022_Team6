@@ -1,7 +1,6 @@
 <!-- TODO: implement radio buttons for subscription types
 implement country code and phone number validation
-(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
-add website field -->
+(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)-->
 
 @extends('layouts.app')
 
@@ -20,7 +19,7 @@ add website field -->
                             <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username" class="form-control @error('email') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
                                 <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -57,6 +56,25 @@ add website field -->
                                 @enderror
                             </div>
                         </div>
+
+                        <!-- <input id="email" type="email" class="form-control" name="email" value="" required="" autocomplete="email"> -->
+
+
+                        <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control @error('name') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                                <input id="phone" type="phone" class="form-control" name="phone" value="" required="" autocomplete="email">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> 
 
                         <div class="row mb-3">
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
@@ -135,6 +153,20 @@ add website field -->
                                 <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
 
                                 @error('number_of_volunteers')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="website" class="col-md-4 col-form-label text-md-end">{{ __('Website') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('website') }}" required autocomplete="website" autofocus>
+
+                                @error('country')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
