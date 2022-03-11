@@ -66,8 +66,6 @@ implement country code and phone number validation
                             <div class="col-md-6">
                                 <input id="phone" type="text" class="form-control @error('name') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
-                                <input id="phone" type="phone" class="form-control" name="phone" value="" required="" autocomplete="email">
-
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -174,11 +172,22 @@ implement country code and phone number validation
                             </div>
                         </div>
 
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                 Subscription Type
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">TYPE 1</a></li>
+                                <li><a class="dropdown-item" href="#">TYPE 2</a></li>
+                            </ul>
+                        </div> -->
+
                         <div class="row mb-3">
                             <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>
 
                             <div class="col-md-6">
-                                <input id="subscription_type" type="radio" class="form-control @error('subscription_type') is-invalid @enderror" name="subscription_type" required autocomplete="subscription_type">
+                                <input id="subscription_type" type="radio">
+                                <label class=
 
                                 @error('subscription_type')
                                     <span class="invalid-feedback" role="alert">
