@@ -1,6 +1,10 @@
 <!-- TODO: 
 implement country code and phone number validation
-(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)-->
+(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
+
+TODO: 
+Radio buttons are currently not part of the same set so you can select both. Need to merge to the same list,
+but not going to do that until after Stripe is implemented, since that may affect exactly how the membership types are implemented-->
 
 @extends('layouts.app')
 

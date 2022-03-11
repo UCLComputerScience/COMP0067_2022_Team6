@@ -157,8 +157,23 @@
                     </div>
                 </div>
             </section>
+
+
+        <!-- Map-->
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder">Where our members are located</h1>
+        <section id="sidebar">
+        <div id="directions_panel"></div>
+        </section>
+
+        <section id="main">
+            <div id="map_canvas" style="width: 70%; height: 500px; left:12.5%"></div>
+        </div>
+        </section>
+        
+        </body>
         </main>
-        <!-- Footer-->
+
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -183,22 +198,16 @@
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 //<![CDATA[
-
 var map;
-
 // Ban Jelačić Square - Center of Zagreb, Croatia
 var center = new google.maps.LatLng(45.812897, 15.97706);
-
 function init() {
-
 var mapOptions = {
 zoom: 13,
 center: center,
 mapTypeId: google.maps.MapTypeId.ROADMAP
 }
-
 map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
 var marker = new google.maps.Marker({
 map: map,
 position: center,
@@ -209,16 +218,6 @@ position: center,
 </head>
 <body onload="init();">
 
-<h1>Where our members are located</h1>
 
-<section id="sidebar">
-<div id="directions_panel"></div>
-</section>
-
-<section id="main">
-<div id="map_canvas" style="width: 70%; height: 500px;"></div>
-</section>
-
-</body>
 </html>
 @endsection

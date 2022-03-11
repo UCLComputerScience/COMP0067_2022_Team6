@@ -1,3 +1,5 @@
+<!-- TODO: Move events into a single grid - currently they are separate sets which is not good -->
+
 @extends('layouts.mainlayout')
 @extends('layouts.partials.header')
 
