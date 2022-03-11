@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
    @include('layouts.partials.head')
- </head>
+</head>
  <body>
 
   @include('layouts.partials.nav')
