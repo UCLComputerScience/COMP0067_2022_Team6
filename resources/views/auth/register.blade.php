@@ -1,4 +1,4 @@
-<!-- TODO: implement radio buttons for subscription types
+<!-- TODO: 
 implement country code and phone number validation
 (see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)-->
 
@@ -11,10 +11,15 @@ implement country code and phone number validation
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Become an ANCSSC member today</h1>
+                        <p class="lead fw-normal text-muted mb-0">Choose from our annual plans based on your type of organisation</p>
+                    </div>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        
                         <div class="row mb-3">
                             <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
@@ -171,16 +176,6 @@ implement country code and phone number validation
                                 @enderror
                             </div>
                         </div>
-
-                        <!-- <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                 Subscription Type
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">TYPE 1</a></li>
-                                <li><a class="dropdown-item" href="#">TYPE 2</a></li>
-                            </ul>
-                        </div> -->
 
                         <div class="row mb-3">
                             <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>

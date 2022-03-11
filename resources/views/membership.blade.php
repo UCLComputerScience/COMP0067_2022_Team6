@@ -149,7 +149,7 @@
                                             Monthly status reports
                                         </li>
                                     </ul>
-                                    <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Become a corporate member</a></div>
+                                    <div class="d-grid"><a class="btn btn-outline-primary" href="/register">Become a corporate member</a></div>
                                 </div>
                             </div>
                         </div>
