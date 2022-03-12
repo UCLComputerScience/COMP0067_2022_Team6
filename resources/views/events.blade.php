@@ -54,11 +54,12 @@
             <!-- Blog preview section-->
             <section class="py-5">
                 <div class="container px-5">
-                    <!-- <h2 class="fw-bolder fs-5 mb-4">Upcoming events</h2> -->
+                    <!-- Page title -->
                     <div class="text-center mb-5">
                         <h1 class="fw-bolder">Upcoming events</h1>
                         <p class="lead fw-normal text-muted mb-0">Streamed online throughout the year, our events will support your organisation's knowledge growth</p>
                     </div>
+                    <!-- Event preview -->
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
