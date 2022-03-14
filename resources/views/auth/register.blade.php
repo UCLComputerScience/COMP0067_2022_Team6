@@ -8,6 +8,8 @@ but not going to do that until after Stripe is implemented, since that may affec
 
 @extends('layouts.app')
 
+@extends('layouts.partials.nav')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
