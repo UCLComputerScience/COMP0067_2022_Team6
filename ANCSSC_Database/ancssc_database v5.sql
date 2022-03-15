@@ -45,8 +45,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `locations` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,
-`name` VARCHAR(150) NOT NULL,
+`member_name` VARCHAR(150) NOT NULL,
 `address` VARCHAR(255) NOT NULL,
+`sdg` VARCHAR(255) NOT NULL,
 `lat` FLOAT(10,6) NOT NULL,
 `lon` FLOAT(10,6) NOT NULL,
 `description` TEXT NOT NULL,
