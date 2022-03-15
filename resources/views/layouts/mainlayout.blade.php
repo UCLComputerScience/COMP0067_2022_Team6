@@ -6,14 +6,13 @@
 </head>
 <body>
 
-@include('layouts.partials.head')
+@include('layouts.partials.tryhead')
   
 
 @yield('content')
 
 @include('layouts.partials.footer')
 
-@include('layouts.partials.footer-scripts')
 
  </body>
 </html>

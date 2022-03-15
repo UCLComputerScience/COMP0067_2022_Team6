@@ -1,20 +1,25 @@
 <!-- TODO: 
 implement country code and phone number validation
-(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)-->
+(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
+
+TODO: 
+Radio buttons are currently not part of the same set so you can select both. Need to merge to the same list,
+but not going to do that until after Stripe is implemented, since that may affect exactly how the membership types are implemented-->
 
 @extends('layouts.app')
+
+@extends('layouts.partials.nav')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                    <div class="text-center mb-5">
+            <div class="text-center mb-5">
                         <h1 class="fw-bolder">Become an ANCSSC member today</h1>
                         <p class="lead fw-normal text-muted mb-0">Choose from our annual plans based on your type of organisation</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

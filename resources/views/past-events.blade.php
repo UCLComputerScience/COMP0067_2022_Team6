@@ -32,7 +32,7 @@
                                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
                                                 <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
+                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2021 &middot; 1 hour</div>
                                             </div>
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
                                                 <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
+                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2021 &middot; 1 hour</div>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
                                                 <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
+                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2021 &middot; 1 hour</div>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
                                                 <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
+                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2021 &middot; 1 hour</div>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@
                                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                             <div class="small">
                                                 <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
+                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2021 &middot; 1 hour</div>
                                             </div>
                                         </div>
                                     </div>
@@ -138,8 +138,8 @@
 
                     
                     <div class="text-end mb-5 mb-xl-0">
-                        <a class="text-decoration-none" href="/past-events">
-                            Past events
+                        <a class="text-decoration-none" href="/events">
+                            Upcoming events
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
