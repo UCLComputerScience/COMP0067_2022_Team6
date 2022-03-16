@@ -1,5 +1,10 @@
+<!-- TODO: 
+1. Get filtering to work for projects table
+2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
+
 @extends('layouts.mainlayout')
 @section('content')
+
 <!DOCTYPE html>
 <html lang="en">
     <body class="d-flex flex-column h-100">
@@ -7,45 +12,81 @@
             
             <!-- Page Content-->
             <section class="py-5">
+                <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Projects</h1>
+                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="text-center mb-5">
+                        <h2 class="fw-bolder">Project locations</h1>
+                        <p class="lead fw-normal text-muted mb-0">(map to come)</p>
+                </div>
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Our Work</h1>
-                        <p class="lead fw-normal text-muted mb-0">Company portfolio</p>
+                            <h2 class="fw-bolder">Project information</h1>
+                            <p class="lead fw-normal text-muted mb-0">(explanatory text for the table below goes here)</p>
                     </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-5 mb-lg-0">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <table id="projects" class="table table-striped nowrap" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Project name</th>
+                                <th>Organisation name</th>
+                                <th>Location</th>
+                                <th>Language</th>
+                                <th>Description</th>
+                                <th>SDGs</th>
+                                <th>Date added</th>
+                                <th>Last updated</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mexican water source</td>
+                            <td>WaterAid</td>
+                            <td>Mexico</td>
+                            <td>Spanish</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                            <td>3, 11</td>
+                            <td>2018/11/13</td>
+                            <td>2019/12/12</td>
+                        </tr>
+                        <tr>
+                            <td>Very important project</td>
+                            <td>Oxfam</td>
+                            <td>Brazil</td>
+                            <td>English</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                            <td>12</td>
+                            <td>2019/1/3</td>
+                            <td>2021/5/12</td>
+                        </tr>
+                        <tr>
+                            <td>1000 houses</td>
+                            <td>GlobalGiving</td>
+                            <td>Argentina</td>
+                            <td>English</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                            <td>1, 4, 5, 6</td>
+                            <td>2021/1/3</td>
+                            <td>2021/1/3</td>
+                        </tr>
+                    </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Project name</th>
+                        <th>Organisation name</th>
+                        <th>Location</th>
+                        <th>Language</th>
+                        <th>Description</th>
+                        <th>SDGs</th>
+                        <th>Date added</th>
+                        <th>Last updated</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
             </section>
-            <section class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                    <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
-                </div>
-            </section>
+
         </main>
     </body>
 </html>
