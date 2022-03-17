@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 
-@section
+@section('content')
 <title>Google Maps Example</title>
 <style type="text/css">
 body { font: normal 14px Verdana; }
