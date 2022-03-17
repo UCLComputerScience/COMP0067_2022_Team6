@@ -11,8 +11,11 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
-                                <h1 class="fw-bolder">Project Title</h1>
-                                <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab similique, ducimus ut alias sit accusamus illum, asperiores deserunt dolorum quaerat qui! Ab, quisquam explicabo magni dolores unde beatae quam a.</p>
+                                <h1 class="fw-bolder">Project title here</h1>
+                                <h2 class="fw-bolder">Organisation name here</h2>
+                                <!-- Note: SDGs may be better served by showing up with shiny pictures but we should review to see what works and what's feasible -->
+                                <h2 class="fw-bolder">SDGs: SDGs here</h2>
+                                <p class="lead fw-normal text-muted mb-0">This is the project description! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab similique, ducimus ut alias sit accusamus illum, asperiores deserunt dolorum quaerat qui! Ab, quisquam explicabo magni dolores unde beatae quam a.</p>
                             </div>
                         </div>
                     </div>
@@ -31,6 +34,48 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bolder">Project reports</h1>
+                        <table id="projects" class="table table-striped nowrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Report name</th>
+                                    <th>Project name</th>
+                                    <th>Organisation name</th>
+                                    <th>Language</th>
+                                    <th>Description</th>
+                                    <th>SDGs</th>
+                                    <th>Date added</th>
+                                    <th>Last updated</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2018 water research</td>
+                                    <td>Mexican water source</td>
+                                    <td>WaterAid</td>
+                                    <td>Spanish</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                    <td>3, 11</td>
+                                    <td>2018/11/13</td>
+                                    <td>2019/12/12</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Report name</th>
+                                    <th>Project name</th>
+                                    <th>Organisation name</th>
+                                    <th>Language</th>
+                                    <th>Description</th>
+                                    <th>SDGs</th>
+                                    <th>Date added</th>
+                                    <th>Last updated</th>
+
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </section>
