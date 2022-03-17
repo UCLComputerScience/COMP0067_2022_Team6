@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+
     <header class="bg-white py-5">
+
         <div class="container px-5">
             <div class="row gx-5 align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
+
                         <h1 class="display-5 fw-bolder text-dark mb-2">ANCSSC</h1>
                         <p class="lead fw-normal text-dark-50 mb-4">The Alliance of NGOs and CSOs for South-South Cooperation is the International Network of NGOs and CSOs which works in collaboration with the United Nations for South-South Cooperation (UNOSSC) to enhance civil society’s understanding of the value of South-South Cooperation in developmental, humanitarian and related spheres.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
@@ -92,6 +95,7 @@
         </div>
     </div>
     </section>
+
 </body>
 </html>
 @endsection
