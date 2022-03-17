@@ -140,14 +140,15 @@
                 </tbody>
             <tfoot>
                 <tr>
+                    <th>Report name</th>
                     <th>Project name</th>
                     <th>Organisation name</th>
-                    <th>Location</th>
                     <th>Language</th>
                     <th>Description</th>
                     <th>SDGs</th>
                     <th>Date added</th>
                     <th>Last updated</th>
+
                 </tr>
             </tfoot>
         </table>
