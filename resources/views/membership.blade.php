@@ -1,11 +1,6 @@
 @extends('layouts.mainlayout')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
             
             <!-- Pricing section-->
             <section class="bg-light py-5">
@@ -133,9 +128,13 @@
         </body>
         </main>
     </body>
+
+ <div id="map"> </div>   
 </html>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemap')['map_apikey'] }}&libraries=places&callback=initialize"></script>
 <script type="text/javascript">
 //<![CDATA[
 var map;

@@ -1470,31 +1470,31 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.8.3",
-            "version_normalized": "13.8.3.0",
+            "version": "v13.8.4",
+            "version_normalized": "13.8.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526"
+                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
-                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/880e1ed0872e9c24a8abcf59b45c0d220f719ada",
+                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada",
                 "shasum": ""
             },
             "require": {
                 "dompdf/dompdf": "^0.8.6|^1.0.1",
                 "ext-json": "*",
-                "illuminate/console": "^8.0|^9.0",
-                "illuminate/contracts": "^8.0|^9.0",
-                "illuminate/database": "^8.0|^9.0",
-                "illuminate/http": "^8.0|^9.0",
-                "illuminate/log": "^8.0|^9.0",
-                "illuminate/notifications": "^8.0|^9.0",
-                "illuminate/routing": "^8.0|^9.0",
-                "illuminate/support": "^8.0|^9.0",
-                "illuminate/view": "^8.0|^9.0",
+                "illuminate/console": "^8.37|^9.0",
+                "illuminate/contracts": "^8.37|^9.0",
+                "illuminate/database": "^8.37|^9.0",
+                "illuminate/http": "^8.37|^9.0",
+                "illuminate/log": "^8.37|^9.0",
+                "illuminate/notifications": "^8.37|^9.0",
+                "illuminate/routing": "^8.37|^9.0",
+                "illuminate/support": "^8.37|^9.0",
+                "illuminate/view": "^8.37|^9.0",
                 "moneyphp/money": "^3.2|^4.0",
                 "nesbot/carbon": "^2.0",
                 "php": "^7.3|^8.0",
@@ -1510,7 +1510,7 @@
             "suggest": {
                 "ext-intl": "Allows for more locales besides the default \"en\" when formatting money values."
             },
-            "time": "2022-02-22T16:00:53+00:00",
+            "time": "2022-03-15T15:52:51+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

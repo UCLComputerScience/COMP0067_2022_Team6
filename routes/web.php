@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\ImageUpload;
+use App\Http\Controllers\AutoAddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,17 @@ Route::get('/events', function () {
 Route::get('/events-detail', function () {
     return view('events-detail');
 });
+Route::get('gmaps', 'LocationController@gmaps');
+
+Route::get('/create', function () {
+    return view('create');
+});
+// Google auto complete
+
+Route::get('auto-complete', [GoogleController::class, 'index']);
+
+// Google autocomplete 2 
+Route::get('auto-complete-address', [AutoAddressController::class, 'googleAutoAddress']);
 
 Auth::routes();
 

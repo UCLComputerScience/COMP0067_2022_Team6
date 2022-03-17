@@ -43,7 +43,7 @@ SET time_zone = "+00:00";
 
 -- Table structure for table `Member Locations`
 
-CREATE TABLE `locations` (
+CREATE TABLE `location` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,
 `member_name` VARCHAR(150) NOT NULL,
 `address` VARCHAR(255) NOT NULL,
@@ -298,13 +298,24 @@ CREATE TABLE `subscription_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
+CREATE TABLE `plans` (
+            'name' varchar(255) NOT NULL,
+            'slug' varchar(255) NOT NULL,
+            'stripe_name'varchar(255) NOT NULL,
+            'stripe_product_id' varchar(255) NOT NULL,
+            'stripe_price_id'varchar(255) NOT NULL,
+            'price' int(15) NOT NULL,
+            'abbreviation' varchar(255) NOT NULL,
+            'timestamp'timestamp NULL DEFAULT NULL
 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
                          `id` int(15) NOT NULL,
+                         'type' int(1) DEFAULT (1)
                          `username` varchar(255) DEFAULT NULL,
                          `name` varchar(255) NOT NULL,
                          `password` varchar(255) NOT NULL,

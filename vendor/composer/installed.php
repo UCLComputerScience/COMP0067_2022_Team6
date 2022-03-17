@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ee4c38942516b227378648401ca52e2eaa4c0876',
+        'reference' => 'c10e46014aac60f5e1561c738947b41dc5fb83ec',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -392,12 +392,12 @@
             ),
         ),
         'laravel/cashier' => array(
-            'pretty_version' => 'v13.8.3',
-            'version' => '13.8.3.0',
+            'pretty_version' => 'v13.8.4',
+            'version' => '13.8.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/cashier',
             'aliases' => array(),
-            'reference' => 'c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526',
+            'reference' => '880e1ed0872e9c24a8abcf59b45c0d220f719ada',
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(
@@ -415,7 +415,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ee4c38942516b227378648401ca52e2eaa4c0876',
+            'reference' => 'c10e46014aac60f5e1561c738947b41dc5fb83ec',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
