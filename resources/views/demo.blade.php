@@ -4,11 +4,15 @@
 
 
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    
 <!-- About section one-->
 <section class="py-5 bg-light" id="scroll-target">
   <div class="container px-5 my-5">
       <div class="row gx-5 align-items-center">
-          <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://i.ibb.co/wB6Zfp4/Charity-Mission-2.jpg" alt="..." /></div>
+          <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="./assets/ANCSSClogo.jpg" alt="..." /></div>
           <div class="col-lg-6">
               <h2 class="fw-bolder">Our mission</h2>
               <p class="lead fw-normal text-muted mb-0">To facilitate the strengthening of capacities of NGOs and CSOs; where needed, through the sharing of expertise, best practices, staff trainings and other assets among themselves.</p>
@@ -16,11 +20,7 @@
       </div>
   </div>
 </section>
-<div class="d-grid gap-2 col-6 mx-auto">
-    <button class="btn btn-primary" type="button">Button</button>
-    <button class="btn btn-primary" type="button">Button</button>
-  </div>
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
+
 
 <!-- About section two-->
 <section class="py-5">
@@ -73,5 +73,6 @@
       </div>
   </div>
 </section>
-</main>
+</body>
+</html>
 @endsection

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container px-5">
-      <img src="https://ancssc.com/wp-content/uploads/2019/07/ANCSSC.png"href="index.html" alt="..." height="36"  >
+    <a href="http://127.0.0.1:8000/"><img src="https://ancssc.com/wp-content/uploads/2019/07/ANCSSC.png"href="/" alt="..." height="36"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

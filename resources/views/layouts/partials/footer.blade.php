@@ -13,17 +13,7 @@
               <span class="text-white mx-1">&middot;</span>
               <a class="link-light small" href="#!">Contact</a>
               <span class="text-white mx-1">&middot;</span>
-              <i class="fab fa-facebook-f"></i>
-              <!-- Twitter -->
-              <i class="fab fa-twitter"></i>
-              <!-- Google -->
-              <i class="fab fa-google"></i>
-              
-              <!-- Instagram -->
-              <i class="fab fa-instagram"></i>
-              
-              <!-- Linkedin -->
-              <i class="fab fa-linkedin-in"></i>
+
                   
           </div>
       </div>
