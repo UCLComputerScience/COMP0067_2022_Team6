@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@include('layouts.partials.nav-logged-in')
+@include('layouts.partials.nav-admin')
 </head>
 <body>
 
