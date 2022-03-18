@@ -41,6 +41,16 @@ Route::get('/events', function () {
 Route::get('/events-detail', function () {
     return view('events-detail');
 });
+Route::get('/past-events', function () {
+    return view('past-events');
+});
+Route::get('/projects-create', function () {
+    return view('projects-create');
+});
+
+Route::get('/projects-edit', function () {
+    return view('projects-edit');
+});
 
 Auth::routes();
 
