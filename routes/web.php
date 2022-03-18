@@ -52,6 +52,10 @@ Route::get('/projects-edit', function () {
     return view('projects-edit');
 });
 
+Route::get('/user-profile', function () {
+    return view('user-profile');
+});
+
 Auth::routes();
 
 //Main Site Pages - Logged In Corporate/CSO
@@ -74,6 +78,29 @@ Route::get('/members', function () {
     return view('members');
 });
 
+Route::get('/admin-members', function () {
+    return view('admin-members');
+});
+
+Route::get('/admin-create-resources', function () {
+    return view('admin-create-resources');
+});
+
+Route::get('/admin-create-events', function () {
+    return view('admin-create-events');
+});
+
+Route::get('/admin-manage-events', function () {
+    return view('admin-manage-events');
+});
+
+Route::get('/admin-manage-resources', function () {
+    return view('admin-manage-resources');
+});
+
+Route::get('/admin-analytics', function () {
+    return view('admin-analytics');
+});
 // Stripe subscription
 
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
