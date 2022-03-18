@@ -1,4 +1,5 @@
-@extends('layouts.mainlayout')
+@extends('layouts.mainlayout-logged-in')
+@extends('layouts.partials.nav-logged-in')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
