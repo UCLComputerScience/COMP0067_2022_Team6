@@ -95,15 +95,6 @@
                                             <i class="bi bi-check text-primary"></i>
                                             Unlimited private projects
                                         </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-check text-primary"></i>
-                                            Dedicated support
-                                        </li>
-                                        <li class="mb-2">
-                                            <i class="bi bi-check text-primary"></i>
-                                            <strong>Unlimited</strong>
-                                            linked domains
-                                        </li>
                                         <li class="text-muted">
                                             <i class="bi bi-check text-primary"></i>
                                             Monthly status reports
@@ -120,7 +111,7 @@
 
         <!-- Map-->
      
-<h1>Where our members are located</h1>
+<h1 style="text-align:center">Where our members are located</h1>
 
 <body>
 <div id="map" style="width: 100%; height: 500px;"></div>

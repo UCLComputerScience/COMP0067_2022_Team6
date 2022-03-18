@@ -8,7 +8,13 @@
 
 @section('content')
 
-<title>Members Table</title>
+            <!-- Page Content-->
+<section class="py-5">
+<div class="text-center mb-5">
+<h1 class="fw-bolder">Our Members</h1>
+ <p class="lead fw-normal text-muted mb-0">Find and collaborate with a Member of your choice below</p>
+</div>
+<div class="text-center mb-5">
 
 <!-- Meta -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +31,6 @@
 
 </head>
 <body>
-<h2 style="text-align: center;">Users Table</h2>
 <table id='usersTable' width='100%'>
 <thead>
 <tr>
@@ -36,7 +41,7 @@
 </thead>
 </table>
 
-<!-- Script -->
+<!-- Table -->
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -58,9 +63,10 @@ $(document).ready(function(){
 </html>
 
 
-<h1>Where our members are located</h1>
-
 <body>
+
+<!-- Map -->
+
 <div id="map" style="width: 100%; height: 500px;"></div>
 
 <?php $userlocs = DB::table('location')
@@ -86,7 +92,6 @@ $(document).ready(function(){
             map: map,
             title: locations[i]['member_name'],
             
-
         });
     }
 
