@@ -1,6 +1,4 @@
-@extends('layouts.mainlayout-logged-in')
-@extends('layouts.partials.nav-logged-in')
-
+@extends('layouts.mainlayout-admin')
 
 
 @section('content')

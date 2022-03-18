@@ -1,5 +1,5 @@
 @extends('layouts.mainlayout-logged-in')
-@extends('layouts.partials.nav-logged-in')
+
 <!DOCTYPE html>
 
 <html lang="en">
