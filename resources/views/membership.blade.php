@@ -119,42 +119,41 @@
 
 
         <!-- Map-->
-        <div class="text-center mb-5">
-            <h1 class="fw-bolder">Where our members are located</h1>
-        <section id="sidebar">
-        <div id="directions_panel"></div>
-        </section>
+     
+<h1>Where our members are located</h1>
 
-        <section id="main">
-            <div id="map_canvas" style="width: 70%; height: 500px; left:12.5%"></div>
-        </div>
-        </section>
-        
-        </body>
-        </main>
-    </body>
-</html>
+<body>
+<div id="map" style="width: 100%; height: 500px;"></div>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<?php $userlocs = DB::table('location')
+    ->select(array('member_name', 'lat', 'lon','sdg'))
+    ->get();?>
+
+<?php //echo $userlocs ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
+        type="text/javascript"></script>
 <script type="text/javascript">
-//<![CDATA[
-var map;
-// Ban Jelačić Square - Center of Zagreb, Croatia
-var center = new google.maps.LatLng(45.812897, 15.97706);
-function init() {
-var mapOptions = {
-zoom: 13,
-center: center,
-mapTypeId: google.maps.MapTypeId.ROADMAP
-}
-map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-var marker = new google.maps.Marker({
-map: map,
-position: center,
-});
-}
-//]]>
+    var locations = <?php echo $userlocs ?>;
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: new google.maps.LatLng(14.3291267,-18.4540299),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i]['lon'], locations[i]['lat']),
+            map: map,
+            title: locations[i]['member_name'],
+            
+
+        });
+    }
+
 </script>
+
 </head>
 <body onload="init();">
 
