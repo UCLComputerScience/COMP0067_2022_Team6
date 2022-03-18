@@ -38,6 +38,9 @@ Route::get('/contact', function () {
 Route::get('/events', function () {
     return view('events');
 });
+Route::get('/login-events', function () {
+    return view('login-events');
+});
 Route::get('/events-detail', function () {
     return view('events-detail');
 });
