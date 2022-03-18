@@ -16,12 +16,6 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('home');
-//});
-//Route::get('/homepage1', function () {
-   // return view('welcome');
-//});
 Route::get('/posts', function () {
     return view('posts.index');
 });
@@ -31,9 +25,7 @@ Route::get('/', function () {
 Route::get('/maps', function () {
     return view('maps');
 });
-//Route::get('/', function () {
- //   return view('home-not-logged-in');
-//});
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -53,6 +45,8 @@ Route::get('/events-detail', function () {
 Auth::routes();
 
 //Main Site Pages - Logged In Corporate/CSO
+
+Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/resources', function () {
     return view('resources');
@@ -90,7 +84,6 @@ Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload
 Route::get('/image-upload', [ImageUpload::class, 'createForm']);
 Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUpload');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
