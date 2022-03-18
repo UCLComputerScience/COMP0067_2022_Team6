@@ -43,7 +43,7 @@ SET time_zone = "+00:00";
 
 -- Table structure for table `Member Locations`
 
-CREATE TABLE `locations` (
+CREATE TABLE `location` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,
 `member_name` VARCHAR(150) NOT NULL,
 `address` VARCHAR(255) NOT NULL,
