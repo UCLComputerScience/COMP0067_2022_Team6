@@ -18,7 +18,40 @@
                 </div>
                 <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project locations</h1>
-                        <p class="lead fw-normal text-muted mb-0">(map to come)</p>
+                        <p class="lead fw-normal text-muted mb-0"></p>
+
+<body>
+    <div id="map" style="width: 100%; height: 250px;"></div>
+    
+    <?php $userlocs = DB::table('location')
+        ->select(array('member_name', 'lat', 'lon','sdg'))
+        ->get();?>
+    
+    <?php //echo $userlocs ?>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+        var locations = <?php echo $userlocs ?>;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 3,
+            center: new google.maps.LatLng(14.3291267,-18.4540299),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    
+        var infowindow = new google.maps.InfoWindow();
+    
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i]['lon'], locations[i]['lat']),
+                map: map,
+                title: locations[i]['member_name'],
+                
+    
+            });
+        }
+    
+    </script>
+    
                 </div>
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
