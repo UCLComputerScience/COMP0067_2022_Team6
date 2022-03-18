@@ -2,10 +2,10 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-            
+
             <!-- Header-->
             <header class="py-5">
                 <div class="container px-5">
@@ -86,8 +86,8 @@
                 </div>
             </section>
         </main>
-        
-        
+
+
     </body>
 </html>
 @endsection
