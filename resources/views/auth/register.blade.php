@@ -26,10 +26,10 @@ but not going to do that until after Stripe is implemented, since that may affec
                         @csrf
                         
                         <div class="row mb-3">
-                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
 
                                 <!-- @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -54,10 +54,10 @@ but not going to do that until after Stripe is implemented, since that may affec
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name of Organisation') }}</label>
+                            <label for="org" class="col-md-4 col-form-label text-md-end">{{ __('Name of Organisation') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="org" type="text" class="form-control @error('org') is-invalid @enderror" name="org" value="{{ old('org') }}" required autocomplete="org" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">

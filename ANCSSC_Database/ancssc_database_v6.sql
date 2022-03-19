@@ -304,10 +304,10 @@ CREATE TABLE `subscription_items` (
 
 CREATE TABLE `users` (
   `id` int(15) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `org` varchar(255) NOT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `address` text,
   `city` varchar(100) DEFAULT NULL,
@@ -316,6 +316,7 @@ CREATE TABLE `users` (
   `number_of_employees` int(10) DEFAULT NULL,
   `number_of_volunteers` int(10) DEFAULT NULL,
   `website` varchar(255) DEFAULT NULL,
+  `role` int(15) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `subscription_type` tinyint(5) DEFAULT NULL,
@@ -330,9 +331,6 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `username`, `name`, `password`, `email`, `phone`, `address`, `city`, `country`, `postcode`, `number_of_employees`, `number_of_volunteers`, `website`, `created_at`, `updated_at`, `subscription_type`, `user_status`, `remember_token`, `stripe_id`, `pm_type`, `pm_last_four`, `trial_ends_at`) VALUES
-(1, NULL, 'Marc Solomon', '$2y$10$A7BFH8KHaKkQKhmg5UGLA.gH//U6NXLu5aXpPpConfhXdEs0aCSCe', 'ucabm11@ucl.ac.uk', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-19 16:15:24', '2022-03-19 16:15:24', NULL, NULL, 'PONckwnjxAbBb3zX4Y9X7RqHalMjUrq7mxHO5UnKVjkFHLSLhPpVYS7ib6Fz', NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -601,7 +599,3 @@ ALTER TABLE `resource`
 ALTER TABLE `resource_picture`
   ADD CONSTRAINT `resource_picture_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`resource_id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
