@@ -8,8 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Cashier\Billable;
+use Laratrust\Traits\LaratrustUserTrait;
 class User extends Authenticatable
 {
+    use LaratrustUserTrait;
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
     /**
@@ -21,15 +23,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        //'username', 
-        //'phone',
-        //'address',
-        //'city',
-        //'country',
-       // 'postcode',
-        //'number_of_employees',
-        //'number_of_volunteers',
-        //'website',
+        'org',
+        'phone',
+        'address',
+        'city',
+        'country',
+        'postcode',
+        'number_of_employees',
+        'number_of_volunteers',
+        'website',
+        'role',
         //'subscription_type',
     ];
 
