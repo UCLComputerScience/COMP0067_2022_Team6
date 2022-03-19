@@ -99,7 +99,7 @@ Route::get('/admin-manage-resources', function () {
 });
 
 Route::get('/admin-analytics', function () {
-    return view('admin-analytics');
+    return view('admin/admin-analytics');
 });
 // Stripe subscription
 

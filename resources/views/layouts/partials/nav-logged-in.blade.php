@@ -11,7 +11,7 @@
                   <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Events</a>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                       <li><a class="dropdown-item" href="events">Upcoming Events</a></li>
-                      <li><a class="dropdown-item" href="past-events">Past Events</a></li>
+                      <li><a class="dropdown-item" href="past-events"> Events</a></li>
                     </ul>     </li>
               <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}">Log Out</a></li> 
