@@ -15,15 +15,10 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Guest views
 
-Route::get('/posts', function () {
-    return view('posts.index');
-});
 Route::get('/', function () {
     return view('/guest/demo');
-});
-Route::get('/maps', function () {
-    return view('maps');
 });
 
 Route::get('/about', function () {
@@ -38,72 +33,76 @@ Route::get('/contact', function () {
 Route::get('/events', function () {
     return view('/guest/events');
 });
+
+
+// User views 
+
 Route::get('/login-events', function () {
     return view('login-events');
-});
+})->middleware('auth');
 Route::get('/events-detail', function () {
     return view('/user/events-detail');
-});
+})->middleware('auth');
 Route::get('/past-events', function () {
     return view('/user/past-events');
-});
+})->middleware('auth');
 Route::get('/projects-create', function () {
     return view('/user/projects-create');
-});
+})->middleware('auth');
 
 Route::get('/projects-edit', function () {
     return view('/user/projects-edit');
-});
+})->middleware('auth');
 
 Route::get('/user-profile', function () {
     return view('/user/user-profile');
-});
-
-Auth::routes();
-
-//Main Site Pages - Logged In Corporate/CSO
+})->middleware('auth');
 
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/resources', function () {
     return view('/user/resources');
-});
+})->middleware('auth');
 Route::get('/resources-detail', function () {
     return view('/user/resources-detail');
-});
+})->middleware('auth');
 Route::get('/projects', function () {
     return view('/user/projects');
-});
+})->middleware('auth');
 Route::get('/projects-detail', function () {
     return view('/user/projects-detail');
-});
+})->middleware('auth');
 Route::get('/members', function () {
     return view('/user/members');
-});
+})->middleware('auth');
+
+// Admin views
+
+Auth::routes();
 
 Route::get('admin-members', function () {
     return view('/admin/admin-members');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-create-resources', function () {
     return view('/admin/admin-create-resources');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-create-events', function () {
     return view('/admin/admin-create-events');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-manage-resources', function () {
     return view('/admin/admin-manage-resources');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-analytics', function () {
     return view('/admin/admin-analytics');
-});
+})->middleware(['auth', 'can:accessAdmin']);
 // Stripe subscription
 
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
