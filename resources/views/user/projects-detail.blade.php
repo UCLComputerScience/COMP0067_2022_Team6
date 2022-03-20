@@ -2,6 +2,17 @@
 
 @section('content')
 <!DOCTYPE html>
+
+<?php  
+
+$project_id = $_GET['project_id'];
+$this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('project_id',$project_id )->get();
+$project_title = $this_project['projectTitle'];
+$project_details = $this_project['projectDetails'];
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
+
+?>
+
 <html lang="en">
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -86,49 +97,15 @@
 
 <?php
 
-  $item_id = $_GET['item_id'];
-  $listing_details = get_listing_details($item_id);
-  $num_bids = $listing_details['numBids'];
-  $current_price = $listing_details['currentPrice'];
-  $reserve_price = $listing_details['reservePrice'];
-  if ($num_bids > 0) {
-    $current_high_bidder = $listing_details['highBidder'];
-  }
 
-  $title = $listing_details['shortDescription'];
-  $description = $listing_details['fullDescription'];
-  $end_time = new DateTime($listing_details['endDateTime']);
-
-  // TODO: Note: Auctions that have ended may pull a different set of data,
-  //       like whether the auction ended in a sale or was cancelled due
-  //       to lack of high-enough bids. Or maybe not.
-  
-  // Calculate time to auction end:
-  $now = new DateTime();
-  
-  if ($now < $end_time) {
-    $time_to_end = date_diff($now, $end_time);
-    $time_remaining = ' (in ' . display_time_remaining($time_to_end) . ')';
-  }
-
-  $watching = false;
-?>
-<?php
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-  
-  $user_id = $_SESSION['userID'];
-  $listing_id = $_GET['item_id'];
-  $watching = get_watch_status($user_id,$listing_id);
+  function image_path_from_row($row)
+{
+    $image_path = "images/";
+    $image_path .= dechex($row["imageUUID"]);
+    $image_path .= ".";
+    $image_path .= $row["extension"];
+    return $image_path;
 }
-?>
-
-<?php
-// The below redirects if the itemID doesn't exist
-
-  $listing_id = $_GET['item_id'];
-  if (checklistingexists($listing_id) == FALSE){
-  header('Location: error_404.php');
-  }
 
 ?>
 
@@ -144,233 +121,15 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
      just as easily use PHP as in other places in the code */
   if ($now < $end_time):
 ?>
-    <div id="watch_nowatch" <?php if ($_SESSION["logged_in"] && $watching) echo('style="display: none"');?> >
-      <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addToWatchlist()">+ Add to watchlist</button>
-    </div>
-    <div id="watch_watching" <?php if (!$_SESSION["logged_in"] || !$watching) echo('style="display: none"');?> >
-      <button type="button" class="btn btn-success btn-sm" disabled>Watching</button>
-      <button type="button" class="btn btn-danger btn-sm" onclick="removeFromWatchlist()">Remove watch</button>
-    </div>
-<?php endif /* Print nothing otherwise */ ?>
-  </div>
-</div>
 
-<!-- Item description -->
+<!-- Project description -->
 
 <div class="row"> 
   <div class="col-sm-8"> 
     <div class="itemDescription"> 
-    <?php echo($description); ?>
+    <?php echo($project_title); ?>
     </div>
   </div>
 </div>
 
-
-<!-- Images -->
-
-<div class="row"> 
-  <div class="col-sm-8"> 
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      
-      <div class="carousel-inner">
-        <?php 
-          $result = get_multiple_imagePaths($item_id); 
-          $count = 0; 
-
-          while ($row = $result->fetch_assoc()) {
-            $path = image_path_from_row($row);
-            if ($count == 0) {
-              echo $path;
-              echo '<div class="carousel-item active" style="background-color: #FFFFFF">';
-              $count = $count + 1;
-            } else {
-              echo '<div class="carousel-item" style="background-color: #FFFFFF">';
-            }  
-            
-            $count = $count + 1;
-        
-            echo '<img class="d-block w-100" src="' . $path . '" alt="First slide"  style="height:500px; width: auto !important; margin:auto;">';
-            echo '</div>';} // End div for each item
-        ?>
-          </div> <!-- end of carousel-inner -->
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div> <!-- end of whole carousel object -->
-    </div>
-    
-
-
- 
-
-<div class="col-sm-4"> <!-- Right col with bidding info -->
-
-
-
-<?php 
-
-//Logic for e-mails being sent after - Commented out as cronjob/functions now take care of this
-if ($now > $end_time):
-  //{
-  //if ($current_price < $reserve_price)
-  //{
-    //auction_end_reserve_not_met($listing_id);
-  //}
-  //else if ($current_price > $reserve_price)
-  //{
-    //auction_end($listing_id);};
-  //}
-?>
-     This auction ended <?php echo(date_format($end_time, 'j M H:i')) ?>
-
-
-     <!-- TODO: Print the result of the auction here? -->
-  <?php else: ?>
-      <p>Auction ends <?php echo(date_format($end_time, 'j M H:i') . $time_remaining) ?></p>  
-      <p class="lead">Current bid: £<?php echo(number_format($current_price, 2)) ?></p>
-      <p class="lead">Total number of bids: <?php print_r($num_bids) ?></p>
-      <?php if ($current_price < $reserve_price): ?>
-        <p class="lead">Reserve not met</p>
-      <?php endif ?>
-      <?php if ($_SESSION["logged_in"] and $_SESSION["account_type"] == "buyer"): ?>
-      <!-- Bidding form -->
-        <?php if ($current_high_bidder == $_SESSION["userID"]): ?>
-          <p class="lead">You are currently the highest bidder</p>
-        <?php else: ?>
-        <form action="javascript:void(0);">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">£</span>
-            </div>
-          <input type="number" step="0.1" class="form-control" id="bid" required>
-          </div>
-          <button type="submit" class="btn btn-primary form-control" onclick="placeBid();" >Place bid</button>
-        </form>
-        <?php endif ?>
-      <?php else: ?>
-      <p>You must be logged in as a bidder to place a bid.</p>
-      <?php endif ?>
-  <?php endif ?>
-
-  
-  </div> <!-- End of right col with bidding info -->
-
-</div> <!-- End of row #2 -->
-
-</div>
-
-
-<script> 
-// JavaScript functions: addToWatchlist and removeFromWatchlist.
-
-function placeBid(button) {
-  $.ajax(
-    "place_bid.php", {
-      type: "POST",
-      data: {
-        item_id: <?php echo($item_id); ?>,
-        bid_amount: $("#bid").val()
-      },
-      success:
-        function(obj) {
-          if (obj["success"]) {
-            console.log("Bid successfully placed");
-            alert("Bid successfully placed");
-            location.reload();
-          }
-          else {
-            console.log("Error placing bid");
-            console.log(obj["message"]);
-            alert(obj["message"]);
-            location.reload();
-          }
-        },
-      error:
-        function (obj, textstatus) {
-          console.log("Error");
-          alert("Error processing request, please try again later");
-          location.reload();
-        }
-    })
-}
-
-function addToWatchlist(button) {
-  console.log("These print statements are helpful for debugging btw");
-
-  // This performs an asynchronous call to a PHP function using POST method.
-  // Sends item ID as an argument to that function.
-  $.ajax('watchlist_funcs.php', {
-    type: "POST",
-    data: {functionname: 'add_to_watchlist', arguments: [<?php echo($item_id);?>]},
-
-    success: 
-      function (obj, textstatus) {
-        // Callback function for when call is successful and returns obj
-        console.log("Success");
-        var objT = obj.trim();
- 
-        if (objT == "success") {
-          $("#watch_nowatch").hide();
-          $("#watch_watching").show();
-        }
-        else {
-          var mydiv = document.getElementById("watch_nowatch");
-          mydiv.appendChild(document.createElement("br"));
-          mydiv.appendChild(document.createTextNode("Add to watch failed. Try again later."));
-        }
-      },
-
-    error:
-      function (obj, textstatus) {
-        console.log("Error");
-      }
-  }); // End of AJAX call
-
-} // End of addToWatchlist func
-
-function removeFromWatchlist(button) {
-  // This performs an asynchronous call to a PHP function using POST method.
-  // Sends item ID as an argument to that function.
-  $.ajax('watchlist_funcs.php', {
-    type: "POST",
-    data: {functionname: 'remove_from_watchlist', arguments: [<?php echo($item_id);?>]},
-
-    success: 
-      function (obj, textstatus) {
-        // Callback function for when call is successful and returns obj
-        console.log("Success");
-        var objT = obj.trim();
- 
-        if (objT == "success") {
-          $("#watch_watching").hide();
-          $("#watch_nowatch").show();
-        }
-        else {
-          var mydiv = document.getElementById("watch_watching");
-          mydiv.appendChild(document.createElement("br"));
-          mydiv.appendChild(document.createTextNode("Watch removal failed. Try again later."));
-        }
-      },
-
-    error:
-      function (obj, textstatus) {
-        console.log("Error");
-      }
-  }); // End of AJAX call
-
-} // End of addToWatchlist func
-</script>
-
-<?php include_once("footer.php") ?>
 @endsection
