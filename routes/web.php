@@ -48,8 +48,18 @@ Route::get('/past-events', function () {
 })->middleware('auth');
 Route::get('/projects-create', function () {
     return view('/user/projects-create');
-})->middleware('auth');
+});//->middleware('auth');
 
+Route::post('/projects-create-result', function () {
+    return view('/user/projects-create-result');
+});
+
+Route::get('/test', function () {
+    return view('/user/test');
+});
+Route::get('/projects-my', function () {
+    return view('/user/projects-my');
+});
 Route::get('/projects-edit', function () {
     return view('/user/projects-edit');
 })->middleware('auth');
@@ -68,7 +78,7 @@ Route::get('/resources-detail', function () {
 })->middleware('auth');
 Route::get('/projects', function () {
     return view('/user/projects');
-})->middleware('auth');
+});//->middleware('auth');
 Route::get('/projects-detail', function () {
     return view('/user/projects-detail');
 })->middleware('auth');

@@ -202,15 +202,18 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `projects` (
-  `project_id` int(11) NOT NULL,
+  `project_id` INTEGER AUTO_INCREMENT PRIMARY KEY,
   `id` int(11) NOT NULL,
-  `project_name` varchar(255) NOT NULL,
+  `projectTitle` varchar(255) NOT NULL,
   `project_language` varchar(100) DEFAULT NULL,
-  `project_description` text,
+  `projectDetails` text,
   `project_organisation_name` varchar(255) DEFAULT NULL,
   `project_date_added` int(11) NOT NULL,
   `project_last_updated` date NOT NULL,
-  `project_sdg` varchar(255) DEFAULT NULL
+  `projectEndDate` DATETIME NOT NULL,
+  `projectValue`varchar(100) DEFAULT NULL,
+  `fundingRequired`varchar(100) DEFAULT NULL,
+  `sdg` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -328,13 +331,41 @@ CREATE TABLE `users` (
   `trial_ends_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `users`
---
 
---
--- Indexes for dumped tables
---
+CREATE TABLE `categories`(
+    `categoryID` INTEGER AUTO_INCREMENT PRIMARY KEY,
+    `categoryName` VARCHAR(80) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `categories` (`categoryName`) VALUES
+
+('GOAL 1: No Poverty'),
+('GOAL 2: Zero Hunger'),
+('GOAL 3: Good Health and Well-being'),
+('GOAL 4: Quality Education'),
+('GOAL 5: Gender Equality'),
+('GOAL 6: Clean Water and Sanitation'),
+('GOAL 7: Affordable and Clean Energy'),
+('GOAL 8: Decent Work and Economic Growth'),
+('GOAL 9: Industry, Innovation and Infrastructure'),
+('GOAL 10: Reduced Inequality'),
+('GOAL 11: Sustainable Cities and Communities'),
+('GOAL 12: Responsible Consumption and Production'),
+('GOAL 13: Climate Action'),
+('GOAL 14: Life Below Water'),
+('GOAL 15: Life on Land'),
+('GOAL 16: Peace and Justice Strong Institutions'),
+('GOAL 17: Partnerships to achieve the Goal');
+
+
+CREATE TABLE `ImagePaths`
+(
+    `project_id` INTEGER NOT NULL,
+    `project_id``project_id` INTEGER NOT NULL,
+    `imageUUID` BIGINT UNSIGNED PRIMARY KEY,
+    `extension` VARCHAR(5) NOT NULL
+)
+ENGINE = InnoDB;
 
 --
 -- Indexes for table `country_of_operation`
@@ -405,9 +436,7 @@ ALTER TABLE `personal_access_tokens`
 --
 -- Indexes for table `projects`
 --
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`project_id`),
-  ADD KEY `id` (`id`);
+
 
 --
 -- Indexes for table `project_picture`
@@ -514,8 +543,8 @@ ALTER TABLE `personal_access_tokens`
 --
 -- AUTO_INCREMENT for table `projects`
 --
-ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT;
+
+
 
 --
 -- AUTO_INCREMENT for table `project_picture`
@@ -578,8 +607,6 @@ ALTER TABLE `event_picture`
 --
 -- Constraints for table `projects`
 --
-ALTER TABLE `projects`
-  ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `project_picture`
