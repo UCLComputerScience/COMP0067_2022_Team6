@@ -31,7 +31,7 @@
                     </div>
                     <br>
                     <br>
-                    <p class="mb-4"> If you are interested in finding out more, please email us at <u>ines@ancssc.org</u></p>
+                    <p class="mb-4"> If you are interested in finding out more, please email us at <u>ines@Jur22.org</u></p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -98,7 +98,7 @@
                                     <span class="fa-stack-1x">4</span>
                                 </span>
                                 <div class="flex-grow-1">
-                                    <p>ANCSSC calendar containing information about, and dates of, relevant networking events and conferences worldwide, related to South-South development.</p>
+                                    <p>Jur22 calendar containing information about, and dates of, relevant networking events and conferences worldwide, related to South-South development.</p>
                                 </div>
                             </li>
                         </ul>
@@ -126,7 +126,7 @@
                                     <span class="fa-stack-1x">6</span>
                                 </span>
                                 <div class="flex-grow-1">
-                                    <p>Invitations to ANCSSC side events and free trainings held in different locations around the world. The facilitation of talent management and visibility for experts on the Global South.</p>
+                                    <p>Invitations to Jur22 side events and free trainings held in different locations around the world. The facilitation of talent management and visibility for experts on the Global South.</p>
                                 </div>
                             </li>
                         </ul>
@@ -171,7 +171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <h3>3. Corporate Members – Friends of ANCSSC</h3>
+                    <h3>3. Corporate Members – Friends of Jur22</h3>
 
                     
                     <p class="py-2">This membership is available to the private sectors companies which are interested in social responsibility and sustainability field and have had a positive impact in their region.</p>

@@ -1,4 +1,4 @@
-# ANCSSC Members’ Web App Version 2.0  
+# Jur22 Members’ Web App Version 2.0  
 
 Repository for storing COMP0067 code
 

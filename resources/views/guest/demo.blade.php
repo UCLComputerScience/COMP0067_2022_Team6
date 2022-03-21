@@ -11,15 +11,15 @@
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
 
-                        <h1 class="display-5 fw-bolder text-dark mb-2">ANCSSC</h1>
-                        <p class="lead fw-normal text-dark-50 mb-4">The Alliance of NGOs and CSOs for South-South Cooperation is the International Network of NGOs and CSOs which works in collaboration with the United Nations for South-South Cooperation (UNOSSC) to enhance civil society’s understanding of the value of South-South Cooperation in developmental, humanitarian and related spheres.</p>
+                        <h1 class="display-5 fw-bolder text-dark mb-2">Jur22</h1>
+                        <p class="lead fw-normal text-dark-50 mb-4">.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                             <a class="btn btn-primary btn-lg px-4 me-sm-3" href="http://127.0.0.1:8000/register">Join Us</a>
-                            <a class="btn btn-outline-secondary btn-lg px-4" href="https://ancssc.com/">Learn More</a>
+                            <a class="btn btn-outline-secondary btn-lg px-4" href="https://Jur22.com/">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="./assets/ANCSSClogo.jpg" width="85%" alt="..." /></div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="./assets/Jur22logo.jpg" width="85%" alt="..." /></div>
             </div>
         </div>
     </header>   
@@ -65,22 +65,22 @@
         <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
             <div class="col mb-5 mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://globalone.org.uk/wp-content/uploads/2020/04/Dr_Hanaa.jpg" width="200" height="200" alt="..." />
-                    <h5 class="fw-bolder">Dr. Hana</h5>
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="" width="200" height="200" alt="..." />
+                    <h5 class="fw-bolder"></h5>
                     <div class="fst-italic text-muted">Founder</div>
                 </div>
             </div>
             <div class="col mb-5 mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://ancssc.com/wp-content/uploads/2019/07/Dr-Husna-Ahmad-OBE.jpg" width="200" height="200" alt="..." />
-                    <h5 class="fw-bolder">Dr. Husna</h5>
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://Jur22.com/wp-content/uploads/2019/07/Dr-Husna-Ahmad-OBE.jpg" width="200" height="200" alt="..." />
+                    <h5 class="fw-bolder"></h5>
                     <div class="fst-italic text-muted">Founder</div>
                 </div>
             </div>
             <div class="col mb-5 mb-5 mb-sm-0">
                 <div class="text-center">
                     <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
-                    <h5 class="fw-bolder">Ines Belliard</h5>
+                    <h5 class="fw-bolder"></h5>
                     <div class="fst-italic text-muted">Project Manager</div>
                 </div>
             </div> 

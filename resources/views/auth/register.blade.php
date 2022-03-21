@@ -15,7 +15,7 @@ but not going to do that until after Stripe is implemented, since that may affec
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Become an ANCSSC member today</h1>
+                        <h1 class="fw-bolder">Become an Jur22 member today</h1>
                         <p class="lead fw-normal text-muted mb-0">Choose from our annual plans based on your type of organisation</p>
             </div>
             <div class="card">

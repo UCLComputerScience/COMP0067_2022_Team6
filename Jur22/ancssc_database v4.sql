@@ -7,18 +7,18 @@
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
-DROP DATABASE ancssc_database;
+DROP DATABASE Jur22_database;
 
-CREATE DATABASE ancssc_database
+CREATE DATABASE Jur22_database
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
 
 GRANT ALL PRIVILEGES
-    ON ancssc_database.*
+    ON Jur22_database.*
     TO 'user'@'localhost'
         IDENTIFIED BY 'password';
 
-USE ancssc_database;
+USE Jur22_database;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ancssc_database`
+-- Database: `Jur22_database`
 --
 
 -- --------------------------------------------------------

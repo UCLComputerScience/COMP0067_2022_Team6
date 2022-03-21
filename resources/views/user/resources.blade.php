@@ -34,7 +34,7 @@
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div class="text-center mb-5">
-                        <h1 class="fw-bolder">ANCSSC Resources Area</h1>
+                        <h1 class="fw-bolder">Jur22 Resources Area</h1>
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <table id="resources" class="table table-striped table-hover" style="width:100%">

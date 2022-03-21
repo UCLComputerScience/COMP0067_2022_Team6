@@ -11,7 +11,7 @@
             <section class="bg-light py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Become an ANCSSC member today</h1>
+                        <h1 class="fw-bolder">Become an Jur22 member today</h1>
                         <p class="lead fw-normal text-muted mb-0">Choose from our annual plans based on your type of organisation</p>
                     </div>
                     <div class="row gx-5 justify-content-center">

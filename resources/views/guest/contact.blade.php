@@ -82,7 +82,7 @@
                         <div class="col">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                             <div class="h5">Email</div>
-                            <p class="text-muted mb-0">info@ancssc.org</p>
+                            <p class="text-muted mb-0">info@Jur22.org</p>
                         </div>
                         
                         <div class="col">

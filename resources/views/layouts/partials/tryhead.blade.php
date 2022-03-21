@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>ANCSSC</title>
+        <title>Jur22</title>
         <!-- Favicon-->
-        <link rel="icon" href="assets/ANCSSClogo.jpg" type="image/x-icon">
+        <link rel="icon" href="assets/Jur22logo.jpg" type="image/x-icon">
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->

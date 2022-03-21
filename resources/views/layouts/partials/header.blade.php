@@ -19,7 +19,7 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>ANCSSC</title>
+    <title>Jur22</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">

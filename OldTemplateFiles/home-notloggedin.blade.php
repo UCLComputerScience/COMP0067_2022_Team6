@@ -19,7 +19,7 @@
     <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>ANCSSC</title>
+    <title>Jur22</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
             <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <a class="navbar-brand logo-text" href="http://127.0.0.1:8000">ANCSSC</a>
+            <a class="navbar-brand logo-text" href="http://127.0.0.1:8000">Jur22</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -77,13 +77,13 @@
                 </ul>
                 <span class="nav-item social-icons">
                     <span class="fa-stack">
-                        <a href="https://www.facebook.com/ancssc/">
+                        <a href="https://www.facebook.com/Jur22/">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-facebook-f fa-stack-1x"></i>
                         </a>
                     </span>
                     <span class="fa-stack">
-                        <a href="https://twitter.com/ANCSSC1">
+                        <a href="https://twitter.com/Jur221">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-twitter fa-stack-1x"></i>
                         </a>
@@ -101,7 +101,7 @@
     <!-- Home -->
     <section class="home py-5 d-flex align-items-center" id="header">
         <div class="container text-light py-5"  data-aos="fade-right"> 
-            <h1 class="headline"><span class="home_text">ANCSSC</span><br>The International Network <br>of NGOs and CSOs</h1>
+            <h1 class="headline"><span class="home_text">Jur22</span><br>The International Network <br>of NGOs and CSOs</h1>
             <p class="para para-light py-3">To target the Sustainable Development Goals through supporting capacity-building, advocacy and knowledge sharing within the Global South and within Triangular Cooperation.</p>
     <!--        <div class="d-flex align-items-center">
                 <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
@@ -153,7 +153,7 @@
                     <p class="py-2 para-light">It encourages the sharing of knowledge, expertise and contextually appropriate technologies and assets among NGOs and CSOs, particularly those that have been developed in their respective organizational and operational experiences in developing countries.</p>
 
                     <div class="my-3">
-                        <a class="btn" href="https://ancssc.com/">Learn More</a>
+                        <a class="btn" href="https://Jur22.com/">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down"> 
@@ -349,7 +349,7 @@
                     <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>EMAIL</h6>
-                        <p>info@ancssc.org</p>
+                        <p>info@Jur22.org</p>
                     </div>
                 </div>
              <!--   <div class="col-lg-3 d-flex align-items-center" >
@@ -370,22 +370,22 @@
             <div class="row" data-aos="fade-right">
                 <div class="col-lg-3 py-4 py-md-5">
                     <div class="d-flex align-items-center">
-                        <h4 class="">ANCSSC</h4>
+                        <h4 class="">Jur22</h4>
                     </div>
                     <p class="py-3 para-light">To target the Sustainable Development Goals through supporting capacity-building, advocacy and knowledge sharing within the Global South and within Triangular Cooperation.</p>
                     <div class="d-flex">
                         <div class="me-3">
-                            <a href="https://www.facebook.com/ancssc/">
+                            <a href="https://www.facebook.com/Jur22/">
                                 <i class="fab fa-facebook-f fa-2x py-2"></i>
                             </a>
                         </div>
                         <div class="me-3">
-                            <a href="https://twitter.com/ANCSSC1">
+                            <a href="https://twitter.com/Jur221">
                                 <i class="fab fa-twitter fa-2x py-2"></i>
                             </a>
                         </div>
                         <div class="me-3">
-                            <a href="https://www.instagram.com/ancssc1/">
+                            <a href="https://www.instagram.com/Jur221/">
                                 <i class="fab fa-instagram fa-2x py-2"></i>
                             </a>
                         </div>
@@ -422,7 +422,7 @@
     <div class="bottom py-2 text-light" >
         <div class="container d-flex justify-content-between">
             <div>
-                <p>Al rights reserved @ ANCSSC2022</p><br>
+                <p>Al rights reserved @ Jur222022</p><br>
             </div>
         </div> <!-- end of container -->
     </div> <!-- end of bottom -->
