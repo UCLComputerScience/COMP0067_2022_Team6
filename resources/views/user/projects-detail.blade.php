@@ -94,7 +94,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     </body>
 </html>
 
-
+<section>
 <div class="container">
 
 <div class="row"> <!-- Row #1 with auction title + watch button -->
@@ -112,5 +112,5 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     </div>
   </div>
 </div>
-
+</section>
 @endsection
