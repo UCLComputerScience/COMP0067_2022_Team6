@@ -22,7 +22,7 @@
                 </div>
 
 <body>
-    <div id="map" style="width: 80%; height: 250px;"></div>
+    <div id="map" style="width: 80%; height: 250px; margin:auto;"></div>
         <div class="text-center mb-5">
             <?php $userlocs = DB::table('location')
                 ->select(array('member_name', 'lat', 'lon','sdg'))
