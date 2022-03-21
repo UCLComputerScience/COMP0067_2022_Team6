@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 <!-- Map -->
 
-<div id="map" style="width: 100%; height: 500px;"></div>
+<div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2.5%; margin-top: 2.5%;"></div>
 
 <?php $userlocs = DB::table('location')
     ->select(array('member_name', 'lat', 'lon','sdg'))
