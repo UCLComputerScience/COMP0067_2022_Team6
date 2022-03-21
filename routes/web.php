@@ -59,7 +59,7 @@ Route::get('/test', function () {
 });
 Route::get('/projects-my', function () {
     return view('/user/projects-my');
-});
+})->middleware('auth');
 Route::get('/projects-edit', function () {
     return view('/user/projects-edit');
 })->middleware('auth');
@@ -79,7 +79,7 @@ Route::get('/resources-detail', function () {
 Route::get('/projects', function () {
     return view('/user/projects');
 });//->middleware('auth');
-Route::get('/projects-detail/{project_id}',function ($project_id){
+Route::get('/projects-detail/{project_id}',function (){
     return view('/user/projects-detail');})->where('project_id', '.*');
 
 //})->middleware('auth');
