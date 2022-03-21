@@ -8,8 +8,8 @@
 //$project_id = $_GET['project_id'];
 $project_id = Request::segment(2);
 $this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('project_id',$project_id)->get();
-$project_title = $this_project['projectTitle'];
-$project_details = $this_project['projectDetails'];
+$project_title = $this_project->pluck('projectTitle');
+$project_details = $this_project->pluck('projectDetails');
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
 
 ?>
@@ -33,7 +33,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
+                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-6">
@@ -95,26 +95,11 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
 </html>
 
 
-
-<?php
-
-
-  function image_path_from_row($row)
-{
-    $image_path = "images/";
-    $image_path .= dechex($row["imageUUID"]);
-    $image_path .= ".";
-    $image_path .= $row["extension"];
-    return $image_path;
-}
-
-?>
-
 <div class="container">
 
 <div class="row"> <!-- Row #1 with auction title + watch button -->
   <div class="col-sm-8"> <!-- Left col -->
-    <h2 class="my-3"><?php echo($title); ?></h2>
+    <h2 class="my-3"><?php echo($project_title); ?></h2>
   </div>
   <div class="col-sm-4 align-self-center"> <!-- Right col -->
 

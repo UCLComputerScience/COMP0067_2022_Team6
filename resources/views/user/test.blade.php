@@ -4,23 +4,12 @@
 
 <?php 
 
-$id = Auth::id();
-
-print_r($id);
-
-$userid = Auth::id();
-
-//$my_projects = DB::Table('projects')->select('project_name','project_description','project_sdg')->where('id',$userid)->get();
-
-//$my_projects;
-
-
-$my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
-
-//print_r($my_projects);
-
-$project_id = $_GET['project_id'];
-print_r($project_id) 
+$project_id = 3;
+$this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('project_id',$project_id)->get();
+$this_project->pluck('projectTitle'));
+$project_title = $this_project->pluck('projectTitle'));
+$project_details = $this_project->pluck('projectDetails'));
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
 
 
 ?>
