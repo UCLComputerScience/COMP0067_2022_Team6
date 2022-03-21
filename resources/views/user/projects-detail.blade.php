@@ -5,8 +5,9 @@
 
 <?php  
 
-$project_id = $_GET['project_id'];
-$this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('project_id',$project_id )->get();
+//$project_id = $_GET['project_id'];
+$project_id = Request::segment(2);
+$this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('project_id',$project_id)->get();
 $project_title = $this_project['projectTitle'];
 $project_details = $this_project['projectDetails'];
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
@@ -116,11 +117,6 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     <h2 class="my-3"><?php echo($title); ?></h2>
   </div>
   <div class="col-sm-4 align-self-center"> <!-- Right col -->
-<?php
-  /* The following watchlist functionality uses JavaScript, but could
-     just as easily use PHP as in other places in the code */
-  if ($now < $end_time):
-?>
 
 <!-- Project description -->
 

@@ -79,9 +79,10 @@ Route::get('/resources-detail', function () {
 Route::get('/projects', function () {
     return view('/user/projects');
 });//->middleware('auth');
-Route::get('/projects-detail', function () {
-    return view('/user/projects-detail');
-})->middleware('auth');
+Route::get('/projects-detail/{project_id}',function ($project_id){
+    return view('/user/projects-detail');})->where('project_id', '.*');
+
+//})->middleware('auth');
 Route::get('/members', function () {
     return view('/user/members');
 })->middleware('auth');

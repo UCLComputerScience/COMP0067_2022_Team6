@@ -19,8 +19,8 @@ $my_projects = DB::Table('projects')->select('project_id','projectTitle','projec
 
 //print_r($my_projects);
 
-foreach($my_projects as $row);
-print_r($row->project_id);
+$project_id = $_GET['project_id'];
+print_r($project_id) 
 
 
 ?>

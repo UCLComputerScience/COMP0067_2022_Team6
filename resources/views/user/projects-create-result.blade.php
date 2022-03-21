@@ -24,7 +24,7 @@
     $sdg = $_POST['sdg']; 
     $projectValue = $_POST['projectValue'];
     $fundingRequired = $_POST['fundingRequired'];
-    $userid = Auth::id(); 
+    $userid = Auth::id();
 
     // Putting them into an array
 
@@ -61,7 +61,7 @@
     }
     else {
 
-       $projectID =  DB::table('projects')->insert($newProjectArray);        
+       $project_id =  DB::table('projects')->insert($newProjectArray);        
         // loop for each uploaded file begins
 
         foreach ($_FILES['filesToUpload']['name'] as $key => $value) {
@@ -89,7 +89,7 @@
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
                 //create_new_image_reference($projectID, $imageUUID, $imageFileType);
                 DB::table('ImagePaths')->insert(array(
-                    'project_id'     =>   $projectID, 
+                    'project_id'     =>   $project_id, 
                     'imageUUID'   =>   $imageUUID,
                     'extension'   =>   $imageFileType)); }
         }
