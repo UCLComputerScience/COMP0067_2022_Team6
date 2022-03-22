@@ -57,11 +57,7 @@
                                             Monthly status reports
                                         </li>
                                     </ul>
-                                    <form action="/checkout" method="POST">
-                                    @csrf
-                                    <button  type="submit" class="btn btn-outline-primary">Become a charity member</div>
-                                    <input type="hidden" name="priceId" value="price_1Ka7hTLbAUO2h0p7oxGVMlab" />
-                                  </form>
+                                    <div class="d-grid"><a class="btn btn-outline-primary" href="checkout">Become a charity member</a></div>                                  </form>
                                 </div>
                             </div>
                         </div>

@@ -1,16 +1,15 @@
-@extends('layouts.mainlayout-logged-in')
 
-@section('content')
 <?php
+require '../vendor/autoload.php';
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
-
+//echo getenv('STRIPE_SECRET');
 // The price ID passed from the front end.
 //$priceId = $_POST['priceId'];
 //$priceId = '{{PRICE_ID}}';
 
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://127.0.0.1:8000/success',
-      'cancel_url' => 'http://127.0.0.1:8000/cancel',
+  'success_url' => 'http://127.0.0.1:8000/success.php',
+      'cancel_url' => 'http://127.0.0.1:8000/cancel.php',
   'mode' => 'subscription',
   'line_items' => [[
     'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',
@@ -18,6 +17,8 @@ $checkout_session = \Stripe\Checkout\Session::create([
     'quantity' => 1,
   ]],
 ]);
+
+echo $checkout_session['url']
 ?>
 <head>
   <title>Stripe Subscription Checkout</title>
@@ -27,8 +28,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
   <script type="text/javascript">
      var stripe = Stripe(getenv('STRIPE_KEY'));
      var session = "<?php echo $checkout_session['id']; ?>";
-          stripe.redirectToCheckout({ sessionId: session })
-                  .then(function(result) {
+          stripe.redirectToCheckout({ sessionId: session }).then(function(result) {
           // If `redirectToCheckout` fails due to a browser or network
           // error, you should display the localized error message to your
           // customer using `error.message`.
@@ -38,9 +38,9 @@ $checkout_session = \Stripe\Checkout\Session::create([
         })
         .catch(function(error) {
           console.error('Error:', error);
-        });          
+   
+  })
+        });   
   </script>
   
 </body>
-?>
-@endsection
