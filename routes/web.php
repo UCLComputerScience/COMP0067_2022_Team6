@@ -87,6 +87,22 @@ Route::get('/members', function () {
     return view('/user/members');
 })->middleware('auth');
 
+Route::get('/user-subscribe', function () {
+    return view('/user/user-subscribe');});
+
+ 
+
+//Stripe
+Route::get('/user-subscribe', function () {
+    return view('/user/user-subscribe');});
+
+Route::get('/success', function () {
+    return view('/user/success');});
+
+Route::post('/checkout', function () {
+    return view('user/checkout');});
+
+
 // Admin views
 
 Auth::routes();
@@ -118,6 +134,7 @@ Route::get('admin-analytics', function () {
 
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
 Route::post('/seller/subscribe', 'SubscriptionController@processSubscription');
+
 // welcome page only for subscribed users
 Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
 

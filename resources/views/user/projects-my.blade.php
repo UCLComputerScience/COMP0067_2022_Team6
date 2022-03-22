@@ -76,7 +76,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     $counter +=1;
   }
   echo "</ul>";
-  echo "Results: " . $counter;
+  echo "Projects: " . $counter;
   
 ?>
 </div>
