@@ -13,11 +13,11 @@
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Edit Project</h1>
+                        <h1 class="fw-bolder">Edit Event</h1>
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
  
 
-                        
+                        <!-- TODO: Change these field names and what they're pointing at -->
                         <div class="row mb-3">
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
 

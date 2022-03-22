@@ -34,7 +34,7 @@
                                 <label for="event_title" class="col-sm-2 col-form-label text-right">Event title</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="event_title" id="event_title" required minlength="20" placeholder="e.g. Well Building - Moldova">
-                                  <small id="titleHelp" class="form-text text-muted" text-align=left><span class="text-danger">* Required.</span> The title of your event (minimum 20 characters).</small>
+                                  <small id="titleHelp" class="form-text text-muted align-left"><span class="text-danger">* Required.</span> The title of your event (minimum 20 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -51,17 +51,15 @@
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Date and time this event will take place.</small>
                                 </div>
                               </div>
-                              <!-- TODO: Add event_timezone as a field to the events table in DB -->
                               <div class="form-group row">
                                 <label for="event_timezone" class="col-sm-2 col-form-label text-right">Event timezone</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="event_timezone" id="event_timezone" required>
                                     <option value="">Choose a timezone</option>
-                                      <!-- TODO: Add 'timezone' table and populate it with values -->
                                       <?php 
                                     $result = DB::table('timezones')->get();    ?>
                                     @foreach ($result as $row)
-                                        <option value="{{$row->timezones_id}}">{{$row->timezones_id}}</option>
+                                        <option value="{{$row->timezone_id}}">{{$row->timezone_id}}</option>
                                     @endforeach 
                                       </select>
                                       <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select the timezone this event will take place in.</small>

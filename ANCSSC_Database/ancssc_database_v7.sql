@@ -308,7 +308,7 @@ CREATE TABLE `subscription_items` (
 --
 
 CREATE TABLE `users` (
-  `id` int(15) NOT NULL,
+  `id` INTEGER AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -525,7 +525,6 @@ ALTER TABLE `subscription_items`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `users_stripe_id_index` (`stripe_id`);
 
 --
@@ -621,12 +620,6 @@ ALTER TABLE `subscriptions`
 --
 ALTER TABLE `subscription_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
