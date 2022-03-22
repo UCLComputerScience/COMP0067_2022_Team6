@@ -220,6 +220,8 @@ CREATE TABLE `projects` (
   `sdg` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
 -- --------------------------------------------------------
 
 --

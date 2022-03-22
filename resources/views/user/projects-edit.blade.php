@@ -37,6 +37,8 @@
 
                             <div class="col-md-6">
                                 <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
+                                </div>
+                        </div>
 
                                 
 @endsection
