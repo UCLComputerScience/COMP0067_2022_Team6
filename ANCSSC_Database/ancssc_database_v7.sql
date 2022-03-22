@@ -204,17 +204,19 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `projects` (
-  `project_id` INTEGER AUTO_INCREMENT PRIMARY KEY,
+  `project_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `projectTitle` varchar(255) NOT NULL,
-  `project_language` varchar(100) DEFAULT NULL,
+  `projectOrganisation` varchar(100) DEFAULT NULL,
+  `projectLocation` varchar(100) NOT NULL,
+  `projectCity` varchar(100) NOT NULL,
+  `projectCountry` varchar(100) NOT NULL,
   `projectDetails` text,
-  `project_organisation_name` varchar(255) DEFAULT NULL,
   `project_date_added` int(11) NOT NULL,
   `project_last_updated` date NOT NULL,
-  `projectEndDate` DATETIME NOT NULL,
-  `projectValue`varchar(100) DEFAULT NULL,
-  `fundingRequired`varchar(100) DEFAULT NULL,
+  `projectEndDate` datetime NOT NULL,
+  `projectValue` varchar(100) DEFAULT NULL,
+  `fundingRequired` varchar(100) DEFAULT NULL,
   `sdg` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
