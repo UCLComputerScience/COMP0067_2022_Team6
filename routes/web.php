@@ -97,10 +97,30 @@ Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');});
 
 Route::get('/success', function () {
-    return view('/user/success');});
+    return view('/user/success');})->middleware('auth');
 
-Route::post('/checkout', function () {
-    return view('user/checkout');});
+Route::get('/checkout', function () {
+
+require '../vendor/autoload.php';
+\Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
+//echo getenv('STRIPE_SECRET');
+// The price ID passed from the front end.
+//$priceId = $_POST['priceId'];
+//$priceId = '{{PRICE_ID}}';
+
+$checkout_session = \Stripe\Checkout\Session::create([
+  'success_url' => 'http://127.0.0.1:8000/success',
+      'cancel_url' => 'http://127.0.0.1:8000/cancel',
+  'mode' => 'subscription',
+  'line_items' => [[
+    'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',
+    // For metered billing, do not pass quantity
+    'quantity' => 1,
+  ]],
+]);
+$url = $checkout_session['url'];
+
+    return redirect($url);});
 
 
 // Admin views
