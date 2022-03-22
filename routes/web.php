@@ -85,7 +85,7 @@ Route::get('/projects-detail/{project_id}',function (){
 //})->middleware('auth');
 Route::get('/members', function () {
     return view('/user/members');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');});
