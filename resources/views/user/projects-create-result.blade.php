@@ -19,6 +19,10 @@
     // Extracting the variables from the POST 
     
     $projectTitle = $_POST['projectTitle'];
+    $projectOrganisation = $_POST['projectOrganisation'];
+    $projectLocation = $_POST['projectLocation'];
+    $projectCity = $_POST['projectCity'];
+    $projectCountry = $_POST['projectCountry'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
     $sdg = $_POST['sdg']; 
@@ -30,6 +34,10 @@
 
     $newProjectArray = array(
         'projectTitle' => $projectTitle,
+        'projectOrganisation' => $projectOrganisation,
+        'projectLocation' => $projectLocation,
+        'projectCity' => $projectCity,
+        'projectCountry' => $projectCountry,
         'projectDetails' => $projectDetails,
         'projectEndDate' => $projectEndDate,
         'sdg' => $sdg, 
@@ -43,6 +51,18 @@
     
     if (empty($projectTitle)){
         echo 'Please enter an project title.';
+    } 
+    elseif (empty($projectOrganisation)){
+        echo 'Please enter the organisation of this project.';
+    } 
+    elseif (empty($projectLocation)){
+        echo 'Please enter the address of this project.';
+    } 
+    elseif (empty($projectCity)){
+        echo 'Please enter the city of this project.';
+    } 
+    elseif (empty($projectCountry)){
+        echo 'Please enter the country of this project.';
     } 
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';

@@ -35,15 +35,43 @@
                                 <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectTitle" id="projectTitle" required minlength="20" placeholder="e.g. Well Building - Moldova">
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The title of your project (minimum 20 characters).</small>
+                                  <input type="text" class="form-control" name="projectTitle" id="projectTitle" required minlength="10" placeholder="e.g. Well Building - Moldova">
+                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The title of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Details</label>
+                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Organisation</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="projectOrganisation" id="projectOrganisation" required minlength="10" placeholder="e.g. WaterAid">
+                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The organisation of your project (minimum 10 characters).</small>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" required minlength="5" placeholder="">
+                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="projectCity" id="projectCity" placeholder="">
+                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" placeholder="">
+                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
                                   <textarea class="form-control" name="projectDetails" id="projectDetails" rows="4"></textarea>
-                                  <small id="detailsHelp" class="form-text text-muted">Full details of your project to give insight to members.</small>
+                                  <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>
                                 </div>
                               </div>
                               <div class="form-group row">
