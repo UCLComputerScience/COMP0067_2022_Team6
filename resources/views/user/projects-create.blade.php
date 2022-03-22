@@ -19,7 +19,6 @@
 
                         <?php 
                       $username = Session::get('key');
-                      $username
                       ?>
                       
                   
