@@ -171,6 +171,10 @@ Route::get('admin-create-events', function () {
     return view('/admin/admin-create-events');
 })->middleware(['auth', 'can:accessAdmin']);
 
+Route::post('/admin-events-create-result', function () {
+    return view('/admin/admin-events-create-result');
+});
+
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
 })->middleware(['auth', 'can:accessAdmin']);
