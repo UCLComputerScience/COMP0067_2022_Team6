@@ -99,7 +99,7 @@ Route::get('/user-subscribe', function () {
 Route::get('/success', function () {
     return view('/user/success');})->middleware('auth');
 
-Route::get('/checkout', function () {
+Route::get('/checkoutNGO', function () {
 
 require '../vendor/autoload.php';
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
@@ -121,7 +121,29 @@ $checkout_session = \Stripe\Checkout\Session::create([
 $url = $checkout_session['url'];
 
     return redirect($url);});
+    Route::get('/checkoutCorporate', function () {
 
+        require '../vendor/autoload.php';
+        \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
+        //echo getenv('STRIPE_SECRET');
+        // The price ID passed from the front end.
+        //$priceId = $_POST['priceId'];
+        //$priceId = '{{PRICE_ID}}';
+        
+        $checkout_session = \Stripe\Checkout\Session::create([
+          'success_url' => 'http://127.0.0.1:8000/success',
+              'cancel_url' => 'http://127.0.0.1:8000/cancel',
+          'mode' => 'subscription',
+          'line_items' => [[
+            'price' => 'price_1Ka7h7LbAUO2h0p7Iu1EKPF8',
+            // For metered billing, do not pass quantity
+            'quantity' => 1,
+          ]],
+        ]);
+        $url = $checkout_session['url'];
+        
+            return redirect($url);});
+        
 
 // Admin views
 
@@ -160,7 +182,35 @@ Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscr
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', function () {
+
+$userRole = Auth::user()->role;
+
+if ($userRole == 1) {
+
+return view('admin/home');
+        // Authentication was successful...
+} elseif ($userRole == 2 ) {
+        
+return redirect('/user-subscribe');
+        // Authentication was successful...
+} elseif ($userRole == 3 ) {
+        
+return view('user/home');
+        // Authentication was successful...
+        } 
+else  {
+        
+echo "" ;
+        // Authentication was successful...
+        }
+
+;});
+
+
+
 
 
 //File Upload
