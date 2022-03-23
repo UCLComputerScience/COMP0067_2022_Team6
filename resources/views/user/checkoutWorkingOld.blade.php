@@ -44,3 +44,6 @@ echo $checkout_session['url']
   </script>
   
 </body>
+if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])) {
+    // Authentication was successful...
+}

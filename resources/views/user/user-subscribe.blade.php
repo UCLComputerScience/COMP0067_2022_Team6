@@ -1,6 +1,9 @@
-@extends('layouts.mainlayout')
+@extends('layouts.mainlayout-not-subscribed')
+@extends('layouts.partials.nav-logged-in-not-subscribed')
+
 
 @section('content')
+
 <!DOCTYPE html>
 <html lang="en">
     <body class="d-flex flex-column">
@@ -11,7 +14,7 @@
             <section class="bg-light py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Welcome <?php echo Auth::user()->id ?>, subscribe to aceess the members area</h1>
+                        <h1 class="fw-bolder">Welcome <?php echo Auth::user()->name ?>, subscribe below to access the Members area</h1>
                         <p class="lead fw-normal text-muted mb-0"></p>
                     </div>
                     <div class="row gx-5 justify-content-center">
@@ -28,7 +31,7 @@
                                         <span class="text-muted">/ year</span>
                                     </div>
                                     <div class="small text-camelcase fw-bold">
-                                        If your organisation is in the non-profit sector, this is the membership for you
+                                        If your organisation is an NGO, this is the membership for you
                                     </div>
                                     <br />
                                     <ul class="list-unstyled mb-4">
@@ -38,7 +41,7 @@
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Form a network of other like-minded organisations
+                                            Form a network 
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
@@ -57,7 +60,7 @@
                                             Monthly status reports
                                         </li>
                                     </ul>
-                                    <div class="d-grid"><a class="btn btn-outline-primary" href="checkout">Become a charity member</a></div>                                  </form>
+                                    <div class="d-grid"><a class="btn btn-outline-primary" href="checkoutNGO">Become a charity member</a></div>                                  </form>
                                 </div>
                             </div>
                         </div>
@@ -100,22 +103,12 @@
                                             Monthly status reports
                                         </li>
                                     </ul>
-                                    <div class="d-grid"><a class="btn btn-outline-primary" href="https://buy.stripe.com/test_eVa4jXe870Lt18s4gh">Become a corporate member</a></div>
+                                    <div class="d-grid"><a class="btn btn-outline-primary" href="checkoutCorporate">Become a corporate member</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-
-            <html>
-  <head>
-    <title>Checkout</title>
-  </head>
-  <body>
-
-</html>
-
 
 @endsection

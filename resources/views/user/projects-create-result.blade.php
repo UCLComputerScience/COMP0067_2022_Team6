@@ -108,6 +108,7 @@
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
                 //create_new_image_reference($projectID, $imageUUID, $imageFileType);
+                $imageUUID = hexdec($imageUUID);
                 DB::table('ImagePaths')->insert(array(
                     'project_id'     =>   $project_id, 
                     'imageUUID'   =>   $imageUUID,
