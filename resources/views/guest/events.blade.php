@@ -3,149 +3,85 @@
 @extends('layouts.mainlayout')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            
 
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <!-- Page title -->
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Upcoming events</h1>
-                        <p class="lead fw-normal text-muted mb-0">Streamed online throughout the year, our events will support your organisation's knowledge growth</p>
-                    </div>
-                    <!-- Event preview -->
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="container">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section class="py-5">
-                <div class="container px-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Yet another cool event</div></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<h2 class="my-3">Events</h2>
 
 
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Yet another cool event</div></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+<ul class="list-group">
 
-                    
-                    <div class="text-end mb-5 mb-xl-0">
-                        <a class="text-decoration-none" href="/past-events">
-                            Past events
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </body>
-</html>
+<?php
+  // This page is for showing a user the auction listings they've made.
+  // It will be pretty similar to browse.php, except there is no search bar.
+  // This can be started after browse.php is working with a database.
+  // Feel free to extract out useful functions from browse.php and put them in
+  // the shared "utilities.php" where they can be shared by multiple files.
+
+
+// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
+
+
+$events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
+
+
+function print_event_with_image($event_id, $event_title, $event_description)
+{
+
+    // TODO: Bring this back later
+// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
+
+  // Truncate long descriptions
+  if (strlen($event_description) > 250) {
+    $event_desc_shortened = substr($event_description, 0, 250) . '...';
+  }
+  else {
+    $event_desc_shortened = $event_description;
+  }
+  
+  // Calculate time to auction end
+ // $now = new DateTime();
+  //if ($now > $end_time) {
+   // $time_remaining = 'This auction has ended';
+  //}
+  //else {
+    // Get interval:
+    //$time_to_end = date_diff($now, $end_time);
+   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
+  //}
+  
+  // Print HTML
+//   Need to add this line in to the line break within the echo - this is to do with image display!
+//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
+  echo('
+    <li class="list-group-item d-flex justify-content-between">
+    
+    <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</div>
+  </li>'
+  );
+
+}
+  // This page is for showing a user the auction listings they've made.
+  // It will be pretty similar to browse.php, except there is no search bar.
+  // This can be started after browse.php is working with a database.
+  // Feel free to extract out useful functions from browse.php and put them in
+  // the shared "utilities.php" where they can be shared by multiple files.
+  
+  //$search_results = get_seller_listings($_SESSION["userID"]);
+  
+  
+  $counter = 0;
+  foreach ($events as $row)
+  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+  {
+    $endDateTime = new DateTime($row->event_datetime);
+    print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
+    $counter +=1;
+  }
+  echo "</ul>";
+  echo "Events: " . $counter;
+  
+?>
+</div>
+
 @endsection

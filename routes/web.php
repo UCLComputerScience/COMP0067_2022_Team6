@@ -41,7 +41,7 @@ Route::get('/login-events', function () {
     return view('login-events');
 })->middleware('auth');
 Route::get('/events-detail', function () {
-    return view('/user/events-detail');
+    return view('/user/events-detail/{event_id}');
 })->middleware('auth');
 Route::get('/past-events', function () {
     return view('/user/past-events');
