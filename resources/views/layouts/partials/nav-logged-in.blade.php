@@ -10,7 +10,6 @@
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                       <li><a class="dropdown-item" href="projects-my">My Projects</a></li>
                       <li><a class="dropdown-item" href="projects-create">Create Project</a></li>
-                      <li><a class="dropdown-item" href="projects-edit">Edit Project</a></li>
                     </ul>     
               </li>
               <li class="nav-item"><a class="nav-link" href="resources">Resources</a></li>
