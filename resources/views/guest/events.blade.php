@@ -8,6 +8,50 @@
 
 <h2 class="my-3">Events</h2>
 
+<div class="container">
+
+<h3 class="my-3">Browse listings</h3>
+  <div id="searchSpecs">
+  <!-- When this form is submitted, this PHP page is what processes it.
+      Search/sort specs are passed to this page through parameters in the URL
+      (GET method of passing data to a page). -->
+  <form method="get" action="browse.php">
+    <div class="row">
+      <div class="col-md-5 pr-0">
+        <div class="form-group">
+          <label for="keyword" class="sr-only">Search keyword:</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" class="form-control border-left-0" id="keyword" placeholder="Search for anything" name = "keyword">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 pr-0">
+        <div class="form-group">
+          <label for="cat" class="sr-only">Select SDG:</label>
+          <select class="form-control" id="cat" name="cat">
+            <option selected value="all">Select SDG</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3 pr-0">
+        <div class="form-inline">
+          <label class="mx-2" for="order_by">Sort by:</label>
+          <select class="form-control" id="order_by" name = "order_by">
+            <option selected value="pricelow">All</option>
+            <option value="pricehigh">Upcoming events only</option>
+            <option value="date">Past events only</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-1 px-0">
+        <button type="submit" class="btn btn-primary" name="search"  value = "Search">Search</button>
+      </div>
+    </div>
+  </form>
+  </div> 
+</div>
 
 <ul class="list-group">
 
