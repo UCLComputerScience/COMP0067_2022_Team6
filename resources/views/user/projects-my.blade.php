@@ -1,5 +1,5 @@
 @extends('layouts.mainlayout-logged-in')
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @section('content')
 
 
@@ -50,23 +50,24 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
   //}
   
   // Print HTML
+ 
   echo('
+ 
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
     <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
-    <td>  <a class="btn btn-primary btn-lg" href="projects-detail/'. $project_id.'" > Edit </a> </td>
-    <td> <a class="btn btn-primary btn-lg" href="projects-detail/'. $project_id.'" > Delete </a> </td>
-  </li>'
+    <td>  <a class="btn btn-primary btn-lg" href="projects-edit/'. $project_id.'" > Edit </a> </td>
+    <form method="post" enctype="multipart/form-data" action="projects-delete/'. $project_id.'">
+    <input type="hidden" name="_token" value="' . Session::token() . '?>">
+    <div class="form-group row">
+    <td> <button type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </button> </td>
+    <div>
+    </form>
+    </li>'
   );
 
 }
-  // This page is for showing a user the auction listings they've made.
-  // It will be pretty similar to browse.php, except there is no search bar.
-  // This can be started after browse.php is working with a database.
-  // Feel free to extract out useful functions from browse.php and put them in
-  // the shared "utilities.php" where they can be shared by multiple files.
-  
-  //$search_results = get_seller_listings($_SESSION["userID"]);
+
   
   
   $counter = 0;
@@ -81,6 +82,5 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
   echo "Projects: " . $counter;
   
 ?>
-</div>
 
 @endsection

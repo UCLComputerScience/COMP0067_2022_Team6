@@ -6,8 +6,8 @@
  \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
 
   $checkout_session = \Stripe\Checkout\Session::create([
-      'success_url' => 'http://127.0.0.1:8000/success',
-      'cancel_url' => 'http://127.0.0.1:8000/cancel',
+      'success_url' => '/success',
+      'cancel_url' => '/cancel',
       'payment_method_types' => ['card'],
       'mode' => 'subscription',
       'line_items' => [[

@@ -53,6 +53,10 @@ Route::get('/projects-create', function () {
 Route::post('/projects-create-result', function () {
     return view('/user/projects-create-result');
 });
+Route::post('/projects-edit-create-result', function () {
+    return view('/user/projects-edit-create-result');
+});
+
 
 Route::get('/test', function () {
     return view('/user/test');
@@ -60,9 +64,9 @@ Route::get('/test', function () {
 Route::get('/projects-my', function () {
     return view('/user/projects-my');
 })->middleware('auth');
-Route::get('/projects-edit', function () {
-    return view('/user/projects-edit');
-})->middleware('auth');
+//Route::get('/projects-edit', function () {
+   // return view('/user/projects-edit');
+//})->middleware('auth');
 
 Route::get('/user-profile', function () {
     return view('/user/user-profile');
@@ -79,10 +83,16 @@ Route::get('/resources-detail', function () {
 Route::get('/projects', function () {
     return view('/user/projects');
 });//->middleware('auth');
+
 Route::get('/projects-detail/{project_id}',function (){
     return view('/user/projects-detail');})->where('project_id', '.*');
 
-//})->middleware('auth');
+Route::post('/projects-delete/{project_id}',function (){
+return view('/user/projects-delete');})->where('project_id', '.*');
+
+Route::any('/projects-edit/{project_id}',function (){
+    return view('/user/projects-edit');})->where('project_id', '.*');
+
 Route::get('/members', function () {
     return view('/user/members');
 })->middleware(['auth', 'can:stripeUser']);
@@ -109,8 +119,8 @@ require '../vendor/autoload.php';
 //$priceId = '{{PRICE_ID}}';
 
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://127.0.0.1:8000/success',
-      'cancel_url' => 'http://127.0.0.1:8000/cancel',
+  'success_url' => '/success',
+      'cancel_url' => '/cancel',
   'mode' => 'subscription',
   'line_items' => [[
     'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',
@@ -131,8 +141,8 @@ $url = $checkout_session['url'];
         //$priceId = '{{PRICE_ID}}';
         
         $checkout_session = \Stripe\Checkout\Session::create([
-          'success_url' => 'http://127.0.0.1:8000/success',
-              'cancel_url' => 'http://127.0.0.1:8000/cancel',
+          'success_url' => '/success',
+              'cancel_url' => '/cancel',
           'mode' => 'subscription',
           'line_items' => [[
             'price' => 'price_1Ka7h7LbAUO2h0p7Iu1EKPF8',

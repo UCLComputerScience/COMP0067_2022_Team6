@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 19, 2022 at 04:15 PM
+-- Generation Time: Mar 25, 2022 at 01:44 PM
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
@@ -18,19 +18,55 @@ GRANT ALL PRIVILEGES
     TO 'user'@'localhost'
         IDENTIFIED BY 'password';
 
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 USE ancssc_database;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
--- Database: `ancssc_database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `categoryID` int(11) NOT NULL,
+  `categoryName` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
+(1, 'GOAL 1: No Poverty'),
+(2, 'GOAL 2: Zero Hunger'),
+(3, 'GOAL 3: Good Health and Well-being'),
+(4, 'GOAL 4: Quality Education'),
+(5, 'GOAL 5: Gender Equality'),
+(6, 'GOAL 6: Clean Water and Sanitation'),
+(7, 'GOAL 7: Affordable and Clean Energy'),
+(8, 'GOAL 8: Decent Work and Economic Growth'),
+(9, 'GOAL 9: Industry, Innovation and Infrastructure'),
+(10, 'GOAL 10: Reduced Inequality'),
+(11, 'GOAL 11: Sustainable Cities and Communities'),
+(12, 'GOAL 12: Responsible Consumption and Production'),
+(13, 'GOAL 13: Climate Action'),
+(14, 'GOAL 14: Life Below Water'),
+(15, 'GOAL 15: Life on Land'),
+(16, 'GOAL 16: Peace and Justice Strong Institutions'),
+(17, 'GOAL 17: Partnerships to achieve the Goal');
 
 -- --------------------------------------------------------
 
@@ -51,14 +87,14 @@ CREATE TABLE `country_of_operation` (
 --
 
 CREATE TABLE `events` (
-  `event_id` INT(11) NOT NULL,
-  `id` INT(11) NOT NULL,
-  `event_title` VARCHAR(255) NOT NULL,
-  `event_description` TEXT,
-  `event_datetime` DATETIME NOT NULL,
-  `event_timezone` VARCHAR(255) NOT NULL,
-  `event_call_url` TEXT,
-  `event_video_url` TEXT DEFAULT NULL
+  `event_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `event_title` varchar(255) NOT NULL,
+  `event_description` text,
+  `event_datetime` datetime NOT NULL,
+  `event_timezone` varchar(255) NOT NULL,
+  `event_call_url` text,
+  `event_video_url` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -105,6 +141,30 @@ CREATE TABLE `files` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ImagePaths`
+--
+
+CREATE TABLE `ImagePaths` (
+  `project_id` int(11) NOT NULL,
+  `project_id``project_id` int(11) NOT NULL,
+  `imageUUID` bigint(20) UNSIGNED NOT NULL,
+  `extension` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ImagePaths`
+--
+
+INSERT INTO `ImagePaths` (`project_id`, `project_id``project_id`, `imageUUID`, `extension`) VALUES
+(1, 0, 1728097182231375, 'png'),
+(1, 0, 1728097650736589, 'png'),
+(1, 0, 1728099671457598, 'png'),
+(1, 0, 1728206133598976, 'png'),
+(1, 0, 1728278761343642, 'png');
 
 -- --------------------------------------------------------
 
@@ -179,6 +239,13 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`id`, `created_at`, `updated_at`, `email`, `token`) VALUES
+(2, '2022-03-24 17:51:29', NULL, 'jack@gmail.com', '$2y$10$WIZqlASrrt0CHi/UzuQFtO40rVU8WEHrZ0TbnjDT8TJlk08uksARu');
+
 -- --------------------------------------------------------
 
 --
@@ -204,7 +271,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `projects` (
-  `project_id` INTEGER AUTO_INCREMENT PRIMARY KEY,
+  `project_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `projectTitle` varchar(255) NOT NULL,
   `projectOrganisation` varchar(100) DEFAULT NULL,
@@ -220,7 +287,14 @@ CREATE TABLE `projects` (
   `sdg` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `projects`
+--
 
+INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation`, `projectLocation`, `projectCity`, `projectCountry`, `projectDetails`, `project_date_added`, `project_last_updated`, `projectEndDate`, `projectValue`, `fundingRequired`, `sdg`) VALUES
+(3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3'),
+(4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2'),
+(5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9');
 
 -- --------------------------------------------------------
 
@@ -308,11 +382,61 @@ CREATE TABLE `subscription_items` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `timezones`
+--
+
+CREATE TABLE `timezones` (
+  `timezone_id` int(11) NOT NULL,
+  `timezone_name` varchar(80) NOT NULL,
+  `timezone_relative_to_gmt` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `timezones`
+--
+
+INSERT INTO `timezones` (`timezone_id`, `timezone_name`, `timezone_relative_to_gmt`) VALUES
+(1, 'GMT', 'GMT+0:00'),
+(2, 'UTC', 'GMT+0:00'),
+(3, 'ECT', 'GMT+1:00'),
+(4, 'EET', 'GMT+2:00'),
+(5, 'ART', 'GMT+2:00'),
+(6, 'EAT', 'GMT+3:00'),
+(7, 'MET', 'GMT+3:30'),
+(8, 'NET', 'GMT+4:00'),
+(9, 'PLT', 'GMT+5:00'),
+(10, 'IST', 'GMT+5:30'),
+(11, 'BST', 'GMT+6:00'),
+(12, 'VST', 'GMT+7:00'),
+(13, 'CTT', 'GMT+8:00'),
+(14, 'JST', 'GMT+9:00'),
+(15, 'ACT', 'GMT+9:30'),
+(16, 'AET', 'GMT+10:00'),
+(17, 'SST', 'GMT+11:00'),
+(18, 'NST', 'GMT+12:00'),
+(19, 'MIT', 'GMT-11:00'),
+(20, 'HST', 'GMT-10:00'),
+(21, 'AST', 'GMT-9:00'),
+(22, 'PST', 'GMT-8:00'),
+(23, 'PNT', 'GMT-7:00'),
+(24, 'MST', 'GMT-7:00'),
+(25, 'CST', 'GMT-6:00'),
+(26, 'EST', 'GMT-5:00'),
+(27, 'IET', 'GMT-5:00'),
+(28, 'PRT', 'GMT-4:00'),
+(29, 'CNT', 'GMT-3:30'),
+(30, 'AGT', 'GMT-3:00'),
+(31, 'BET', 'GMT-3:00'),
+(32, 'CAT', 'GMT-1:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` INTEGER AUTO_INCREMENT PRIMARY KEY,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -334,88 +458,27 @@ CREATE TABLE `users` (
   `stripe_id` varchar(255) DEFAULT NULL,
   `pm_type` varchar(255) DEFAULT NULL,
   `pm_last_four` varchar(4) DEFAULT NULL,
-  `trial_ends_at` timestamp NULL DEFAULT NULL
+  `trial_ends_at` timestamp NULL DEFAULT NULL,
+  `sdg` int(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `users`
+--
 
-CREATE TABLE `categories`(
-    `categoryID` INTEGER AUTO_INCREMENT PRIMARY KEY,
-    `categoryName` VARCHAR(80) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `org`, `phone`, `address`, `city`, `country`, `postcode`, `number_of_employees`, `number_of_volunteers`, `website`, `role`, `created_at`, `updated_at`, `subscription_type`, `user_status`, `remember_token`, `stripe_id`, `pm_type`, `pm_last_four`, `trial_ends_at`) VALUES
+(1, 'Jack', '$2y$10$ve1u0H8n7pj9YQluGtPU4...4s1LIq9SnEGGI6PQHpEcP7Hf0wXHa', 'jack@gmail.com', 'sfefwefwef', 'kh', 'oihoih', 'oih', 'oih', 'oi', 0, 0, 'h', 3, '2022-03-23 13:24:31', '2022-03-23 13:24:02', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'Marc', '$2y$10$CpEkai1mfDE7XzPOWwmk1.U5.bY9MmpN.Uj7FqYWxVxxrW.YJDkOm', 'mjwsolo@hotmail.com', 'The Best Org', '0207241 4801', 'London', 'London', 'England', 'N1 8BZ', 100, 122, '100.com', 3, '2022-03-24 17:53:12', '2022-03-24 17:52:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
-INSERT INTO `categories` (`categoryName`) VALUES
+--
+-- Indexes for dumped tables
+--
 
-('GOAL 1: No Poverty'),
-('GOAL 2: Zero Hunger'),
-('GOAL 3: Good Health and Well-being'),
-('GOAL 4: Quality Education'),
-('GOAL 5: Gender Equality'),
-('GOAL 6: Clean Water and Sanitation'),
-('GOAL 7: Affordable and Clean Energy'),
-('GOAL 8: Decent Work and Economic Growth'),
-('GOAL 9: Industry, Innovation and Infrastructure'),
-('GOAL 10: Reduced Inequality'),
-('GOAL 11: Sustainable Cities and Communities'),
-('GOAL 12: Responsible Consumption and Production'),
-('GOAL 13: Climate Action'),
-('GOAL 14: Life Below Water'),
-('GOAL 15: Life on Land'),
-('GOAL 16: Peace and Justice Strong Institutions'),
-('GOAL 17: Partnerships to achieve the Goal');
-
-
-CREATE TABLE `timezones`(
-    `timezone_id` INTEGER AUTO_INCREMENT PRIMARY KEY,
-    `timezone_name` VARCHAR(80) NOT NULL,
-    `timezone_relative_to_gmt` VARCHAR(80) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Full list of timezones can be found here: https://publib.boulder.ibm.com/tividd/td/TWS/SC32-1274-02/en_US/HTML/SRF_mst273.htm
-
-INSERT INTO `timezones` (`timezone_name`, `timezone_relative_to_gmt`) VALUES
-
-('GMT', 'GMT+0:00'),
-('UTC', 'GMT+0:00'),
-('ECT', 'GMT+1:00'),
-('EET', 'GMT+2:00'),
-('ART', 'GMT+2:00'),
-('EAT', 'GMT+3:00'),
-('MET', 'GMT+3:30'),
-('NET', 'GMT+4:00'),
-('PLT', 'GMT+5:00'),
-('IST', 'GMT+5:30'),
-('BST', 'GMT+6:00'),
-('VST', 'GMT+7:00'),
-('CTT', 'GMT+8:00'),
-('JST', 'GMT+9:00'),
-('ACT', 'GMT+9:30'),
-('AET', 'GMT+10:00'),
-('SST', 'GMT+11:00'),
-('NST', 'GMT+12:00'),
-('MIT', 'GMT-11:00'),
-('HST', 'GMT-10:00'),
-('AST', 'GMT-9:00'),
-('PST', 'GMT-8:00'),
-('PNT', 'GMT-7:00'),
-('MST', 'GMT-7:00'),
-('CST', 'GMT-6:00'),
-('EST', 'GMT-5:00'),
-('IET', 'GMT-5:00'),
-('PRT', 'GMT-4:00'),
-('CNT', 'GMT-3:30'),
-('AGT', 'GMT-3:00'),
-('BET', 'GMT-3:00'),
-('CAT', 'GMT-1:00');
-
-
-CREATE TABLE `ImagePaths`
-(
-    `project_id` INTEGER NOT NULL,
-    `project_id``project_id` INTEGER NOT NULL,
-    `imageUUID` BIGINT UNSIGNED PRIMARY KEY,
-    `extension` VARCHAR(5) NOT NULL
-)
-ENGINE = InnoDB;
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`categoryID`);
 
 --
 -- Indexes for table `country_of_operation`
@@ -452,6 +515,12 @@ ALTER TABLE `files`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ImagePaths`
+--
+ALTER TABLE `ImagePaths`
+  ADD PRIMARY KEY (`imageUUID`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -486,7 +555,8 @@ ALTER TABLE `personal_access_tokens`
 --
 -- Indexes for table `projects`
 --
-
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`project_id`);
 
 --
 -- Indexes for table `project_picture`
@@ -526,14 +596,27 @@ ALTER TABLE `subscription_items`
   ADD UNIQUE KEY `subscription_items_stripe_id_unique` (`stripe_id`);
 
 --
+-- Indexes for table `timezones`
+--
+ALTER TABLE `timezones`
+  ADD PRIMARY KEY (`timezone_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `users_stripe_id_index` (`stripe_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -581,7 +664,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -592,8 +675,8 @@ ALTER TABLE `personal_access_tokens`
 --
 -- AUTO_INCREMENT for table `projects`
 --
-
-
+ALTER TABLE `projects`
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `project_picture`
@@ -626,6 +709,18 @@ ALTER TABLE `subscription_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `timezones`
+--
+ALTER TABLE `timezones`
+  MODIFY `timezone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -648,10 +743,6 @@ ALTER TABLE `event_picture`
   ADD CONSTRAINT `event_picture_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`);
 
 --
--- Constraints for table `projects`
---
-
---
 -- Constraints for table `project_picture`
 --
 ALTER TABLE `project_picture`
@@ -669,3 +760,7 @@ ALTER TABLE `resource`
 ALTER TABLE `resource_picture`
   ADD CONSTRAINT `resource_picture_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`resource_id`);
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

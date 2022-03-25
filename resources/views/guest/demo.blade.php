@@ -14,7 +14,7 @@
                         <h1 class="display-5 fw-bolder text-dark mb-2">ANCSSC</h1>
                         <p class="lead fw-normal text-dark-50 mb-4">The Alliance of NGOs and CSOs for South-South Cooperation is the International Network of NGOs and CSOs which works in collaboration with the United Nations for South-South Cooperation (UNOSSC) to enhance civil society’s understanding of the value of South-South Cooperation in developmental, humanitarian and related spheres.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="http://127.0.0.1:8000/register">Join Us</a>
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="register">Join Us</a>
                             <a class="btn btn-outline-secondary btn-lg px-4" href="https://ancssc.com/">Learn More</a>
                         </div>
                     </div>

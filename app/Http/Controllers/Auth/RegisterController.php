@@ -78,6 +78,7 @@ class RegisterController extends Controller
             'number_of_employees'=> $data['number_of_employees'],
             'number_of_volunteers'=> $data['number_of_volunteers'],
             'website'=> $data['website'],
+            'sdg' => $data['sdg'],
         ]);
 
         

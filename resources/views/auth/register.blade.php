@@ -183,20 +183,18 @@ but not going to do that until after Stripe is implemented, since that may affec
                         </div>
 
                         <div class="row mb-3">
-                            <label for="subscription_type" class="col-md-4 col-form-label text-md-end">{{ __('Subscription Type') }}</label>
+                            <label for="SDGs" class="col-md-4 col-form-label text-md-end">{{ __('SDGs') }}</label>
 
                             <div class="col-md-6">
-                                <input id="subscription_type" type="radio">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Charity membership
-                                 </label>
-                                <br />
-                                 <input id="subscription_type" type="radio">
-                                 <label class="form-check-label" for="flexRadioDefault2">
-                                    Corporate membership
-                                 </label>
-
-                                @error('subscription_type')
+                                <select class="form-control" name="sdg" id="sdg" required> <!-- The code under this should auto-update, now working!! -->
+                                    <option value="">Choose an option</option>
+                                      <?php 
+                                    $result = DB::table('categories')->get();    ?>
+                                    @foreach ($result as $row)
+                                        <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
+                                    @endforeach 
+                                      </select>
+                                @error('SDGs')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

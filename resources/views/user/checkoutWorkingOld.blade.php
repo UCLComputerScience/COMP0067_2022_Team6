@@ -8,8 +8,8 @@ require '../vendor/autoload.php';
 //$priceId = '{{PRICE_ID}}';
 
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://127.0.0.1:8000/success.php',
-      'cancel_url' => 'http://127.0.0.1:8000/cancel.php',
+  'success_url' => '/success.php',
+      'cancel_url' => '/cancel.php',
   'mode' => 'subscription',
   'line_items' => [[
     'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',

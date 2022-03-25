@@ -77,7 +77,7 @@
                               <div class="form-group row">
                                 <label for="sdg" class="col-sm-2 col-form-label text-right">SDG</label>
                                 <div class="col-sm-10">
-                                  <select class="form-control" name="sdg" id="sdg" required> <!-- The code under this should auto-update, now working!! -->
+                                  <select class="form-control" name="sdg" id="sdg" multiple> <!-- The code under this should auto-update, now working!! -->
                                     <option value="">Choose an option</option>
                                       <?php 
                                     $result = DB::table('categories')->get();    ?>
