@@ -17,6 +17,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         @foreach ($users as $user)
@@ -24,6 +25,9 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
+                <td>
+                    <a href="{{ url('edit-user/'.$user->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                </td>
                 <td><a href="{{ route('users.index') }}"
                        onclick="event.preventDefault();
                            document.getElementById(

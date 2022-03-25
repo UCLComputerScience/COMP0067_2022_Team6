@@ -229,5 +229,7 @@ Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getU
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
 
 Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.index');
-Route::get('users/list', [App\Http\Controllers\UserController::class, 'getUsers'])->name('users.list');
+//Route::get('users/list', [App\Http\Controllers\UserController::class, 'getUsers'])->name('users.list');
 Route::delete('/users/{id}', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
+Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
