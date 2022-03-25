@@ -201,6 +201,19 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="GDPR" class="col-md-4 col-form-label text-md-end">{{ __('GDPR') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="GDPR" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('GDPR') }}" required autocomplete="GDPR" autofocus>
+
+                                @error('GDPR')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
 
                         <div class="row mb-3">
