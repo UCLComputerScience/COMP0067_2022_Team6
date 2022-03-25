@@ -215,8 +215,8 @@ echo "" ;
 
 
 //File Upload
-Route::get('/upload-file', [FileUpload::class, 'createForm']);
-Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+Route::get('/file-upload', [FileUpload::class, 'createForm']);
+Route::post('/file-upload', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
 //Image Upload
 Route::get('/image-upload', [ImageUpload::class, 'createForm']);
@@ -233,3 +233,6 @@ Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.i
 Route::delete('/users/{id}', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
 Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
+
+Route::resource('files', 'App\Http\Controllers\FileController');
+Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');

@@ -8,11 +8,13 @@ use App\Models\File;
 class FileUpload extends Controller
 {
     public function createForm(){
+        $files = File::all();
         return view('file-upload');
     }
+
     public function fileUpload(Request $req){
         $req->validate([
-            'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
+            'file' => 'required|mimes:csv,txt,xlx,xls,pdf,dox,docx,ppt,xlsx|max:2048'
         ]);
         $fileModel = new File;
         if($req->file()) {
@@ -26,4 +28,5 @@ class FileUpload extends Controller
                 ->with('file', $fileName);
         }
     }
+
 }
