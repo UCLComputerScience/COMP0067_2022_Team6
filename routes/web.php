@@ -41,7 +41,7 @@ Route::get('/login-events', function () {
     return view('login-events');
 })->middleware('auth');
 Route::get('/events-detail', function () {
-    return view('/user/events-detail');
+    return view('/user/events-detail/{event_id}');
 })->middleware('auth');
 Route::get('/past-events', function () {
     return view('/user/past-events');
@@ -170,6 +170,10 @@ Route::get('admin-create-resources', function () {
 Route::get('admin-create-events', function () {
     return view('/admin/admin-create-events');
 })->middleware(['auth', 'can:accessAdmin']);
+
+Route::post('/admin-events-create-result', function () {
+    return view('/admin/admin-events-create-result');
+});
 
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
