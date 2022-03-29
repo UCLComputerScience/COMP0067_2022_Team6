@@ -119,8 +119,8 @@ require '../vendor/autoload.php';
 //$priceId = '{{PRICE_ID}}';
 
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => '/success',
-      'cancel_url' => '/cancel',
+  'success_url' => 'http://127.0.0.1:8000/success',
+      'cancel_url' => 'http://127.0.0.1:8000/cancel',
   'mode' => 'subscription',
   'line_items' => [[
     'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',
@@ -141,8 +141,8 @@ $url = $checkout_session['url'];
         //$priceId = '{{PRICE_ID}}';
         
         $checkout_session = \Stripe\Checkout\Session::create([
-          'success_url' => '/success',
-              'cancel_url' => '/cancel',
+          'success_url' => 'http://127.0.0.1:8000/success',
+              'cancel_url' => 'http://127.0.0.1:8000/cancel',
           'mode' => 'subscription',
           'line_items' => [[
             'price' => 'price_1Ka7h7LbAUO2h0p7Iu1EKPF8',
