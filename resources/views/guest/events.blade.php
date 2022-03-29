@@ -10,7 +10,7 @@
 
 <div class="container">
 
-<h3 class="my-3">Browse listings</h3>
+<h3 class="my-3">Browse events</h3>
   <div id="searchSpecs">
   <!-- When this form is submitted, this PHP page is what processes it.
       Search/sort specs are passed to this page through parameters in the URL
@@ -39,9 +39,9 @@
         <div class="form-inline">
           <label class="mx-2" for="order_by">Sort by:</label>
           <select class="form-control" id="order_by" name = "order_by">
-            <option selected value="pricelow">All</option>
-            <option value="pricehigh">Upcoming events only</option>
-            <option value="date">Past events only</option>
+            <option selected value="all">All</option>
+            <option value="upcoming">Upcoming events only</option>
+            <option value="past">Past events only</option>
           </select>
         </div>
       </div>
@@ -52,16 +52,100 @@
   </form>
   </div> 
 </div>
+<br \>
+
+<!-- Search results -->
+<?php
+  // Retrieve these from the URL
+
+  if (!isset($_GET['page'])) {
+    $curr_page = 1;
+  }
+  else {
+    $curr_page = $_GET['page'];
+  }
+
+
+
+  if(isset($_GET['search'])){
+    if (!isset($_GET['keyword'])) {
+      //if a keyword is not specified then we simply set it to be blank so that in the
+      //sql query, it does not filter out any auctions since all descriptions and titles of
+      //auctions will have "" in them.
+      $keyword = "";
+    }else {
+      $keyword = $_GET['keyword'];
+    }
+
+    if (!isset($_GET['cat'])) {
+      $category = "all";
+    }else {
+      $category = $_GET['cat'];
+    }
+
+    if (!isset($_GET['order_by'])) {
+      $ordering = "all";
+    }else {
+      $ordering = $_GET['order_by'];
+    }
+
+
+    // Calculate time to auction end
+ // $now = new DateTime();
+  //if ($now > $end_time) {
+   // $time_remaining = 'This auction has ended';
+  //}
+  //else {
+    // Get interval:
+    //$time_to_end = date_diff($now, $end_time);
+   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
+  //}
+
+    //sql query to get the relevant information about the auction
+   /* $query = "SELECT tblauction.auctionID AS 'item_id',
+                         tblauction.itemName AS 'title',
+                         tblauction.itemDescription AS 'description',
+                         tblauction.endTime AS 'end_date',
+                         tblauction.startPrice AS 'start_price',
+                         tblbidding.bidPrice
+                         FROM tblAuction
+                         LEFT JOIN tblbidding
+                         ON tblauction.auctionID = tblbidding.auctionID
+                         WHERE ((tblAuction.itemDescription LIKE '%$keyword%')
+                         OR (tblAuction.itemName LIKE '%$keyword%')) ";*/
+    //if category is not set to be all then we want to filter our search further
+    //i.e. we want to add an AND statement after the above WHERE clause
+    /*if($category != "all"){
+      //the following query retrieves the itemCategoryID based on the category that was selected
+      $sql = "SELECT itemCategoryID FROM tblitemcategory WHERE itemCategory = '$category'";
+      $sql_result = mysqli_query($connection, $sql);
+      $sql_array = mysqli_fetch_assoc($sql_result);
+      $itemcategoryID = $sql_array['itemCategoryID'];
+      //filtering the search further
+      $query .= " AND tblauction.itemCategoryID = '$itemcategoryID'
+                  GROUP BY tblauction.auctionID ";
+    }else{
+      $query .= " GROUP BY tblauction.auctionID ";
+    }
+*/
+
+    //sql query for ordering the results based on datetime
+  if($ordering === "all"){
+      $query .= " ORDER BY ecent_datetime DESC ";
+  }else if ($ordering === "upcoming"){
+    $query .= " AND event_datetime >= GETDATE() ";
+  }else if($ordering === "past"){
+    $query .= " AND event_datetime < GETDATE() ";
+  }
+
+
+
+  }
+  ?>
 
 <ul class="list-group">
 
 <?php
-  // This page is for showing a user the auction listings they've made.
-  // It will be pretty similar to browse.php, except there is no search bar.
-  // This can be started after browse.php is working with a database.
-  // Feel free to extract out useful functions from browse.php and put them in
-  // the shared "utilities.php" where they can be shared by multiple files.
-
 
 // $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
 
@@ -83,17 +167,6 @@ function print_event_with_image($event_id, $event_title, $event_description)
     $event_desc_shortened = $event_description;
   }
   
-  // Calculate time to auction end
- // $now = new DateTime();
-  //if ($now > $end_time) {
-   // $time_remaining = 'This auction has ended';
-  //}
-  //else {
-    // Get interval:
-    //$time_to_end = date_diff($now, $end_time);
-   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
-  //}
-  
   // Print HTML
 //   Need to add this line in to the line break within the echo - this is to do with image display!
 //   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
@@ -105,13 +178,6 @@ function print_event_with_image($event_id, $event_title, $event_description)
   );
 
 }
-  // This page is for showing a user the auction listings they've made.
-  // It will be pretty similar to browse.php, except there is no search bar.
-  // This can be started after browse.php is working with a database.
-  // Feel free to extract out useful functions from browse.php and put them in
-  // the shared "utilities.php" where they can be shared by multiple files.
-  
-  //$search_results = get_seller_listings($_SESSION["userID"]);
   
   
   $counter = 0;
@@ -123,7 +189,10 @@ function print_event_with_image($event_id, $event_title, $event_description)
     $counter +=1;
   }
   echo "</ul>";
-  echo "Events: " . $counter;
+  if ($counter > 0){
+    echo "Events: " . $counter;}
+  else{
+    echo "No events were found matching your search criteria";}
   
 ?>
 </div>
