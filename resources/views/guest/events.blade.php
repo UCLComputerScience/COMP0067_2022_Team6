@@ -31,7 +31,18 @@
         <div class="form-group">
           <label for="cat" class="sr-only">Select SDG:</label>
           <select class="form-control" id="cat" name="cat">
-            <option selected value="all">Select SDG</option>
+            <option value="">Choose an option</option>
+                <?php 
+                  $result = DB::table('categories')->get();    ?>
+                    @foreach ($result as $row)
+                        <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
+                    @endforeach 
+                      </select>
+                  @error('SDGs')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
           </select>
         </div>
       </div>
