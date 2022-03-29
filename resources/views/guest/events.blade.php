@@ -3,149 +3,209 @@
 @extends('layouts.mainlayout')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            
 
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <!-- Page title -->
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Upcoming events</h1>
-                        <p class="lead fw-normal text-muted mb-0">Streamed online throughout the year, our events will support your organisation's knowledge growth</p>
-                    </div>
-                    <!-- Event preview -->
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="container">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Event title</div></a>
-                                    <p class="card-text mb-0">Some quick example text about our cool upcoming event.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
+<h2 class="my-3">Events</h2>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="container">
 
-                </div>
-            </section>
+<h3 class="my-3">Browse events</h3>
+  <div id="searchSpecs">
+  <!-- When this form is submitted, this PHP page is what processes it.
+      Search/sort specs are passed to this page through parameters in the URL
+      (GET method of passing data to a page). -->
+  <form method="get" action="browse.php">
+    <div class="row">
+      <div class="col-md-5 pr-0">
+        <div class="form-group">
+          <label for="keyword" class="sr-only">Search keyword:</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            <input type="text" class="form-control border-left-0" id="keyword" placeholder="Search for anything" name = "keyword">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 pr-0">
+        <div class="form-group">
+          <label for="cat" class="sr-only">Select SDG:</label>
+          <select class="form-control" id="cat" name="cat">
+            <option value="">Choose an option</option>
+                <?php 
+                  $result = DB::table('categories')->get();    ?>
+                    @foreach ($result as $row)
+                        <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
+                    @endforeach 
+                      </select>
+                  @error('SDGs')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3 pr-0">
+        <div class="form-inline">
+          <label class="mx-2" for="order_by">Sort by:</label>
+          <select class="form-control" id="order_by" name = "order_by">
+            <option selected value="all">All</option>
+            <option value="upcoming">Upcoming events only</option>
+            <option value="past">Past events only</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-1 px-0">
+        <button type="submit" class="btn btn-primary" name="search"  value = "Search">Search</button>
+      </div>
+    </div>
+  </form>
+  </div> 
+</div>
+<br \>
 
-            <section class="py-5">
-                <div class="container px-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Yet another cool event</div></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!-- Search results -->
+<?php
+  // Retrieve these from the URL
+
+  if (!isset($_GET['page'])) {
+    $curr_page = 1;
+  }
+  else {
+    $curr_page = $_GET['page'];
+  }
 
 
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Yet another cool event</div></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                            <div class="small">
-                                                <div class="fw-bold">Kelly Rowan</div>
-                                                <div class="text-muted">12.30 PM GMT &middot; April 30, 2022 &middot; 1 hour</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        
-                    </div>
 
-                    
-                    <div class="text-end mb-5 mb-xl-0">
-                        <a class="text-decoration-none" href="/past-events">
-                            Past events
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </body>
-</html>
+  if(isset($_GET['search'])){
+    if (!isset($_GET['keyword'])) {
+      //if a keyword is not specified then we simply set it to be blank so that in the
+      //sql query, it does not filter out any auctions since all descriptions and titles of
+      //auctions will have "" in them.
+      $keyword = "";
+    }else {
+      $keyword = $_GET['keyword'];
+    }
+
+    if (!isset($_GET['cat'])) {
+      $category = "all";
+    }else {
+      $category = $_GET['cat'];
+    }
+
+    if (!isset($_GET['order_by'])) {
+      $ordering = "all";
+    }else {
+      $ordering = $_GET['order_by'];
+    }
+
+
+    // Calculate time to auction end
+ // $now = new DateTime();
+  //if ($now > $end_time) {
+   // $time_remaining = 'This auction has ended';
+  //}
+  //else {
+    // Get interval:
+    //$time_to_end = date_diff($now, $end_time);
+   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
+  //}
+
+    //sql query to get the relevant information about the auction
+   /* $query = "SELECT tblauction.auctionID AS 'item_id',
+                         tblauction.itemName AS 'title',
+                         tblauction.itemDescription AS 'description',
+                         tblauction.endTime AS 'end_date',
+                         tblauction.startPrice AS 'start_price',
+                         tblbidding.bidPrice
+                         FROM tblAuction
+                         LEFT JOIN tblbidding
+                         ON tblauction.auctionID = tblbidding.auctionID
+                         WHERE ((tblAuction.itemDescription LIKE '%$keyword%')
+                         OR (tblAuction.itemName LIKE '%$keyword%')) ";*/
+    //if category is not set to be all then we want to filter our search further
+    //i.e. we want to add an AND statement after the above WHERE clause
+    /*if($category != "all"){
+      //the following query retrieves the itemCategoryID based on the category that was selected
+      $sql = "SELECT itemCategoryID FROM tblitemcategory WHERE itemCategory = '$category'";
+      $sql_result = mysqli_query($connection, $sql);
+      $sql_array = mysqli_fetch_assoc($sql_result);
+      $itemcategoryID = $sql_array['itemCategoryID'];
+      //filtering the search further
+      $query .= " AND tblauction.itemCategoryID = '$itemcategoryID'
+                  GROUP BY tblauction.auctionID ";
+    }else{
+      $query .= " GROUP BY tblauction.auctionID ";
+    }
+*/
+
+    //sql query for ordering the results based on datetime
+  if($ordering === "all"){
+      $query .= " ORDER BY ecent_datetime DESC ";
+  }else if ($ordering === "upcoming"){
+    $query .= " AND event_datetime >= GETDATE() ";
+  }else if($ordering === "past"){
+    $query .= " AND event_datetime < GETDATE() ";
+  }
+
+
+
+  }
+  ?>
+
+<ul class="list-group">
+
+<?php
+
+// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
+
+
+$events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
+
+
+function print_event_with_image($event_id, $event_title, $event_description)
+{
+
+    // TODO: Bring this back later
+// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
+
+  // Truncate long descriptions
+  if (strlen($event_description) > 250) {
+    $event_desc_shortened = substr($event_description, 0, 250) . '...';
+  }
+  else {
+    $event_desc_shortened = $event_description;
+  }
+  
+  // Print HTML
+//   Need to add this line in to the line break within the echo - this is to do with image display!
+//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
+  echo('
+    <li class="list-group-item d-flex justify-content-between">
+    
+    <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</div>
+  </li>'
+  );
+
+}
+  
+  
+  $counter = 0;
+  foreach ($events as $row)
+  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+  {
+    $endDateTime = new DateTime($row->event_datetime);
+    print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
+    $counter +=1;
+  }
+  echo "</ul>";
+  if ($counter > 0){
+    echo "Events: " . $counter;}
+  else{
+    echo "No events were found matching your search criteria";}
+  
+?>
+</div>
+
 @endsection
