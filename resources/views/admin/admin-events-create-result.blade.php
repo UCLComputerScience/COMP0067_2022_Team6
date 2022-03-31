@@ -89,7 +89,7 @@
                     'extension'   =>   $imageFileType)); }
         }
 
-        echo '<div class="text-center">Event successfully created! <a href="events">View your new event.</a></div>';
+        echo '<br><div class="text-center">Event successfully created! <a href="events">View your new event.</a></div>';
     }
 
     }
