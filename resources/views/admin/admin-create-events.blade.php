@@ -16,7 +16,6 @@
 
                         <?php 
                       $username = Session::get('key');
-                      $username
                       ?>
                       
                   
@@ -33,8 +32,8 @@
                                 <div class="form-group row">
                                 <label for="event_title" class="col-sm-2 col-form-label text-right">Event title</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="event_title" id="event_title" required minlength="10" placeholder="e.g. Well Building - Moldova">
-                                  <small id="titleHelp" class="form-text text-muted align-left" style="float:left"><span class="text-danger">* Required.</span> The title of your event (minimum 10 characters).</small>
+                                  <input type="text" class="form-control" name="event_title" id="event_title" required minlength="5" placeholder="e.g. Well Building - Moldova">
+                                  <small id="titleHelp" class="form-text text-muted align-left" style="float:left"><span class="text-danger">* Required.</span> The title of your event (minimum 5 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
