@@ -46,7 +46,7 @@
                               <div class="form-group row">
                                 <label for="event_datetime" class="col-sm-2 col-form-label text-right">Event date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" required>
+                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" required>
                                   <small id="endDateHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Date and time this event will take place.</small>
                                 </div>
                               </div>
