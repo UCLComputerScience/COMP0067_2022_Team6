@@ -201,19 +201,6 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label for="GDPR" class="col-md-4 col-form-label text-md-end">{{ __('GDPR') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="GDPR" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('GDPR') }}" required autocomplete="GDPR" autofocus>
-
-                                @error('GDPR')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
 
                         <div class="row mb-3">
@@ -237,6 +224,22 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="GDPR" class="col-md-4 col-form-label text-md-end">{{ __('Consent to GDPR') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="GDPR" type="checkbox" class="form-check-input" name="gdpr" value="{{ old('GDPR') }}" required autocomplete="GDPR" autofocus>
+                                <br />
+                                <small id="gdprHelp" class="form-text text-muted align-left" style="float:left"><a href="gdpr" target="_blank">ANCSSC GDPR policy</a></small>
+                                @error('GDPR')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
