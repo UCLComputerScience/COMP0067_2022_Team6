@@ -21,9 +21,10 @@ $userid = Auth::id();
 
 
 $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
+//echo ($my_projects);
 
-
-
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
+echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
 
 function print_listing_with_image($project_id, $title, $desc)
 {
@@ -50,9 +51,8 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
   //}
   
   // Print HTML
- 
   echo('
- 
+    
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
     <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
