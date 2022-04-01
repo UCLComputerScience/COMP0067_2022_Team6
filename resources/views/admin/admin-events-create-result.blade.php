@@ -96,30 +96,23 @@
                 <div class="col-lg-6 col-xl-4">
                                 <div class="card mb-5 mb-xl-0">
                                     <div class="card-body p-5">
-                                        <div class="small text-uppercase fw-bold">
-                                            Charity
-                                        </div>
                                         <div class="mb-3">
-                                            <span class="display-4">£90</span>
-                                            <span class="text-muted">/ year</span>
+                                            <span class="display-4">Success</span>
                                         </div>
                                         <div class="small text-camelcase fw-bold">
-                                            If your organisation is in the non-profit sector, this is the membership for you
+                                            Event successfully created!
                                         </div>
                                         <br />
-                                        <div class="d-grid"><a class="btn btn-outline-primary" href="/register">View your new event</a></div>
+                                        <div class="d-grid"><a class="btn btn-outline-primary" href="events">View your new event</a></div>
                                         <br \>
-                                        <div class="d-grid"><a class="btn btn-outline-primary" href="/register">Manage events</a></div>
+                                        <div class="d-grid"><a class="btn btn-outline-primary" href="admin-manage-events">Manage events</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     <br \>
                     <br \>
-                </section>
-        
-        
-        <div class="text-center">Event successfully created! <a href="events">View your new event.</a></div>';
+                </section>';
     }
 
     }
