@@ -96,10 +96,10 @@
                 <div class="col-lg-6 col-xl-4">
                                 <div class="card mb-5 mb-xl-0">
                                     <div class="card-body p-5">
-                                        <div class="mb-3">
+                                        <div class="mb-3 d-flex justify-content-center align-items-center">
                                             <span class="display-4">Success</span>
                                         </div>
-                                        <div class="small text-camelcase fw-bold">
+                                        <div class="small text-camelcase d-flex justify-content-center align-items-center">
                                             Event successfully created!
                                         </div>
                                         <br />
