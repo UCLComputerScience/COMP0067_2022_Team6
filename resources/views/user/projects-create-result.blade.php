@@ -115,7 +115,7 @@
                     'extension'   =>   $imageFileType)); }
         }
 
-        echo '<div class="text-center">Project successfully created! <a href="projects-my">View your new project.</a></div>';
+        echo '<br><div class="text-center">Project successfully created! <a href="projects-my">View your new project.</a></div>';
     }
 
     }
