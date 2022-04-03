@@ -167,7 +167,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
 {
 
     // TODO: Bring this back later
-// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
 
   // Truncate long descriptions
   if (strlen($event_description) > 250) {

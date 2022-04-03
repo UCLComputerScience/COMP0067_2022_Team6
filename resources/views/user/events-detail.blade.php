@@ -30,7 +30,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                                 <!-- Note: SDGs may be better served by showing up with shiny pictures but we should review to see what works and what's feasible -->
                                 
                                 <div class="d-grid"><a class="btn btn-primary" href=$event_call_url><i class="fa fa-phone"></i>Join event</a></div>
-                                <p class="lead fw-normal text-muted mb-0"><?php echo $event_description ?> This is the event description! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab similique, ducimus ut alias sit accusamus illum, asperiores deserunt dolorum quaerat qui! Ab, quisquam explicabo magni dolores unde beatae quam a.</p>
+                                <p class="lead fw-normal text-muted mb-0"><?php //echo $event_description ?> This is the event description! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab similique, ducimus ut alias sit accusamus illum, asperiores deserunt dolorum quaerat qui! Ab, quisquam explicabo magni dolores unde beatae quam a.</p>
                             </div>
                         </div>
                     </div>
