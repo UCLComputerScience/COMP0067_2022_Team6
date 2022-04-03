@@ -102,10 +102,8 @@
                                         <div class="small text-camelcase d-flex justify-content-center align-items-center">
                                             Event successfully created!
                                         </div>
-                                        <br />
-                                        <div class="d-grid"><a class="btn btn-outline-primary" href="events">View your new event</a></div>
                                         <br \>
-                                        <div class="d-grid"><a class="btn btn-outline-primary" href="admin-manage-events">Manage events</a></div>
+                                        <div class="d-grid"><a class="btn btn-primary" href="admin-manage-events">Manage events</a></div>
                                     </div>
                                 </div>
                             </div>
