@@ -74,7 +74,7 @@
                               <div class="form-group row">
                                 <label for="event_call_url" class="col-sm-2 col-form-label text-right">Webcall URL for event</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" name="event_call_url" id="event_call_url" rows="4"></textarea>
+                                  <textarea class="form-control" name="event_call_url" id="event_call_url" rows="1"></textarea>
                                   <small id="detailsHelp" class="form-text text-muted" style="float:left">URL for the webcall where your event will take place e.g. Zoom link.</small>
                                 </div>
                               </div>
