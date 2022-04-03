@@ -29,9 +29,17 @@ $event_title = strip_text($event_title);
 
 $event_video_url_modified = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src=' .$event_video_url_modified .' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="' .$event_video_url_modified .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>';
+
+if (is_null($event_call_url_modified) != NULL){
+        if (str_starts_with($event_call_url_modified, 'https://') == FALSE){
+            $event_call_url_modified = 'https://' .$event_call_url_modified;
+        }
+}
+
+$event_call_url_modified = '<div class="d-grid"><a class="btn btn-primary" href="' .$event_call_url_modified .'" target="_blank">Join event</a></div>';
 
 ?>
 
@@ -46,9 +54,13 @@ $event_video_url_modified = '<div class="row gx-5 justify-content-center" style=
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
-                                <div class="d-grid"><a class="btn btn-primary" role="button" href=<?php echo "http://$event_call_url_modified";?> target="_blank">Join event</a></div>
+                                <?php if (is_null($event_call_url_modified) == FALSE){
+                                    echo $event_call_url_modified;
+                                }
+                                ?>
                                 <br \>
-                                <p class="lead fw-normal text-muted mb-0"><?php echo $event_description ?> </p>
+                                <?php echo $event_description ?> 
+                                <p class="lead fw-normal text-muted mb-0"></p>
                             </div>
                         </div>
                     </div>
