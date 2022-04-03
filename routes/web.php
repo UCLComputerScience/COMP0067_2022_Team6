@@ -48,9 +48,6 @@ Route::get('/events-detail/{event_id}', function () {
     return view('/user/events-detail');})->where('event_id', '.*');
 // })->middleware('auth');
 
-// Route::get('/projects-detail/{project_id}',function (){
-//     return view('/user/projects-detail');})->where('project_id', '.*');
-
 Route::get('/past-events', function () {
     return view('/user/past-events');
 })->middleware('auth');
