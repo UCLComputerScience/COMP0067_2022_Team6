@@ -22,24 +22,38 @@ function strip_text($url){
     return $url;
 }
 
-$event_video_url_modified = strip_text($event_video_url);
-$event_call_url_modified = strip_text($event_call_url);
+$event_video_url = strip_text($event_video_url);
+$event_call_url = strip_text($event_call_url);
 $event_description = strip_text($event_description);
 $event_title = strip_text($event_title);
 
-$event_video_url_modified = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
+// BRING THIS BIT BACK
+if ($event_video_url != 'null'){
+    $event_video_url = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="' .$event_video_url_modified .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-</div>';
+        <iframe width="560" height="315" src="' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>';
+    }
 
-if (is_null($event_call_url_modified) != NULL){
-        if (str_starts_with($event_call_url_modified, 'https://') == FALSE){
-            $event_call_url_modified = 'https://' .$event_call_url_modified;
+    // return $event_video_url;
+    
+
+// $event_video_url_modified = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
+//      <div class="embed-responsive embed-responsive-16by9">
+//         <iframe width="560" height="315" src="' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+//     </div>
+// </div>';
+
+// Something in here is adding a '/' to NULL. Hmm...
+if ($event_call_url != 'null'){
+        if (str_starts_with($event_call_url, 'https://') == FALSE){
+            $event_call_url = 'https://' .$event_call_url;
         }
+    $event_call_url = '<br /><div class="d-grid"><a class="btn btn-primary" href="' .$event_call_url .'" target="_blank">Join event</a></div>';
 }
 
-$event_call_url_modified = '<div class="d-grid"><a class="btn btn-primary" href="' .$event_call_url_modified .'" target="_blank">Join event</a></div>';
+
 
 ?>
 
@@ -54,11 +68,11 @@ $event_call_url_modified = '<div class="d-grid"><a class="btn btn-primary" href=
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
-                                <?php if (is_null($event_call_url_modified) == FALSE){
-                                    echo $event_call_url_modified;
+                                <?php if ($event_call_url != 'null'){
+                                    echo $event_call_url;
                                 }
                                 ?>
-                                <br \>
+                                <br>
                                 <?php echo $event_description ?> 
                                 <p class="lead fw-normal text-muted mb-0"></p>
                             </div>
@@ -67,8 +81,8 @@ $event_call_url_modified = '<div class="d-grid"><a class="btn btn-primary" href=
                     <div class="row gx-5">
                         <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
                     </div>
-                    <?php if (is_null($event_video_url) == FALSE ) {
-                        echo $event_video_url_modified;
+                    <?php if ($event_video_url != 'null') {
+                        echo $event_video_url;
                         }
                     ?>    
                 </div>
