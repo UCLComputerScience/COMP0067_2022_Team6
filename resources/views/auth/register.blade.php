@@ -6,9 +6,7 @@ TODO:
 Radio buttons are currently not part of the same set so you can select both. Need to merge to the same list,
 but not going to do that until after Stripe is implemented, since that may affect exactly how the membership types are implemented-->
 
-@extends('layouts.app')
-
-@extends('layouts.partials.nav')
+@extends('layouts.mainlayout')
 
 @section('content')
 <div class="container">
