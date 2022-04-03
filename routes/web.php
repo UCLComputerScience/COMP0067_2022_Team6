@@ -43,9 +43,14 @@ Route::get('/gdpr', function () {
 Route::get('/login-events', function () {
     return view('login-events');
 })->middleware('auth');
-Route::get('/events-detail', function () {
-    return view('/user/events-detail/{event_id}');
-})->middleware('auth');
+
+Route::get('/events-detail/{event_id}', function () {
+    return view('/user/events-detail/{event_id}');})->where('event_id', '.*');
+// })->middleware('auth');
+
+// Route::get('/projects-detail/{project_id}',function (){
+//     return view('/user/projects-detail');})->where('project_id', '.*');
+
 Route::get('/past-events', function () {
     return view('/user/past-events');
 })->middleware('auth');
