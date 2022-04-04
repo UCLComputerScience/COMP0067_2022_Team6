@@ -184,7 +184,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
     <li class="list-group-item d-flex justify-content-between">
     
     <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</div>
-    <a class="btn btn-primary" href="admin-events-edit/'. $event_id.'" > Edit </a>
+    <a class="btn btn-primary" href="admin-events-edit/'. $event_id.'" role="button"> Edit </a>
     <form method="post" enctype="multipart/form-data" action="admin-events-delete/'. $event_id.'">
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div class="form-group row">
