@@ -24,6 +24,7 @@ function strip_text($url){
 }
 
 $event_video_url = strip_text($event_video_url);
+$event_video_url = substr($event_video_url, strpos($event_video_url, "=") + 1);
 $event_call_url = strip_text($event_call_url);
 $event_description = strip_text($event_description);
 $event_title = strip_text($event_title);
@@ -32,11 +33,9 @@ $event_datetime = substr($event_datetime, 0, -3);
 $event_timezone = strip_text($event_timezone);
 
 if ($event_video_url != 'null'){
-    $event_video_url = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
-     <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>';
+    $event_video_url = '
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        ';
     }
 
 
@@ -75,19 +74,13 @@ if ($event_call_url != 'null'){
                     </div>
                     <div class="row gx-5">
                         <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
-                        <?php 
-                            //echo str_replace(array ('["','"]'),'' , $event_call_url_test);
-                            $stripped_url = str_replace(array ('["','"]'),'' , $event_call_url_test);
-                            $second_stripped_url = substr($stripped_url, 35);
-                            //echo  $second_stripped_url;
-                            echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $second_stripped_url .'?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        <br>
+                        <?php if ($event_video_url != 'null') {
+                                echo $event_video_url;
+                            }
                         ?> 
-                    
                     </div>
-                    <?php if ($event_video_url != 'null') {
-                        echo $event_video_url;
-                        }
-                    ?>    
+   
                 </div>
             </section>
         </main>
