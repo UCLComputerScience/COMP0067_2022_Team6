@@ -22,7 +22,9 @@
                         $event_description = $this_event->pluck('event_description');
                         $event_datetime = $this_event->pluck('event_datetime');
                         $event_timezone = $this_event->pluck('event_timezone');
-                        
+                        $event_call_url = $this_event->pluck('event_call_url');
+                        $event_video_url = $this_event->pluck('event_video_url');
+
                         function strip_text($url){
                             $url = str_replace(array('[',']','"'), '', $url);
                             $url = stripslashes($url);
@@ -34,6 +36,7 @@
                         <div class="container">
                       
                       <!-- Create auction form -->
+                      <?php if (isset($event_description)){ print_r($event_description[0]);} else { print_r(""); }?>
                       <div style="max-width: 800px; margin: 10px auto">
                         <h2 class="my-3">Edit event <?php echo strip_text($event_title) ?> </h2>
                         <div class="card">
@@ -50,7 +53,7 @@
                               <div class="form-group row">
                                 <label for="event_description" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" name="event_description" id="event_description" rows="4"></textarea>
+                                  <textarea class="form-control" name="event_description" id="event_description" value='<?php print_r($event_description[0]); ?>' rows="4"></textarea>
                                   <small id="detailsHelp" class="form-text text-muted" style="float:left">Full details of your event to give insight to members.</small>
                                 </div>
                               </div>
@@ -85,14 +88,14 @@
                               <div class="form-group row">
                                 <label for="event_call_url" class="col-sm-2 col-form-label text-right">Webcall URL for event</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" name="event_call_url" id="event_call_url" rows="1"></textarea>
-                                  <small id="detailsHelp" class="form-text text-muted" style="float:left">URL for the webcall where your event will take place e.g. Zoom link.</small>
+                                  <input type="text" class="form-control" name="event_call_url" id="event_call_url"  value='<?php print_r($event_call_url[0]); ?>'  rows="1"></textarea>
+                                  <small id="detailsHelp" class="form-text text-muted" style="float:left">URL for the webcall where your event will take place e.g. Zoom link. Note that if the event is over, you can remove this link.</small>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="event_video_url" class="col-sm-2 col-form-label text-right">YouTube link of recording</label>
+                                <label for="event_video_url" class="col-sm-2 col-form-label text-right">YouTube recording link</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" name="event_video_url" id="event_video_url" rows="1"></textarea>
+                                  <input type="text" class="form-control" name="event_video_url" id="event_video_url" value='<?php print_r($event_video_url[0]); ?>' rows="1"></textarea>
                                   <small id="detailsHelp" class="form-text text-muted" style="float:left">YouTube URL of event recording goes here.</small>
                                 </div>
                               </div>
