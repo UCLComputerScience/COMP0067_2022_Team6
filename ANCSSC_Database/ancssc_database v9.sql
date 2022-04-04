@@ -97,6 +97,10 @@ CREATE TABLE `events` (
   `event_video_url` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `events`(`id`, `event_title`, `event_description`, `event_datetime`, `event_timezone`, `event_call_url`, `event_video_url`) VALUES (1,'This wonderful call name','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2022-10-10 10:35:00','GMT+2:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE'),
+(1,'A great call about charity work','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2022-10-10 10:35:00','GMT+2:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE'),
+(1,'This is an event title','Lorem ipsum dolor sit amet, consectetur adipiscing elit','2022-10-11 10:00:00','GMT+7:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE')
+
 -- --------------------------------------------------------
 
 --
@@ -195,6 +199,11 @@ CREATE TABLE `location` (
   `lon` float(10,6) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `location` (`id`, `member_name`, `address`, `sdg`, `lat`, `lon`, `description`) VALUES 
+(1, 'Jack', 'Av. Pedro De Valdivia 2907 Ñuñoa (2)2746343, Las Condes', 'GOAL 1: No Poverty', '-14.280354', '-53.407850', 'Well-Building Charity'),
+(2, 'Mark', 'Calle Luis Acevedo, 23', 'GOAL 2: Zero Hunger', '27.979849', '0.416379', 'Food for Change'),
+(3, 'Jack', 'Av. Pedro De Valdivia', 'GOAL 1: No Poverty', '18.297165', '-9.697609', 'Oxfam');
 
 -- --------------------------------------------------------
 
