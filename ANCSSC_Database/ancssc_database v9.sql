@@ -200,6 +200,11 @@ CREATE TABLE `location` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `location` (`id`, `member_name`, `address`, `sdg`, `lat`, `lon`, `description`) VALUES 
+(1, 'Jack', 'Av. Pedro De Valdivia 2907 Ñuñoa (2)2746343, Las Condes', 'GOAL 1: No Poverty', '-14.280354', '-53.407850', 'Well-Building Charity'),
+(2, 'Mark', 'Calle Luis Acevedo, 23', 'GOAL 2: Zero Hunger', '27.979849', '0.416379', 'Food for Change'),
+(3, 'Jack', 'Av. Pedro De Valdivia', 'GOAL 1: No Poverty', '18.297165', '-9.697609', 'Oxfam');
+
 -- --------------------------------------------------------
 
 --
