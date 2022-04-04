@@ -9,6 +9,7 @@ $event_id = Request::segment(2);
 $this_event = DB::Table('events')->select('event_id','event_title','event_description','event_datetime','event_timezone', 'event_call_url', 'event_video_url')->where('event_id',$event_id)->get();
 $event_title = $this_event->pluck('event_title');
 $event_description = $this_event->pluck('event_description');
+$event_datetime = $this_event->pluck('event_datetime');
 $event_timezone = $this_event->pluck('event_timezone');
 $event_call_url = $this_event->pluck('event_call_url');
 $event_call_url_test = $this_event->pluck('event_call_url');
@@ -28,7 +29,6 @@ $event_call_url = strip_text($event_call_url);
 $event_description = strip_text($event_description);
 $event_title = strip_text($event_title);
 
-// BRING THIS BIT BACK
 if ($event_video_url != 'null'){
     $event_video_url = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
      <div class="embed-responsive embed-responsive-16by9">
@@ -37,16 +37,7 @@ if ($event_video_url != 'null'){
     </div>';
     }
 
-    // return $event_video_url;
-    
 
-// $event_video_url_modified = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
-//      <div class="embed-responsive embed-responsive-16by9">
-//         <iframe width="560" height="315" src="' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-//     </div>
-// </div>';
-
-// Something in here is adding a '/' to NULL. Hmm...
 if ($event_call_url != 'null'){
         if (str_starts_with($event_call_url, 'https://') == FALSE){
             $event_call_url = 'https://' .$event_call_url;
@@ -69,6 +60,7 @@ if ($event_call_url != 'null'){
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
+                                <h2><?php echo $event_datetime, $event_timezone ?></h2>
                                 <?php if ($event_call_url != 'null'){
                                     echo $event_call_url;
                                 }
