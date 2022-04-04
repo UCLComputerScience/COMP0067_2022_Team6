@@ -4,7 +4,6 @@
 
 <?php  
 
-//$event_id = $_GET['event_id'];
 $event_id = Request::segment(2);
 $this_event = DB::Table('events')->select('event_id','event_title','event_description','event_datetime','event_timezone', 'event_call_url', 'event_video_url')->where('event_id',$event_id)->get();
 $event_title = $this_event->pluck('event_title');
@@ -28,6 +27,9 @@ $event_video_url = strip_text($event_video_url);
 $event_call_url = strip_text($event_call_url);
 $event_description = strip_text($event_description);
 $event_title = strip_text($event_title);
+$event_datetime = strip_text($event_datetime);
+$event_datetime = substr($event_datetime, 0, -3);
+$event_timezone = strip_text($event_timezone);
 
 if ($event_video_url != 'null'){
     $event_video_url = '<div class="row gx-5 justify-content-center" style="margin-left: 25%;">
@@ -60,7 +62,7 @@ if ($event_call_url != 'null'){
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
-                                <h2><?php echo $event_datetime, $event_timezone ?></h2>
+                                <h3><?php echo $event_datetime, "<br>", $event_timezone ?></h3>
                                 <?php if ($event_call_url != 'null'){
                                     echo $event_call_url;
                                 }
