@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 
 @section('content')
-            
+<div class="container">
             
             <!-- Page Content-->
             <section class="py-5">
@@ -61,9 +61,10 @@
                 });
                 </script>
                 </body>
+            </section>
+            </div>
                 </html>
                 
                 
-                <body>
-
+          
 @endsection
