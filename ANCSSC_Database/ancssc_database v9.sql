@@ -97,6 +97,10 @@ CREATE TABLE `events` (
   `event_video_url` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `events`(`id`, `event_title`, `event_description`, `event_datetime`, `event_timezone`, `event_call_url`, `event_video_url`) VALUES (1,'This wonderful call name','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2022-10-10 10:35:00','GMT+2:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE'),
+(1,'A great call about charity work','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2022-10-10 10:35:00','GMT+2:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE'),
+(1,'This is an event title','Lorem ipsum dolor sit amet, consectetur adipiscing elit','2022-10-11 10:00:00','GMT+7:00','www.zoom.com','https://www.youtube.com/watch?v=xHegpKx61eE')
+
 -- --------------------------------------------------------
 
 --
