@@ -25,6 +25,13 @@
                         $event_call_url = $this_event->pluck('event_call_url');
                         $event_video_url = $this_event->pluck('event_video_url');
 
+                        $event_datetime_stripped = strip_text($event_datetime);
+                        $event_timezone_stripped = strip_text($event_timezone);
+
+                        $event_datetime_orig = date("c", strtotime($event_datetime_stripped)); 
+                        list($Date)=explode('+', $event_datetime_orig); 
+                        $event_datetime_orig = $Date;
+
                         function strip_text($url){
                             $url = str_replace(array('[',']','"'), '', $url);
                             $url = stripslashes($url);
@@ -36,7 +43,11 @@
                         <div class="container">
                       
                       <!-- Create auction form -->
-                      <?php if (isset($event_description)){ print_r($event_description[0]);} else { print_r(""); }?>
+                      <?php echo $event_datetime_orig;?>
+                      <?php echo $event_datetime;?>
+                      <?php echo $event_datetime_stripped;?>
+                      <?php echo $event_timezone_stripped;?>
+                      <?php print_r($event_timezone[0]);?>
                       <div style="max-width: 800px; margin: 10px auto">
                         <h2 class="my-3">Edit event <?php echo strip_text($event_title) ?> </h2>
                         <div class="card">
@@ -60,7 +71,7 @@
                               <div class="form-group row">
                                 <label for="event_datetime" class="col-sm-2 col-form-label text-right">Event date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" required>
+                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" value='$event_datetime_stripped' required>
                                   <small id="endDateHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Date and time this event will take place.</small>
                                 </div>
                               </div>
@@ -68,13 +79,14 @@
                                 <label for="event_timezone" class="col-sm-2 col-form-label text-right">Event timezone</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="event_timezone" id="event_timezone" required>
-                                    <option value="">Choose a timezone</option>
+                                        <option value="<?php print_r($event_timezone[0]);?>">Choose a timezone</option>
                                       <?php 
                                     $result = DB::table('timezones')->get();    ?>
                                     @foreach ($result as $row)
                                         <option value="{{$row->timezone_relative_to_gmt}}">{{$row->timezone_relative_to_gmt}}</option>
-                                    @endforeach 
+                                    @endforeach
                                       </select>
+                                      
                                       <small id="categoryHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Select the timezone this event will take place in.</small>
                                 </div>
                               </div>
