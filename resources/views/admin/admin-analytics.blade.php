@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <body class="d-flex flex-column h-100">
+    <div class="container">
         <main class="flex-shrink-0">
             
             <!-- Page Content-->
@@ -37,6 +38,10 @@
 
                             <div class="col-md-6">
                                 <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
-
+</section>
+</main>
+</div>
+</body>
+</html>
                                 
 @endsection

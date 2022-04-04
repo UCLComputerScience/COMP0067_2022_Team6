@@ -1,7 +1,7 @@
 <!-- TODO: 
 1. Get filtering to work for projects table
 2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
-@extends('layouts.mainlayout-logged-in')
+@extends('layouts.mainlayout-admin')
 
 @section('content')
 
