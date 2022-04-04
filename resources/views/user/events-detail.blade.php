@@ -11,6 +11,7 @@ $event_title = $this_event->pluck('event_title');
 $event_description = $this_event->pluck('event_description');
 $event_timezone = $this_event->pluck('event_timezone');
 $event_call_url = $this_event->pluck('event_call_url');
+$event_call_url_test = $this_event->pluck('event_call_url');
 $event_video_url= $this_event->pluck('event_video_url');
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id', $event_id)->get();
 
@@ -80,6 +81,14 @@ if ($event_call_url != 'null'){
                     </div>
                     <div class="row gx-5">
                         <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
+                        <?php 
+                            //echo str_replace(array ('["','"]'),'' , $event_call_url_test);
+                            $stripped_url = str_replace(array ('["','"]'),'' , $event_call_url_test);
+                            $second_stripped_url = substr($stripped_url, 35);
+                            //echo  $second_stripped_url;
+                            echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $second_stripped_url .'?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        ?> 
+                    
                     </div>
                     <?php if ($event_video_url != 'null') {
                         echo $event_video_url;
