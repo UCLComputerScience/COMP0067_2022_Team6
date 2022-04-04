@@ -43,11 +43,6 @@
                         <div class="container">
                       
                       <!-- Create auction form -->
-                      <?php echo $event_datetime_orig;?>
-                      <?php echo $event_datetime;?>
-                      <?php echo $event_datetime_stripped;?>
-                      <?php echo $event_timezone_stripped;?>
-                      <?php print_r($event_timezone[0]);?>
                       <div style="max-width: 800px; margin: 10px auto">
                         <h2 class="my-3">Edit event <?php echo strip_text($event_title) ?> </h2>
                         <div class="card">
