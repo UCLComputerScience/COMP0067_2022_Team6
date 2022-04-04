@@ -15,6 +15,14 @@ $event_call_url_test = $this_event->pluck('event_call_url');
 $event_video_url= $this_event->pluck('event_video_url');
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id', $event_id)->get();
 
+// If time, implement this to show if an event has already ended
+// Need to include if statement for if $now > $event_datetime to control what shows
+// $now = new DateTime();
+// if ($now > $event_datetime) {
+//         $time_remaining = 'This event has ended';
+//     }
+
+
 
 function strip_text($url){
     $url = str_replace(array('[',']','"'), '', $url);
@@ -61,7 +69,7 @@ if ($event_call_url != 'null'){
                         <div class="col-lg-6">
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
-                                <h3><?php echo $event_datetime, "<br>", $event_timezone ?></h3>
+                                <h3><?php echo $event_datetime, "<br>", $event_timezone, "<br>" ?></h3>
                                 <?php if ($event_call_url != 'null'){
                                     echo $event_call_url;
                                 }
