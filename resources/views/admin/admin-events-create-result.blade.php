@@ -82,7 +82,7 @@
             // if tests are successful, then the file is uploaded
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                //create_new_image_reference($eventID, $imageUUID, $imageFileType);
+                create_new_image_reference($eventID, $imageUUID, $imageFileType);
                 DB::table('ImagePaths')->insert(array(
                     'event_id'     =>   $event_id, 
                     'imageUUID'   =>   $imageUUID,
