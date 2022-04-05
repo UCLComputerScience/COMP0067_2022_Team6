@@ -108,7 +108,7 @@ $project_id = $_POST['project_id'];
             // if tests are successful, then the file is uploaded
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                //create_new_image_reference($projectID, $imageUUID, $imageFileType);
+                create_new_image_reference($projectID, $imageUUID, $imageFileType);
                 $imageUUID = hexdec($imageUUID);
                 DB::table('ImagePaths')->insert(array(
                     'project_id'     =>   $project_id, 

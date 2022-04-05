@@ -1,25 +1,54 @@
-
-<?php 
-$userRole = Auth::user()->role;
-
-
-if ($userRole == 1) {
-
-echo "admin" ;
-// Authentication was successful...
-} elseif ($userRole == 2 ) {
-
-return redirect('user/user-subscribe');
-// Authentication was successful...
-} elseif ($userRole == 3 ) {
-
-echo "user with sub!" ;
-// Authentication was successful...
-} else  {
-
-echo "hi" ;
-// Authentication was successful...
-}
-?>
+@extends('layouts.mainlayout')
+@section('content'
 
 
+)
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PHP Google Autocomplete Address Example - Laratutorials.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 m-auto">
+                <div class="card shadow">
+                    <div class="card-header bg-primary">
+                        <h5 class="card-title text-white">PHP Google Autocomplete Address Example - Laratutorials.com</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="autocomplete"> Location/City/Address </label>
+                            <input type="text" name="autocomplete" id="autocomplete" class="form-control" placeholder="Select Location">
+                        </div>
+
+                        <div class="form-group" id="lat_area">
+                            <label for="latitude"> Latitude </label>
+                            <input type="text" name="latitude" id="latitude" class="form-control">
+                        </div>
+
+                        <div class="form-group" id="long_area">
+                            <label for="latitude"> Longitude </label>
+                            <input type="text" name="longitude" id="longitude" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDxTV3a6oL6vAaRookXxpiJhynuUpSccjY&libraries=places&callback=initAutocomplete" type="text/javascript"></script>
+    
+    <script src="/main.js"></script>
+</body>
+
+</html>
