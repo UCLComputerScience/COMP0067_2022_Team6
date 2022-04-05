@@ -60,66 +60,73 @@
                             <p class="lead fw-normal text-muted mb-0">(explanatory text for the table below goes here)</p>
                     </div>
 
+</html>
                     <!-- Project table -->
-                    <table id="projects" class="table table-striped nowrap" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>#Project name</th>
-                                <th>Organisation name</th>
-                                <th>Location</th>
-                                <th>Language</th>
-                                <th>Description</th>
-                                <th>SDGs</th>
-                                <th>Date added</th>
-                                <th>Last updated</th>
-                            </tr>
-                        </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mexican water source</td>
-                            <td>WaterAid</td>
-                            <td>Mexico</td>
-                            <td>Spanish</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-                            <td>3, 11</td>
-                            <td>2018/11/13</td>
-                            <td>2019/12/12</td>
-                        </tr>
-                        <tr>
-                            <td>Very important project</td>
-                            <td>Oxfam</td>
-                            <td>Brazil</td>
-                            <td>English</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-                            <td>12</td>
-                            <td>2019/1/3</td>
-                            <td>2021/5/12</td>
-                        </tr>
-                        <tr>
-                            <td>1000 houses</td>
-                            <td>GlobalGiving</td>
-                            <td>Argentina</td>
-                            <td>English</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-                            <td>1, 4, 5, 6</td>
-                            <td>2021/1/3</td>
-                            <td>2021/1/3</td>
-                        </tr>
-                    </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Project name</th>
-                        <th>Organisation name</th>
-                        <th>Location</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th>SDGs</th>
-                        <th>Date added</th>
-                        <th>Last updated</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+
+<?php
+$userid = Auth::id();
+
+
+$my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->get();
+//echo ($my_projects);
+
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
+//echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+
+function print_listing_with_image($project_id, $title, $desc)
+{
+
+$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',$project_id)->get();
+
+  // Truncate long descriptions
+  if (strlen($desc) > 250) {
+    $desc_shortened = substr($desc, 0, 250) . '...';
+  }
+  else {
+    $desc_shortened = $desc;
+  }
+  
+  // Calculate time to auction end
+ // $now = new DateTime();
+  //if ($now > $end_time) {
+   // $time_remaining = 'This auction has ended';
+  //}
+  //else {
+    // Get interval:
+    //$time_to_end = date_diff($now, $end_time);
+   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
+  //}
+  
+  // Print HTML
+  echo('
+    
+    <li class="list-group-item d-flex justify-content-between">
+    <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
+    <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
+    <input type="hidden" name="_token" value="' . Session::token() . '?>">
+    <div class="form-group row">
+    <div>
+    </form>
+    </li>'
+  );
+
+}
+
+  
+  
+  $counter = 0;
+  foreach ($my_projects as $row)
+  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+  {
+    $endDateTime = new DateTime($row->projectEndDate);
+    print_listing_with_image($row->project_id,$row->projectTitle, $row->projectDetails,$row->projectEndDate);
+    $counter +=1;
+  }
+  echo "</ul>";
+  echo "Projects: " . $counter;
+  ?>
+
+
 
         <!-- Report table -->
             <div class="container px-5 my-5">
