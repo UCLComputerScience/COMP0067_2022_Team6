@@ -128,7 +128,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
-                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" required autocomplete="postcode" autofocus>
+                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" autocomplete="postcode" autofocus>
 
                                 @error('postcode')
                                     <span class="invalid-feedback" role="alert">
@@ -142,7 +142,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" required autocomplete="number_of_employees" autofocus>
+                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" autocomplete="number_of_employees" autofocus>
 
                                 @error('number_of_employees')
                                     <span class="invalid-feedback" role="alert">
@@ -156,7 +156,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
+                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" autocomplete="number_of_volunteers" autofocus>
 
                                 @error('number_of_volunteers')
                                     <span class="invalid-feedback" role="alert">
@@ -170,7 +170,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             <label for="website" class="col-md-4 col-form-label text-md-end">{{ __('Website') }}</label>
 
                             <div class="col-md-6">
-                                <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('website') }}" required autocomplete="website" autofocus>
+                                <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('website') }}" autocomplete="website" autofocus>
 
                                 @error('country')
                                     <span class="invalid-feedback" role="alert">
