@@ -9,7 +9,7 @@ but not going to do that until after Stripe is implemented, since that may affec
 @extends('layouts.mainlayout')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-bottom:3%">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center mb-5">
