@@ -90,9 +90,7 @@
         }
 
         echo '<section class="bg-light-py-5">
-                <br \>
-                <br \>
-            <div class="row gx-5 justify-content-center">
+            <div class="row gx-5 justify-content-center" style="margin: auto; height:50%;">
                 <div class="col-lg-6 col-xl-4">
                                 <div class="card mb-5 mb-xl-0">
                                     <div class="card-body p-5">
