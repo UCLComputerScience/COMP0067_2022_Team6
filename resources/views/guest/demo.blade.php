@@ -69,7 +69,7 @@
         <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
             <div class="col mb-5 mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://globalone.org.uk/wp-content/uploads/2020/04/Dr_Hanaa.jpg" width="200" height="200" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://globalone.org.uk/wp-content/uploads/2019/05/Dr_Hanaa.jpg" width="200" height="200" alt="..." />
                     <h5 class="fw-bolder">Dr. Hana</h5>
                     <div class="fst-italic text-muted">Founder</div>
                 </div>
