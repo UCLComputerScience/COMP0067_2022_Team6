@@ -15,7 +15,7 @@
                         <p class="lead fw-normal text-dark-50 mb-4">The Alliance of NGOs and CSOs for South-South Cooperation is the International Network of NGOs and CSOs which works in collaboration with the United Nations for South-South Cooperation (UNOSSC) to enhance civil society’s understanding of the value of South-South Cooperation in developmental, humanitarian and related spheres.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                             <a class="btn btn-primary btn-lg px-4 me-sm-3" href="register">Join Us</a>
-                            <a class="btn btn-outline-secondary btn-lg px-4" href="https://ancssc.com/">Learn More</a>
+                            <a class="btn btn-outline-secondary btn-lg px-4" href="about">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -31,23 +31,27 @@
                 <div class="col-lg-8">
                     <div class="row gx-5 row-cols-1 row-cols-md-2">
                         <div class="col mb-5 h-100">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people-fill"></i></div>
+                            <a href="membership"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people-fill"></i></div></a>
+                            
                             <h2 class="h5">Membership</h2>
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="col mb-5 h-100">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-calendar-event"></i></div>
+                            <a href="events"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-calendar-event"></i></div></a>
+                            
                             <h2 class="h5">Events</h2>
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="col mb-5 mb-md-0 h-100">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-left-dots"></i></div>
+                            <a href="contact"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-left-dots"></i></div></a>
+                            
                             <h2 class="h5">Contact</h2>
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="col h-100">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-check-circle"></i></div>
-                            <h2 class="h5">SDGs</h2>
+                            <a href="register"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-check-circle"></i></div></a>
+                            
+                            <h2 class="h5">Register</h2>
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
