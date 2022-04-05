@@ -114,7 +114,7 @@
 <h1 style="text-align:center">Where our members are located</h1>
 
 <body>
-<div id="map" style="width: 80%; height: 500px;"></div>
+<div id="map" style="width: 80%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
 <?php $userlocs = DB::table('location')
     ->select(array('member_name', 'lat', 'lon','sdg'))
