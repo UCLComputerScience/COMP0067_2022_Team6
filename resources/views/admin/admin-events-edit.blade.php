@@ -9,9 +9,7 @@
             
             <!-- Page Content-->
             <section class="py-5">
-                <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Edit Event</h1>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                
  
 
 
@@ -24,6 +22,9 @@
                         $event_timezone = $this_event->pluck('event_timezone');
                         $event_call_url = $this_event->pluck('event_call_url');
                         $event_video_url = $this_event->pluck('event_video_url');
+
+                        $this_event_timezone_unstripped = DB::Table('events')->select('event_timezone')->where('event_id',$event_id)->get();
+                        $this_event_timezone = strip_text($this_event_timezone_unstripped);
 
                         $event_datetime_stripped = strip_text($event_datetime);
                         $event_timezone_stripped = strip_text($event_timezone);
@@ -43,12 +44,14 @@
                         <div class="container">
                       
                       <!-- Create auction form -->
+                      <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Edit event: <?php echo strip_text($event_title) ?> </h1>
                       <div style="max-width: 800px; margin: 10px auto">
-                        <h2 class="my-3">Edit event <?php echo strip_text($event_title) ?> </h2>
                         <div class="card">
                           <div class="card-body">
-                            <form method="post" enctype="multipart/form-data" action="admin-events-create-result">
+                            <form method="post" enctype="multipart/form-data" action="/admin-events-edit-result">
                                 @csrf <!-- {{ csrf_field() }} -->
+                                <input type="hidden" name="event_id" value="<?php echo $event_id ?>">
                                 <div class="form-group row">
                                 <label for="event_title" class="col-sm-2 col-form-label text-right">Event title</label>
                                 <div class="col-sm-10">
@@ -74,12 +77,16 @@
                                 <label for="event_timezone" class="col-sm-2 col-form-label text-right">Event timezone</label>
                                 <div class="col-sm-10">
                                   <select class="form-control" name="event_timezone" id="event_timezone" required>
-                                        <option value="<?php print_r($event_timezone[0]);?>">Choose a timezone</option>
+                                        <option value="<?php print_r($event_timezone[0]);?>">Select timezone</option>
                                       <?php 
                                     $result = DB::table('timezones')->get();    ?>
                                     @foreach ($result as $row)
-                                        <option value="{{$row->timezone_relative_to_gmt}}">{{$row->timezone_relative_to_gmt}}</option>
+                                      <option value="{{$row->timezone_relative_to_gmt}}">{{$row->timezone_relative_to_gmt}}</option>
+                                        <!-- if ({{$row->timezone_relative_to_gmt}} == $event_timezone){
+                                        } -->
                                     @endforeach
+                                    <!-- <option selected="{{$row->timezone_relative_to_gmt}}" >{{$row->timezone_relative_to_gmt}}</option> -->
+
                                       </select>
                                       
                                       <small id="categoryHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Select the timezone this event will take place in.</small>
