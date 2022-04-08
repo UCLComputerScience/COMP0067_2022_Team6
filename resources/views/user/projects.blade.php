@@ -1,4 +1,4 @@
-<!-- TODO: 
+<!-- TODO:
 1. Get filtering to work for projects table
 2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
 @extends('layouts.mainlayout-logged-in')
@@ -9,7 +9,7 @@
 <html lang="en">
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            
+
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
@@ -27,7 +27,7 @@
             <?php $userlocs = DB::table('location')
                 ->select(array('member_name', 'lat', 'lon','sdg'))
                 ->get();?>
-            
+
             <?php //echo $userlocs ?>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
                     type="text/javascript"></script>
@@ -38,19 +38,19 @@
                     center: new google.maps.LatLng(14.3291267,-18.4540299),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 });
-            
+
                 var infowindow = new google.maps.InfoWindow();
-            
+
                 for (i = 0; i < locations.length; i++) {
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(locations[i]['lon'], locations[i]['lat']),
                         map: map,
                         title: locations[i]['member_name'],
-                        
-            
+
+
                     });
                 }
-            
+
             </script>
         </div>
     </div>
@@ -85,7 +85,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
   else {
     $desc_shortened = $desc;
   }
-  
+
   // Calculate time to auction end
  // $now = new DateTime();
   //if ($now > $end_time) {
@@ -96,10 +96,10 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     //$time_to_end = date_diff($now, $end_time);
    // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
   //}
-  
+
   // Print HTML
   echo('
-    
+
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
     <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
@@ -112,8 +112,8 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
 
 }
 
-  
-  
+
+
   $counter = 0;
   foreach ($my_projects as $row)
   //while (TRUE)//$search_row = $my_projects->fetch_assoc())
@@ -145,7 +145,9 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                             <th>SDGs</th>
                             <th>Date added</th>
                             <th>Last updated</th>
+                            <th>Download file</th>
                         </tr>
+
                     </thead>
                 <tbody>
                     <tr>

@@ -2,7 +2,7 @@
 @section('content')
 <!DOCTYPE html>
 
-<?php  
+<?php
 
 //$project_id = $_GET['project_id'];
 $project_id = Request::segment(2);
@@ -17,7 +17,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
 <html lang="en">
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-            
+
             <!-- Page Content-->
             <section class="py-5">
                 <div class="container px-5 my-5">
@@ -33,7 +33,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                     </div>
                     <div class="row gx-5">
                         <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
-                    </div>    
+                    </div>
                     <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project reports</h1>
                         <table id="projects" class="table table-striped nowrap" style="width:100%">
@@ -71,10 +71,38 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                                     <th>SDGs</th>
                                     <th>Date added</th>
                                     <th>Last updated</th>
-
                                 </tr>
                             </tfoot>
                         </table>
+
+                            <div class="card">
+                                <div class="card-header">Files list</div>
+
+                                <div class="card-body">
+
+                                    <a href="{{ route('files.create') }}" class="btn btn-primary">Add new file</a>
+                                    <br /><br />
+
+                                    <table class="table">
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Download file</th>
+                                        </tr>
+                                        @forelse ($files as $file)
+                                            <tr>
+                                                <td>{{ $file->title }}</td>
+                                                <td><a href="{{ route('files.download', $file->uuid) }}">{{ $file->cover }}</a></td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="2">No files found.</td>
+                                            </tr>
+                                        @endforelse
+                                    </table>
+
+                                </div>
+                            </div>
+
                     </div>
                 </div>
             </section>

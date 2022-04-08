@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageUpload;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -251,10 +252,24 @@ Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUp
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
 
+//User table
 Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.index');
 Route::delete('/users/{id}', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
 Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
 
+//Project table
+
+Route::get('/projects-my', 'App\Http\Controllers\ProjectController@index')->name('projects.index');
+Route::delete('/projects-my/{id}', 'App\Http\Controllers\ProjectController@destroy')->name('projects.destroy');
+Route::get('edit-project/{id}', [App\Http\Controllers\ProjectController::class, 'edit']);
+Route::put('update-project/{id}', [App\Http\Controllers\ProjectController::class, 'update']);
+
+
+//File Upload and Download
 Route::resource('files', 'App\Http\Controllers\FileController');
 Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');
+
+//Project Upload and Download
+Route::resource('projects', 'App\Http\Controllers\ProjectController');
+Route::get('projects/{uuid}/download', 'App\Http\Controllers\ProjectController@download')->name('projects.download');

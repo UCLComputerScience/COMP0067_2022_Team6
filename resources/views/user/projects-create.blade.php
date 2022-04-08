@@ -1,4 +1,4 @@
-<!-- TODO: 
+<!-- TODO:
 1. Get filtering to work for projects table
 2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
 @extends('layouts.mainlayout-logged-in')
@@ -9,22 +9,22 @@
 <html lang="en">
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            
+
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
                         <h1 class="fw-bolder">Create Project</h1>
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
- 
 
-                        <?php 
+
+                        <?php
                       $username = Session::get('key');
                       ?>
-                      
-                  
-                    
+
+
+
                       <div class="container">
-                      
+
                       <!-- Create auction form -->
                       <div style="max-width: 800px; margin: 10px auto">
                         <h2 class="my-3">Create new project </h2>
@@ -79,11 +79,11 @@
                                 <div class="col-sm-10">
                                   <select class="form-control" name="sdg" id="sdg" multiple> <!-- The code under this should auto-update, now working!! -->
                                     <option value="">Choose an option</option>
-                                      <?php 
+                                      <?php
                                     $result = DB::table('categories')->get();    ?>
                                     @foreach ($result as $row)
                                         <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
-                                    @endforeach 
+                                    @endforeach
                                       </select>
                                       <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select a category for this item.</small>
                                 </div>
@@ -122,7 +122,7 @@
                               <div class="form-group row">
                               <label for="filesToUpload" class="col-sm-2 col-form-label text-right">Image upload</label>
                               <div class="col-sm-10">
-                                <input type="file" name="filesToUpload[]" id="filesToUpload" style="float:left" multiple required>
+                                  <input type="file" name="filesToUpload[]" id="filesToUpload" style="float:left" multiple required>
                                <br>
                                 <small id="filesToUploadHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required. </span>Please upload one to three images for your project.</small>
                               </div>
@@ -132,7 +132,7 @@
                           </div>
                         </div>
                       </div>
-                      
+
                       </div>
-                       
+
 @endsection
