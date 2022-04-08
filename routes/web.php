@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\ImageUpload;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +40,7 @@ Route::get('/gdpr', function () {
 });
 
 
-// User views 
+// User views
 
 Route::get('/login-events', function () {
     return view('user/login-events');
@@ -105,7 +107,7 @@ Route::get('/members', function () {
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');});
 
- 
+
 
 //Stripe
 Route::get('/user-subscribe', function () {
@@ -144,7 +146,7 @@ $url = $checkout_session['url'];
         // The price ID passed from the front end.
         //$priceId = $_POST['priceId'];
         //$priceId = '{{PRICE_ID}}';
-        
+
         $checkout_session = \Stripe\Checkout\Session::create([
           'success_url' => 'http://127.0.0.1:8000/success',
               'cancel_url' => 'http://127.0.0.1:8000/cancel',
@@ -156,9 +158,9 @@ $url = $checkout_session['url'];
           ]],
         ]);
         $url = $checkout_session['url'];
-        
+
             return redirect($url);});
-        
+
 
 // Admin views
 
@@ -215,16 +217,16 @@ if ($userRole == 1) {
 return view('admin/home');
         // Authentication was successful...
 } elseif ($userRole == 2 ) {
-        
+
 return redirect('/user-subscribe');
         // Authentication was successful...
 } elseif ($userRole == 3 ) {
-        
+
 return view('user/home');
         // Authentication was successful...
-        } 
+        }
 else  {
-        
+
 echo "" ;
         // Authentication was successful...
         }
@@ -236,8 +238,8 @@ echo "" ;
 
 
 //File Upload
-Route::get('/upload-file', [FileUpload::class, 'createForm']);
-Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+Route::get('/file-upload', [FileUpload::class, 'createForm']);
+Route::post('/file-upload', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
 //Image Upload
 Route::get('/image-upload', [ImageUpload::class, 'createForm']);
@@ -248,3 +250,11 @@ Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUp
 
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
+
+Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.index');
+Route::delete('/users/{id}', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
+Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
+
+Route::resource('files', 'App\Http\Controllers\FileController');
+Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');
