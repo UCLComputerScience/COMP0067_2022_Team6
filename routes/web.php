@@ -48,21 +48,21 @@ Route::get('/login-events', function () {
 
 Route::get('/events-detail/{event_id}', function () {
     return view('/user/events-detail');})->where('event_id', '.*');
-// })->middleware('auth');
+//})->middleware('auth');
 
 Route::get('/past-events', function () {
     return view('/user/past-events');
 })->middleware('auth');
 Route::get('/projects-create', function () {
     return view('/user/projects-create');
-});//->middleware('auth');
+})->middleware('auth');
 
 Route::post('/projects-create-result', function () {
     return view('/user/projects-create-result');
-});
+})->middleware('auth');
 Route::post('/projects-edit-create-result', function () {
     return view('/user/projects-edit-create-result');
-});
+})->middleware('auth');
 
 
 Route::get('/test', function () {
@@ -89,7 +89,7 @@ Route::get('/resources-detail', function () {
 })->middleware('auth');
 Route::get('/projects', function () {
     return view('/user/projects');
-});//->middleware('auth');
+})->middleware('auth');
 
 Route::get('/projects-detail/{project_id}',function (){
     return view('/user/projects-detail');})->where('project_id', '.*');
