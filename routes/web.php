@@ -189,6 +189,10 @@ Route::get('admin-manage-events', function () {
 Route::get('/admin-events-edit/{event_id}', function () {
     return view('/admin/admin-events-edit');})->where('event_id', '.*');
 
+Route::any('/admin-events-edit-result', function () {
+    return view('/admin/admin-events-edit-result');
+});
+
 Route::get('admin-manage-resources', function () {
     return view('/admin/admin-manage-resources');
 })->middleware(['auth', 'can:accessAdmin']);
