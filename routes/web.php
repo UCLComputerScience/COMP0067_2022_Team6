@@ -50,6 +50,9 @@ Route::get('/events-detail/{event_id}', function () {
     return view('/user/events-detail');})->where('event_id', '.*');
 //})->middleware('auth');
 
+Route::get('/resources/views/user/images/{*}', function () {
+    return view('/resources/views/user/images/{*}');})->where('*', '.*');
+
 Route::get('/past-events', function () {
     return view('/user/past-events');
 })->middleware('auth');

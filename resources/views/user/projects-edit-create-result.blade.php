@@ -81,8 +81,8 @@ $project_id = $_POST['project_id'];
         echo 'Please enter a project end date.';
     }
     else {
-
-       $project_id =  DB::table('projects')where('user_id',$project_id)->update(array($newProjectArray);        
+        echo $project_id;
+       //$project_id =  DB::table('projects')->where('project_id',$project_id)->update(array($newProjectArray));        
         // loop for each uploaded file begins
 
         foreach ($_FILES['filesToUpload']['name'] as $key => $value) {
@@ -108,7 +108,7 @@ $project_id = $_POST['project_id'];
             // if tests are successful, then the file is uploaded
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                create_new_image_reference($projectID, $imageUUID, $imageFileType);
+                //create_new_image_reference($projectID, $imageUUID, $imageFileType);
                 $imageUUID = hexdec($imageUUID);
                 DB::table('ImagePaths')->insert(array(
                     'project_id'     =>   $project_id, 

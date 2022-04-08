@@ -39,7 +39,7 @@
                         <h2 class="my-3">Edit your project </h2>
                         <div class="card">
                           <div class="card-body">
-                            <form method="post" enctype="multipart/form-data" action="projects-edit-create-result">
+                            <form method="post" enctype="multipart/form-data" action="/projects-edit-create-result">
                                 @csrf <!-- {{ csrf_field() }} -->
                                 <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>

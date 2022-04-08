@@ -16,9 +16,10 @@
                 <div class="text-center mb-5">
                         <h1 class="fw-bolder">Analytics</h1>
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
- 
+                        <!-- Google Analytics -->
+                        <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/119cc50a-5f86-4cd5-a396-6c4c88105278/page/Av8pC" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <!-- Google Analytics -->
 
-                        
                         <div class="row mb-3">
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
 

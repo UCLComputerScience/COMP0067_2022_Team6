@@ -22,7 +22,7 @@
   </div>
             <!-- Custom Google Search -->
             <script async src="https://cse.google.com/cse.js?cx=f44adf12da156c20f"></script>
-            <div id="cse" style="width: 25%; margin: 0 auto">
+            <div id="cse" style="width: 25%; margin: -10 auto;">
             <div class="gcse-search"></div>
          <!-- Custom Google Search -->
 </nav>

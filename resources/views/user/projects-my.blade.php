@@ -23,13 +23,24 @@ $userid = Auth::id();
 $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
 //echo ($my_projects);
 
-$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
-//echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+//$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
+$first_image_path_UUID = DB::Table('ImagePaths')->where('project_id',5)->pluck('imageUUID')->first();
+$first_image_path_ext = DB::Table('ImagePaths')->where('project_id',5)->pluck('extension')->first();
+$first_image_path = "/resources/views/user/images/$first_image_path_UUID.$first_image_path_ext";
+
+echo $first_image_path;
+
+
+
 
 function print_listing_with_image($project_id, $title, $desc)
 {
 
-$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',$project_id)->get();
+//$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',$project_id)->get();
+
+$first_image_path_UUID = DB::Table('ImagePaths')->where('project_id',$project_id)->pluck('imageUUID')->first();
+$first_image_path_ext = DB::Table('ImagePaths')->where('project_id',$project_id)->pluck('extension')->first();
+$first_image_path = "/resources/views/user/images/$first_image_path_UUID.$first_image_path_ext";
 
   // Truncate long descriptions
   if (strlen($desc) > 250) {
