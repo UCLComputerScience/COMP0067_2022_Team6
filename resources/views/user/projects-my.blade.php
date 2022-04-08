@@ -24,7 +24,7 @@ $my_projects = DB::Table('projects')->select('project_id','projectTitle','projec
 //echo ($my_projects);
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
-echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+//echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
 
 function print_listing_with_image($project_id, $title, $desc)
 {
