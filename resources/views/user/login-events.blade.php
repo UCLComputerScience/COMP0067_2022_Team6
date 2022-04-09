@@ -8,7 +8,7 @@
 <h2 class="my-3">Events</h2>
 
 <div class="container">
-
+<br><br>
 <h3 class="my-3">Browse events</h3>
   <div id="searchSpecs">
   <!-- When this form is submitted, this PHP page is what processes it.

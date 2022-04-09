@@ -7,7 +7,7 @@
 <meta charset="utf-8" />
 
 @section('content')
-
+<br><br><br>
             <!-- Page Content-->
 <section class="py-5">
 <div class="text-center mb-5">
