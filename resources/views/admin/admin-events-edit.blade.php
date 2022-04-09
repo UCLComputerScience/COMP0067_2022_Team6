@@ -30,9 +30,9 @@
                         $event_datetime_stripped = strip_text($event_datetime);
                         $event_timezone_stripped = strip_text($event_timezone);
 
-                        $event_datetime_orig = date("c", strtotime($event_datetime_stripped)); 
-                        list($Date)=explode('+', $event_datetime_orig); 
-                        $event_datetime_orig = $Date;
+                        // Changing datetime to correct format for HTML to parse in datetime-local
+                        $event_datetime_final = str_replace(array(' '), 'T', $event_datetime_stripped);
+
 
                         function strip_text($url){
                             $url = str_replace(array('[',']','"'), '', $url);
@@ -70,7 +70,7 @@
                               <div class="form-group row">
                                 <label for="event_datetime" class="col-sm-2 col-form-label text-right">Event date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" value='$event_datetime_stripped' required>
+                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" value='<?= $event_datetime_final; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Date and time this event will take place.</small>
                                 </div>
                               </div>
