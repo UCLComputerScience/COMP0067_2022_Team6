@@ -62,7 +62,10 @@
        $event_update =  DB::table('events')->
                         where('event_id', $event_id)->
                         limit(1)->
-                        update(array('event_title' => $event_title));
+                        update(array('event_title' => $event_title,
+                                    'event_description' => $event_description
+                    
+                    ));
         // loop for each uploaded file begins
 
         foreach ($_FILES['filesToUpload']['name'] as $key => $value) {
