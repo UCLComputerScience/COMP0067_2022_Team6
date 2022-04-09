@@ -36,9 +36,9 @@
 <tr>
     <td>No.</td>
     <td>Organisation Name</td>
-    <td>Country</td>
     <td>Contact E-mail</td>
     <td>SDG</td>
+    <td>Country</td>
 </tr>
 </thead>
 </table>
@@ -54,10 +54,10 @@ $(document).ready(function(){
         ajax: "{{route('users.getUsers')}}",
         columns: [
             { data: 'id' },
-            { data: 'country' },
             { data: 'name' },
             { data: 'email' },
             { data: 'sdg' },
+            { data: 'country' },
             
         ]
     });
@@ -74,8 +74,8 @@ $(document).ready(function(){
 
 <div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
-<?php $userlocs = DB::table('location')
-    ->select(array('member_name', 'lat', 'lon','sdg'))
+<?php $userlocs = DB::table('users')
+    ->select(array('org', 'latitude', 'longitude','sdg','country'))
     ->get();?>
 
 <?php //echo $userlocs ?>
@@ -93,9 +93,9 @@ $(document).ready(function(){
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i]['lon'], locations[i]['lat']),
+            position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
             map: map,
-            title: locations[i]['member_name'],
+            title: locations[i]['org'],
             
         });
     }

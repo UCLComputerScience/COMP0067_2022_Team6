@@ -104,7 +104,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 </span>
                             @enderror
                             </div>
-                                </div>  
+                                
                                 {{-- <div class="form-group row mb-3" id="latitudeArea"> --}}
                                     {{-- <label for="latitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
