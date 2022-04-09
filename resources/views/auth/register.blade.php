@@ -90,31 +90,33 @@ but not going to do that until after Stripe is implemented, since that may affec
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                            </div>
                         </div>
-                    
-                                <div class="form-group">
-                                    <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
-                                    <div class="col-md-6">
-                                        <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
-                                    </div>
-                                    @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>  
-                                    <div class="form-group" id="latitudeArea">
-                                        <div class="col-md-6">
-                                        <input id="latitude" type="text"  name="latitude" class="form-control">
-                                    </div>
-                              
-                                    <div class="row mb-3" id="longtitudeArea">
-                                        <div class="col-md-6">
-                                        <input id="longitude" name="longitude" type="text"   class="form-control">
-                                    </div>
+                            <div class="form-group row mb-3">
+                                <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
+                                
+                                <div class="col-md-6">
+                                    <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
                                 </div>
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
+                                </div>  
+                                {{-- <div class="form-group row mb-3" id="latitudeArea"> --}}
+                                    {{-- <label for="latitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
+                                    <div class="col-md-6">
+                                    <input id="latitude" type="hidden"  name="latitude" class="form-control">
+                                </div>
+                            
+                                {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
+                                    {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
+                                    <div class="col-md-6">
+                                    <input id="longitude" name="longitude" type="hidden"   class="form-control">
+                              
+                        </div>
                                 {{-- @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

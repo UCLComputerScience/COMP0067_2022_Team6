@@ -49,8 +49,10 @@ class AdminController extends Controller
 
             $data_arr[] = array(
                 "id" => $record->id,
+                "country" => $record->country,
                 "name" => $record->name,
                 "email" => $record->email,
+                "sdg"  => $record->sdg,
             );
     }
         $response = array(
