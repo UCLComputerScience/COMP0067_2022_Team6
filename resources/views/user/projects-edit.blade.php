@@ -19,10 +19,15 @@
  
                         <?php 
                       $project_id = Request::segment(2);
-                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectDetails','projectEndDate','sdg','projectOrganisation')->where('project_id',$project_id)->get();
+                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg','projectOrganisation', 'projectValue', 'fundingRequired')->where('project_id',$project_id)->get();
                       $project_title = $this_project->pluck('projectTitle');
                       $project_location = $this_project->pluck('projectLocation');
+                      $project_city = $this_project->pluck('projectCity');
+                      $project_country = $this_project->pluck('projectCountry');
                       $project_details = $this_project->pluck('projectDetails');
+                      $project_end_date = $this_project->pluck('projectEndDate');
+                      $project_value = $this_project->pluck('projectValue');
+                      $project_funding_required = $this_project->pluck('fundingRequired');
                       $project_organisation = $this_project->pluck('projectOrganisation');
                       $project_description = $this_project->pluck('projectDetails');
                      
@@ -74,7 +79,7 @@
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCity" id="projectCity" placeholder="">
+                                  <input type="text" class="form-control" name="projectCity" id="projectCity" value="<?php if (isset($project_city[0])){ print_r($project_city[0]);} else { print_r(""); } ?>" placeholder="" required>
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
                               </div>
