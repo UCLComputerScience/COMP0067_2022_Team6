@@ -64,6 +64,7 @@
                         limit(1)->
                         update(array('event_title' => $event_title,
                                     'event_description' => $event_description,
+                                    'event_timezone' => $event_timezone,
                                     'event_call_url' => $event_call_url,
                                     'event_video_url' => $event_video_url
                     
