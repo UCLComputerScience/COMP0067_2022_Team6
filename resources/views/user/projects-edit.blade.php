@@ -38,6 +38,9 @@
                         return $url;
                     }
 
+                    $project_end_date_stripped = strip_text($project_end_date);
+                    $project_end_date_final = str_replace(array(' '), 'T', $project_end_date_stripped);
+
 
 
                       ?>
@@ -138,7 +141,7 @@
                               <div class="form-group row">
                                 <label for="projectEndDate" class="col-sm-2 col-form-label text-right">End date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" required>
+                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date_final; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Expected end date of the project.</small>
                                 </div>
                               </div>
