@@ -85,7 +85,8 @@ $project_id = $_POST['project_id'];
         $project_udpate = DB::table('projects')->
                             where('project_id', $project_id)->
                             limit(1)->
-                            update(array('projectTitle' => $projectTitle
+                            update(array('projectTitle' => $projectTitle,
+                            'projectDetails' => $projectDetails
                             
                         ));
 
