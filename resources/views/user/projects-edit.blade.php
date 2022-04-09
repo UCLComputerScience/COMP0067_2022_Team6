@@ -19,8 +19,9 @@
  
                         <?php 
                       $project_id = Request::segment(2);
-                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate','sdg','projectOrganisation')->where('project_id',$project_id)->get();
+                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectDetails','projectEndDate','sdg','projectOrganisation')->where('project_id',$project_id)->get();
                       $project_title = $this_project->pluck('projectTitle');
+                      $project_location = $this_project->pluck('projectLocation');
                       $project_details = $this_project->pluck('projectDetails');
                       $project_organisation = $this_project->pluck('projectOrganisation');
                       $project_description = $this_project->pluck('projectDetails');
@@ -48,6 +49,7 @@
                           <div class="card-body">
                             <form method="post" enctype="multipart/form-data" action="/projects-edit-result">
                                 @csrf <!-- {{ csrf_field() }} -->
+                                <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
                                 <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
@@ -65,7 +67,7 @@
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" required minlength="5" placeholder="">
+                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" value="<?php if (isset($project_location[0])){ print_r($project_location[0]);} else { print_r(""); } ?>" required minlength="5" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
                                 </div>
                               </div>
