@@ -54,9 +54,6 @@
     elseif (empty($event_timezone) and $event_datetime != 0){
         echo 'Please enter a timezone for your event.';
     }
-    elseif (empty($event_call_url)){
-        echo 'Please enter an event URL for people to join the event with.';
-    }
     else {
 
        $event_update =  DB::table('events')->
