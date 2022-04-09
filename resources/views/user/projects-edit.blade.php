@@ -16,10 +16,7 @@
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Edit Project</h1>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
  
-
                         <?php 
                       $project_id = Request::segment(2);
                       $this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate','sdg','projectOrganisation')->where('project_id',$project_id)->get();
@@ -28,18 +25,28 @@
                       $project_organisation = $this_project->pluck('projectOrganisation');
                       $project_description = $this_project->pluck('projectDetails');
                      
+                      function strip_text($url){
+                        $url = str_replace(array('[',']','"'), '', $url);
+                        $url = stripslashes($url);
+                
+                        return $url;
+                    }
+
+
+
                       ?>
                       
                   
                     
                       <div class="container">
-                      
+                      <br />
+                      <br />
                       <!-- Create auction form -->
                       <div style="max-width: 800px; margin: 10px auto">
-                        <h2 class="my-3">Edit your project </h2>
+                      <h1 class="fw-bolder">Edit Your Project: <?php echo strip_text($project_title); ?> </h1>
                         <div class="card">
                           <div class="card-body">
-                            <form method="post" enctype="multipart/form-data" action="projects-edit-create-result">
+                            <form method="post" enctype="multipart/form-data" action="/projects-edit-result">
                                 @csrf <!-- {{ csrf_field() }} -->
                                 <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>

@@ -41,7 +41,6 @@
                             return $url;
                         }
                     ?>
-                        <!-- TODO: Change these field names and what they're pointing at -->
                         <div class="container">
                       
                       <!-- Create auction form -->
