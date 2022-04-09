@@ -16,31 +16,48 @@
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Edit Project</h1>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
  
-
                         <?php 
                       $project_id = Request::segment(2);
-                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate','sdg','projectOrganisation')->where('project_id',$project_id)->get();
+                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg','projectOrganisation', 'projectValue', 'fundingRequired')->where('project_id',$project_id)->get();
                       $project_title = $this_project->pluck('projectTitle');
+                      $project_location = $this_project->pluck('projectLocation');
+                      $project_city = $this_project->pluck('projectCity');
+                      $project_country = $this_project->pluck('projectCountry');
                       $project_details = $this_project->pluck('projectDetails');
+                      $project_end_date = $this_project->pluck('projectEndDate');
+                      $project_value = $this_project->pluck('projectValue');
+                      $project_funding_required = $this_project->pluck('fundingRequired');
                       $project_organisation = $this_project->pluck('projectOrganisation');
                       $project_description = $this_project->pluck('projectDetails');
                      
+                      function strip_text($url){
+                        $url = str_replace(array('[',']','"'), '', $url);
+                        $url = stripslashes($url);
+                
+                        return $url;
+                    }
+
+                    $project_end_date_stripped = strip_text($project_end_date);
+                    $project_end_date_final = str_replace(array(' '), 'T', $project_end_date_stripped);
+
+
+
                       ?>
                       
                   
                     
                       <div class="container">
-                      
+                      <br />
+                      <br />
                       <!-- Create auction form -->
                       <div style="max-width: 800px; margin: 10px auto">
-                        <h2 class="my-3">Edit your project </h2>
+                      <h1 class="fw-bolder">Edit Your Project: <?php echo strip_text($project_title); ?> </h1>
                         <div class="card">
                           <div class="card-body">
-                            <form method="post" enctype="multipart/form-data" action="projects-edit-create-result">
+                            <form method="post" enctype="multipart/form-data" action="/projects-edit-result">
                                 @csrf <!-- {{ csrf_field() }} -->
+                                <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
                                 <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
@@ -58,28 +75,28 @@
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" required minlength="5" placeholder="">
+                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" value="<?php if (isset($project_location[0])){ print_r($project_location[0]);} else { print_r(""); } ?>" required minlength="5" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCity" id="projectCity" placeholder="">
+                                  <input type="text" class="form-control" name="projectCity" id="projectCity" value="<?php if (isset($project_city[0])){ print_r($project_city[0]);} else { print_r(""); } ?>" placeholder="" required>
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" placeholder="">
+                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" value="<?php if (isset($project_country[0])){ print_r($project_country[0]);} else { print_r(""); } ?>" placeholder="" required>
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" name="projectDetails" value="<?php if (isset($project_description[0])){ print_r($project_description[0]);} else { print_r(""); } ?>" id="projectDetails" rows="4"></textarea>
+                                  <textarea class="form-control" name="projectDetails" value="<?php if (isset($project_description[0])){ print_r($project_description[0]);} else { print_r(""); } ?>" id="projectDetails" rows="4"><?php if (isset($project_description[0])){ print_r($project_description[0]);} else { print_r(""); } ?></textarea>
                                   <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>
                                 </div>
                               </div>
@@ -94,7 +111,7 @@
                                         <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
                                     @endforeach 
                                       </select>
-                                      <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select a category for this item.</small>
+                                      <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select SDGs for this project.</small>
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -104,7 +121,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text">£</span>
                                     </div>
-                                    <input type="number" class="form-control" name="projectValue" id="projectValue" required>
+                                    <input type="number" class="form-control" name="projectValue" id="projectValue" value="<?php if (isset($project_value[0])){ print_r($project_value[0]);} else { print_r(""); } ?>" required>
                                   </div>
                                   <small id="startBidHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> How much you expect your project to cost in total.</small>
                                 </div>
@@ -116,7 +133,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text">£</span>
                                     </div>
-                                    <input type="number" class="form-control" name="fundingRequired" id="fundingRequired" required>
+                                    <input type="number" class="form-control" name="fundingRequired" id="fundingRequired" value="<?php if (isset($project_funding_required[0])){ print_r($project_funding_required[0]);} else { print_r(""); } ?>" required>
                                   </div>
                                   <small id="reservePriceHelp" class="form-text text-muted">Optional. Indicate any funding required</small>
                                 </div>
@@ -124,7 +141,7 @@
                               <div class="form-group row">
                                 <label for="projectEndDate" class="col-sm-2 col-form-label text-right">End date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" required>
+                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date_final; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Expected end date of the project.</small>
                                 </div>
                               </div>
@@ -137,7 +154,7 @@
                               </div>
                               </div>
 
-                              <input type="hidden" name="project_id" value= "<?php $project_id?>" >
+
                               <button type="submit" id="submit" name="submit" class="btn btn-primary form-control">Edit Project</button>
                             </form>
                           </div>

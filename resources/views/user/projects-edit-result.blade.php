@@ -82,7 +82,22 @@ $project_id = $_POST['project_id'];
     }
     else {
 
-       $project_id =  DB::table('projects')where('user_id',$project_id)->update(array($newProjectArray);        
+        $project_udpate = DB::table('projects')->
+                            where('project_id', $project_id)->
+                            limit(1)->
+                            update(array('projectTitle' => $projectTitle,
+                            'projectOrganisation' => $projectOrganisation,
+                            'projectLocation' => $projectLocation,
+                            'projectCity' => $projectCity,
+                            'projectCountry' => $projectCountry,
+                            'projectDetails' => $projectDetails,
+                            'projectEndDate' => $projectEndDate,
+                            'projectValue' => $projectValue,
+                            'fundingRequired' => $fundingRequired
+                            
+                        ));
+
+
         // loop for each uploaded file begins
 
         foreach ($_FILES['filesToUpload']['name'] as $key => $value) {
@@ -108,7 +123,7 @@ $project_id = $_POST['project_id'];
             // if tests are successful, then the file is uploaded
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                create_new_image_reference($projectID, $imageUUID, $imageFileType);
+                // create_new_image_reference($projectID, $imageUUID, $imageFileType);
                 $imageUUID = hexdec($imageUUID);
                 DB::table('ImagePaths')->insert(array(
                     'project_id'     =>   $project_id, 
@@ -116,7 +131,28 @@ $project_id = $_POST['project_id'];
                     'extension'   =>   $imageFileType)); }
         }
 
-        echo '<div class="text-center">Project edited created! <a href="projects-my">View your new project.</a></div>';
+        echo '<br>
+        <br>
+        <section class="bg-light-py-5">
+        <div class="row gx-5 justify-content-center" style="margin: auto; height:50%;">
+            <div class="col-lg-6 col-xl-4">
+                            <div class="card mb-5 mb-xl-0">
+                                <div class="card-body p-5">
+                                    <div class="mb-3 d-flex justify-content-center align-items-center">
+                                        <span class="display-4">Success</span>
+                                    </div>
+                                    <div class="small text-camelcase d-flex justify-content-center align-items-center">
+                                        Project successfully updated!
+                                    </div>
+                                    <br \>
+                                    <div class="d-grid"><a class="btn btn-primary" href="projects-my">Manage projects</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <br \>
+                <br \>
+            </section>';
     }
 
     }

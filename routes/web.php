@@ -60,8 +60,8 @@ Route::get('/projects-create', function () {
 Route::post('/projects-create-result', function () {
     return view('/user/projects-create-result');
 })->middleware('auth');
-Route::post('/projects-edit-create-result', function () {
-    return view('/user/projects-edit-create-result');
+Route::post('/projects-edit-result', function () {
+    return view('/user/projects-edit-result');
 })->middleware('auth');
 
 
