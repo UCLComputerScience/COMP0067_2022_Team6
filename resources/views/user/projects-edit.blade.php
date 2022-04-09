@@ -108,7 +108,7 @@
                                         <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
                                     @endforeach 
                                       </select>
-                                      <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select a category for this item.</small>
+                                      <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select SDGs for this project.</small>
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -118,7 +118,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text">£</span>
                                     </div>
-                                    <input type="number" class="form-control" name="projectValue" id="projectValue" required>
+                                    <input type="number" class="form-control" name="projectValue" id="projectValue" value="<?php if (isset($project_value[0])){ print_r($project_value[0]);} else { print_r(""); } ?>" required>
                                   </div>
                                   <small id="startBidHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> How much you expect your project to cost in total.</small>
                                 </div>
@@ -130,7 +130,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text">£</span>
                                     </div>
-                                    <input type="number" class="form-control" name="fundingRequired" id="fundingRequired" required>
+                                    <input type="number" class="form-control" name="fundingRequired" id="fundingRequired" value="<?php if (isset($project_funding_required[0])){ print_r($project_funding_required[0]);} else { print_r(""); } ?>" required>
                                   </div>
                                   <small id="reservePriceHelp" class="form-text text-muted">Optional. Indicate any funding required</small>
                                 </div>
