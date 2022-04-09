@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -44,15 +45,17 @@ class AdminController extends Controller
             ->get();
 
         $data_arr = array();
+        $sdg_arr = array(DB::table('users')->select(['sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'])->get());
+        //$sdg_arr = DB::table('users')->pluck('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17');
 
-        foreach ($records as $record) {
+         foreach ($records as $record) {
 
             $data_arr[] = array(
                 "id" => $record->id,
                 "country" => $record->country,
                 "name" => $record->name,
                 "email" => $record->email,
-                "sdg"  => $record->sdg,
+                "sdg"  => $sdg_arr
             );
     }
         $response = array(

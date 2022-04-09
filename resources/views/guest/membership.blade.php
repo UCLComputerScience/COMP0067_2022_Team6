@@ -117,8 +117,9 @@
 <div id="map" style="width: 80%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
 <?php $userlocs = DB::table('users')
-    ->select(array('org', 'latitude', 'longitude','sdg','country'))
-    ->get();?>
+    ->select(array('org', 'latitude', 'longitude','sdg1','country'))
+    ->get();
+?>
 
 <?php //echo $userlocs ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
@@ -147,7 +148,6 @@
 
 </head>
 <body onload="init();">
-
 
 </html>
 @endsection

@@ -75,8 +75,12 @@ $(document).ready(function(){
 <div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
 <?php $userlocs = DB::table('users')
-    ->select(array('org', 'latitude', 'longitude','sdg','country'))
-    ->get();?>
+    ->select(array('org', 'latitude', 'longitude','country','sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'))
+    ->get();
+        
+    $sdg_arr = array(DB::table('users')->select(['sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'])->get());
+    //echo implode("'.'", $sdg_arr);
+    // echo "jello"; ?>
 
 <?php //echo $userlocs ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
