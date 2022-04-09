@@ -34,17 +34,11 @@
 <table id='usersTable' width='100%'>
 <thead>
 <tr>
-<<<<<<< Updated upstream
-    <td>#ID</td>
-    <td>#Name</td>
-    <td>#Email</td>
-=======
     <td>No.</td>
     <td>Organisation Name</td>
     <td>Country</td>
     <td>Contact E-mail</td>
     <td>SDG</td>
->>>>>>> Stashed changes
 </tr>
 </thead>
 </table>
