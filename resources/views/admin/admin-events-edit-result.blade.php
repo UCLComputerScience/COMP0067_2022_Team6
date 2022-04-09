@@ -65,6 +65,7 @@
                         update(array('event_title' => $event_title,
                                     'event_description' => $event_description,
                                     'event_timezone' => $event_timezone,
+                                    'event_datetime' => $event_datetime,
                                     'event_call_url' => $event_call_url,
                                     'event_video_url' => $event_video_url
                     
