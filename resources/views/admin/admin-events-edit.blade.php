@@ -25,13 +25,14 @@
 
                         $this_event_timezone_unstripped = DB::Table('events')->select('event_timezone')->where('event_id',$event_id)->get();
                         $this_event_timezone = strip_text($this_event_timezone_unstripped);
+                        $this_event_timezone = str_replace(array('{event_timezone:', '}'), '', $this_event_timezone);
 
                         $event_datetime_stripped = strip_text($event_datetime);
                         $event_timezone_stripped = strip_text($event_timezone);
 
-                        $event_datetime_orig = date("c", strtotime($event_datetime_stripped)); 
-                        list($Date)=explode('+', $event_datetime_orig); 
-                        $event_datetime_orig = $Date;
+                        // Changing datetime to correct format for HTML to parse in datetime-local
+                        $event_datetime_final = str_replace(array(' '), 'T', $event_datetime_stripped);
+
 
                         function strip_text($url){
                             $url = str_replace(array('[',']','"'), '', $url);
@@ -69,7 +70,7 @@
                               <div class="form-group row">
                                 <label for="event_datetime" class="col-sm-2 col-form-label text-right">Event date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" value='$event_datetime_stripped' required>
+                                  <input type="datetime-local" class="form-control" name="event_datetime" id="event_datetime" value='<?= $event_datetime_final; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span> Date and time this event will take place.</small>
                                 </div>
                               </div>
@@ -82,10 +83,9 @@
                                     $result = DB::table('timezones')->get();    ?>
                                     @foreach ($result as $row)
                                       <option value="{{$row->timezone_relative_to_gmt}}">{{$row->timezone_relative_to_gmt}}</option>
-                                        <!-- if ({{$row->timezone_relative_to_gmt}} == $event_timezone){
-                                        } -->
                                     @endforeach
-                                    <!-- <option selected="{{$row->timezone_relative_to_gmt}}" >{{$row->timezone_relative_to_gmt}}</option> -->
+
+                                    <option selected="<?php echo $this_event_timezone;?>"><?php echo $this_event_timezone;?></option>
 
                                       </select>
                                       
