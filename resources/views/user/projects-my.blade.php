@@ -57,12 +57,13 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
     <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
     <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
     <td>  <a class="btn btn-primary btn-lg" href="projects-edit/'. $project_id.'" > Edit </a> </td>
-    <form method="post" enctype="multipart/form-data" action="projects-delete/'. $project_id.'">
+    
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div class="form-group row">
-    <td> <button type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </button> </td>
+    <td> <a href="projects-delete/'. $project_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </a> </td>
+    <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div>
-    </form>
+    
     </li>'
   );
 

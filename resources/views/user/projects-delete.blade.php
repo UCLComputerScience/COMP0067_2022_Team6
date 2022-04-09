@@ -1,14 +1,13 @@
 <?php 
-@include('projects-my')
+@include('projects-my');
 
-    if (isset($_POST["submit"]))
+    if (TRUE)
     {
-    echo "yet";
+    
     $project_id = Request::segment(2);
 
     DB::table('projects')->where('project_id', $project_id)->delete();
     
-    return view('/projects-my');
 
     }
     else {
@@ -16,4 +15,8 @@
 
     }
 
+?>
+<?php
+    $url=url()->previous();
+    echo "<meta http-equiv='refresh' content='0.3;url=$url'>";
 ?>
