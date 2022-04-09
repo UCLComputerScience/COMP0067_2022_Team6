@@ -86,7 +86,14 @@ $project_id = $_POST['project_id'];
                             where('project_id', $project_id)->
                             limit(1)->
                             update(array('projectTitle' => $projectTitle,
-                            'projectDetails' => $projectDetails
+                            'projectOrganisation' => $projectOrganisation,
+                            'projectLocation' => $projectLocation,
+                            'projectCity' => $projectCity,
+                            'projectCountry' => $projectCountry,
+                            'projectDetails' => $projectDetails,
+                            'projectEndDate' => $projectEndDate,
+                            'projectValue' => $projectValue,
+                            'fundingRequired' => $fundingRequired
                             
                         ));
 
