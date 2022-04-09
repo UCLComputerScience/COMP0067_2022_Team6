@@ -464,7 +464,23 @@ CREATE TABLE `users` (
   `pm_type` varchar(255) DEFAULT NULL,
   `pm_last_four` varchar(4) DEFAULT NULL,
   `trial_ends_at` timestamp NULL DEFAULT NULL,
-  `sdg` int(20) UNSIGNED NOT NULL
+  `sdg1`int(20) DEFAULT NULL,
+  `sdg2`int(20) DEFAULT NULL,
+  `sdg3`int(20) DEFAULT NULL,
+  `sdg4`int(20) DEFAULT NULL,
+  `sdg5`int(20) DEFAULT NULL,
+  `sdg6`int(20) DEFAULT NULL,
+  `sdg7`int(20) DEFAULT NULL,
+  `sdg8`int(20) DEFAULT NULL,
+  `sdg9`int(20) DEFAULT NULL,
+  `sdg10`int(20) DEFAULT NULL,
+  `sdg11`int(20) DEFAULT NULL,
+  `sdg12`int(20) DEFAULT NULL,
+  `sdg13`int(20) DEFAULT NULL,
+  `sdg14`int(20) DEFAULT NULL,
+  `sdg15`int(20) DEFAULT NULL,
+  `sdg16`int(20) DEFAULT NULL,
+  `sdg17`int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
