@@ -108,23 +108,25 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 {{-- <div class="form-group row mb-3" id="latitudeArea"> --}}
                                     {{-- <label for="latitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
-                                    <input id="latitude" type="hidden"  name="latitude" class="form-control">
+                                    <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">
                                 </div>
                             
                                 {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                                     {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
-                                    <input id="longitude" name="longitude" type="hidden"   class="form-control">
-                              
+                                    <input id="longitude" name="longitude" type="hidden" value=""   class="form-control">
+                                    <div class="col-md-6">
+                                    <input id="country" name="country" type="hidden" value="" class="form-control">
+
                         </div>
-                                {{-- @error('address')
+                                @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div> 
-
+{{-- 
                         <div class="row mb-3">
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
 
@@ -151,23 +153,23 @@ but not going to do that until after Stripe is implemented, since that may affec
                                     </span>
                                 @enderror
                             </div>
-                        </div>        
+                        </div>         --}}
 
-                        <div class="row mb-3">
-                            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+                        {{-- <div class="row mb-3">
+                            <label for="location_country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label> --}}
 
-                            <div class="col-md-6">
-                                <input id="country" type="text" class="form-control @error('name') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+                            {{-- <div class="col-md-6"> --}}
+                                {{-- <input name="location_country" id="location_country" type="text" class="form-control @error('name') is-invalid @enderror" name="location_country" value="{{ old('country') }}" required autocomplete="location_country" autofocus>
 
-                                @error('country')
+                                @error('location_country')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div> --}}
                         </div>  
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
@@ -215,7 +217,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             <div class="col-md-6">
                                 <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('website') }}" autocomplete="website" autofocus>
 
-                                @error('country')
+                                @error('website')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -305,9 +307,11 @@ but not going to do that until after Stripe is implemented, since that may affec
                         $(document).ready(function () {
                             $("#latitudeArea").addClass("d-none");
                             $("#longtitudeArea").addClass("d-none");
+                            $("#country").addClass("d-none");
                         });
                     </script>
                     <script>
+
                         google.maps.event.addDomListener(window, 'load', initialize);
                   
                         function initialize() {
@@ -318,9 +322,12 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 var place = autocomplete.getPlace();
                                 $('#latitude').val(place.geometry['location'].lat());
                                 $('#longitude').val(place.geometry['location'].lng());
-                  
+                                $('#country').val(place.address_components.slice(-1)[0].long_name); 
+                                // $('input[name="country"]').val(place.country.long_name); 
+
                                 $("#latitudeArea").removeClass("d-none");
                                 $("#longtitudeArea").removeClass("d-none");
+                                $("#country").removeClass("d-none");
                             });
                         }
                     </script>
