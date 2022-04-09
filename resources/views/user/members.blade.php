@@ -34,9 +34,9 @@
 <table id='usersTable' width='100%'>
 <thead>
 <tr>
-    <td>#ID</td>
-    <td>#Name</td>
-    <td>#Email</td>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
 </tr>
 </thead>
 </table>
@@ -69,12 +69,12 @@ $(document).ready(function(){
 
 <div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
-<?php $userlocs = DB::table('location')
-    ->select(array('member_name', 'lat', 'lon','sdg'))
+<?php $userlocs = DB::table('users')
+    ->select(array('org', 'latitude', 'longitude','sdg'))
     ->get();?>
 
 <?php //echo $userlocs ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"
         type="text/javascript"></script>
 <script type="text/javascript">
     var locations = <?php echo $userlocs ?>;
@@ -88,9 +88,9 @@ $(document).ready(function(){
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i]['lon'], locations[i]['lat']),
+            position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
             map: map,
-            title: locations[i]['member_name'],
+            title: locations[i]['org'],
             
         });
     }
