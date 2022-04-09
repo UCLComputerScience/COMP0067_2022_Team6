@@ -86,7 +86,7 @@
                               <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" placeholder="">
+                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" value="<?php if (isset($project_country[0])){ print_r($project_country[0]);} else { print_r(""); } ?>" placeholder="" required>
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
                               </div>
