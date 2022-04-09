@@ -63,7 +63,9 @@
                         where('event_id', $event_id)->
                         limit(1)->
                         update(array('event_title' => $event_title,
-                                    'event_description' => $event_description
+                                    'event_description' => $event_description,
+                                    'event_call_url' => $event_call_url,
+                                    'event_video_url' => $event_video_url
                     
                     ));
         // loop for each uploaded file begins
