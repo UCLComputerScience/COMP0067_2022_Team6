@@ -487,6 +487,8 @@ CREATE TABLE `users` (
                          `city` varchar(100) DEFAULT NULL,
                          `country` varchar(100) DEFAULT NULL,
                          `postcode` varchar(100) DEFAULT NULL,
+                         `latitude` float(10,6) NOT NULL,
+                         `longitude` float(10,6) NOT NULL,
                          `number_of_employees` int(10) DEFAULT NULL,
                          `number_of_volunteers` int(10) DEFAULT NULL,
                          `website` varchar(255) DEFAULT NULL,

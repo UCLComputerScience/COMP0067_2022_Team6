@@ -9,6 +9,18 @@ but not going to do that until after Stripe is implemented, since that may affec
 @extends('layouts.mainlayout')
 
 @section('content')
+
+{{-- Autocomplete --}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  
+<head>
+    {{-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laravel Google Autocomplete Address Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+{{-- Autcomplete --}}
 <div class="container" style="margin-bottom:3%">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -73,8 +85,37 @@ but not going to do that until after Stripe is implemented, since that may affec
 
                             <div class="col-md-6">
                                 <input id="phone" type="text" class="form-control @error('name') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
                                 @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    
+                                <div class="form-group">
+                                    <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
+                                    <div class="col-md-6">
+                                        <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
+                                    </div>
+                                    @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>  
+                                    <div class="form-group" id="latitudeArea">
+                                        <div class="col-md-6">
+                                        <input id="latitude" type="text"  name="latitude" class="form-control">
+                                    </div>
+                              
+                                    <div class="row mb-3" id="longtitudeArea">
+                                        <div class="col-md-6">
+                                        <input id="longitude" name="longitude" type="text"   class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                                {{-- @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -136,7 +177,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row mb-3">
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
@@ -247,6 +288,43 @@ but not going to do that until after Stripe is implemented, since that may affec
                             </div>
                         </div>
                     </form>
+                 {{-- Google  --}}
+                 <body>
+
+                        {{-- <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                   --}}
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                  
+                    <script type="text/javascript"
+                        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&libraries=places" ></script>
+                    <script>
+                        $(document).ready(function () {
+                            $("#latitudeArea").addClass("d-none");
+                            $("#longtitudeArea").addClass("d-none");
+                        });
+                    </script>
+                    <script>
+                        google.maps.event.addDomListener(window, 'load', initialize);
+                  
+                        function initialize() {
+                            var input = document.getElementById('address');
+                            var autocomplete = new google.maps.places.Autocomplete(input);
+                  
+                            autocomplete.addListener('place_changed', function () {
+                                var place = autocomplete.getPlace();
+                                $('#latitude').val(place.geometry['location'].lat());
+                                $('#longitude').val(place.geometry['location'].lng());
+                  
+                                $("#latitudeArea").removeClass("d-none");
+                                $("#longtitudeArea").removeClass("d-none");
+                            });
+                        }
+                    </script>
+                </body>
+                </html>
+                {{-- Google autocomplete --}}
                 </div>
             </div>
         </div>

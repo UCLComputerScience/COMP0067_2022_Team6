@@ -107,7 +107,7 @@ Route::get('/members', function () {
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');});
 
-
+Route::get('google-autocomplete', [GoogleController::class, 'index']);
 
 //Stripe
 Route::get('/user-subscribe', function () {
