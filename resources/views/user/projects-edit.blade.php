@@ -154,7 +154,7 @@
                               </div>
                               </div>
 
-                              <input type="hidden" name="project_id" value= "<?php $project_id?>" >
+
                               <button type="submit" id="submit" name="submit" class="btn btn-primary form-control">Edit Project</button>
                             </form>
                           </div>
