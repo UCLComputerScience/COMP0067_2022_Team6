@@ -93,7 +93,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                             </div>
                         </div>
                             <div class="form-group row mb-3">
-                                <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
+                                <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
                                 
                                 <div class="col-md-6">
                                     <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
@@ -117,15 +117,14 @@ but not going to do that until after Stripe is implemented, since that may affec
                                     <input id="longitude" name="longitude" type="hidden" value=""   class="form-control">
                                     <div class="col-md-6">
                                     <input id="country" name="country" type="hidden" value="" class="form-control">
-
-                        </div>
+                                </div>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div> 
+                        
 {{-- 
                         <div class="row mb-3">
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address Line 1') }}</label>
@@ -167,8 +166,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                                     </span>
                                 @enderror
                             </div> --}}
-                        </div>  
-
+                       
                         {{-- <div class="row mb-3">
                             <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
 
