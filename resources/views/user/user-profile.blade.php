@@ -24,6 +24,11 @@
     $country = $my_details->pluck('country');
     $postcode = $my_details->pluck('postcode');
     $sdg1 = $my_details->pluck('sdg1');
+    // $sdg1 = strip_text($sdg1);
+    if (print_r($sdg1[0]) == 1){
+        $sdg1 = "checked"
+    ;}
+    else{$sdg1 = "";}
     $sdg2 = $my_details->pluck('sdg2');
     $sdg3 = $my_details->pluck('sdg3');
     $sdg4 = $my_details->pluck('sdg4');
@@ -42,7 +47,11 @@
     $sdg17 = $my_details->pluck('sdg17');
 
 
+    function strip_text($url){
+        $url = str_replace(array('[',']','"'), '', $url);
+        $url = stripslashes($url);
 
+        return $url;}
 
 ?>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -64,7 +73,7 @@
                 <br>
                 <br>
                         <h1 class="fw-bolder">My Profile</h1>
-                        <?php echo isset($sdg1);?>
+                        <?php print_r($sdg1[0]);?>
             </div>
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -279,7 +288,7 @@
                                 <div class="col-md-14">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
-                                    <input class="form-check-input" type="checkbox" value="1" <?php if(isset($sdg1) == 1){echo 'checked="checked"';}?> id="sdg1" name="sdg1">
+                                    <input class="form-check-input" type="checkbox" value="1" <?php echo $sdg1; ?> id="sdg1" name="sdg1">
                                     <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
                                     <input class="form-check-input" type="checkbox" value="2" <?php if($sdg2 == "1"){echo 'checked="checked"';}?> id="sdg2" name="sdg2">
