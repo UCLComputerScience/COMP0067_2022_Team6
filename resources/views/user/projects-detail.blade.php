@@ -10,12 +10,17 @@ $this_project = DB::Table('projects')->select('project_id','id','projectTitle','
 $project_title = $this_project->pluck('projectTitle');
 $project_details = $this_project->pluck('projectDetails');
 $sdg = $this_project->pluck('sdg');
-$first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
+// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
 $project_user_id = $this_project->pluck('id');
 
 $user_id = Auth::id();
 $this_user = DB::Table('users')->select('id')->where('id',$user_id)->get();
 $id = $this_user->pluck('id');
+
+$first_image_path = DB::Table('projects')->where('project_id',$project_id)->pluck('image_name');
+$first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
+$first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+echo $first_image_path_stripped_second;
 ?>
 
 <html lang="en">
@@ -36,7 +41,7 @@ $id = $this_user->pluck('id');
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
+                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." /></div>
                     </div>
                     <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project reports</h1>
