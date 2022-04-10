@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageUpload;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -265,5 +266,8 @@ Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'upd
 
 Route::resource('files', 'App\Http\Controllers\FileController');
 Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');
-
 Route::get('/projects-detail/{project_id}',[FileController::class, 'index']);
+
+Route::resource('resources', 'App\Http\Controllers\ResourceController');
+Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
+Route::get('resources',[ResourceController::class, 'index'])->name('resources.index');
