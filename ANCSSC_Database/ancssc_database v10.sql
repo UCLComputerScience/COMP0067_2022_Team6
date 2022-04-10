@@ -173,7 +173,8 @@ INSERT INTO `ImagePaths` (`project_id`, `event_id`, `imageUUID`, `extension`) VA
                                                                                   (1, NULL, 1728099671457598, 'png'),
                                                                                   (1, NULL, 1728206133598976, 'png'),
                                                                                   (1, NULL, 1728278761343642, 'png'),
-                                                                                  (1, NULL, 1729718070885351, 'jpg');
+                                                                                  (1, NULL, 1729718070885351, 'jpg'),
+                                                                                  (1, NULL, 1729730290171205, 'png');
 
 -- --------------------------------------------------------
 
@@ -188,6 +189,13 @@ CREATE TABLE `images` (
                           `created_at` timestamp NULL DEFAULT NULL,
                           `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `name`, `image_path`, `created_at`, `updated_at`) VALUES
+    (2, '[\"95e6960f-7cc6-4157-8ef7-a9932c2146d1.jpg\"]', '[\"95e6960f-7cc6-4157-8ef7-a9932c2146d1.jpg\"]', '2022-04-10 11:28:39', '2022-04-10 11:28:39');
 
 -- --------------------------------------------------------
 
@@ -241,7 +249,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
                                                           (8, '2022_03_06_160406_create_files_table', 2),
                                                           (9, '2022_03_06_184948_create_images_table', 3),
                                                           (10, '2022_03_09_154541_create_images_table', 4),
-                                                          (11, '2022_03_18_132923_create_password_resets_table', 5);
+                                                          (11, '2022_03_18_132923_create_password_resets_table', 5),
+                                                          (12, '2022_03_19_172101_laratrust_setup_tables', 6);
 
 -- --------------------------------------------------------
 
@@ -263,6 +272,44 @@ CREATE TABLE `password_resets` (
 
 INSERT INTO `password_resets` (`id`, `created_at`, `updated_at`, `email`, `token`) VALUES
     (2, '2022-03-24 17:51:29', NULL, 'jack@gmail.com', '$2y$10$WIZqlASrrt0CHi/UzuQFtO40rVU8WEHrZ0TbnjDT8TJlk08uksARu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE `permissions` (
+                               `id` bigint(20) UNSIGNED NOT NULL,
+                               `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                               `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                               `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                               `created_at` timestamp NULL DEFAULT NULL,
+                               `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permission_role`
+--
+
+CREATE TABLE `permission_role` (
+                                   `permission_id` bigint(20) UNSIGNED NOT NULL,
+                                   `role_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permission_user`
+--
+
+CREATE TABLE `permission_user` (
+                                   `permission_id` bigint(20) UNSIGNED NOT NULL,
+                                   `user_id` bigint(20) UNSIGNED NOT NULL,
+                                   `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -314,7 +361,8 @@ INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation
                                                                                                                                                                                                                                                                                      (3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3', NULL),
                                                                                                                                                                                                                                                                                      (4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2', NULL),
                                                                                                                                                                                                                                                                                      (5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9', NULL),
-                                                                                                                                                                                                                                                                                     (6, 3, 'Improving the Efficiency of Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', 0, '0000-00-00', '2022-04-30 14:50:00', '111', '111', '1', NULL);
+                                                                                                                                                                                                                                                                                     (6, 3, 'Improving the Efficiency of Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', 0, '0000-00-00', '2022-04-30 14:50:00', '111', '111', '1', NULL),
+                                                                                                                                                                                                                                                                                     (7, 3, 'Improving the Efficiency of Metro Transport in India', 'Metro Transport in India', 'Metro Transport in India', 'Metro Transport in India', 'Metro Transport in India', 'Metro Transport in India', 0, '0000-00-00', '2022-04-24 19:06:00', '111', '108', '2', NULL);
 
 -- --------------------------------------------------------
 
@@ -334,18 +382,29 @@ CREATE TABLE `project_picture` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resource`
+-- Table structure for table `resources`
 --
 
-CREATE TABLE `resource` (
-                            `resource_id` int(11) NOT NULL,
-                            `id` int(11) NOT NULL,
-                            `resource_title` varchar(255) NOT NULL,
-                            `resource_sdg` varchar(255) DEFAULT NULL,
-                            `resource_language` varchar(100) DEFAULT NULL,
-                            `resource_description` text,
-                            `resource_added_date` date NOT NULL
+CREATE TABLE `resources` (
+                             `resource_id` int(11) NOT NULL,
+                             `id` int(11) DEFAULT NULL,
+                             `uuid` varchar(100) DEFAULT NULL,
+                             `resource_title` varchar(255) NOT NULL,
+                             `resource_sdg` varchar(255) DEFAULT NULL,
+                             `resource_language` varchar(100) DEFAULT NULL,
+                             `resource_description` text,
+                             `resource_added_date` date DEFAULT NULL,
+                             `created_at` timestamp NULL DEFAULT NULL,
+                             `updated_at` timestamp NULL DEFAULT NULL,
+                             `cover` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `resources`
+--
+
+INSERT INTO `resources` (`resource_id`, `id`, `uuid`, `resource_title`, `resource_sdg`, `resource_language`, `resource_description`, `resource_added_date`, `created_at`, `updated_at`, `cover`) VALUES
+    (6, NULL, '020fe6e0-b901-11ec-b211-cdabd4d7cad0', '', NULL, NULL, NULL, NULL, '2022-04-10 18:04:12', '2022-04-10 18:04:12', 'project1.pdf');
 
 -- --------------------------------------------------------
 
@@ -361,6 +420,33 @@ CREATE TABLE `resource_picture` (
                                     `resource_picture_alternate_text` text,
                                     `resource_picture_upload_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+                         `id` bigint(20) UNSIGNED NOT NULL,
+                         `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                         `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                         `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                         `created_at` timestamp NULL DEFAULT NULL,
+                         `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_user`
+--
+
+CREATE TABLE `role_user` (
+                             `role_id` bigint(20) UNSIGNED NOT NULL,
+                             `user_id` bigint(20) UNSIGNED NOT NULL,
+                             `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -507,7 +593,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `org`, `phone`, `address`, `city`, `country`, `postcode`, `latitude`, `longitude`, `number_of_employees`, `number_of_volunteers`, `website`, `role`, `created_at`, `updated_at`, `subscription_type`, `user_status`, `remember_token`, `stripe_id`, `pm_type`, `pm_last_four`, `trial_ends_at`, `sdg1`, `sdg2`, `sdg3`, `sdg4`, `sdg5`, `sdg6`, `sdg7`, `sdg8`, `sdg9`, `sdg10`, `sdg11`, `sdg12`, `sdg13`, `sdg14`, `sdg15`, `sdg16`, `sdg17`) VALUES
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             (1, 'Jack', '$2y$10$ve1u0H8n7pj9YQluGtPU4...4s1LIq9SnEGGI6PQHpEcP7Hf0wXHa', 'jack@gmail.com', 'sfefwefwef', 'kh', 'oihoih', 'oih', 'oih', 'oi', 0.000000, 0.000000, NULL, NULL, 'h', 3, '2022-03-23 13:24:31', '2022-03-23 13:24:02', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             (2, 'Marc', '$2y$10$CpEkai1mfDE7XzPOWwmk1.U5.bY9MmpN.Uj7FqYWxVxxrW.YJDkOm', 'mjwsolo@hotmail.com', 'The Best Org', '0207241 4801', 'London', 'London', 'England', 'N1 8BZ', 0.000000, 0.000000, 100, 122, '100.com', 3, '2022-03-24 17:53:12', '2022-03-24 17:52:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (3, 'Test User', '$2y$10$S4.9uPNj7iUoPCYkUVgn0OjCV.3dVIFLiXF.8jAwJKeoatI.T71yO', 'testuser@gmail.com', 'test', '1234', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-10 09:46:44', '2022-04-10 09:46:44', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (3, 'Admin', '$2y$10$S4.9uPNj7iUoPCYkUVgn0OjCV.3dVIFLiXF.8jAwJKeoatI.T71yO', 'admin@gmail.com', 'test', '1234', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-10 18:44:40', '2022-04-10 09:46:44', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (4, 'test2', '$2y$10$q2Je5r75Ss4ZjzxfWj5rJev9mSPSXkGj5z.zZOaatmR5qItlZ5qCS', 'test2@gmail.com', 'ucl', '123', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-10 18:44:24', '2022-04-10 13:39:18', NULL, NULL, 'dZB6oB2nI0lukD51TP7G0ysSrVE8eS0ozHP6emqUTAvtWJXvZhpnLCuu6xSt', NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -584,6 +671,27 @@ ALTER TABLE `password_resets`
     ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+    ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `permissions_name_unique` (`name`);
+
+--
+-- Indexes for table `permission_role`
+--
+ALTER TABLE `permission_role`
+    ADD PRIMARY KEY (`permission_id`,`role_id`),
+  ADD KEY `permission_role_role_id_foreign` (`role_id`);
+
+--
+-- Indexes for table `permission_user`
+--
+ALTER TABLE `permission_user`
+    ADD PRIMARY KEY (`user_id`,`permission_id`,`user_type`),
+  ADD KEY `permission_user_permission_id_foreign` (`permission_id`);
+
+--
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -605,9 +713,9 @@ ALTER TABLE `project_picture`
   ADD KEY `project_id` (`project_id`);
 
 --
--- Indexes for table `resource`
+-- Indexes for table `resources`
 --
-ALTER TABLE `resource`
+ALTER TABLE `resources`
     ADD PRIMARY KEY (`resource_id`),
   ADD KEY `id` (`id`);
 
@@ -617,6 +725,20 @@ ALTER TABLE `resource`
 ALTER TABLE `resource_picture`
     ADD PRIMARY KEY (`resource_picture_id`),
   ADD KEY `resource_id` (`resource_id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+    ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `roles_name_unique` (`name`);
+
+--
+-- Indexes for table `role_user`
+--
+ALTER TABLE `role_user`
+    ADD PRIMARY KEY (`user_id`,`role_id`,`user_type`),
+  ADD KEY `role_user_role_id_foreign` (`role_id`);
 
 --
 -- Indexes for table `subscriptions`
@@ -685,7 +807,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -697,13 +819,19 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `password_resets`
 --
 ALTER TABLE `password_resets`
     MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -715,7 +843,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-    MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+    MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `project_picture`
@@ -724,16 +852,22 @@ ALTER TABLE `project_picture`
     MODIFY `project_picture_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `resource`
+-- AUTO_INCREMENT for table `resources`
 --
-ALTER TABLE `resource`
-    MODIFY `resource_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `resources`
+    MODIFY `resource_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `resource_picture`
 --
 ALTER TABLE `resource_picture`
     MODIFY `resource_picture_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
@@ -757,7 +891,7 @@ ALTER TABLE `timezones`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -782,15 +916,28 @@ ALTER TABLE `event_picture`
     ADD CONSTRAINT `event_picture_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`);
 
 --
+-- Constraints for table `permission_role`
+--
+ALTER TABLE `permission_role`
+    ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `permission_user`
+--
+ALTER TABLE `permission_user`
+    ADD CONSTRAINT `permission_user_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `project_picture`
 --
 ALTER TABLE `project_picture`
     ADD CONSTRAINT `project_picture_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
 
 --
--- Constraints for table `resource`
+-- Constraints for table `resources`
 --
-ALTER TABLE `resource`
+ALTER TABLE `resources`
     ADD CONSTRAINT `resource_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
@@ -798,6 +945,12 @@ ALTER TABLE `resource`
 --
 ALTER TABLE `resource_picture`
     ADD CONSTRAINT `resource_picture_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`resource_id`);
+
+--
+-- Constraints for table `role_user`
+--
+ALTER TABLE `role_user`
+    ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

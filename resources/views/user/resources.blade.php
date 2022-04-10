@@ -2,6 +2,14 @@
 
 @section('content')
 <!DOCTYPE html>
+<?php
+$resource_id = Request::segment(2);
+$this_resource = DB::Table('resources')->select('resource_id','id','resource_title','resource_language','resource_sdg')->where('resource_id',$resource_id)->get();
+$resource_title = $this_resource->pluck('resource_title');
+$sdg = $this_resource->pluck('resource_sdg');
+
+$user_id = Auth::id();
+?>
 <html lang="en">
     <head>
         <style>
@@ -21,7 +29,7 @@
                 white-space: nowrap;
             }
         </style>
-        
+
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -43,7 +51,7 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Uploaded By</th>
-                                <th>Language</th>                             
+                                <th>Language</th>
                                 <th>SDGs</th>
                                 <th>Upload Date</th>
                                 <th>Download</th>
@@ -93,18 +101,63 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Uploaded By</th>
-                                <th>Language</th>                             
+                                <th>Language</th>
                                 <th>SDGs</th>
                                 <th>Upload Date</th>
                                 <th>Download</th>
                             </tr>
                         </tfoot>
                     </table>
+
+                    <div class="card-header">Resources List</div>
+
+                    <div class="card-body">
+
+                        <table class="table">
+                            <tr>
+                                <th>Download resource</th>
+                            </tr>
+                            @forelse ($resources as $resource)
+                                <tr>
+                                    <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="2">No files found.</td>
+                                </tr>
+                            @endforelse
+                        </table>
+
+                    </div>
+
+                    @if($user_id == '3')
+                        <div class="card">
+                            <div class="card-header">Add new resources</div>
+
+                            <div class="card-body">
+
+                                <form action="{{ route('resources.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+
+                                    File:
+                                    <br>
+                                    <input type="file" name="cover">
+
+                                    <br><br>
+
+                                    <input type="submit" value=" Upload file " class="btn btn-primary">
+
+                                </form>
+
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
             </section>
-            
+
         </main>
-       
+
     </body>
 </html>
 @endsection
