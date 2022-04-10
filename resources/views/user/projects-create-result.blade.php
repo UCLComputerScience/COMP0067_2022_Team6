@@ -20,12 +20,29 @@
     
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
-    $projectLocation = $_POST['projectLocation'];
-    $projectCity = $_POST['projectCity'];
-    $projectCountry = $_POST['projectCountry'];
+    $country = $_POST['country'];
+    $address = $_POST['address'];
+    $latitude = $_POST['latitude'];
+    $longitude = $_POST['longitude'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
-    $sdg = $_POST['sdg']; 
+    $sdg1 = $_POST['sdg1'];
+    $sdg2 = $_POST['sdg2']; 
+    $sdg3 = $_POST['sdg3']; 
+    $sdg4 = $_POST['sdg4']; 
+    $sdg5 = $_POST['sdg5']; 
+    $sdg6 = $_POST['sdg6']; 
+    $sdg7 = $_POST['sdg7']; 
+    $sdg8 = $_POST['sdg8']; 
+    $sdg9 = $_POST['sdg9']; 
+    $sdg10 = $_POST['sdg10']; 
+    $sdg11 = $_POST['sdg11']; 
+    $sdg12 = $_POST['sdg12'];  
+    $sdg13 = $_POST['sdg13']; 
+    $sdg14 = $_POST['sdg14']; 
+    $sdg15 = $_POST['sdg15']; 
+    $sdg16 = $_POST['sdg16']; 
+    $sdg17 = $_POST['sdg17']; 
     $projectValue = $_POST['projectValue'];
     $fundingRequired = $_POST['fundingRequired'];
     $userid = Auth::id();
@@ -35,12 +52,29 @@
     $newProjectArray = array(
         'projectTitle' => $projectTitle,
         'projectOrganisation' => $projectOrganisation,
-        'projectLocation' => $projectLocation,
-        'projectCity' => $projectCity,
-        'projectCountry' => $projectCountry,
+        'country' => $country,
+        'address' => $address,
+        'latitude' => $latitude,
+        'longitude' => $longitude,
         'projectDetails' => $projectDetails,
         'projectEndDate' => $projectEndDate,
-        'sdg' => $sdg, 
+        'sdg1' => $sdg1,
+        'sdg2' => $sdg2, 
+        'sdg3' => $sdg3, 
+        'sdg4' => $sdg4, 
+        'sdg5' => $sdg5, 
+        'sdg6' => $sdg6, 
+        'sdg7' => $sdg7, 
+        'sdg8' => $sdg8, 
+        'sdg9' => $sdg9, 
+        'sdg10' => $sdg10, 
+        'sdg11' => $sdg11, 
+        'sdg12' => $sdg12, 
+        'sdg13' => $sdg13, 
+        'sdg14' => $sdg14, 
+        'sdg15' => $sdg15, 
+        'sdg16' => $sdg16, 
+        'sdg17' => $sdg17,  
         'projectValue' => $projectValue,
         'fundingRequired' => $fundingRequired,
         'id' => $userid,
@@ -55,20 +89,71 @@
     elseif (empty($projectOrganisation)){
         echo 'Please enter the organisation of this project.';
     } 
-    elseif (empty($projectLocation)){
+    elseif (empty($address)){
         echo 'Please enter the address of this project.';
     } 
-    elseif (empty($projectCity)){
-        echo 'Please enter the city of this project.';
+    elseif (empty($latitude)){
+        echo 'Please enter the latitude of this project.';
     } 
-    elseif (empty($projectCountry)){
+    elseif (empty($longitude)){
+        echo 'Please enter the longitude of this project.';
+    } 
+    elseif (empty($country)){
         echo 'Please enter the country of this project.';
     } 
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';
     } 
-    elseif (empty($sdg)){
-        echo 'Please enter an SDG.';
+    elseif (empty($sdg1)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg2)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg3)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg4)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg5)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg6)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg7)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg8)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg9)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg10)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg11)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg12)){
+        echo 'Please enter an SDG1.';
+    }
+    elseif (empty($sdg13)){
+        echo 'Please enter an SDG13.';
+    }
+    elseif (empty($sdg14)){
+        echo 'Please enter an SDG14.';
+    }
+    elseif (empty($sdg15)){
+        echo 'Please enter an SDG15.';
+    }
+    elseif (empty($sdg16)){
+        echo 'Please enter an SDG16.';
+    }
+    elseif (empty($sdg17)){
+        echo 'Please enter an SDG17.';
     }
     elseif (empty($projectValue) and $projectValue != 0){
         echo 'Please enter a project value.';
@@ -81,7 +166,9 @@
     }
     else {
 
-       $project_id =  DB::table('projects')->insert($newProjectArray);        
+       $project_id =  DB::table('projects')->insert($newProjectArray);
+       echo $project_id;   
+       echo "hello";    
         // loop for each uploaded file begins
 
         foreach ($_FILES['filesToUpload']['name'] as $key => $value) {
@@ -106,8 +193,9 @@
             }
             // if tests are successful, then the file is uploaded
             else {
+                print_r("hello"); 
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                //create_new_image_reference($projectID, $imageUUID, $imageFileType);
+                create_new_image_reference($projectID, $imageUUID, $imageFileType);
                 $imageUUID = hexdec($imageUUID);
                 DB::table('ImagePaths')->insert(array(
                     'project_id'     =>   $project_id, 
@@ -141,6 +229,10 @@
 
     }
 
+    echo $address;
 ?>
+
 </div>
+
+
  @endsection

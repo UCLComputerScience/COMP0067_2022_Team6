@@ -278,26 +278,43 @@ CREATE TABLE `projects` (
   `id` int(11) NOT NULL,
   `projectTitle` varchar(255) NOT NULL,
   `projectOrganisation` varchar(100) DEFAULT NULL,
-  `projectLocation` varchar(100) NOT NULL,
-  `projectCity` varchar(100) NOT NULL,
-  `projectCountry` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `projectDetails` text,
   `project_date_added` int(11) NOT NULL,
   `project_last_updated` date NOT NULL,
   `projectEndDate` datetime NOT NULL,
   `projectValue` varchar(100) DEFAULT NULL,
   `fundingRequired` varchar(100) DEFAULT NULL,
-  `sdg` varchar(255) DEFAULT NULL
+  `latitude` float(10,6) NOT NULL,
+  `longitude` float(10,6) NOT NULL,
+  `sdg1`int(20) DEFAULT NULL,
+  `sdg2`int(20) DEFAULT NULL,
+  `sdg3`int(20) DEFAULT NULL,
+  `sdg4`int(20) DEFAULT NULL,
+  `sdg5`int(20) DEFAULT NULL,
+  `sdg6`int(20) DEFAULT NULL,
+  `sdg7`int(20) DEFAULT NULL,
+  `sdg8`int(20) DEFAULT NULL,
+  `sdg9`int(20) DEFAULT NULL,
+  `sdg10`int(20) DEFAULT NULL,
+  `sdg11`int(20) DEFAULT NULL,
+  `sdg12`int(20) DEFAULT NULL,
+  `sdg13`int(20) DEFAULT NULL,
+  `sdg14`int(20) DEFAULT NULL,
+  `sdg15`int(20) DEFAULT NULL,
+  `sdg16`int(20) DEFAULT NULL,
+  `sdg17`int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation`, `projectLocation`, `projectCity`, `projectCountry`, `projectDetails`, `project_date_added`, `project_last_updated`, `projectEndDate`, `projectValue`, `fundingRequired`, `sdg`) VALUES
-(3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3'),
-(4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2'),
-(5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9');
+-- INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation`, `projectLocation`, `projectCity`, `projectCountry`, `projectDetails`, `project_date_added`, `project_last_updated`, `projectEndDate`, `projectValue`, `fundingRequired`, `sdg`) VALUES
+-- (3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3'),
+-- (4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2'),
+-- (5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9');
 
 -- --------------------------------------------------------
 
