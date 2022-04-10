@@ -97,6 +97,9 @@ Route::get('/projects-detail/{project_id}',function (){
 Route::any('/projects-delete/{project_id}',function (){
     return view('/user/projects-delete');})->where('project_id', '.*');
 
+Route::any('/admin-events-delete/{event_id}',function (){
+    return view('/admin/admin-events-delete');})->where('event_id', '.*');    
+
 Route::any('/projects-edit/{project_id}',function (){
     return view('/user/projects-edit');})->where('project_id', '.*');
 
