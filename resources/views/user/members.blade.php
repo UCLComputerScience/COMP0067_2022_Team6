@@ -83,7 +83,7 @@ $(document).ready(function(){
     // echo "jello"; ?>
 
 <?php //echo $userlocs ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"
         type="text/javascript"></script>
 <script type="text/javascript">
     var locations = <?php echo $userlocs ?>;
