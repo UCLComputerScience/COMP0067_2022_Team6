@@ -262,3 +262,5 @@ Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'upd
 
 Route::resource('files', 'App\Http\Controllers\FileController');
 Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');
+
+Route::get('/projects-detail/{project_id}',[FileController::class, 'index']);

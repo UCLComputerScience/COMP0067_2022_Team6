@@ -11,12 +11,12 @@ class FileController extends Controller
     public function index()
     {
         $files = File::all();
-        return view('files.index', compact('files'));
+        return view('/user/projects-detail', compact('files'));
     }
 
     public function create()
     {
-        return view('files.create');
+        return view('/user/projects-detail');
     }
 
     public function store(Request $request)
