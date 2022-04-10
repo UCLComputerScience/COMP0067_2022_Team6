@@ -24,11 +24,6 @@
     $country = $my_details->pluck('country');
     $postcode = $my_details->pluck('postcode');
     $sdg1 = $my_details->pluck('sdg1');
-    // $sdg1 = strip_text($sdg1);
-    if (print_r($sdg1[0]) == 1){
-        $sdg1 = "checked"
-    ;}
-    else{$sdg1 = "";}
     $sdg2 = $my_details->pluck('sdg2');
     $sdg3 = $my_details->pluck('sdg3');
     $sdg4 = $my_details->pluck('sdg4');
@@ -53,7 +48,6 @@
 
         return $url;}
 
-    $sdgtest = $my_details->pluck('sdg1');
 ?>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   
@@ -74,8 +68,6 @@
                 <br>
                 <br>
                         <h1 class="fw-bolder">My Profile</h1>
-                        <?php     echo $sdgtest[0];
-                        ?>
             </div>
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -290,55 +282,55 @@
                                 <div class="col-md-14">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
-                                    <input class="form-check-input" type="checkbox" value="1" <?php if($sdgtest[0] == "1"){echo "checked";}else echo ""; ?> id="sdg1" name="sdg1">
+                                    <input class="form-check-input" type="checkbox" value="1" <?php if($sdg1[0] == "1"){echo "checked";}else echo ""; ?> id="sdg1" name="sdg1">
                                     <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
-                                    <input class="form-check-input" type="checkbox" value="2" <?php if($sdg2 == "1"){echo 'checked="checked"';}?> id="sdg2" name="sdg2">
+                                    <input class="form-check-input" type="checkbox" value="2" <?php if($sdg2[0] == "1"){echo "checked";}else echo ""; ?> id="sdg2" name="sdg2">
                                     <label class="form-check-label" for="sdg3">{{ __('3') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg3" name="sdg3">
-                                    <input class="form-check-input" type="checkbox" value="3" <?php if($sdg3 == "1"){echo 'checked="checked"';}?> id="sdg3" name="sdg3">
+                                    <input class="form-check-input" type="checkbox" value="3" <?php if($sdg3[0] == "1"){echo "checked";}else echo ""; ?> id="sdg3" name="sdg3">
                                     <label class="form-check-label" for="sdg4">{{ __('4') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg4" name="sdg4">
-                                    <input class="form-check-input" type="checkbox" value="4" id="sdg4" name="sdg4">
+                                    <input class="form-check-input" type="checkbox" value="4" <?php if($sdg4[0] == "1"){echo "checked";}else echo ""; ?> id="sdg4" name="sdg4">
                                     <label class="form-check-label" for="sdg5">{{ __('5') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg5" name="sdg5">
-                                    <input class="form-check-input" type="checkbox" value="5" id="sdg5" name="sdg5">
+                                    <input class="form-check-input" type="checkbox" value="5" <?php if($sdg5[0] == "1"){echo "checked";}else echo ""; ?> id="sdg5" name="sdg5">
                                     <label class="form-check-label" for="sdg6">{{ __('6') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg6" name="sdg6">
-                                    <input class="form-check-input" type="checkbox" value="6" id="sdg6" name="sdg6">
+                                    <input class="form-check-input" type="checkbox" value="6" <?php if($sdg6[0] == "1"){echo "checked";}else echo ""; ?> id="sdg6" name="sdg6">
                                     <label class="form-check-label" for="sdg7">{{ __('7') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg7" name="sdg7">
-                                    <input class="form-check-input" type="checkbox" value="7" id="sdg7" name="sdg7">
+                                    <input class="form-check-input" type="checkbox" value="7" <?php if($sdg7[0] == "1"){echo "checked";}else echo ""; ?> id="sdg7" name="sdg7">
                                     <label class="form-check-label" for="sdg8">{{ __('8') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg8" name="sdg8">
-                                    <input class="form-check-input" type="checkbox" value="8" id="sdg8" name="sdg8">
+                                    <input class="form-check-input" type="checkbox" value="8" <?php if($sdg8[0] == "1"){echo "checked";}else echo ""; ?>  id="sdg8" name="sdg8">
                                     <label class="form-check-label" for="sdg9">{{ __('9') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg9" name="sdg9">
-                                    <input class="form-check-input" type="checkbox" value="9" id="sdg9" name="sdg9">
+                                    <input class="form-check-input" type="checkbox" value="9" <?php if($sdg9[0] == "1"){echo "checked";}else echo ""; ?> id="sdg9" name="sdg9">
                                     <label class="form-check-label" for="sdg10">{{ __('10') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg10" name="sdg10">
-                                    <input class="form-check-input" type="checkbox" value="10" id="sdg10" name="sdg10">
+                                    <input class="form-check-input" type="checkbox" value="10" <?php if($sdg10[0] == "1"){echo "checked";}else echo ""; ?> id="sdg10" name="sdg10">
                                     <label class="form-check-label" for="sdg11">{{ __('11') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg11" name="sdg11">
-                                    <input class="form-check-input" type="checkbox" value="11" id="sdg11" name="sdg11">
+                                    <input class="form-check-input" type="checkbox" value="11" <?php if($sdg11[0] == "1"){echo "checked";}else echo ""; ?> id="sdg11" name="sdg11">
                                     <label class="form-check-label" for="sdg12">{{ __('12') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg12" name="sdg12">
-                                    <input class="form-check-input" type="checkbox" value="12" id="sdg12" name="sdg12">
+                                    <input class="form-check-input" type="checkbox" value="12" <?php if($sdg12[0] == "1"){echo "checked";}else echo ""; ?> id="sdg12" name="sdg12">
                                     <label class="form-check-label" for="sdg13">{{ __('13') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg13" name="sdg13">
-                                    <input class="form-check-input" type="checkbox" value="13" id="sdg13" name="sdg13">
+                                    <input class="form-check-input" type="checkbox" value="13" <?php if($sdg13[0] == "1"){echo "checked";}else echo ""; ?> id="sdg13" name="sdg13">
                                     <label class="form-check-label" for="sdg14">{{ __('14') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg14" name="sdg14">
-                                    <input class="form-check-input" type="checkbox" value="14" id="sdg14" name="sdg14">
+                                    <input class="form-check-input" type="checkbox" value="14" <?php if($sdg14[0] == "1"){echo "checked";}else echo ""; ?> id="sdg14" name="sdg14">
                                     <label class="form-check-label" for="sdg15">{{ __('15') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg15" name="sdg15">
-                                    <input class="form-check-input" type="checkbox" value="15" id="sdg15" name="sdg15">
+                                    <input class="form-check-input" type="checkbox" value="15" <?php if($sdg15[0] == "1"){echo "checked";}else echo ""; ?> id="sdg15" name="sdg15">
                                     <label class="form-check-label" for="sdg16">{{ __('16') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg16" name="sdg16">
-                                    <input class="form-check-input" type="checkbox" value="16" id="sdg16" name="sdg16">
+                                    <input class="form-check-input" type="checkbox" value="16" <?php if($sdg16[0] == "1"){echo "checked";}else echo ""; ?> id="sdg16" name="sdg16">
                                     <label class="form-check-label" for="sdg17">{{ __('17') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg17" name="sdg17">
-                                    <input class="form-check-input" type="checkbox" value="17" id="sdg17" name="sdg17">
+                                    <input class="form-check-input" type="checkbox" value="17" <?php if($sdg17[0] == "1"){echo "checked";}else echo ""; ?> id="sdg17" name="sdg17">
                                 </div>
                             </div>
                         </div>
