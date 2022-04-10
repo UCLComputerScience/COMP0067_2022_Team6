@@ -6,12 +6,16 @@
 
 //$project_id = $_GET['project_id'];
 $project_id = Request::segment(2);
-$this_project = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate','sdg')->where('project_id',$project_id)->get();
+$this_project = DB::Table('projects')->select('project_id','id','projectTitle','projectDetails','projectEndDate','sdg')->where('project_id',$project_id)->get();
 $project_title = $this_project->pluck('projectTitle');
 $project_details = $this_project->pluck('projectDetails');
 $sdg = $this_project->pluck('sdg');
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
+$project_user_id = $this_project->pluck('id');
 
+$user_id = Auth::id();
+$this_user = DB::Table('users')->select('id')->where('id',$user_id)->get();
+$id = $this_user->pluck('id');
 ?>
 
 <html lang="en">
@@ -99,6 +103,8 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
                         </table>
 
                     </div>
+
+                    @if($id == $project_user_id)
                     <div class="card">
                         <div class="card-header">Add new file</div>
 
@@ -125,6 +131,7 @@ $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->wh
 
                         </div>
                     </div>
+                    @endif
 
                 </div>
             </section>
