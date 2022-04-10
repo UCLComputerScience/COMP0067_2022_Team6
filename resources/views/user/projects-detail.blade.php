@@ -40,45 +40,6 @@ $id = $this_user->pluck('id');
                     </div>
                     <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project reports</h1>
-                        <table id="projects" class="table table-striped nowrap" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Report name</th>
-                                    <th>Project name</th>
-                                    <th>Organisation name</th>
-                                    <th>Language</th>
-                                    <th>Description</th>
-                                    <th>SDGs</th>
-                                    <th>Date added</th>
-                                    <th>Last updated</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>teuawgfhf</td>
-                                    <td><?php echo str_replace(array ('["','"]'),'' , $project_title) ?></td>
-                                    <td>WaterAid</td>
-                                    <td>Spanish</td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-                                    <td>3, 11</td>
-                                    <td>2018/11/13</td>
-                                    <td>2019/12/12</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Report name</th>
-                                    <th>Project name</th>
-                                    <th>Organisation name</th>
-                                    <th>Language</th>
-                                    <th>Description</th>
-                                    <th>SDGs</th>
-                                    <th>Date added</th>
-                                    <th>Last updated</th>
-
-                                </tr>
-                            </tfoot>
-                        </table>
                     </div>
 
                     <div class="card-header">Files list</div>
