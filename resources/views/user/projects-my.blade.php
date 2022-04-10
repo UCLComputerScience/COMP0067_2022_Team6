@@ -32,7 +32,7 @@ function print_listing_with_image($project_id, $title, $desc)
 $first_image_path = DB::Table('projects')->where('project_id',$project_id)->pluck('image_name');
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
-echo $first_image_path_stripped_second;
+// echo $first_image_path_stripped_second;
   // Truncate long descriptions
   if (strlen($desc) > 250) {
     $desc_shortened = substr($desc, 0, 250) . '...';
