@@ -23,6 +23,23 @@
     $event_datetime = $_POST['event_datetime'];
     $event_timezone = $_POST['event_timezone']; 
     $event_call_url = $_POST['event_call_url'];
+    $sdg1 = $_POST['sdg1'];
+    $sdg2 = $_POST['sdg2']; 
+    $sdg3 = $_POST['sdg3']; 
+    $sdg4 = $_POST['sdg4']; 
+    $sdg5 = $_POST['sdg5']; 
+    $sdg6 = $_POST['sdg6']; 
+    $sdg7 = $_POST['sdg7']; 
+    $sdg8 = $_POST['sdg8']; 
+    $sdg9 = $_POST['sdg9']; 
+    $sdg10 = $_POST['sdg10']; 
+    $sdg11 = $_POST['sdg11']; 
+    $sdg12 = $_POST['sdg12'];  
+    $sdg13 = $_POST['sdg13']; 
+    $sdg14 = $_POST['sdg14']; 
+    $sdg15 = $_POST['sdg15']; 
+    $sdg16 = $_POST['sdg16']; 
+    $sdg17 = $_POST['sdg17']; 
     $userid = Auth::id();
 
     // Putting them into an array
@@ -34,6 +51,23 @@
         'event_timezone' => $event_timezone, 
         'event_call_url' => $event_call_url,
         'id' => $userid,
+        'sdg1' => $sdg1,
+        'sdg2' => $sdg2, 
+        'sdg3' => $sdg3, 
+        'sdg4' => $sdg4, 
+        'sdg5' => $sdg5, 
+        'sdg6' => $sdg6, 
+        'sdg7' => $sdg7, 
+        'sdg8' => $sdg8, 
+        'sdg9' => $sdg9, 
+        'sdg10' => $sdg10, 
+        'sdg11' => $sdg11, 
+        'sdg12' => $sdg12, 
+        'sdg13' => $sdg13, 
+        'sdg14' => $sdg14, 
+        'sdg15' => $sdg15, 
+        'sdg16' => $sdg16, 
+        'sdg17' => $sdg17, 
     );
  
     // The flow below checks for general errors in the form, then does 
@@ -82,7 +116,7 @@
             // if tests are successful, then the file is uploaded
             else {
                 move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$key], $targetFileDestination);
-                create_new_image_reference($eventID, $imageUUID, $imageFileType);
+                //create_new_image_reference($eventID, $imageUUID, $imageFileType);
                 DB::table('ImagePaths')->insert(array(
                     'event_id'     =>   $event_id, 
                     'imageUUID'   =>   $imageUUID,

@@ -48,10 +48,17 @@
                 position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
                 map: map,
                 title: locations[i]['projectTitle'],
+
                 
-            });
+            });       
         }
-    
+        google.maps.event.addListener(marker, 'mouseover', function () {
+        var point = fromLatLngToPoint(marker.getPosition(), map);
+        $('#marker-tooltip').html(marker.tooltipContent + '<br>Pixel coordinates: ' + point.x + ', ' + point.y).css({
+            'left': point.x,
+                'top': point.y
+        }).show();
+    });
     </script>
         </div>
     </div>
