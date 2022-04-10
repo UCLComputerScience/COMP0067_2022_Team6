@@ -53,6 +53,7 @@
 
         return $url;}
 
+    $sdgtest = $my_details->pluck('sdg1');
 ?>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   
@@ -73,7 +74,8 @@
                 <br>
                 <br>
                         <h1 class="fw-bolder">My Profile</h1>
-                        <?php print_r($sdg1[0]);?>
+                        <?php     echo $sdgtest[0];
+                        ?>
             </div>
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -288,7 +290,7 @@
                                 <div class="col-md-14">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
-                                    <input class="form-check-input" type="checkbox" value="1" <?php echo $sdg1; ?> id="sdg1" name="sdg1">
+                                    <input class="form-check-input" type="checkbox" value="1" <?php if($sdgtest[0] == "1"){echo "checked";}else echo ""; ?> id="sdg1" name="sdg1">
                                     <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
                                     <input class="form-check-input" type="checkbox" value="2" <?php if($sdg2 == "1"){echo 'checked="checked"';}?> id="sdg2" name="sdg2">
