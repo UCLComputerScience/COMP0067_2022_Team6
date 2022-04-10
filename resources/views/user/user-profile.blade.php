@@ -7,12 +7,39 @@
 {{-- Autocomplete --}}
 <?php 
     $userid = Auth::id();
-    $my_details = DB::Table('users')->select('name')->where('id', $userid)->get();
+    $my_details = DB::Table('users')->select('name', 'org', 'email', 'phone', 'number_of_employees', 'number_of_volunteers', 'website', 'latitude', 'longitude', 'city', 'country', 'postcode', 
+    'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17' )
+    ->where('id', $userid)->get();
+
     $name = $my_details->pluck('name');
-
-
-
-
+    $email = $my_details->pluck('email');
+    $org = $my_details->pluck('org');
+    $phone = $my_details->pluck('phone');
+    $employees = $my_details->pluck('number_of_employees');
+    $volunteers = $my_details->pluck('number_of_volunteers');
+    $website = $my_details->pluck('website');
+    $latitude = $my_details->pluck('latitude');
+    $longitude = $my_details->pluck('longitude');
+    $city = $my_details->pluck('city');
+    $country = $my_details->pluck('country');
+    $postcode = $my_details->pluck('postcode');
+    $sdg1 = $my_details->pluck('sdg1');
+    $sdg2 = $my_details->pluck('sdg2');
+    $sdg3 = $my_details->pluck('sdg3');
+    $sdg4 = $my_details->pluck('sdg4');
+    $sdg5 = $my_details->pluck('sdg5');
+    $sdg6 = $my_details->pluck('sdg6');
+    $sdg7 = $my_details->pluck('sdg7');
+    $sdg8 = $my_details->pluck('sdg8');
+    $sdg9 = $my_details->pluck('sdg9');
+    $sdg10 = $my_details->pluck('sdg10');
+    $sdg11 = $my_details->pluck('sdg11');
+    $sdg12 = $my_details->pluck('sdg12');
+    $sdg13 = $my_details->pluck('sdg13');
+    $sdg14 = $my_details->pluck('sdg14');
+    $sdg15 = $my_details->pluck('sdg15');
+    $sdg16 = $my_details->pluck('sdg16');
+    $sdg17 = $my_details->pluck('sdg17');
 
 
 
@@ -37,6 +64,7 @@
                 <br>
                 <br>
                         <h1 class="fw-bolder">My Profile</h1>
+                        <?php echo isset($sdg1);?>
             </div>
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -49,12 +77,6 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
                             <div class="col-md-6">
                                 <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="<?php print_r($name[0]); ?>" required autocomplete="name">
-
-                                <!-- @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror -->
                             </div>
                         </div>
 
@@ -62,7 +84,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="<?php print_r($email[0]); ?>" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -76,7 +98,7 @@
                             <label for="org" class="col-md-4 col-form-label text-md-end">{{ __('Name of Organisation') }}</label>
 
                             <div class="col-md-6">
-                                <input id="org" type="text" class="form-control @error('org') is-invalid @enderror" name="org" value="{{ old('org') }}" required autocomplete="org" autofocus>
+                                <input id="org" type="text" class="form-control @error('org') is-invalid @enderror" name="org" value="<?php print_r($org[0]); ?>" required autocomplete="org" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -93,7 +115,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('name') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                <input id="phone" type="text" class="form-control @error('name') is-invalid @enderror" name="phone" value="<?php print_r($phone[0]); ?>" required autocomplete="phone" autofocus>
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -117,15 +139,15 @@
                                 {{-- <div class="form-group row mb-3" id="latitudeArea"> --}}
                                     {{-- <label for="latitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
-                                    <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">
+                                    <input id="latitude" type="hidden"  value="" name="latitude" class="form-control" value="<?php print_r($latitude[0]); ?>">
                                 </div>
                             
                                 {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                                     {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
-                                    <input id="longitude" name="longitude" type="hidden" value=""   class="form-control">
+                                    <input id="longitude" name="longitude" type="hidden" value="<?php print_r($longitude[0]); ?>"   class="form-control">
                                     <div class="col-md-6">
-                                    <input id="country" name="country" type="hidden" value="" class="form-control">
+                                    <input id="country" name="country" type="hidden" value="<?php print_r($country[0]); ?>" class="form-control">
                                 </div>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -153,7 +175,7 @@
                             <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control @error('name') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+                                <input id="city" type="text" class="form-control @error('name') is-invalid @enderror" name="city" value="<?php print_r($city[0]); ?>" required autocomplete="city" autofocus>
 
                                 @error('city')
                                     <span class="invalid-feedback" role="alert">
@@ -167,7 +189,7 @@
                             <label for="location_country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label> --}}
 
                             {{-- <div class="col-md-6"> --}}
-                                {{-- <input name="location_country" id="location_country" type="text" class="form-control @error('name') is-invalid @enderror" name="location_country" value="{{ old('country') }}" required autocomplete="location_country" autofocus>
+                                {{-- <input name="location_country" id="location_country" type="text" class="form-control @error('name') is-invalid @enderror" name="location_country" value="<?php print_r($country[0]); ?>" required autocomplete="location_country" autofocus>
 
                                 @error('location_country')
                                     <span class="invalid-feedback" role="alert">
@@ -180,7 +202,7 @@
                             <label for="postcode" class="col-md-4 col-form-label text-md-end">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
-                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" autocomplete="postcode" autofocus>
+                                <input id="postcode" type="text" class="form-control @error('name') is-invalid @enderror" name="postcode" value="<?php print_r($postcode[0]); ?>" autocomplete="postcode" autofocus>
 
                                 @error('postcode')
                                     <span class="invalid-feedback" role="alert">
@@ -194,7 +216,7 @@
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" autocomplete="number_of_employees" autofocus>
+                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="<?php print_r($employees[0]); ?>" autocomplete="number_of_employees" autofocus>
 
                                 @error('number_of_employees')
                                     <span class="invalid-feedback" role="alert">
@@ -208,7 +230,7 @@
                             <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" autocomplete="number_of_volunteers" autofocus>
+                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="<?php print_r($volunteers[0]); ?>" autocomplete="number_of_volunteers" autofocus>
 
                                 @error('number_of_volunteers')
                                     <span class="invalid-feedback" role="alert">
@@ -222,7 +244,7 @@
                             <label for="website" class="col-md-4 col-form-label text-md-end">{{ __('Website') }}</label>
 
                             <div class="col-md-6">
-                                <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="{{ old('website') }}" autocomplete="website" autofocus>
+                                <input id="website" type="text" class="form-control @error('name') is-invalid @enderror" name="website" value="<?php print_r($website[0]); ?>" autocomplete="website" autofocus>
 
                                 @error('website')
                                     <span class="invalid-feedback" role="alert">
@@ -257,13 +279,13 @@
                                 <div class="col-md-14">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
-                                    <input class="form-check-input" type="checkbox" value="1" id="sdg1" name="sdg1">
+                                    <input class="form-check-input" type="checkbox" value="1" <?php if(isset($sdg1) == 1){echo 'checked="checked"';}?> id="sdg1" name="sdg1">
                                     <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
-                                    <input class="form-check-input" type="checkbox" value="2" id="sdg2" name="sdg2">
+                                    <input class="form-check-input" type="checkbox" value="2" <?php if($sdg2 == "1"){echo 'checked="checked"';}?> id="sdg2" name="sdg2">
                                     <label class="form-check-label" for="sdg3">{{ __('3') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg3" name="sdg3">
-                                    <input class="form-check-input" type="checkbox" value="3" id="sdg3" name="sdg3">
+                                    <input class="form-check-input" type="checkbox" value="3" <?php if($sdg3 == "1"){echo 'checked="checked"';}?> id="sdg3" name="sdg3">
                                     <label class="form-check-label" for="sdg4">{{ __('4') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg4" name="sdg4">
                                     <input class="form-check-input" type="checkbox" value="4" id="sdg4" name="sdg4">
@@ -317,7 +339,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -331,7 +353,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
