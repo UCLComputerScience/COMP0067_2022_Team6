@@ -209,7 +209,7 @@
                               <div class="form-group row">
                               <label for="filesToUpload" class="col-sm-2 col-form-label text-right">Image upload</label>
                               <div class="col-sm-10">
-                                <input type="file" name="filesToUpload[]" id="filesToUpload" style="float:left" multiple required>
+                                <input type="file" name="uploadfile"  id="uploadfile" value="" style="float:left">
                                <br>
                                 <small id="filesToUploadHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required. </span>Please upload one to three images for your project.</small>
                               </div>

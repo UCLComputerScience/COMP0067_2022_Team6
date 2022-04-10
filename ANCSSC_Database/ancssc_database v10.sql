@@ -388,7 +388,8 @@ CREATE TABLE `projects` (
                             `sdg14`int(20) DEFAULT NULL,
                             `sdg15`int(20) DEFAULT NULL,
                             `sdg16`int(20) DEFAULT NULL,
-                            `sdg17`int(20) DEFAULT NULL
+                            `sdg17`int(20) DEFAULT NULL,
+                            
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
