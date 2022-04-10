@@ -19,20 +19,12 @@
             <div class="card">
          
                 <div class="card-body">
-
-                         <div class="Welcome" role="alert">
-                        </div>
-              
+                    
                     
 
-                        </div>
-                    
-                        <div class="col-md-15 text-centre">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                
+                
+                <a class="twitter-timeline" data-width="300" data-height="500" href="https://twitter.com/ANCSSC1?ref_src=twsrc%5Etfw">Tweets by ANCSSC1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        </div>
     </div>
 </div>
 </div>

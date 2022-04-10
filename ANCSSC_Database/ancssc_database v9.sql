@@ -747,14 +747,14 @@ ALTER TABLE `country_of_operation`
 --
 -- Constraints for table `events`
 --
-ALTER TABLE `events`
-  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
+-- ALTER TABLE `events`
+--   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `event_picture`
 --
-ALTER TABLE `event_picture`
-  ADD CONSTRAINT `event_picture_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`);
+-- ALTER TABLE `event_picture`
+--   ADD CONSTRAINT `event_picture_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`);
 
 --
 -- Constraints for table `project_picture`
