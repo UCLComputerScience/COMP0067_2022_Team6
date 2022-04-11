@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Edit & Update User
-                            <a href="{{ url('users') }}" class="btn btn-danger float-end">BACK</a>
+                            <a href="{{ url('admin-members') }}" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">

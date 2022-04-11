@@ -52,7 +52,7 @@ Route::get('/events-detail/{event_id}', function () {
 
 Route::any('/storage/app/public/images/{first_image_path_stripped}', function () {
     return view('/public/storage/app/public/images');})->where('first_image_path_stripped', '.*')->middleware('auth');
-   
+
 Route::get('/past-events', function () {
     return view('/user/past-events');
 })->middleware('auth');
@@ -99,7 +99,7 @@ Route::get('/projects-detail/{project_id}',function (){
 
 Route::any('/projects-delete/{project_id}',function (){
     return view('/user/projects-delete');})->where('project_id', '.*')->middleware('auth');
- 
+
 
 Route::any('/projects-edit/{project_id}',function (){
     return view('/user/projects-edit');})->where('project_id', '.*')->middleware('auth');
@@ -262,8 +262,9 @@ Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUp
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
 
-Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.index');
-Route::delete('/users/{id}', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
+Route::get('admin-members', [UserController::class, 'index']);
+Route::get('admin-members', 'App\Http\Controllers\UserController@index')->name('admin-members.index');
+Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin-members.destroy');
 Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
 
