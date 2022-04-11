@@ -81,7 +81,24 @@
                             'number_of_employees' => $employees,
                             'number_of_volunteers' => $volunteers,
                             'website' => $website,
-                            'address' => $address
+                            'address' => $address,
+                            'sdg1' => $sdg1,
+                            'sdg2' => $sdg2,
+                            'sdg3' => $sdg3,
+                            'sdg4' => $sdg4,
+                            'sdg5' => $sdg5,
+                            'sdg6' => $sdg6,
+                            'sdg7' => $sdg7,
+                            'sdg8' => $sdg8,
+                            'sdg9' => $sdg9,
+                            'sdg10' => $sdg10,
+                            'sdg11' => $sdg11,
+                            'sdg12' => $sdg12,
+                            'sdg13' => $sdg13,
+                            'sdg14' => $sdg14,
+                            'sdg15' => $sdg15,
+                            'sdg16' => $sdg16,
+                            'sdg17' => $sdg17
                         ));
 
 
