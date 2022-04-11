@@ -137,6 +137,15 @@
                                 </div>
                               </div>
 
+                              <div class="form-group row">
+                                <label for="event_video_url" class="col-sm-2 col-form-label text-right">YouTube recording link</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="event_video_url" id="event_video_url" rows="1"></textarea>
+                                  <small id="detailsHelp" class="form-text text-muted" style="float:left">YouTube URL of event recording goes here.</small>
+                                </div>
+                              </div>
+
+
                               <button type="submit" id="submit" name="submit" class="btn btn-primary form-control">Create event</button>
                             </form>
                           </div>

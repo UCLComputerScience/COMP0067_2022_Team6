@@ -41,16 +41,18 @@
     $event_datetime = substr($event_datetime, 0, -3);
     $event_timezone = strip_text($event_timezone);
 
-    if ($event_video_url != 'null'){
+    $checking_array = array("null", "", NULL);
+
+    if (!in_array($event_video_url, $checking_array)){
         $event_video_url = '
             <iframe width="560" height="315" src="https://www.youtube.com/embed/' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             ';
         }
 
-
-    if ($event_call_url != 'null'){
+        
+    if (!in_array($event_call_url, $checking_array)){
             if (str_starts_with($event_call_url, 'https://') == FALSE){
-                $event_call_url = 'https://' .$event_call_url;
+                $event_call_url = 'https://' . $event_call_url;
             }
         $event_call_url = '<br /><div class="d-grid"><a class="btn btn-primary" href="' .$event_call_url .'" target="_blank">Join event</a></div>';
     }
@@ -71,9 +73,8 @@
                             <div class="text-center mb-5">
                                 <h1 class="fw-bolder"> <?php echo $event_title ?> </h1>
                                 <h3><?php echo $event_datetime, "<br>", $event_timezone, "<br>" ?></h3>
-                                <?php if ($event_call_url != 'null'){
+                                <?php 
                                     echo $event_call_url;
-                                }
                                 ?>
                                 <br>
                                 <?php echo $event_description ?> 
@@ -84,10 +85,8 @@
                     <div class="row gx-5">
                         <div class="col-12"><img class="img-fluid rounded-3 mb-5" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." width="1300" height="700" /></div>
                         <br>
-                        <?php echo $first_image_path;
-                        if ($event_video_url != 'null') {
-                                echo $event_video_url;
-                            }
+                        <?php 
+                             echo $event_video_url;
                         ?> 
                     </div>
    

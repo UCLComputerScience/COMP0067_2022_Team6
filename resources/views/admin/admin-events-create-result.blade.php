@@ -23,6 +23,7 @@
     $event_datetime = $_POST['event_datetime'];
     $event_timezone = $_POST['event_timezone']; 
     $event_call_url = $_POST['event_call_url'];
+    $event_video_url = $_POST['event_video_url'];
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2']; 
     $sdg3 = $_POST['sdg3']; 
@@ -52,6 +53,7 @@
         'event_datetime' => $event_datetime,
         'event_timezone' => $event_timezone, 
         'event_call_url' => $event_call_url,
+        'event_video_url' => $event_video_url,
         'id' => $userid,
         'sdg1' => $sdg1,
         'sdg2' => $sdg2, 
@@ -87,9 +89,6 @@
     }
     elseif (empty($event_timezone) and $event_datetime != 0){
         echo 'Please enter a timezone for your event.';
-    }
-    elseif (empty($event_call_url)){
-        echo 'Please enter an event URL for people to join the event with.';
     }
     else {
 
