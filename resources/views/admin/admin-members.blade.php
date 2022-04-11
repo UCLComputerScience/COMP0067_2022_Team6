@@ -22,35 +22,46 @@
 
 </head>
 <body>
-<h2 style="text-align: center;">Users Table</h2>
-<table id='usersTable' width='100%'>
-    <thead>
-    <tr>
-        <td>#ID</td>
-        <td>#Name</td>
-        <td>#Email</td>
-    </tr>
-    </thead>
-</table>
 
-<!-- Script -->
-<script type="text/javascript">
-    $(document).ready(function(){
+<div class="container mt-5">
+    <h2 style="text-align: center;">Users Table</h2>
+    <table class="table table-bordered yajra-datatable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach ($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <a href="{{ url('edit-user/'.$user->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                </td>
+                <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
+                       onclick="event.preventDefault();
+                           document.getElementById(
+                           'delete-form-{{$user->id}}').submit();">
+                        Delete
+                    </a>
+                </td>
+                <form id="delete-form-{{$user->id}}"
+                      + action="{{route('admin-members.destroy', $user->id)}}"
+                      method="post">
+                    @csrf @method('DELETE')
+                </form>
+            </tr>
+        @endforeach
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
-        // DataTable
-        $('#usersTable').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{route('users.getUsers')}}",
-            columns: [
-                { data: 'id' },
-                { data: 'name' },
-                { data: 'email' },
-            ]
-        });
-
-    });
-</script>
 </body>
 </html>
 @endsection

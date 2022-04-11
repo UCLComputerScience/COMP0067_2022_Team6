@@ -11,14 +11,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::All();
-        return view('users', ['users'=>$users]);
+        return view('admin/admin-members', ['users'=>$users]);
     }
 
     public function destroy($id)
     {
         $user = User::where('id', $id)->delete();
         echo ("User Record deleted successfully.");
-        return redirect()->route('users.index');
+        return redirect()->route('admin-members.index');
     }
 
     public function edit($id)
