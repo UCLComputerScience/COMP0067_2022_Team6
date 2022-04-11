@@ -56,16 +56,16 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                                 <th>Title</th>
                                 <th>Download file</th>
                             </tr>
-                            @forelse ($files as $file)
+                            @foreach ($files as $file)
+
+                                @if($file->project_id == $project_id)
                                 <tr>
                                     <td>{{ $file->title }}</td>
                                     <td><a href="{{ route('files.download', $file->uuid) }}">{{ $file->cover }}</a></td>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="2">No files found.</td>
-                                </tr>
-                            @endforelse
+                                @endif
+
+                            @endforeach
                         </table>
 
                     </div>
