@@ -64,7 +64,7 @@ $sdgs_second_strip = explode(',', $sdgs_first_strip);
     
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-    <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '</div>
+    <div class="col-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '</div>
     <div class="row align-items-center">
     <div class="col"><td>  <a class="btn btn-primary form-control" href="projects-edit/'. $project_id.'" > Edit </a></td></div>
     
