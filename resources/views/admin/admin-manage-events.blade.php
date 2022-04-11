@@ -171,9 +171,19 @@ $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('ima
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null','0','"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
-  // $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+
+
+
 $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
+$eventDate = DB::Table('events')->select('event_datetime')->where('event_id',$event_id)->get();
+$array1 = array('[',']','{','}','"','"','event_datetime');
+$date = str_replace($array1,"",$eventDate);
+$sdgs_second_strip = explode(',', $sdgs_first_strip);
+$timezone = DB::Table('events')->select('event_timezone')->where('event_id',$event_id)->get();
+$array2 = array('[',']','{','}','"','"','event_timezone');
+$tz = str_replace($array2,"",$timezone);
+
   // Truncate long descriptions
   if (strlen($event_description) > 250) {
     $event_desc_shortened = substr($event_description, 0, 250) . '...';
@@ -188,10 +198,14 @@ $sdgs_first_strip = str_replace($array,"",$sdgs);
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-    <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '</div>
-    <a class="btn btn-primary" href="admin-events-edit/'. $event_id.'" role="button"> Edit </a>
-    <div class="form-group row">
-    <td> <a href="admin-events-delete/'. $event_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '.$event_id.'" > Delete </a> </td>
+
+    <div class="col-4"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '<br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br>Event Date '.$date.'<br>Time Zone '.$tz.'</div>
+    
+    <div class="row align-items-center">
+    <div class="col"><a class="btn btn-primary" href="admin-events-edit/'. $event_id.'" role="button"> Edit </a></div>
+    
+    <div class="col"><td> <a href="admin-events-delete/'. $event_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '.$event_id.'" > Delete </a> </td></div>
+
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div>
     </form>
