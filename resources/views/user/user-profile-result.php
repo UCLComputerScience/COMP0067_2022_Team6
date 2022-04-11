@@ -3,13 +3,19 @@
 @section('content')
 
 
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  
+<head>
+    {{-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laravel Google Autocomplete Address Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
 <div class="container my-5">
 
 <?php
 
-//require_once(app_path().'../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
-
-//require_once('resources/views/user/projects-create.blade.php');
 @include('user-profile');
 
     if (isset($_POST['submit']))
@@ -29,9 +35,7 @@
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
     $address = $_POST['address'];
-
     $country = $_POST['country'];
-
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2'];
     $sdg3 = $_POST['sdg3'];
@@ -49,6 +53,7 @@
     $sdg15 = $_POST['sdg15'];
     $sdg16 = $_POST['sdg16'];
     $sdg17 = $_POST['sdg17'];
+
 
  
     // The flow below checks for general errors in the form, then does 
@@ -100,7 +105,7 @@
                             'sdg16' => $sdg16,
                             'sdg17' => $sdg17
                         ));
-
+                    
 
 
         echo '<br>
@@ -127,7 +132,7 @@
             </section>';
     }
 
-    }
+}
 
 ?>
 
