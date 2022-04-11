@@ -82,7 +82,7 @@ $project_id = $_POST['project_id'];
     }
     else {
 
-        $project_udpate = DB::table('projects')->
+        $project_update = DB::table('projects')->
                             where('project_id', $project_id)->
                             limit(1)->
                             update(array('projectTitle' => $projectTitle,

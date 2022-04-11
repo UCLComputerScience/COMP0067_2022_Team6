@@ -81,6 +81,10 @@ Route::get('/user-profile', function () {
     return view('/user/user-profile');
 })->middleware('auth');
 
+Route::post('/user-profile-result', function () {
+    return view('/user/user-profile-result');
+});
+
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/resources', function () {
