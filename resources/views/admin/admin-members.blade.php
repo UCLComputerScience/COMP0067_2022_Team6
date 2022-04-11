@@ -24,7 +24,7 @@
 <body>
 
 <div class="container mt-5">
-    <h2 style="text-align: center;">Users Table</h2>
+    <h2 style="text-align: center;">Manage Members</h2>
     <table class="table table-bordered yajra-datatable">
         <thead>
         <tr>
