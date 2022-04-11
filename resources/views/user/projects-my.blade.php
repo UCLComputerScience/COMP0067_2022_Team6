@@ -58,11 +58,12 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
     <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
-    <td>  <a class="btn btn-primary btn-lg" href="projects-edit/'. $project_id.'" > Edit </a> </td>
+    <div class="row align-items-center">
+    <div class="col"><td>  <a class="btn btn-primary form-control" href="projects-edit/'. $project_id.'" > Edit </a></td></div>
     
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
-    <div class="form-group row">
-    <td> <a href="projects-delete/'. $project_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </a> </td>
+    
+    <div class="col"><td> <a href="projects-delete/'. $project_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </a> </td></div>
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div>
     
