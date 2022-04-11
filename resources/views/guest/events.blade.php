@@ -122,30 +122,45 @@
 
 
 
+  if(isset($_GET['search'])){
 
-// Plain SQL
-    // $query = "SELECT * FROM `events`
-    // WHERE (`event_description` LIKE '%$keyword%'
-    // OR `event_title` LIKE '%$keyword%'
-    // OR `event_call_url` LIKE '%$keyword%'
-    // OR `event_video_url`  LIKE '%$keyword%')
-    //  ";
+    if (!isset($_GET['keyword'])) {
+      //if a keyword is not specified then we simply set it to be blank so that in the
+      //sql query, it does not filter out any auctions since all descriptions and titles of
+      //auctions will have "" in them.
+      $keyword = "";
+    }else {
+      $keyword = $_GET['keyword'];
+    }
 
 
 
+
+    $query = "SELECT * FROM `events`
+    WHERE (`event_description` LIKE '%$keyword%'
+    OR `event_title` LIKE '%$keyword%'
+    OR `event_call_url` LIKE '%$keyword%'
+    OR `event_video_url`  LIKE '%$keyword%')
+    ";
+
+
+    if (isset($_GET['sdg1'])) {
+      $ordering = $_GET['sdg1'];
+      $query .= " AND 'sdg1' = 1";
+}
   
 
-//   if ($ordering === "all"){
-//     $query .= " ORDER BY event_datetime DESC ";
-// }else if ($ordering === "upcoming"){
-//   $query .= " AND event_datetime >= GETDATE() 
-//   ORDER BY event_datetime DESC";
-// }else if($ordering === "past"){
-//   $query .= " AND event_datetime < GETDATE() 
-//   ORDER BY event_datetime DESC";
-// }
+  if ($ordering === "all"){
+    $query .= " ORDER BY event_datetime DESC ";
+}else if ($ordering === "upcoming"){
+  $query .= " AND event_datetime >= GETDATE() 
+  ORDER BY event_datetime DESC";
+}else if($ordering === "past"){
+  $query .= " AND event_datetime < GETDATE() 
+  ORDER BY event_datetime DESC";
+}
 
-  // }
+  }
 
 
 
