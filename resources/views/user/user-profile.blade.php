@@ -7,7 +7,7 @@
 {{-- Autocomplete --}}
 <?php 
     $userid = Auth::id();
-    $my_details = DB::Table('users')->select('name', 'org', 'email', 'phone', 'number_of_employees', 'number_of_volunteers', 'website', 'latitude', 'longitude', 'city', 'country', 'postcode', 
+    $my_details = DB::Table('users')->select('name', 'org', 'email', 'phone', 'number_of_employees', 'number_of_volunteers', 'website', 'address', 'latitude', 'longitude', 'city', 'country', 'postcode', 
     'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17' )
     ->where('id', $userid)->get();
 
@@ -18,6 +18,7 @@
     $employees = $my_details->pluck('number_of_employees');
     $volunteers = $my_details->pluck('number_of_volunteers');
     $website = $my_details->pluck('website');
+    $address = $my_details->pluck('address');
     $latitude = $my_details->pluck('latitude');
     $longitude = $my_details->pluck('longitude');
     $city = $my_details->pluck('city');
@@ -130,7 +131,7 @@
                                 <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
+                                    <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" required autocomplete="address" autofocus value="<?php print_r($address[0]); ?>">
                                 </div>
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
