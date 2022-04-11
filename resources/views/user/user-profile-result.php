@@ -28,9 +28,10 @@
     $website = $_POST['website'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
-    // $city = $_POST['city'];
+    $address = $_POST['address'];
+
     $country = $_POST['country'];
-    // $postcode = $_POST['postcode'];
+
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2'];
     $sdg3 = $_POST['sdg3'];
@@ -60,17 +61,27 @@
         echo 'Please enter your email.';
     } 
     elseif (empty($org)){
-        echo 'Please enter your organisation.';
+        echo 'Please enter your organisation name.';
     } 
     elseif (empty($phone)){
         echo 'Please enter a contact number.';
+    } 
+    elseif (empty($address)){
+        echo 'Please enter the primary address of your organisation.';
     } 
     else {
 
         $project_udpate = DB::table('users')->
                             where('id', $userid)->
                             limit(1)->
-                            update(array('name' => $name                            
+                            update(array('name' => $name,
+                            'email' => $email,
+                            'org' => $org,
+                            'phone' => $phone,
+                            'number_of_employees' => $employees,
+                            'number_of_volunteers' => $volunteers,
+                            'website' => $website,
+                            'address' => $address
                         ));
 
 
