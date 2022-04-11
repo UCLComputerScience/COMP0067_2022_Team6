@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('styles')
-@extends('layouts.partials.nav-logged-in')
+@extends('layouts.mainlayout-logged-in')
 
 @section('content')
 
@@ -20,6 +18,7 @@
 
     // Extracting the variables from the POST 
     
+    $userid = $_POST['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $org = $_POST['org'];
@@ -29,9 +28,9 @@
     $website = $_POST['website'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
-    $city = $_POST['city'];
+    // $city = $_POST['city'];
     $country = $_POST['country'];
-    $postcode = $_POST['postcode'];
+    // $postcode = $_POST['postcode'];
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2'];
     $sdg3 = $_POST['sdg3'];
