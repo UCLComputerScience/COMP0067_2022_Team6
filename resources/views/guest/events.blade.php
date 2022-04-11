@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="container">
 
 <h2 class="my-3">Events</h2>
@@ -15,6 +16,7 @@
   <!-- When this form is submitted, this PHP page is what processes it.
       Search/sort specs are passed to this page through parameters in the URL
       (GET method of passing data to a page). -->
+
   <form method="get" action="browse.php">
     <div class="row">
       <div class="col-md-5 pr-0">
@@ -28,23 +30,7 @@
         </div>
       </div>
       <div class="col-md-3 pr-0">
-        <div class="form-group">
-          <label for="cat" class="sr-only">Select SDG:</label>
-          <select class="form-control" id="cat" name="cat">
-            <option value="">Choose an option</option>
-                <?php 
-                  $result = DB::table('categories')->get();    ?>
-                    @foreach ($result as $row)
-                        <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
-                    @endforeach 
-                      </select>
-                  @error('SDGs')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-          </select>
-        </div>
+        
       </div>
       <div class="col-md-3 pr-0">
         <div class="form-inline">
@@ -56,8 +42,66 @@
           </select>
         </div>
       </div>
+      <div class="col-md-6 pr-0">
+      <div class="form-group row">
+        <label for="sdg" class="col-sm-2 col-form-label text-right" for="sdg1">SDGs:</label>
+           <div class="col-md-10">
+              <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
+              <input class="form-check-input" type="checkbox" value="1" id="sdg1" name="sdg1">
+              <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
+              <input class="form-check-input" type="checkbox" value="2" id="sdg2" name="sdg2">
+              <label class="form-check-label" for="sdg3">{{ __('3') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg3" name="sdg3">
+              <input class="form-check-input" type="checkbox" value="3" id="sdg3" name="sdg3">
+              <label class="form-check-label" for="sdg4">{{ __('4') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg4" name="sdg4">
+              <input class="form-check-input" type="checkbox" value="4" id="sdg4" name="sdg4">
+              <label class="form-check-label" for="sdg5">{{ __('5') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg5" name="sdg5">
+              <input class="form-check-input" type="checkbox" value="5" id="sdg5" name="sdg5">
+              <label class="form-check-label" for="sdg6">{{ __('6') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg6" name="sdg6">
+              <input class="form-check-input" type="checkbox" value="6" id="sdg6" name="sdg6">
+              <label class="form-check-label" for="sdg7">{{ __('7') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg7" name="sdg7">
+              <input class="form-check-input" type="checkbox" value="7" id="sdg7" name="sdg7">
+              <label class="form-check-label" for="sdg8">{{ __('8') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg8" name="sdg8">
+              <input class="form-check-input" type="checkbox" value="8" id="sdg8" name="sdg8">
+              <label class="form-check-label" for="sdg9">{{ __('9') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg9" name="sdg9">
+              <input class="form-check-input" type="checkbox" value="9" id="sdg9" name="sdg9">
+              <label class="form-check-label" for="sdg10">{{ __('10') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg10" name="sdg10">
+              <input class="form-check-input" type="checkbox" value="10" id="sdg10" name="sdg10">
+              <label class="form-check-label" for="sdg11">{{ __('11') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg11" name="sdg11">
+              <input class="form-check-input" type="checkbox" value="11" id="sdg11" name="sdg11">
+              <label class="form-check-label" for="sdg12">{{ __('12') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg12" name="sdg12">
+              <input class="form-check-input" type="checkbox" value="12" id="sdg12" name="sdg12">
+              <label class="form-check-label" for="sdg13">{{ __('13') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg13" name="sdg13">
+              <input class="form-check-input" type="checkbox" value="13" id="sdg13" name="sdg13">
+              <label class="form-check-label" for="sdg14">{{ __('14') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg14" name="sdg14">
+              <input class="form-check-input" type="checkbox" value="14" id="sdg14" name="sdg14">
+              <label class="form-check-label" for="sdg15">{{ __('15') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg15" name="sdg15">
+              <input class="form-check-input" type="checkbox" value="15" id="sdg15" name="sdg15">
+              <label class="form-check-label" for="sdg16">{{ __('16') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg16" name="sdg16">
+              <input class="form-check-input" type="checkbox" value="16" id="sdg16" name="sdg16">
+              <label class="form-check-label" for="sdg17">{{ __('17') }}</label>
+              <input class="form-check-input" type="hidden" value="" id="sdg17" name="sdg17">
+              <input class="form-check-input" type="checkbox" value="17" id="sdg17" name="sdg17">
+          </div>
+</div>
+</div>
       <div class="col-md-1 px-0">
-        <button type="submit" class="btn btn-primary" name="search"  value = "Search">Search</button>
+        <button type="submit" class="btn btn-primary text-right" name="search"  value = "Search">Search</button>
       </div>
     </div>
   </form>
@@ -79,6 +123,7 @@
 
 
   if(isset($_GET['search'])){
+
     if (!isset($_GET['keyword'])) {
       //if a keyword is not specified then we simply set it to be blank so that in the
       //sql query, it does not filter out any auctions since all descriptions and titles of
@@ -88,17 +133,40 @@
       $keyword = $_GET['keyword'];
     }
 
-    if (!isset($_GET['cat'])) {
-      $category = "all";
-    }else {
-      $category = $_GET['cat'];
-    }
 
     if (!isset($_GET['order_by'])) {
       $ordering = "all";
     }else {
       $ordering = $_GET['order_by'];
     }
+
+
+    $query = "SELECT * FROM `events`
+    WHERE (`event_description` LIKE '%$keyword%'
+    OR `event_title` LIKE '%$keyword%'
+    OR `event_call_url` LIKE '%$keyword%'
+    OR `event_video_url`  LIKE '%$keyword%')
+    ";
+
+
+    if (isset($_GET['sdg1'])) {
+      $ordering = $_GET['sdg1'];
+      $query .= " AND 'sdg1' = 1";
+}
+  
+
+  if ($ordering === "all"){
+    $query .= " ORDER BY event_datetime DESC ";
+}else if ($ordering === "upcoming"){
+  $query .= " AND event_datetime >= GETDATE() 
+  ORDER BY event_datetime DESC";
+}else if($ordering === "past"){
+  $query .= " AND event_datetime < GETDATE() 
+  ORDER BY event_datetime DESC";
+}
+
+  }
+
 
 
     // Calculate time to auction end
@@ -141,17 +209,11 @@
 */
 
     //sql query for ordering the results based on datetime
-  if($ordering === "all"){
-      $query .= " ORDER BY ecent_datetime DESC ";
-  }else if ($ordering === "upcoming"){
-    $query .= " AND event_datetime >= GETDATE() ";
-  }else if($ordering === "past"){
-    $query .= " AND event_datetime < GETDATE() ";
-  }
 
 
 
-  }
+
+  
   ?>
 
 <ul class="list-group">
