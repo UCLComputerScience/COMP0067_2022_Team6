@@ -13,8 +13,9 @@
     $event_call_url = $this_event->pluck('event_call_url');
     $event_call_url_test = $this_event->pluck('event_call_url');
     $event_video_url= $this_event->pluck('event_video_url');
-    $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id', $event_id)->get();
-
+    $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
+    $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
+    $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
     // If time, implement this to show if an event has already ended
     // Need to include if statement for if $now > $event_datetime to control what shows
     // $now = new DateTime();
@@ -81,7 +82,7 @@
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="https://dummyimage.com/1300x700/343a40/6c757d" alt="..." /></div>
+                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." width="1300" height="700" /></div>
                         <br>
                         <?php echo $first_image_path;
                         if ($event_video_url != 'null') {

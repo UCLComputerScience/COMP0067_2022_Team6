@@ -167,8 +167,9 @@ function print_event_with_image($event_id, $event_title, $event_description)
 {
 
     // TODO: Bring this back later
-// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
-
+$first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
+$first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
+$first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
   // Truncate long descriptions
   if (strlen($event_description) > 250) {
     $event_desc_shortened = substr($event_description, 0, 250) . '...';
@@ -184,6 +185,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
     <li class="list-group-item d-flex justify-content-between">
     
     <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</div>
+    <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
     <a class="btn btn-primary" href="admin-events-edit/'. $event_id.'" role="button"> Edit </a>
     <div class="form-group row">
     <td> <a href="admin-events-delete/'. $event_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '.$event_id.'" > Delete </a> </td>

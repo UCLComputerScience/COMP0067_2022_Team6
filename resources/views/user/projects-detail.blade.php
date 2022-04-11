@@ -20,7 +20,7 @@ $id = $this_user->pluck('id');
 $first_image_path = DB::Table('projects')->where('project_id',$project_id)->pluck('image_name');
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
-echo $first_image_path_stripped_second;
+
 ?>
 
 <html lang="en">
@@ -41,7 +41,7 @@ echo $first_image_path_stripped_second;
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="rounded mx-auto d-block" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." /></div>
+                        <div class="col-12"><img class="rounded mx-auto d-block" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." width="1300" height="700"/></div>
                     </div>
                     <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project reports</h1>

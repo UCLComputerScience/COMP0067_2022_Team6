@@ -95,6 +95,7 @@ CREATE TABLE `events` (
                           `event_timezone` varchar(255) NOT NULL,
                           `event_call_url` text,
                           `event_video_url` text,
+                          `image_name` varchar(100) DEFAULT NULL,
                           `sdg1`int(20) DEFAULT NULL,
                           `sdg2`int(20) DEFAULT NULL,
                           `sdg3`int(20) DEFAULT NULL,
