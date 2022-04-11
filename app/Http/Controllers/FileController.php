@@ -23,6 +23,7 @@ class FileController extends Controller
     {
         $file = $request->all();
         $file['uuid'] = (string)Uuid::generate();
+        $file['project_id'] = $request->project_id;
         if ($request->hasFile('cover')) {
             $file['cover'] = $request->cover->getClientOriginalName();
             $request->cover->storeAs('files', $file['cover']);
