@@ -41,13 +41,15 @@
     $event_datetime = substr($event_datetime, 0, -3);
     $event_timezone = strip_text($event_timezone);
 
-    if ($event_video_url != 'null'){
+    $checking_array = array("null", "", NULL);
+
+    if (!in_array($event_video_url, $checking_array)){
         $event_video_url = '
             <iframe width="560" height="315" src="https://www.youtube.com/embed/' .$event_video_url .'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             ';
         }
 
-        $checking_array = array("null", "", NULL);
+        
     if (!in_array($event_call_url, $checking_array)){
             if (str_starts_with($event_call_url, 'https://') == FALSE){
                 $event_call_url = 'https://' . $event_call_url;
