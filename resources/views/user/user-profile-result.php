@@ -135,5 +135,5 @@
 }
 
 ?>
-
+</script>
  @endsection
