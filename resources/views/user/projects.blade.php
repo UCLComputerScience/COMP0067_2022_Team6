@@ -87,6 +87,10 @@ function print_listing_with_image($project_id, $title, $desc)
 $first_image_path = DB::Table('projects')->where('project_id',$project_id)->pluck('image_name');
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+$array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null','0','"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
+// $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+$sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('project_id',$project_id)->get();
+$sdgs_first_strip = str_replace($array,"",$sdgs);
   // Truncate long descriptions
   if (strlen($desc) > 250) {
     $desc_shortened = substr($desc, 0, 250) . '...';
@@ -111,7 +115,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
     
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-    <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</div>
+    <div class="p-2 mr-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '</div>
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div class="form-group row">
     <div>

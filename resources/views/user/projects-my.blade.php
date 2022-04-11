@@ -37,8 +37,7 @@ $sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6',
 $sdgs_first_strip = str_replace($array,"",$sdgs);
 // $sdgs = DB::Table('projects')->select('sdg5')->where('project_id',$project_id)->whereNull('sdg5')->orWhere('sdg5','!=',0)->get();
 // 'sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')
-//  $sdgs_second_strip = explode(',', $sdgs_first_strip);
-
+$sdgs_second_strip = explode(',', $sdgs_first_strip);
 // echo $sdgs_first_strip;
 // echo $first_image_path_stripped_second;
   // Truncate long descriptions
