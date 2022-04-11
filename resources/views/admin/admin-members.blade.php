@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Users Table</title>
+    <title>Manage Members</title>
 
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
