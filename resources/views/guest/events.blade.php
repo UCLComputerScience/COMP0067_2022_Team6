@@ -17,7 +17,7 @@
       Search/sort specs are passed to this page through parameters in the URL
       (GET method of passing data to a page). -->
 
-  <form method="get" action="browse.php">
+  <form method="get" action="events">
     <div class="row">
       <div class="col-md-5 pr-0">
         <div class="form-group">
