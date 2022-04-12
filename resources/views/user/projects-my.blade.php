@@ -5,7 +5,7 @@
 
 <div class="container">
 <br><br><br><br>
-<h2 class="my-3">My Projects</h2>
+<h1 class="text-center mb-5 fw-bold">My Projects</h1>
 
 
 <ul class="list-group">
