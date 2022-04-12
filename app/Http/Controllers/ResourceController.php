@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Resource;
 use Webpatser\Uuid\Uuid;
+use DataTables;
 
 class ResourceController extends Controller
 {

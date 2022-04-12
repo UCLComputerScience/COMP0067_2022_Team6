@@ -51,10 +51,23 @@ $user_id = Auth::id();
                         <table class="table">
                             <tr>
                                 <th>Download resource</th>
+                                <th>Delete</th>
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
+                                    <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
+                                           onclick="event.preventDefault();
+                                               document.getElementById(
+                                               'delete-form-{{$resource->uuid}}').submit();">
+                                            Delete
+                                        </a>
+                                    </td>
+                                    <form id="delete-form-{{$resource->uuid}}"
+                                          + action="{{route('resources.destroy', $resource->uuid)}}"
+                                          method="post">
+                                        @csrf @method('DELETE')
+                                    </form>
                                 </tr>
                             @empty
                                 <tr>
@@ -64,30 +77,6 @@ $user_id = Auth::id();
                         </table>
 
                     </div>
-
-                    @if($user_id == '3')
-                        <div class="card">
-                            <div class="card-header">Add new resources</div>
-
-                            <div class="card-body">
-
-                                <form action="{{ route('resources.store') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-
-                                    File:
-                                    <br>
-                                    <input type="file" name="cover">
-
-                                    <br><br>
-
-                                    <input type="submit" value=" Upload file " class="btn btn-primary">
-
-                                </form>
-
-                            </div>
-                        </div>
-                    @endif
-
                 </div>
             </section>
 
