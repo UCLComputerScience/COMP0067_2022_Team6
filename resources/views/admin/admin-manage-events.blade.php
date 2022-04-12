@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<h2 class="my-3">Manage events</h2>
+<h1 class="text-center mb-5 fw-bold">Manage events</h1>
 
 <div class="container">
 
