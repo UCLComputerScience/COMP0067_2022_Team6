@@ -57,9 +57,9 @@
                               </div> -->
                             </div>
                             <div class="form-group row mb-3">
-                                <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                                <label for="address" class="col-sm-2 col-form-label text-right">{{ __('Address') }}</label>
                                 
-                                <div class="col-md-6">
+                                <div class="col-sm-10">
                                     <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
                                 </div>
                                 @error('address')
@@ -106,9 +106,12 @@
                                   <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>
                                 </div>
                               </div>
+                              <br>
                               
-                              <div class="row mb-6">
-                                <div class="col-md-14">
+                              <div class="form-group row">
+                                <label for="" class="col-sm-2 col-form-label text-right">SDGs:</label>
+                              <!-- <div class="row mb-6"> -->
+                                <div class="col-sm-10">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
                                     <input class="form-check-input" type="checkbox" value="1" id="sdg1" name="sdg1">
@@ -160,8 +163,10 @@
                                     <label class="form-check-label" for="sdg17">{{ __('17') }}</label>
                                     <input class="form-check-input" type="hidden" value="" id="sdg17" name="sdg17">
                                     <input class="form-check-input" type="checkbox" value="17" id="sdg17" name="sdg17">
-                                </div>
+                                <!-- </div> -->
                             </div>
+                            </div>
+                            <br>
                               <div class="form-group row">
                                 <label for="projectValue" class="col-sm-2 col-form-label text-right">Project Value</label>
                                 <div class="col-sm-10">
