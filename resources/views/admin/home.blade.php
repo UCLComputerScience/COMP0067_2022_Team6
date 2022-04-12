@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
  <!-- Welcome Message -->
-     <section class="bg-light py-5">
+     <section class="py-5">
          <div class="container px-5 my-5">
         <div class="text-center mb-5">
       <h1 class="fw-bolder">Welcome, administrator <?php echo Auth::user()->name ?>!</h1>
