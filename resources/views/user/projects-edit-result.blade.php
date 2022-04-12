@@ -47,20 +47,6 @@ $project_id = $_POST['project_id'];
     $userid = Auth::id();
     $project_id = $_POST['project_id'];
 
-    // Putting them into an array
-
-    $newProjectArray = array(
-        'projectTitle' => $projectTitle,
-        'projectOrganisation' => $projectOrganisation,
-        'projectLocation' => $projectLocation,
-        'projectCity' => $projectCity,
-        'projectCountry' => $projectCountry,
-        'projectDetails' => $projectDetails,
-        'projectEndDate' => $projectEndDate,
-        'projectValue' => $projectValue,
-        'fundingRequired' => $fundingRequired,
-        'id' => $userid,
-    );
  
     // The flow below checks for general errors in the form, then does 
     // a loop for each image. 
