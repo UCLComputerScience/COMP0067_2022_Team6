@@ -16,7 +16,7 @@
                                 <p class="lead fw-normal text-muted mb-4">To empower civil society to establish a just world based on the values of South-South Cooperation. </p>
                                 <h2 class="fw-bolder mb-3">Our Mission</h2>
                                 <p class="lead fw-normal text-muted mb-4">To target the Sustainable Development Goals through supporting capacity-building, advocacy and knowledge sharing within the Global South and within Triangular Cooperation </p>
-                                <a class="btn btn-primary btn-lg" href="https://ancssc.com/">Learn More</a>
+                                <!-- <a class="btn btn-primary btn-lg" href="https://ancssc.com/">Learn More</a> -->
                             </div>
                         </div>
                     </div>
