@@ -1,15 +1,14 @@
-@extends('layouts.mainlayout-logged-in')
 
+
+@extends('layouts.mainlayout')
 @section('content')
-
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   
 <head>
-    {{-- <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel Google Autocomplete Address Example</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <div class="container my-5">
@@ -87,6 +86,7 @@
                             'number_of_volunteers' => $volunteers,
                             'website' => $website,
                             'address' => $address,
+                            'latitude' => $latitude,
                             'sdg1' => $sdg1,
                             'sdg2' => $sdg2,
                             'sdg3' => $sdg3,
@@ -136,4 +136,4 @@
 
 ?>
 </script>
- @endsection
+@endsection

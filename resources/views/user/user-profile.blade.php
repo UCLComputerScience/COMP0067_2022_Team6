@@ -149,7 +149,7 @@
                                 {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                                     {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                                     <div class="col-md-6">
-                                    <input id="longitude" name="longitude" type="hidden"    class="form-control">
+                                    <input id="longitude" name="longitude" type="hidden" value=""  class="form-control">
                                     <div class="col-md-6">
                                     <input id="country" name="country" type="hidden" value="<?php print_r($country[0]); ?>" class="form-control">
                                 </div>

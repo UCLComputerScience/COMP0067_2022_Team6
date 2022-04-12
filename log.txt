@@ -1,0 +1,2281 @@
+commit 53c2dd7796faa8da7d7fa817238025264b62a950
+Merge: f79cae0 f4e9a35
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 22:14:47 2022 +0100
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit f79cae08cef1a30359bbfd969929710f8f2d3139
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 22:14:43 2022 +0100
+
+    removed update to projects and admin manage events
+
+commit f4e9a35c99ddaa77935d2875b531160092aad06a
+Merge: 2df102e 33e63ec
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 22:13:37 2022 +0100
+
+    Merge pull request #68 from UCLComputerScience/tables
+    
+    Update upload file
+
+commit 33e63ec4bb65eaa4a8cc7cfacf7cf49849981777
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 22:12:29 2022 +0100
+
+    Update upload file
+
+commit 2df102e20246962e9378bd031d481ce288965aaf
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 22:05:03 2022 +0100
+
+    remove trailing comma from admin manage events, and projects
+
+commit a2d809fc957804b392d29c616f0ef67ce6be9e13
+Merge: f02ea2b 0f9d986
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 21:34:09 2022 +0100
+
+    Merge pull request #67 from UCLComputerScience/update-event
+    
+    updated events&fix footer for admin home
+
+commit 0f9d9869e810380b164ed2c4b63accdf1af3f793
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 21:31:26 2022 +0100
+
+    updated events&fix footer for admin home
+
+commit f02ea2b85b9e955076ddd0da9da179e81813b754
+Merge: cef584f 123f7bd
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 21:18:22 2022 +0100
+
+    Merge pull request #66 from UCLComputerScience/tables
+    
+    Add tables only showing the relevant project's reports
+
+commit 123f7bd595bd8fdc892579aab4c9162abd0324e1
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 21:14:58 2022 +0100
+
+    Add tables only showing the relevant project's reports
+
+commit cef584f809d300d5fa77ff9c810954d99fb47e82
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 20:45:23 2022 +0100
+
+    added SDGs to admin manage events, and move image to far left and title/desc to middle
+
+commit 18ec0719094fa4aaebd29ac2951b8063694820b6
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 20:10:54 2022 +0100
+
+    added images and sdgs to events not logged in
+
+commit affc73d9778bc1c18fdba65212e9af2ac278af1e
+Merge: c5db176 2e706f7
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 19:18:54 2022 +0100
+
+    Merge pull request #65 from UCLComputerScience/Add-project-end-date
+    
+    add project end date
+
+commit 2e706f7bdfad702cb387f546d51b5658617c77ee
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 19:18:30 2022 +0100
+
+    add project end date
+
+commit c5db1760f42b38ae02923b40c1294dac09de287c
+Merge: 519ab23 77741f0
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 19:03:02 2022 +0100
+
+    Merge pull request #64 from UCLComputerScience/update-title-position
+    
+    update title position
+
+commit 77741f0baf05de25e999d7c6fc7848ed65ed4855
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 18:59:37 2022 +0100
+
+    update title position
+
+commit 519ab23a418375966d7918939e6bd50f8c286505
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 17:45:32 2022 +0100
+
+    added get SDGS, strip and display to projects, and login-events. And updated display SDGs on projects-my
+
+commit 931612b0b074572970d8a637a3f970c8412e9e53
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 17:32:04 2022 +0100
+
+    updated my projects so it displays a project's SDGs
+
+commit 973ed01d9c1a4696abb1337b81fcbbf6b99989db
+Merge: 39cca3a bae2a1a
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Apr 11 17:31:08 2022 +0100
+
+    Merge pull request #63 from UCLComputerScience/events-video-url-and-misc-fixes
+    
+    Events video url and misc fixes
+
+commit bae2a1a9a72f847e77e3beaf1bf11a76d7e9c038
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 17:28:38 2022 +0100
+
+    Hiding youtube player if no video exists on events
+
+commit f5d68c4d0a34cd8e8e0899882eae5936f97e9d90
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 17:25:57 2022 +0100
+
+    Fixing visual issues, hiding call button if no URL
+
+commit 39cca3af031656734f9aac09c105ee716a654f2d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 16:26:12 2022 +0100
+
+    updated Google maps on membership page
+
+commit 246ad1d32db2b09a6eeb2db5dd9b5baee22e57c5
+Merge: d0de70e a2fd81f
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Apr 11 16:19:42 2022 +0100
+
+    Merge pull request #62 from UCLComputerScience/edit-user-details
+    
+    Edit user details 1
+
+commit a2fd81f1306aae1488aacaa899ee40d9277757a6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 16:10:19 2022 +0100
+
+    Script tag added
+
+commit cdc1fa2453d3ed203f84d59d8a1211edf07d1fc2
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 16:07:01 2022 +0100
+
+    Fixing SDG values and posting again
+    
+    Now more consistent with other parts of the system, and also actually displaying what it should be.
+
+commit 418d9a5c1574b3fae404c65efc9a135c3725fdeb
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 12:14:52 2022 +0100
+
+    Fixing SDGs so they populate properly
+
+commit 2ba4c392449554ca002148f7b95a92a45ec984c5
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 11:49:24 2022 +0100
+
+    Updating all other fields except city, postcode, password, and SDGs
+
+commit f2df0b11663850793630a571ef292bd5e3cf06e1
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 11:41:48 2022 +0100
+
+    Updating db for name changes
+
+commit 91cdf64d39e3c4d9fe07fec11b1b56b329b59685
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 11 11:32:11 2022 +0100
+
+    autopopulating address
+
+commit c5101dea10b3909f06f2f67694487ba855a3c36b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 22:39:28 2022 +0100
+
+    Tidying of submit button for user-profile
+
+commit 97a04ef4b5e3fe570b2a863d5802e77d9de2bd08
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 22:31:52 2022 +0100
+
+    Adding result page, updating route, posting values, adding errors for missing values
+
+commit f94a805370dea2c7fec063db73c850e5874cae77
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 21:15:13 2022 +0100
+
+    Pulling checks from db for all other sdgs
+
+commit c631418d4c99c5f892a94e73b1dce0117d78e48d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 20:32:55 2022 +0100
+
+    created $sdgtest example for checkbox pre-population
+
+commit 6b42ab6dc4b39ccf120bc8d02277a76561dcab2c
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 19:58:02 2022 +0100
+
+    Trying to get prepopulated tickboxes working
+
+commit 0b3a4bdf25e1c9f70027a8e7ae31778893fee7c6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 14:56:43 2022 +0100
+
+    Adding more fields that autopopulate, working on sdgs
+
+commit 09f0f97f5928fb437d73fa54d35a264d3e8c824e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 10 10:29:43 2022 +0100
+
+    Adding initial profile fields, pulling 'name' of user from db
+
+commit d0de70e5ef90ef0b5cefe6163c8832300397ef83
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 14:29:03 2022 +0100
+
+    updated table title on admin-members to Manage Members
+
+commit 73ff4bac605a7a0fc26459817acc15a7d38f2545
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 14:28:22 2022 +0100
+
+    updated title on admin-members to manage members
+
+commit fb90f8d8939fffaefc7107f3689207d32695c93e
+Merge: bed60ad add2d1b
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 13:37:37 2022 +0100
+
+    Merge pull request #61 from UCLComputerScience/tables
+    
+    Add user table in admin-members.blade.php
+
+commit add2d1b327ec95a23bdaf498f98769985fca7943
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Apr 11 13:36:54 2022 +0100
+
+    Add user table in admin-members.blade.php
+
+commit bed60ad7d63037e6866c789f04b20ed7b9f37de7
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 10:35:56 2022 +0100
+
+    added image upload and display to events logged-in, manage events and events detail, projects authed new routes, updated db
+
+commit fe976b3a90a5132fa7c11fdbfb0a22d101ddfea0
+Merge: bc43cff b90e1e4
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 01:19:03 2022 +0100
+
+    Merge pull request #60 from UCLComputerScience/updated-button-position&centred-image
+    
+    updated button position&centred image
+
+commit b90e1e4d2fdd30398fefcdc611e3f5c93920ceec
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 01:18:39 2022 +0100
+
+    updated button position&centred image
+
+commit bc43cffde1bd2940642f88f44aa0ec753048d4d0
+Merge: 2b208e0 44d2bb8
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 00:58:01 2022 +0100
+
+    Merge pull request #59 from UCLComputerScience/updated-db
+    
+    updated db
+
+commit 44d2bb8818dbddf10fe00c737acb93eba026c94c
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 11 00:57:27 2022 +0100
+
+    updated db
+
+commit 2b208e03e6401b1dac27680796760ba83d593027
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 00:47:35 2022 +0100
+
+    updated display images
+
+commit 4d426d9e8815f6067ea02078855ba85930ea6e67
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 00:37:34 2022 +0100
+
+    added image display to project detail
+
+commit 21a66974fdb2db009c3390ddc5072f2caae292c1
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 11 00:29:44 2022 +0100
+
+    Made uploaded images visible and uploaded to correct path
+
+commit 69dfabfac88b5f694e3591a33a048a136ee0e775
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 21:15:35 2022 +0100
+
+    updating google key
+
+commit 49b85dcc21f53e6b1d5669e91e961456ae8c99c9
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 20:42:49 2022 +0100
+
+    removed excess table from user/resources
+
+commit bbbe37d5d71a43886b0d5b8dc9466d2a30c47d4f
+Merge: 0174b27 24ddcad
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 20:33:54 2022 +0100
+
+    Merge pull request #58 from UCLComputerScience/tables
+    
+    Add resource table in resources.blade.php and update db v10
+
+commit 24ddcad902c9d1c42094ab1c2311d3842fceaf24
+Merge: a0ce641 0174b27
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 20:33:47 2022 +0100
+
+    Merge branch 'main' into tables
+
+commit a0ce641c4e662fe6581c8c7b40d1b037993943b4
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 20:23:37 2022 +0100
+
+    Add resource table in resources.blade.php and update db v10
+
+commit 0174b27a562823b22fcbe818b354fa3150814b11
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 20:05:30 2022 +0100
+
+    added delete function to Events
+
+commit 2223cd13fcac0fdc817326f77ce73bc38493efb4
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 19:19:51 2022 +0100
+
+    embedded tweets on admin home page
+
+commit 250e45b60b60cab046df06b45fc41c334cf37e13
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 18:25:22 2022 +0100
+
+    updated admin nav bar
+
+commit bb2c4ff76368fd7750914a2078e27cd99139083f
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 18:05:30 2022 +0100
+
+    added multiple SDG inputs to create events, added Google listener to projects
+
+commit 80c6bea4727eff143752c28662e79856f1526c4a
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 16:30:12 2022 +0100
+
+    updated map on project page, so map automatically updates based on new projects being added
+
+commit 8ffd872c4cb5ef03d08bceaa65a138f4b85d02ca
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 16:25:48 2022 +0100
+
+    updated events table and removed excess table from project-detail
+
+commit 613e1e1f5095728f9d80089cadb01aeb33155817
+Merge: 05cab9f d5c9162
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 15:45:07 2022 +0100
+
+    Merge pull request #57 from UCLComputerScience/tables
+    
+    Add user identification to the files table on the projects-detail page.
+
+commit d5c9162c401c46ce231024e6ed1dc25266e41ec5
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 15:43:42 2022 +0100
+
+    Add user identification to the files table on the projects-detail page.
+
+commit 05cab9f14c8d38b309767318c8d987a7c40a15d2
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 15:37:56 2022 +0100
+
+    updated create projects, and create projects result, and database to allow Google Autocomplete and multiple SDGs to be added to a project
+
+commit d21c721d1044b5dbde9e262c0735c19320cb5420
+Merge: 33dae8c 9e66185
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 13:26:26 2022 +0100
+
+    Merge pull request #56 from UCLComputerScience/tables
+    
+    Add db v10
+
+commit 9e661852c308e01fa66ff7326c43b1532a2e9e70
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 13:25:39 2022 +0100
+
+    Add db v10
+
+commit 33dae8cacb16f9f0986614f7247ce9da80b9d378
+Merge: f744355 aef067c
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 12:21:59 2022 +0100
+
+    Merge pull request #55 from UCLComputerScience/tables
+    
+    Add files table on the projects-detail page.
+
+commit aef067c34bfa24ed5d60c57458c81f578d7bce64
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Apr 10 12:17:36 2022 +0100
+
+    Add files table on the projects-detail page.
+
+commit f744355439df94813ca2b880c2bac774777255cf
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 10 00:08:11 2022 +0100
+
+    update members table to include sdgs and country
+
+commit e59f597675d314e1c74cf55162d115821037a8bb
+Merge: 93d307f e94aeed
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 22:23:04 2022 +0100
+
+    Merge pull request #54 from UCLComputerScience/deleting
+    
+    delete function
+
+commit e94aeed9f7af267bac0ea48e40c3b8a221c07dbc
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 22:22:21 2022 +0100
+
+    delete function
+
+commit 93d307fe3df8e16661fa5ce13f0214c437850ead
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 19:38:56 2022 +0100
+
+    updated register so users can enter multiple SDGs
+
+commit 6dd0160654c99cb298e2fbfc061a8c1be96b850f
+Merge: 58392a0 b4a6df4
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 19:22:36 2022 +0100
+
+    Merge pull request #53 from UCLComputerScience/fix-footer&admin-nav-bar
+    
+    fix footer&admin nav bar
+
+commit b4a6df46b3c591f3176d6cf9224977aabbdb692c
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 19:21:28 2022 +0100
+
+    fix footer&admin nav bar
+
+commit 58392a0b440f62eb673dfdf798ca8e381625b893
+Merge: 7548da1 d0ab0b1
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 19:04:46 2022 +0100
+
+    Merge pull request #52 from UCLComputerScience/add-br-
+    
+    add br
+
+commit d0ab0b1a58236b571ab187d796f4390ad89b192e
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sat Apr 9 19:04:03 2022 +0100
+
+    add br
+
+commit 7548da17a517fab21ba544d63cf82bb159bf5928
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 18:20:13 2022 +0100
+
+    updated formatting on registration, Address Line 1 to Address
+
+commit 8d371e7c1ee54bedbc7c3691fbe5296ccf617689
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 18:05:38 2022 +0100
+
+    updated register so Country automatically gets added to database from GoogleAutocomplete
+
+commit 53abc00564f11965bedf0b10e811f5a0392bc0bf
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 16:20:20 2022 +0100
+
+    updated membership and members maps to reflect updated register fields
+
+commit 1c910f263e6f2c35cf743ef844ffd6903efe933d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 16:08:02 2022 +0100
+
+    updated register to hide lat and long, updated admin controller to allow SDG display on Members and Membership
+
+commit 0b54bdf917cc04e57a3af3b24271340b321024dd
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 16:07:20 2022 +0100
+
+    updated register to hide lat and long, updated admin controller to allow SDG display on Members and Membership
+
+commit f0020b8b2b4ef53c9321ab30c05b0e079b09d875
+Merge: beee1de 72de43e
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 13:39:01 2022 +0100
+
+    Merge pull request #51 from UCLComputerScience/google_autocomplete
+    
+    added google autocomplete to Register and updated DB
+
+commit 72de43ed5d428c35fb5ef12ea23b3dc788080cce
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 13:38:31 2022 +0100
+
+    added google autocomplete to Register and updated DB
+
+commit beee1de4f220eac697a72f26d29257d66295c7e9
+Merge: e2a2c61 48838b7
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Sat Apr 9 13:25:49 2022 +0100
+
+    Merge pull request #50 from UCLComputerScience/projects-edit
+    
+    Projects edit
+
+commit 48838b7163219acae94b12b5cedaecbd4ba05bca
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 13:24:01 2022 +0100
+
+    All other project fields updating in DB, except SDG and image
+
+commit 0007dbe6e25c07f193c12abf6136f24563bd70a9
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 13:21:55 2022 +0100
+
+    Updating project details in DB
+
+commit 8c6d42c2d9df7fa9b29c2ea4590df511601f6db0
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 13:20:30 2022 +0100
+
+    Project title updating in DB
+    
+    Also made new success message box
+
+commit c969283e981412035b3a99d7417c6d0db84cb2df
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:33:51 2022 +0100
+
+    Project end date prepopulating
+
+commit 5d9831317e028df23e5ba6644fc5b878dca5231b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:28:43 2022 +0100
+
+    Prepopulating funding and value, changing SDG text
+
+commit d244e89d5a60c13d914b20d6817ac3fb61967c4e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:26:01 2022 +0100
+
+    Prepopulating project description
+
+commit e5d32b539fceed033fab7b54fd1f5dd245855d69
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:24:37 2022 +0100
+
+    Prepopulating project country
+
+commit 876fba7c0ab75aaac6181712df100acdee7f10fa
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:23:35 2022 +0100
+
+    Prepopulating city
+    
+    Also pulling more project fields from DB
+
+commit 4b58cb8e323870359f660ec02007e23bfe6064b4
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:18:48 2022 +0100
+
+    Prepopulates address line 1 from preexisting value
+
+commit dc8a1b027fe5b59ad1f6e0ae38d544454c105e3e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 12:10:39 2022 +0100
+
+    Updating project edit form title
+    
+    Now echoes name of project
+
+commit e2a2c61ecc122c55e06179e87077ee875f3add5c
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Apr 9 12:26:12 2022 +0100
+
+    added google analytics to Admin analytics page
+
+commit 1ebf3ed4d319629fc94bc99b02b936578c37949d
+Merge: 82a6b1c 96aa50d
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Sat Apr 9 11:55:05 2022 +0100
+
+    Merge pull request #49 from UCLComputerScience/edit-events-updated
+    
+    Edit events updated
+
+commit 96aa50da5e87eef3d9c5bbbadee497c61132d4ac
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 11:53:56 2022 +0100
+
+    Removing error when user removes event_call_url
+
+commit f466dce6ef24591874ac11d294fa183cea76f29b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 11:49:30 2022 +0100
+
+    Event datetime edit update to db
+
+commit 90e55d503f56f496e25c395fa977dbba20926c05
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 11:48:25 2022 +0100
+
+    Datetime autopopulated with preexisting value
+
+commit 9a5b1ab05388882e828032ca389ebdcdbc7e2d2a
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 11:24:00 2022 +0100
+
+    Updating event timezone
+
+commit 49111cf1bf1087d7b086fb7573bb72027760cf5f
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 11:21:39 2022 +0100
+
+    Select current timezone by default
+
+commit 293129ffc203f571378d9fd72d596d15406d8e63
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 10:34:48 2022 +0100
+
+    Edit event - video URL, call URL
+    
+    These features have now been added
+
+commit f46662ce88cbbaafff7179632417fef388a9071b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Apr 9 10:31:11 2022 +0100
+
+    Edit for event description
+    
+    Description can now be edited for events
+
+commit 82a6b1c21eb4c792dc1bcd9e22081e9bf831b851
+Merge: 3d97c73 fe9e752
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Fri Apr 8 18:33:39 2022 +0100
+
+    Merge pull request #48 from UCLComputerScience/events-edit
+    
+    Adding edit function for title only in events
+
+commit fe9e75235987d06232c5c6fa3442d2d87fa65177
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 8 18:32:58 2022 +0100
+
+    Adding edit function for title only in events
+    
+    Still need to add update for other fields
+
+commit 3d97c73ad4e68adc07f4c301f1ace623d0bbb313
+Merge: de5be8c e9e4ab8
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Apr 8 14:24:55 2022 +0100
+
+    Merge pull request #47 from UCLComputerScience/fix-logged-in-nav-bar
+    
+    fix logged in nav bar
+
+commit e9e4ab896a613c919aaae0d2ee032886c95121a5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Apr 8 14:23:52 2022 +0100
+
+    fix logged in nav bar
+
+commit de5be8c13cddd690270cf793b3555a41d4777d3e
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Apr 8 13:52:09 2022 +0100
+
+    removed echos from my projects
+
+commit eee402f43e818dc599d27577336d2a42d63d64ff
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Apr 8 13:48:53 2022 +0100
+
+    added authentication to projects pages
+
+commit f38e4d8aaa017ecdd238d9b94f6fe7912c0f1b06
+Merge: 9962e6d 235d8dd
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Apr 8 13:07:21 2022 +0100
+
+    Merge pull request #25 from UCLComputerScience/new_tables
+    
+    Update user table with editing and deleting functionality.
+
+commit 235d8dd7624f69499b2d7f622529e4b51f352dbc
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Mar 25 19:02:40 2022 +0000
+
+    Updata ancssc_database_v9.sql
+
+commit 7468ba34f8400efcf72a1009abaaea0353f3aee5
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Mar 25 18:55:26 2022 +0000
+
+    Update user table with editing and deleting functionality.
+    Update file upload and download.
+
+commit 9962e6d7bf307a7ebacf54ddd4260772b7f13221
+Merge: 10fc89b c21f8ba
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Thu Apr 7 18:01:51 2022 +0100
+
+    Merge pull request #46 from UCLComputerScience/programmable_search
+    
+    added Google programmable search to website
+
+commit c21f8bac1cf5428cd69cfb43be08daa25f8d4aa6
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Apr 7 18:01:29 2022 +0100
+
+    added Google programmable search to website
+
+commit 10fc89b4caacea06bbb5a4c4c5c55af31c29c8c9
+Merge: b1bdca6 091cae0
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Apr 5 17:42:35 2022 +0100
+
+    Merge pull request #45 from UCLComputerScience/fixed_uuid_error
+    
+    fixed the new uuid image generator
+
+commit 091cae004e4a7dde95f30645724de26b0a702a99
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Apr 5 17:42:06 2022 +0100
+
+    fixed the new uuid image generator
+
+commit b1bdca6fff837d80e42996ded0b6d38bcfba7687
+Merge: e360984 5bb5c33
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Tue Apr 5 17:27:49 2022 +0100
+
+    Merge pull request #44 from UCLComputerScience/registration-field-updates
+    
+    Registration field updates
+
+commit 5bb5c332d31e58e9249bc85adc0259caf8eb86a3
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 16:22:14 2022 +0100
+
+    Adding space between end of form and footer
+
+commit f7cc27dc560ad97cb22fb010eda87eb6a742cfbb
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 16:19:59 2022 +0100
+
+    Making postcode, no of employees, no of volunteers, and website not mandatory
+
+commit e360984513633515ff7a4bc1e7f7dedaab0b216e
+Merge: fba62f6 45dc5d8
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 16:41:14 2022 +0100
+
+    Merge pull request #43 from UCLComputerScience/frontend-quick-wins
+    
+    Update demo.blade.php
+
+commit 45dc5d85582d928ab74da218f5f1400c89b784ba
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 16:40:16 2022 +0100
+
+    Update demo.blade.php
+
+commit fba62f6227aa498da68df34411d9fe1edf17321c
+Merge: 032f0cb 4c49b13
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Tue Apr 5 16:00:28 2022 +0100
+
+    Merge pull request #42 from UCLComputerScience/contact-us-direct
+    
+    Open email directly from contact us page
+
+commit 4c49b1331e5efdc1f6f42665ac146ebcf10fa8e1
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 15:59:58 2022 +0100
+
+    Open email directly from contact us page
+
+commit 032f0cb567ee666536916ca20d79c19c60fc87fa
+Merge: 91c330d 008b007
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 15:37:39 2022 +0100
+
+    Merge pull request #41 from UCLComputerScience/frontend-quick-wins
+    
+    Update nav-logged-in.blade.php
+
+commit 008b007c0be1db4553f75c5332b1bf3cca7a87e5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 15:36:00 2022 +0100
+
+    Update nav-logged-in.blade.php
+
+commit 91c330de9a3c6ae1e48959326fa1b74856a56c9e
+Merge: 08d25f2 0906935
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Tue Apr 5 15:34:53 2022 +0100
+
+    Merge pull request #40 from UCLComputerScience/login-centering
+    
+    Login centering
+
+commit 0906935c10b27b2d11bf080d2df9c301842f9b57
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 15:33:53 2022 +0100
+
+    Adding box for success on project creation
+
+commit 68fe11501a1691cf7999b087e2b90720bc3a9aff
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 15:19:48 2022 +0100
+
+    Login card now centralised
+
+commit 08d25f25b75e76e1024e420bbdff63d1d60a9dff
+Merge: 83a8f46 2fa3113
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 15:30:32 2022 +0100
+
+    Merge pull request #39 from UCLComputerScience/frontend-quick-wins
+    
+    frontend
+
+commit 2fa31131da3a619bd5fd1f88aadccb6f749f0558
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Apr 5 15:29:04 2022 +0100
+
+    frontend
+
+commit 83a8f46557d7163a56b19798ed0189cfd313ba4a
+Merge: 9d2a7ec e5d547d
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Tue Apr 5 15:07:39 2022 +0100
+
+    Merge pull request #38 from UCLComputerScience/maps
+    
+    Centering maps on projects, members, membership pages
+
+commit e5d547d5c433afb26145bd6f403a3cd2240bf346
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Apr 5 15:06:56 2022 +0100
+
+    Centering maps on projects, members, membership pages
+
+commit 9d2a7ec264905948f5fc206c0219c74dfa21e805
+Merge: 411fc28 a47a0d8
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Apr 5 15:00:15 2022 +0100
+
+    Merge pull request #37 from UCLComputerScience/projects_page_with_list
+    
+    updated projects to include list view, same as events list
+
+commit a47a0d86f4f7fe0abb38466e05d3ff944cb54c8f
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Apr 5 14:58:45 2022 +0100
+
+    updated projects to include list view, same as events list
+
+commit 411fc28e3dc4b003a2827e3e3555a933207dcdc7
+Merge: f34f9ee 0b0a659
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Apr 4 16:02:45 2022 +0100
+
+    Merge pull request #36 from UCLComputerScience/db-dummy-data
+    
+    Db dummy data
+
+commit 0b0a6591fc636f4e60adca1385ab1663c495edbd
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 16:02:18 2022 +0100
+
+    Adding location dummy values
+
+commit 562fa9146c1b90ec727fb72075c7e00309c7be05
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 15:47:23 2022 +0100
+
+    Inserting 3 dummy events
+
+commit f34f9eeef9de92335967526f82fca0c1b3876a73
+Merge: 1e4528e b13e673
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Apr 4 15:27:54 2022 +0100
+
+    Merge pull request #35 from UCLComputerScience/manage-events
+    
+    Manage events
+
+commit b13e67355320f5a7d135bd793ec3f852e1d785c6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 15:26:57 2022 +0100
+
+    Tidy up of test echoes
+
+commit 4c834f1985f48d65bc9b029c523276c4a0a513ca
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 15:20:47 2022 +0100
+
+    Update admin-events-edit.blade.php
+
+commit 0646150e3feed816e77932f27a23acce2f4649e6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 14:15:25 2022 +0100
+
+    Populating event_description
+
+commit ffcfec01169a41b4f3116bf7671f24b2ef557cd0
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 14:12:14 2022 +0100
+
+    Show call_url, video_url
+
+commit 39f1c8f4bf9c28561d76ec726e2957e8e3af4789
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 12:56:04 2022 +0100
+
+    Adding video link, updating event edit to pull data
+    
+    Currently just pulling data for event title
+
+commit 4b5f356ca75ade89de4166f72e08f474005cfae6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 12:39:30 2022 +0100
+
+    Event edit route added
+
+commit 1e4528edb47ae69ab71fe915c86a93d21a14b3b8
+Merge: cd9c61d 48ad892
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 4 13:41:53 2022 +0100
+
+    Merge pull request #34 from UCLComputerScience/fix-footer-position-and-admin-nav-bar
+    
+    fix footer position&admin nav bar
+
+commit 48ad892e1679e4a90f695133d1b6439926a16d1a
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Apr 4 13:41:35 2022 +0100
+
+    fix footer position&admin nav bar
+
+commit cd9c61de8e806b3a7d3b51cfee6023040061e96f
+Merge: 5f753ad 9a1ccd4
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Apr 4 12:27:14 2022 +0100
+
+    Merge pull request #33 from UCLComputerScience/event-details-times-image
+    
+    Event details times, manage events
+
+commit 9a1ccd446db961c4505083d8e6992a5e78713628
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 12:22:41 2022 +0100
+
+    Manage events updates
+    
+    Fixing it so it shows event list, event deletion and edit buttons that go to the right places too
+
+commit d409a95a9464cad83531b520707a61388b241eed
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 11:23:40 2022 +0100
+
+    Tidying format
+
+commit 42d3acaed78d69330222abcac279b24c47062a42
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 10:36:52 2022 +0100
+
+    Notes on past events
+    
+    To implement if time
+
+commit 23104f589c0bc4e40127d37c83a35591f4e7ce45
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 10:25:43 2022 +0100
+
+    Fixing event video issues
+
+commit 719907c99b86228e590eb95b39a2592753033ff1
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 09:54:18 2022 +0100
+
+    Tidying format for datetime
+    
+    Including removing unnecessary characters and the display of seconds in datetime
+
+commit a2d415abeed70bd116af0fc9e10a7e7cb1c2a2aa
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Apr 4 09:47:57 2022 +0100
+
+    Tidying superseded comments, adding datetime and timezone to view
+
+commit 5f753ad2ba44b12efcc4c654699c3d09effd26c5
+Merge: ca1b485 57875d7
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Mon Apr 4 09:38:58 2022 +0100
+
+    Merge pull request #32 from UCLComputerScience/embedded_youtube
+    
+    present youtube videos embedded on events-detail page, based on URL from DB
+
+commit 57875d761eb0e40d864f8b611166912a882a2533
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Apr 4 09:38:28 2022 +0100
+
+    present youtube videos embedded on page, based on URL from DB
+
+commit ca1b485e89d994f8f985125d437b8731422d0c95
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 23:02:46 2022 +0100
+
+    Updating admin events create to make webcall box smaller
+
+commit f9fc34fea15f693882245df62f13d90d62806a25
+Merge: e4c1962 537510d
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Sun Apr 3 22:39:30 2022 +0100
+
+    Merge pull request #31 from UCLComputerScience/event-details
+    
+    Event details
+
+commit 537510ddbd2ab734be7d61c7defe5bb851858e69
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 22:35:44 2022 +0100
+
+    Fixed issues in display for blank urls
+
+commit e2224167542b1c8b99128a7a19272b7509a1a1fb
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 21:39:05 2022 +0100
+
+    Fixing call url
+    
+    Now works
+
+commit 381cb412688466e18e1dbd727a2af8e7708dc19b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 20:59:25 2022 +0100
+
+    embedded video added
+    
+    With condition to not appear if event_video_url value is NULL
+
+commit 85b8521af8e4739f09439ff86aa98b900eaca2cc
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Apr 3 17:01:05 2022 +0100
+
+    fixed routes and file locations for logged in events and event details, $event_description variable needs to be defined
+
+commit 9eb907d8450136442e548f29f9e584fa6255d4a9
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 16:33:20 2022 +0100
+
+    Aligning manage-events with projects-my, aligning login-events with logged out events page
+
+commit dc7e02277dd40c61579b6a6ae05c8254fba4095a
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sun Apr 3 15:30:01 2022 +0100
+
+    Updating event details view
+    
+    Also correcting event details linking
+
+commit e4c196234ee922e99bc489b474826ad8a7fe2d4b
+Merge: c11f653 9dee10c
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Apr 3 15:47:13 2022 +0100
+
+    Merge pull request #30 from UCLComputerScience/navdrop
+    
+    fix nav bar menu dropdown
+
+commit 9dee10c801dabdb5e2612b18689dbceae8f53210
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Apr 3 15:46:53 2022 +0100
+
+    fix nav bar menu dropdown
+
+commit c11f653d9290e1e3a90b9fdaa4b99f86806b84be
+Merge: 546b3c9 181e821
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Fri Apr 1 22:05:13 2022 +0100
+
+    Merge pull request #29 from UCLComputerScience/confirm-successful-creation
+    
+    Confirm successful creation
+
+commit 181e82113ef1db756d4844c89a138eec6ffe8d94
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 1 22:02:18 2022 +0100
+
+    Updating text and centering
+
+commit ca6177441c19e58130d11f85a1b20510a663d52d
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 1 21:50:42 2022 +0100
+
+    Updating text and format in event success box
+
+commit 879fca23c116c1303a4bcb3ce77946a08cb73ea8
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 1 21:44:43 2022 +0100
+
+    Adding box for confirmation of success
+    
+    Text to be changed
+
+commit 546b3c9968b05e8c6630a89a3c91f4802d812937
+Merge: 9c08928 873ebbc
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Fri Apr 1 20:46:37 2022 +0100
+
+    Merge pull request #28 from UCLComputerScience/gdpr-registration
+    
+    Adding GDPR. Includes:
+    
+    - New guest page with GDPR text (currently filler text)
+    - Updating web.php to add the route to the new page
+    - Updating registration page to change GDPR to a tickbox, forcing tickbox to be mandatory, and adding a link that opens the GDPR policy page on a new tab
+
+commit 873ebbcb04e82aa34114d8bb6f72b98496d5a834
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 1 20:45:52 2022 +0100
+
+    Adding GDPR
+    
+    Includes:
+    - New guest page with GDPR text (currently filler text)
+    - Updating web.php to add the route to the new page
+    - Updating registration page to change GDPR to a tickbox, forcing tickbox to be mandatory, and adding a link that opens the GDPR policy page on a new tab
+
+commit 9c0892810d87ee20af39a6523d04df31965ae7b6
+Merge: ce1f9b0 d398941
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Fri Apr 1 15:56:33 2022 +0100
+
+    Merge pull request #27 from UCLComputerScience/events-create
+    
+    Adding create event functionality
+
+commit d398941c65e8086aa7276429b2f14f6c4781a134
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Apr 1 15:55:27 2022 +0100
+
+    Events creation, admin home, DB updates for users and images
+
+commit ce1f9b0ae38bec04eb090ad1c73c94366e3681fc
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Apr 1 14:43:26 2022 +0100
+
+    update
+
+commit 414b88b4369c2c288b3f72a5dc09ae02bc2f145f
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Thu Mar 31 12:31:22 2022 +0100
+
+    Fixing visual issue on create result
+    
+    Fixing so that the header doesn't overlap with the success confirmation
+
+commit 2879a6e958a15625ebc99927eae2b2e3064772ad
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Thu Mar 31 12:28:37 2022 +0100
+
+    updating events create page, adding line break to projects page
+    
+    Fixed minor visual issue on projects create page and implemented minor changes on events create page
+
+commit c1bf0c9212f399561e40cb3881e9e19f1bb3714c
+Merge: d1d5ad3 54e67e6
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 29 15:11:59 2022 +0100
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit d1d5ad3360f9dc9318bb3ffd5a2435302d5fb6f2
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 29 15:09:12 2022 +0100
+
+    updated stripe URLs
+
+commit 54e67e68f323f45944e42ac2df9652f9ee7956b5
+Merge: 62f839c d2b6b15
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Tue Mar 29 11:48:37 2022 +0100
+
+    Merge pull request #21 from UCLComputerScience/events-updates
+    
+    Updating route to include event results
+
+commit d2b6b15f83e90beeb6237685d5d09406a677e0fd
+Merge: 9606c57 71db67d
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 29 11:47:14 2022 +0100
+
+    Merge branch 'events-updates' of https://github.com/UCLComputerScience/COMP0067_2022_Team6 into events-updates
+
+commit 9606c579cd8a03f4c67fe61a982cb2e9c3c1767c
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 29 11:43:28 2022 +0100
+
+    Adding dynamic SDG dropdown
+
+commit c318bf8e58eb275f2f026c51ed18006d0b99a838
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 29 11:40:49 2022 +0100
+
+    Updating search query, removing unnecessary code
+
+commit a3ca18bd0a138c32bed23609e79c4b8674b7ad66
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 25 22:20:00 2022 +0000
+
+    Update to searching on events page
+
+commit 2b8a3dc50f7b1f4dd89f82d2b41c06c2e13527b6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 18:03:45 2022 +0000
+
+    Displaying event list
+    
+    Currently has no limits to past and future events - depending on how search function work goes, I may try and let user toggle results. For now, this is just the full list. Images are commented out for now.
+
+commit cb990f1b4957ee75a104fbcf296e2b48518d50e0
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 17:15:39 2022 +0000
+
+    Updating admin event create
+    
+    Includes changing character minimum for event name to 10 (instead of 20), updating the help text for that, aligning all help text to the left, and updating timezone view so it shows the times relative to GMT.
+
+commit 5724cfaa3c666bb1c4e5fdb0eaad7f31cdad7b96
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 16:52:21 2022 +0000
+
+    Updating route to include event results
+
+commit 62f839c4ddfbdd45bf4e5e0256780c2cf91e9d3e
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Mon Mar 28 15:02:17 2022 +0100
+
+    Add test data in ancssc_database v8
+
+commit 867766a34d0e939862a4ce3e39b3a599caf5622f
+Merge: 8d77e14 2e6ea70
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Mar 27 20:45:38 2022 +0100
+
+    Merge pull request #26 from UCLComputerScience/nav
+    
+    fixed nav bar size problem
+
+commit 2e6ea70c3b77711a95576e2234540ca0a1667429
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Mar 27 20:45:20 2022 +0100
+
+    fixed nav bar size problem
+
+commit 71db67d37237b83b937300b3ccbc8126c0085a0e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 25 22:20:00 2022 +0000
+
+    Update to searching on events page
+
+commit 8d77e14f5cdb68f8059fa94e4f3da32eae5e8d96
+Merge: ff544d3 bfda8f5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 25 16:42:35 2022 +0000
+
+    Merge pull request #24 from UCLComputerScience/loginnav
+    
+    Update nav-logged-in.blade.php
+
+commit bfda8f54f9c7e3dea69d98f16d84302c7e593d56
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 25 16:42:01 2022 +0000
+
+    Update nav-logged-in.blade.php
+
+commit ff544d3f54418c58f398fe85681ded381eff7057
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 16:11:33 2022 +0000
+
+    update
+
+commit ba535bae4702a4c3cfd9505bf5d5841788f466c3
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 15:59:44 2022 +0000
+
+    Update .env
+
+commit 7e2b184fa3ac55f5a10f5339235770929773327f
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 15:35:26 2022 +0000
+
+    update
+
+commit 49252a1abcab97a2c2c623c3df37968c20d909c7
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 15:29:30 2022 +0000
+
+    update
+
+commit a13c9e7f6faac2340e4e994bbb2e25e8b7dd49d7
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 15:00:21 2022 +0000
+
+    update
+
+commit a376d5e4bce1273ab8367edb0e11b81b32847daf
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 14:57:03 2022 +0000
+
+    port change
+
+commit 7df5af38e2202c779452b99c3dab3f496d2404d4
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 18:03:45 2022 +0000
+
+    Displaying event list
+    
+    Currently has no limits to past and future events - depending on how search function work goes, I may try and let user toggle results. For now, this is just the full list. Images are commented out for now.
+
+commit 7c6465659b3e196bfdf3b74301408a16dfed1cc2
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 17:15:39 2022 +0000
+
+    Updating admin event create
+    
+    Includes changing character minimum for event name to 10 (instead of 20), updating the help text for that, aligning all help text to the left, and updating timezone view so it shows the times relative to GMT.
+
+commit 31a335184849bd94480ca6a713c09817b049d9aa
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 23 16:52:21 2022 +0000
+
+    Updating route to include event results
+
+commit eb7df271b05822c5c2cf789f89d1c789cb1d9764
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 25 14:32:19 2022 +0000
+
+    edit and delete projects pages added, database updated to V8, register updated to include sdg
+
+commit 592f5eb32b75da00b2f3b34d81215ec2218b2cf1
+Merge: 515ecd6 0e28109
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Wed Mar 23 17:59:21 2022 +0000
+
+    Merge pull request #22 from UCLComputerScience/loginnav
+    
+    Update nav-logged-in.blade.php
+
+commit 0e28109a44d32aca6efb5194c30219846ecc9bd5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Wed Mar 23 17:59:01 2022 +0000
+
+    Update nav-logged-in.blade.php
+
+commit 515ecd62e38d2f18776755e0470b6a3343467a26
+Merge: 789cbf3 93ebcd4
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Wed Mar 23 12:44:09 2022 +0000
+
+    Merge pull request #20 from UCLComputerScience/auth-updated-for-end-to-end-sign-up-+-project-create-updated
+    
+    update
+
+commit 93ebcd4f79afaaa8d650d42eb6c42074b4dbbe66
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Wed Mar 23 12:43:27 2022 +0000
+
+    update
+
+commit 789cbf32153c55bc539f1e18a10ae6f9c4e681d7
+Merge: 3fe8f6a f9ca014
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 22:26:58 2022 +0000
+
+    Merge pull request #19 from UCLComputerScience/stripeV1
+    
+    updates to auth
+
+commit f9ca0145a4bd3d25e8f63bf3ffe8288c6c629f01
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 22:26:43 2022 +0000
+
+    updates to auth
+
+commit 3fe8f6a0a1fd3176928c9278267edcfecd2a4a3b
+Merge: f0cc23b 98cc703
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 19:06:47 2022 +0000
+
+    Merge pull request #17 from UCLComputerScience/stripeV1
+    
+    update
+
+commit f0cc23bb67b871da7e602f0808aec8a074aab4d1
+Merge: 54c187d b56a665
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:58:36 2022 +0000
+
+    Merge pull request #16 from UCLComputerScience/jh
+    
+    Update projects-detail.blade.php
+
+commit b56a6651acabc729381a53d4d84f0e68786ddfa7
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:56:08 2022 +0000
+
+    Update projects-detail.blade.php
+
+commit 54c187da3428b3f58f7f7c6b8bbd372589ca9047
+Merge: 925cbfb fbce91a
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:39:47 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 925cbfb06d755785179ba8f21d501a4df6f4b966
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:39:20 2022 +0000
+
+    DB update
+
+commit fbce91a31a466f9eaffa199d546d890516e5743e
+Merge: c113202 0e47988
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:22:32 2022 +0000
+
+    Merge pull request #15 from UCLComputerScience/jh
+    
+    DB and create projects update
+
+commit 0e4798801e0743ec16c48c67430888de8c133345
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 18:12:14 2022 +0000
+
+    DB and create projects update
+
+commit c1132022a97f06be06837d15428b776a0aa2d984
+Merge: 0bfc196 9fda70b
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 18:07:53 2022 +0000
+
+    Merge pull request #14 from UCLComputerScience/events
+    
+    Adding events, add timezone, events table update
+
+commit 9fda70be2957e02b0c8bec6535b0a45876f0c68c
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 22 18:03:41 2022 +0000
+
+    updating db v7
+    
+    Updating db file to be in line with changes made in v6
+
+commit 98cc7033282c4764b0fc6414af791fc4ed789d17
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 18:03:13 2022 +0000
+
+    update
+
+commit 7e3c25f235d2c930bdda5ef58cf8de282e4c8ca6
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 22 17:16:57 2022 +0000
+
+    Adding events, add timezone, events table update
+    
+    Adding new table for timezones, updating events table to include URL fields and remove language, adding new pages for adding events and editing
+
+commit 0bfc19649e062b5e51ccba4040f54cbf902f0941
+Merge: 1ea9089 95a1659
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 15:21:16 2022 +0000
+
+    Merge pull request #13 from UCLComputerScience/jh
+    
+    Create projects
+
+commit 95a1659b7d0ddcd581429ff22269ad561d574b71
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 22 15:20:33 2022 +0000
+
+    Create projects
+
+commit 1ea908972409016ad1bb634525f71620b6d819ce
+Merge: 352b4b8 b50e351
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 15:18:30 2022 +0000
+
+    Merge pull request #12 from UCLComputerScience/new-db-+-projects-detail
+    
+    update
+
+commit b50e351f840b6029637a68376aa563f00e986d83
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 22 15:18:07 2022 +0000
+
+    update
+
+commit 352b4b8bb9816351002f56eeb6f942876d5fa24a
+Merge: 5a55a99 ae9be5d
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Mar 21 15:58:48 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 5a55a990331e465f9959f23403a763dc35c9fd8d
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Mar 21 15:57:35 2022 +0000
+
+    Fix css/js for projects-detail
+
+commit ae9be5d43e54a511722fbfabe6ec5c1e2fd503e6
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Mar 21 14:31:45 2022 +0000
+
+    updates
+
+commit 276c6cd574aa1297e2712a90496a85bafc6dfe56
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Mar 21 10:55:03 2022 +0000
+
+    Revert "Revert "Merge pull request #10 from UCLComputerScience/map-centering""
+    
+    This reverts commit cdffe3881acb6fb8edf37794ad7348eb2a38025c.
+
+commit cdffe3881acb6fb8edf37794ad7348eb2a38025c
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Mar 21 10:50:32 2022 +0000
+
+    Revert "Merge pull request #10 from UCLComputerScience/map-centering"
+    
+    This reverts commit c32cec73538735abac760e11604b77232a5aa070, reversing
+    changes made to 5e3600612a8920c3ab0b2b64284623e324069c57.
+
+commit c32cec73538735abac760e11604b77232a5aa070
+Merge: 5e36006 bcfec32
+Author: Elynor Kamil <92984338+Elynor-Kamil@users.noreply.github.com>
+Date:   Mon Mar 21 10:46:53 2022 +0000
+
+    Merge pull request #10 from UCLComputerScience/map-centering
+    
+    Revert "Centralising and padding the maps"
+
+commit bcfec329097e2c86ab2153b965b58ac45831a119
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Mar 21 10:45:51 2022 +0000
+
+    Revert "Centralising and padding the maps"
+    
+    This reverts commit 5e3600612a8920c3ab0b2b64284623e324069c57.
+
+commit 5e3600612a8920c3ab0b2b64284623e324069c57
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Mar 21 10:37:00 2022 +0000
+
+    Centralising and padding the maps
+    
+    Updated maps on projects, members, and membership pages to have a little padding at the top and bottom, plus making them centralised.
+
+commit f6332bf75c05c548f338100234bf2cb0affb725c
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Mar 21 00:49:13 2022 +0000
+
+    updates to projects-detail - view now working
+
+commit d14a3e63ea695f9233154ac30db07ad99a7b3004
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Mar 21 00:09:41 2022 +0000
+
+    dynamic routing added to listings
+
+commit 66aa68db4ac1227f02baf34f85b9e08acd073ad4
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 20 19:34:48 2022 +0000
+
+    updates to project-detail
+
+commit a7a9db87a564f9c93b080b641a1ab2aac2f84976
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 20 18:28:25 2022 +0000
+
+    created methods/pages to create projects and present them on to a user
+
+commit b9cd81a670b30420228c219ab8a35698b2dd53d9
+Merge: 2c6cadd e9432b3
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Sun Mar 20 02:15:32 2022 +0000
+
+    Merge pull request #9 from UCLComputerScience/auth-updates
+    
+    auth access to pages added for Users and Admin
+
+commit e9432b31ef18dbb4b454079e7e978a1db9105368
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 20 02:14:42 2022 +0000
+
+    auth access to pages added for Users and Admin
+
+commit 2c6cadda331d822865a4b7f7d0657745459ef053
+Merge: 478a8e0 f98d9bd
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Sat Mar 19 18:41:00 2022 +0000
+
+    Merge pull request #8 from UCLComputerScience/register-updates
+    
+    updated db tables and connected all register fields to DB
+
+commit f98d9bdc8ca9cb227e0584a354e71f47ab3d448b
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Mar 19 18:40:42 2022 +0000
+
+    updated db tables and connected all register fields to DB
+
+commit 478a8e0b0459591b53565e20c12dd296b2bc740a
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Mar 19 17:16:31 2022 +0000
+
+    updated db
+
+commit 635b796ea3eb9fe53a55d1620e93756ca5bbe0ef
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 18 23:13:15 2022 +0000
+
+    Update HomeController.php
+
+commit fec20a8409bcf7a2526fce7338eb5a01f40c6f5e
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 18 22:50:20 2022 +0000
+
+    nav logo change
+
+commit 422c57dce1dfec93d72eb9d9f5660869a0726a45
+Merge: b1adf83 629444c
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 18 18:55:06 2022 +0000
+
+    Merge pull request #7 from UCLComputerScience/nav
+    
+    nav changes
+
+commit 629444c09fefb470438fbd3251521044abe321b1
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 18 18:15:03 2022 +0000
+
+    nav changes
+
+commit b1adf83a0e760306387073ecc890303b69a9f4d0
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Mar 18 18:13:19 2022 +0000
+
+    Add guest,user,admin folders in the views
+
+commit ce51753ea25e0f3d74d14d7845ccd0f88994fef0
+Merge: 22aa971 31ac7a9
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 17:20:19 2022 +0000
+
+    Merge pull request #5 from UCLComputerScience/added-pages
+    
+    added several pages
+
+commit 31ac7a98a43e6a88a40a2bccca08fe3656e1de9b
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 17:20:02 2022 +0000
+
+    added several pages
+
+commit 22aa971d0f26a47a4121d89a19b50a64eb58126e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 18 16:49:16 2022 +0000
+
+    Centralising the map on projects page
+
+commit b8e736d28c68e942202bc5c32a060b7242f8380c
+Merge: 093b08c efb42f8
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 15:25:55 2022 +0000
+
+    Merge pull request #4 from UCLComputerScience/projects-pages
+    
+    created projects pages
+
+commit efb42f81451c7ed0628a77d5d096ec7931ae28e0
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 15:24:54 2022 +0000
+
+    created projects pages
+
+commit 093b08c11373f3fab9d6aa1665dce52e12333d11
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 15:05:19 2022 +0000
+
+    pushed
+
+commit 86f79418701888853c6e4094d1c3ca0dc4abe3b8
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 12:48:38 2022 +0000
+
+    added Nav bar for logged in home screen + logout button
+
+commit fc6962584709b14528a6cceee4ae4b57dcbe9544
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 12:24:23 2022 +0000
+
+    tweaks to members and membership
+
+commit 3d278a3512c5e16767e8e60c2f96889bb7575e79
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 12:05:07 2022 +0000
+
+    Update ancssc_database v5.sql
+
+commit 480254889d559a81d1070e72c40bfaf0bffd9b42
+Merge: c64e2ec 24e1626
+Author: Marc <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 03:08:49 2022 +0000
+
+    Merge pull request #3 from UCLComputerScience/Maps
+    
+    google maps working
+
+commit 24e1626d2c030e04ed706681a580ed2885547cf9
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 18 03:08:29 2022 +0000
+
+    google maps working
+
+commit c64e2ec0bebf4e58d1cec08e2f753d40fcc35eb0
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Thu Mar 17 22:36:08 2022 +0000
+
+    Update projects-detail.blade.php
+    
+    Updating title, adding reports table, adding organisation name and SDGs titles
+
+commit dc88e32a702621677d064a676032949cdd2be5ae
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Thu Mar 17 22:24:55 2022 +0000
+
+    Update projects.blade.php
+    
+    Fixing the report column names at the bottom
+
+commit 22f1f77458bb6660d5ac40b4ff21ee6ce2efc845
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Thu Mar 17 22:19:18 2022 +0000
+
+    Adding report table to projects.blade.php
+
+commit 797b4ad758a2d46687af283668f6ba2965bcbf2a
+Merge: 0a46dbd ef3f6e2
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Thu Mar 17 21:52:53 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 0a46dbd9a8b4ba3350a802be6bc4a1c8b80bf19d
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Thu Mar 17 21:39:34 2022 +0000
+
+    Improve homepage and image size problem fixed
+
+commit ef3f6e210772aeee1f8e404ce3b19959b9e7fda7
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Mar 17 19:23:51 2022 +0000
+
+    added table to members page
+
+commit 0668d00109bdc2af092153bc7dfbf55d1f3356c7
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Mar 17 19:19:41 2022 +0000
+
+    updated home page - added header
+
+commit 80cd019f37b9d6b5a9f8e3105c8b61394ab1afaa
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Thu Mar 17 18:26:03 2022 +0000
+
+    Add Users Table
+
+commit 4a9d16b948a49db132e795f040fec3108b8cd585
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Thu Mar 17 17:37:54 2022 +0000
+
+    Resources page and link homepage to ANCSSC logo
+
+commit ac1b7fa401cb06e1a8c07ff1cf0c76145dd1b764
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Wed Mar 16 18:50:31 2022 +0000
+
+    Adding projects table to projects page
+    
+    Also updating to include different layout and space for map
+
+commit c10e46014aac60f5e1561c738947b41dc5fb83ec
+Merge: ef0f5d9 475f01f
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 15 11:53:59 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit ef0f5d98904f32d24ae44883d2ca2de0c7b9a354
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 15 11:53:56 2022 +0000
+
+    updated db file
+
+commit 475f01f55aa62e635f63092043c44ab7bea1463f
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Tue Mar 15 11:46:06 2022 +0000
+
+    Adding past events, small link updates
+
+commit 4fb5fd5657c013cfdaccf9d66a4b193b4cf257d1
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Mar 14 21:55:25 2022 +0000
+
+    adding nav to register
+
+commit 7fd3947a53273d704f98a302f7cd2ada9f076d10
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Mar 14 21:52:48 2022 +0000
+
+    about&contact change, laravel default nav bar remove
+
+commit fd4a25fa2408c9439c77e7b85f2b251b9a0d807b
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Mon Mar 14 21:16:16 2022 +0000
+
+    improve about
+
+commit fc6239246975a793ded7ec53200cd95bad4d2205
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Mar 13 12:59:13 2022 +0000
+
+    fixed inconsistent bootstrap style
+
+commit 78a252a7bb5ecdcebefb82fc6a1812af528f38a7
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Mar 13 12:21:54 2022 +0000
+
+    Fix dropdown
+
+commit 1ce55f3b4e97bbee8435c93db8616855b28b015d
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Sun Mar 13 11:49:57 2022 +0000
+
+    nav&footer change
+
+commit e396d11438b61aa55f72e0754a1372a56530ae7e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Mar 12 21:10:44 2022 +0000
+
+    Update events.blade.php
+    
+    Minor comment changes; removing an extra unnecessary header.
+
+commit 59f653c9a2444aa57ccad5967eaeced60676abca
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Sat Mar 12 16:51:37 2022 +0000
+
+    Update nav.blade.php
+    
+    Links added to different pages
+
+commit 995a61d6b7a7afc947bc0b180340c7b752797f43
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 20:33:22 2022 +0000
+
+    Updating map position on  membership.blade.php
+    
+    Centralising map and map header. Moving map to be above footer. Some miscellaneous todo comments or other general commented notes added in other files/
+
+commit 193fec96530b4ffc135a53c1283fb2728c9571f5
+Merge: 5d15fc5 d56376e
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 20:02:58 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 5d15fc5734cdc697fe9eb0fcd4b0145ff5333c8b
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 20:02:48 2022 +0000
+
+    updating events.blade.php
+    
+    Updating to show only events, updating what is shown in each event
+
+commit d56376ec6434d0cfffd9cb735d5e6855d62f5a5c
+Merge: ba4c0e7 8d0e7d9
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 19:38:37 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit ba4c0e7004ffa62f652e57b768b9bef1a5c27105
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 19:38:34 2022 +0000
+
+    added Google map
+
+commit 8d0e7d99bcf3a258ef21970930d5e003b58c42d5
+Merge: 357a609 109dfe2
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 19:33:29 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 357a60989c4189b49e66523368f6ef5efe065e97
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 19:33:19 2022 +0000
+
+    Updating registration.blade.php
+    
+    Updating registration to include more text at the top
+
+commit 109dfe270c26de284a402435803293b2458f8f28
+Merge: b38df95 1ae7a5b
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 19:20:36 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit b38df95b73d54d5ce89a4d5b8abf67f7976d732d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 19:20:33 2022 +0000
+
+    update to db
+
+commit 1ae7a5b2f7647a91d8b17272cea76588f5b08400
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 19:19:58 2022 +0000
+
+    Update to membership.blade.php
+    
+    Removing 3rd membership box, minor formatting changes e.g. with buttons, some text updates, header text updates
+
+commit f618eaaa7f481ad1cc550550de67c0dc4fa8cf6b
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 17:59:57 2022 +0000
+
+    updated main layout file
+
+commit f0d6d9e191386227fa26d82dc0c0c28485db8eb6
+Merge: 749fa7f c792348
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 11 17:50:51 2022 +0000
+
+    Merge pull request #2 from UCLComputerScience/js
+    
+    Js
+
+commit c792348b654c3b1d8b403fb4f7fb49c8ded53225
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 11 17:50:03 2022 +0000
+
+    change to header and footer
+
+commit 749fa7f1ffe5ccd8acd43cc9a901f5d811c99c7d
+Merge: c0388b8 983f100
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 17:49:18 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit c0388b811f9da3cfc53ff3eff64e5aae11550593
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 17:49:15 2022 +0000
+
+    added pages for new template
+
+commit 632732d597754be96561f9c76baf78a957f78bc1
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Fri Mar 11 17:31:03 2022 +0000
+
+    delete
+
+commit 983f10010683cf726b9f1148ede5f86745f2fa06
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 16:55:47 2022 +0000
+
+    Radio buttons added for membership type
+
+commit 70f5984691daff0ac1ff755338ed78ca7ec5fdb0
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 16:49:27 2022 +0000
+
+    Commenting out incomplete code
+
+commit 93f75c840b2f0f83694e380bdf72a7681b754161
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 16:48:27 2022 +0000
+
+    Getting rid of 2nd phone box
+
+commit 6bd652d996875d989d6e082ec3d4297a750f9d19
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Fri Mar 11 15:34:44 2022 +0000
+
+    Adding more fields for registration
+    
+    Phone number, website fields added.
+
+commit 7cf17bf50cf4f37c20be2de703e91d6c4038c656
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Fri Mar 11 11:20:33 2022 +0000
+
+    updated db file to include access credentials
+
+commit d899f52df2bf9730de168b3b32c8faeca7662480
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Mar 10 19:48:35 2022 +0000
+
+    update
+
+commit ee4c38942516b227378648401ca52e2eaa4c0876
+Merge: dbac274 e93e13f
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Mar 10 13:24:47 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit dbac274088dfbd81d3c9b69fb49d2190108ed620
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Thu Mar 10 13:24:42 2022 +0000
+
+    added ERD
+
+commit e93e13f4c05e0d116953b20903ae5251844e0d2c
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Wed Mar 9 17:06:57 2022 +0000
+
+    Add image upload functionality and DB v5
+
+commit 804d159095c6d94869cae4ea89a76d2a7fba688f
+Merge: ce59261 31d5810
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Wed Mar 9 15:41:16 2022 +0000
+
+    Merge remote-tracking branch 'origin/main' into main
+    
+    # Conflicts:
+    #       routes/web.php
+
+commit 31d581080443f7c6c7481aaaa483d4efa26601e5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 8 16:26:27 2022 +0000
+
+    Update .DS_Store
+
+commit 63bca8693172fab98c5a5870a463dfeb5ced76fe
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 8 16:07:49 2022 +0000
+
+    frontend
+
+commit baffa6f0bd3bade7093e239a20634c9297717538
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 8 16:06:14 2022 +0000
+
+    frontend
+
+commit 55a6c9f66ffd368db87bf132735816b73138bada
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 8 16:03:47 2022 +0000
+
+    Update web.php
+
+commit cf2b6541155ff71cb7ea21a8e0d770af80d09473
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 8 15:55:37 2022 +0000
+
+    css & js
+
+commit ce59261e041e86e03fb149a2408e24070934fd30
+Merge: 919b472 8a96c09
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Tue Mar 8 15:54:55 2022 +0000
+
+    Merge remote-tracking branch 'origin/main' into main
+    
+    # Conflicts:
+    #       ANCSSC_Database/ancssc_database v4.sql
+    #       routes/web.php
+
+commit 8a96c09d4ad7e1f775eeb1a7e1842c316bf998bc
+Author: Elynor Kamil <elynorlucie@hotmail.com>
+Date:   Mon Mar 7 21:48:47 2022 +0000
+
+    Adding new fields to registration form
+
+commit 01f5234f825e0c0d7893bfd353b5b74fdf16325c
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 23:41:17 2022 +0000
+
+    updates to Stripe functions
+
+commit b323ef1baa07fcc673125681842a3708294a95c4
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 18:12:43 2022 +0000
+
+    removed not logged-in homepage
+
+commit 6080e8433dd6af0d65a5b5685056d2c01b38e2a3
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 17:52:00 2022 +0000
+
+    Stripe entry form now showing on user's logged-in home page
+
+commit bf723a74419087f3aefb8deaff42eda7191b110c
+Merge: 5df4d96 6b1db3e
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Mar 6 17:19:35 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 5df4d9680030b859c91374b8857d43e970f2be22
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Mar 6 17:18:36 2022 +0000
+
+    Update DB v4
+
+commit 6b1db3e7468ca38dac09f74f24aa6f9fd2c84f13
+Merge: 1f902f9 2925854
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 17:12:35 2022 +0000
+
+    Merge branch 'main' of https://github.com/UCLComputerScience/COMP0067_2022_Team6
+
+commit 1f902f9712ec5e2f34f2696eff4bd2de282a5629
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 17:11:48 2022 +0000
+
+    updated Stripe
+
+commit 292585414216d9a262c79a3c9f03869be7fb55dd
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Mar 6 17:01:47 2022 +0000
+
+    Add file upload functionality and DB v4
+
+commit 919b4723c5a3f090fc377f2a584c23fb54f95174
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Mar 6 16:39:43 2022 +0000
+
+    Update ancssc_database v4.sql
+
+commit 5015d76feadc50d1d22adc17c0bd53516dff2f53
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Sun Mar 6 16:24:00 2022 +0000
+
+    Add file upload function
+
+commit ee37eddd183a20bd295daacc911de8f1902a0a7e
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Mar 6 14:59:37 2022 +0000
+
+    Updated db V3
+
+commit 90db329fb670bf50aa383484c9c6273df15cffed
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sat Mar 5 02:09:18 2022 +0000
+
+    password reset e-mails working + database V3 created
+
+commit 91289749cd895bb51008402f01330f5b1cb0ddab
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 1 18:00:02 2022 +0000
+
+    Update platform_check.php
+
+commit b609781569f3fa97a986034ad944c16b737520b4
+Author: SJH135 <93983336+SJH135@users.noreply.github.com>
+Date:   Tue Mar 1 17:48:07 2022 +0000
+
+    Update platform_check.php
+
+commit 95f57e32915168763e7cacbf83a9cf3b0364ea1d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 1 15:28:00 2022 +0000
+
+    removed env from gitignore
+
+commit d950553cdf3fb9bcc02c7876088cb21aee4c84f0
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 1 15:23:47 2022 +0000
+
+    vendor removed from Gitignore
+
+commit 276f3498db2ae158c919aa26e6f2cf74dd1b8dd9
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Mar 1 13:53:20 2022 +0000
+
+    Update to SQL and Login/Register
+    
+    Made changes to sql file - user_id changed to id, database now creates
+    Users can now register and login, and DB updated
+
+commit 7248b393d8f5aadb8ae85786c35891b05606f53c
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Feb 25 23:31:42 2022 +0000
+
+    Add ancssc_database v2.sql
+
+commit 38b5432023878a0a8e90eec4092a69316873d7a0
+Author: Yingbo Zhou <93536607+YingboZhou@users.noreply.github.com>
+Date:   Fri Feb 25 18:02:46 2022 +0000
+
+    Add ancssc_database.sql
+
+commit 9f3a1851fa0f9842e9cdf2959a6eaa5ec86abae5
+Author: Jiahui Shi <93983336+SJH135@users.noreply.github.com>
+Date:   Thu Feb 24 14:02:49 2022 +0000
+
+    Create Homepage
+
+commit 6561aa76fd4f8a6070a475aca0fa3102890a379d
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Mon Feb 21 13:10:20 2022 +0000
+
+    Laravel framework + MS template
+
+commit c8d1d75620d723df1c2224ef95c2691d5c653f4c
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Tue Feb 8 16:42:23 2022 +0000
+
+    update
+
+commit 20f7c6a0d7bdf5b8bc819364b31de74c2f49c1e5
+Author: mjwsolo <mjwsolo@hotmail.com>
+Date:   Sun Jan 16 21:20:22 2022 +0000
+
+    Create README.md
