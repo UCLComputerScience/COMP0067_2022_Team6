@@ -235,9 +235,9 @@
 // $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
 
 
-// $events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
+$events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
 
-
+// echo $_GET['keyword'];
 
 function print_event_with_image($event_id, $event_title, $event_description)
 {
@@ -290,4 +290,254 @@ $sdgs_first_strip = str_replace($array,"",$sdgs);
 ?>
 </div>
 
+<h2 class="my-3">Browse listings</h2>
+
+<div id="searchSpecs">
+<!-- When this form is submitted, this PHP page is what processes it.
+     Search/sort specs are passed to this page through parameters in the URL
+     (GET method of passing data to a page). -->
+<form method="get" action="browse.php">
+  <div class="row">
+    <div class="col-md-5 pr-0">
+      <div class="form-group">
+        <label for="keyword" class="sr-only">Search keyword:</label>
+	    <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-transparent pr-0 text-muted">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control border-left-0" id="keyword" name="keyword" placeholder="Search for anything">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 pr-0">
+      <div class="form-group">
+        <label for="cat" class="sr-only">Search within:</label>
+        <select class="form-control" id="cat" name="cat">
+          <option selected value="all">All categories</option>
+          <?php 
+                  $result = DB::Table('categories')->select('categoryName')->get();
+                  foreach( $result as $row){
+                    echo "<option value=" . $row->categoryName . "</option>";}
+                ?>
+        </select>
+      </div> 
+    </div>
+    <div class="col-md-3 pr-0">
+      <div class="form-inline">
+        <label class="mx-2" for="order_by">Sort by:</label>
+        <select class="form-control" id="order_by" name="order_by">
+          <option selected value="pricelow">Price (low to high)</option>
+          <option value="pricehigh">Price (high to low)</option>
+          <option value="date">Soonest expiry</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-1 px-0">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</form>
+</div> <!-- end search specs bar -->
+
+
+<?php
+  // Retrieve these from the URL
+  if (!isset($_GET['keyword'])) {
+    $keyword = false;
+
+  }
+  else {
+    $keyword = $_GET['keyword'];
+  }
+
+  if (!isset($_GET['cat'])) {
+    $category = 'all';
+  }
+  else {
+    $category = $_GET['cat'];
+  }
+  
+  if (!isset($_GET['order_by'])) {
+    $ordering = 'ASC';
+    $orderingcol = "listingID";
+  }
+  else {
+    $ordering = $_GET['order_by'];
+    if ($ordering == "pricelow") {
+      $orderingcol = "currentPrice";
+      $ordering = "ASC";
+    }
+    elseif ($ordering == "pricehigh") {
+      $orderingcol = "currentPrice";
+      $ordering = "DESC";
+    }
+    elseif ($ordering == "date") {
+      $orderingcol = "endDateTime";
+      $ordering = "ASC";
+    }
+  }
+  
+  if (!isset($_GET['page'])) {
+    $curr_page = 1;
+  }
+  else {
+    $curr_page = $_GET['page'];
+  }
+
+
+
+  function search_query_num_results($keyword, $category)
+{
+    $sql = "SELECT COUNT(*) FROM events WHERE";
+    if ($keyword) {
+        $sql = $sql . " description LIKE CONCAT('%', ?, '%') AND";
+    }
+    if ($category != "all") {
+        $sql = $sql . " categoryID = ? AND";
+    }
+    $sql = $sql . " event_datetime > CURRENT_TIMESTAMP()";
+    // $conn = connect_database();
+    // if (!$conn)
+    // {
+    //     return -1;
+    // }
+    $stmt = $sql;
+    if ($keyword and $category != "all") {
+        $sql = $sql . $keyword . $category;
+    }
+    else if ($keyword) {
+      $sql = $sql . $keyword;
+    }
+    else if ($category != "all") {
+      $sql = $sql . $category;
+    }
+   
+    return $sql[0];
+}
+     
+function get_search_listings($keyword, $category, $ordering, $orderingcol, $page, $results_per_page)
+{
+    $offset = ($page - 1) * $results_per_page;
+    $ordering_col_whitelist = array("event_id", "event_timedate"); 
+    // "currentPrice",
+    $ordering_whitelist = array("ASC", "DESC");
+    if (!in_array($orderingcol, $ordering_col_whitelist) || !in_array($ordering, $ordering_whitelist)) {
+        return -1;
+    }
+    $sql = $events. " WHERE";
+    if ($keyword) {
+        $sql = $sql . " event_description LIKE CONCAT('%', ?, '%') AND";
+    }
+    if ($category != "all") {
+        $sql = $sql . " categoryID = ? AND";
+    }
+    $sql = $sql . " event_datetime > CURRENT_TIMESTAMP() ORDER BY " . $orderingcol . " " . $ordering;
+    $sql = $sql . " LIMIT ?,?";
+    $sql;
+    if ($keyword and $category != "all") {
+        $sql = $sql . $keyword . $category . $offset . $results_per_page;
+    }
+    else if ($keyword) {
+      $sql = $sql . $keyword . $offset . $results_per_page;
+    }
+    else if ($category != "all") {
+      $sql = $sql .  $category . $offset . $results_per_page;
+    }
+    else {
+      $sql = $sql . $offset . $results_per_page;
+    }
+    
+    return $sql;
+}
+
+  $num_results = search_query_num_results($keyword, $category);
+
+  echo $num_results;
+  $results_per_page = 10;
+  // $max_page = ceil($num_results / $results_per_page);
+  $search_results = get_search_listings($keyword, $category, $ordering, $orderingcol, $curr_page, $results_per_page);
+
+?>
+
+<ul class="list-group">
+
+<?php
+
+  if ($num_results == 0) { 
+    echo 'No results found'; 
+  }
+
+  while ($search_row = $search_results)
+  {
+    $endDateTime = new DateTime($search_row["event_datetime"]);
+    print_listing_with_image($search_row["event_id"], $search_row["event_description"]);
+  }
+?>
+
+</ul>
+
+</div>
+
+<!-- Pagination for results listings -->
+<nav aria-label="Search results pages" class="mt-5">
+  <ul class="pagination justify-content-center">
+  
+<?php
+
+  // Copy any currently-set GET variables to the URL.
+  $querystring = "";
+  foreach ($_GET as $key => $value) {
+    if ($key != "page") {
+      $querystring .= "$key=$value&amp;";
+    }
+  }
+  
+  $high_page_boost = max(3 - $curr_page, 0);
+  $low_page_boost = max(2 - ($max_page - $curr_page), 0);
+  $low_page = max(1, $curr_page - 2 - $low_page_boost);
+  $high_page = min($max_page, $curr_page + 2 + $high_page_boost);
+  
+  if ($curr_page != 1) {
+    echo('
+    <li class="page-item">
+      <a class="page-link" href="browse.php?' . $querystring . 'page=' . ($curr_page - 1) . '" aria-label="Previous">
+        <span aria-hidden="true"><i class="fa fa-arrow-left"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>');
+  }
+    
+  for ($i = $low_page; $i <= $high_page; $i++) {
+    if ($i == $curr_page) {
+      // Highlight the link
+      echo('
+    <li class="page-item active">');
+    }
+    else {
+      // Non-highlighted link
+      echo('
+    <li class="page-item">');
+    }
+    
+    // Do this in any case
+    echo('
+      <a class="page-link" href="browse.php?' . $querystring . 'page=' . $i . '">' . $i . '</a>
+    </li>');
+  }
+  
+  if ($curr_page != $max_page) {
+    echo('
+    <li class="page-item">
+      <a class="page-link" href="browse.php?' . $querystring . 'page=' . ($curr_page + 1) . '" aria-label="Next">
+        <span aria-hidden="true"><i class="fa fa-arrow-right"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>');
+  }
+?>
+
+  </ul>
+</nav>
 @endsection

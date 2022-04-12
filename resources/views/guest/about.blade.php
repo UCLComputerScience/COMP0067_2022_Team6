@@ -5,6 +5,10 @@
 
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
+<?php $result = DB::Table('categories')->select('categoryName')->get();
+
+echo $result; ?>
+
 
             <!-- Header-->
             <header class="py-5">
