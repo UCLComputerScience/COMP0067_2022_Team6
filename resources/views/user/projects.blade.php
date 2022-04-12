@@ -80,6 +80,12 @@ $my_projects = DB::Table('projects')->select('project_id','projectTitle','projec
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
 //echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+function strip_text($url){
+  $url = str_replace(array('[',']','"'), '', $url);
+  $url = stripslashes($url);
+
+  return $url;
+}
 
 function print_listing_with_image($project_id, $title, $desc)
 {
@@ -95,6 +101,10 @@ $projectDate = DB::Table('projects')->select('projectEndDate')->where('project_i
 $array1 = array('[',']','{','}','"','"','projectEndDate');
 $date = str_replace($array1,"",$projectDate);
 $sdgs_second_strip = explode(',', $sdgs_first_strip);
+
+$project_Date=$projectDate->pluck('projectEndDate');
+$project_Date = strip_text($project_Date);
+$project_Date = substr($project_Date,0,-8);
 
   // Truncate long descriptions
   if (strlen($desc) > 250) {
@@ -121,7 +131,7 @@ $sdgs_second_strip = explode(',', $sdgs_first_strip);
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
 
-    <div class="col-6"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br>End Date '.$date.'</div>
+    <div class="col-6"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br>End Date '.$project_Date.'</div>
 
 
 
