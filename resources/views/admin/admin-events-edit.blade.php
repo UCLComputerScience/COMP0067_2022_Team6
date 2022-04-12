@@ -10,9 +10,6 @@
             <!-- Page Content-->
             <section class="py-5">
                 
- 
-
-
                     <?php 
                         $event_id = Request::segment(2);
                         $this_event = DB::Table('events')->select('event_id','event_title','event_description','event_datetime','event_timezone','event_call_url', 'event_video_url',
