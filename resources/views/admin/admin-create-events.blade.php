@@ -10,9 +10,7 @@
             <!-- Page Content-->
             <section class="py-5">
                 <div class="text-center mb-5">
-                        <h1 class="fw-bolder">Create Event</h1>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
- 
+                        <h1 class="fw-bolder">Create Event</h1> 
 
                         <?php 
                       $username = Session::get('key');
@@ -24,7 +22,6 @@
                       
                       <!-- Create auction form -->
                       <div style="max-width: 800px; margin: 10px auto">
-                        <h2 class="my-3">Create new event </h2>
                         <div class="card">
                           <div class="card-body">
                             <form method="post" enctype="multipart/form-data" action="admin-events-create-result">
