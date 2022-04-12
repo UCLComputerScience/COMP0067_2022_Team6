@@ -135,30 +135,42 @@
 
 
 
+// Plain SQL
+    // $query = "SELECT * FROM `events`
+    // WHERE (`event_description` LIKE '%$keyword%'
+    // OR `event_title` LIKE '%$keyword%'
+    // OR `event_call_url` LIKE '%$keyword%'
+    // OR `event_video_url`  LIKE '%$keyword%')
+    // ";
 
-    $query = "SELECT * FROM `events`
-    WHERE (`event_description` LIKE '%$keyword%'
-    OR `event_title` LIKE '%$keyword%'
-    OR `event_call_url` LIKE '%$keyword%'
-    OR `event_video_url`  LIKE '%$keyword%')
-    ";
+    // The same thing but in Eloquent
+  $query = "DB::table('events')
+->select('*')
+->where(function ($query) {
+	$query->where('event_description','like','%$keyword%')
+		->orWhere('event_title','like','%$keyword%')
+		->orWhere('event_call_url','like','%$keyword%')
+		->orWhere('event_video_url','like','%$keyword%');
+})";
+// ->get();
+
 
 
     if (isset($_GET['sdg1'])) {
-      $ordering = $_GET['sdg1'];
-      $query .= " AND 'sdg1' = 1";
+      // $query .= " AND 'sdg1' = 1";
+      $query .= "->where('sdg1','=',1)";
 }
   
 
-  if ($ordering === "all"){
-    $query .= " ORDER BY event_datetime DESC ";
-}else if ($ordering === "upcoming"){
-  $query .= " AND event_datetime >= GETDATE() 
-  ORDER BY event_datetime DESC";
-}else if($ordering === "past"){
-  $query .= " AND event_datetime < GETDATE() 
-  ORDER BY event_datetime DESC";
-}
+//   if ($ordering === "all"){
+//     $query .= " ORDER BY event_datetime DESC ";
+// }else if ($ordering === "upcoming"){
+//   $query .= " AND event_datetime >= GETDATE() 
+//   ORDER BY event_datetime DESC";
+// }else if($ordering === "past"){
+//   $query .= " AND event_datetime < GETDATE() 
+//   ORDER BY event_datetime DESC";
+// }
 
   }
 
