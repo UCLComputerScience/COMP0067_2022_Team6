@@ -61,7 +61,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                                 @if($file->project_id == $project_id)
                                 <tr>
                                     <td>{{ $file->title }}</td>
-                                    <td><a href="{{ route('files.download', $file->uuid) }}">{{ $file->cover }}</a></td>
+                                    <td><a href="{{ route('projects-detail.download', $file->uuid) }}">{{ $file->cover }}</a></td>
                                 </tr>
                                 @endif
 
@@ -76,7 +76,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
 
                         <div class="card-body">
 
-                            <form action="{{ route('files.store', $project_id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('projects-detail.store', $project_id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <input type="hidden" name="project_id" value="{{ $project_id }}" />
