@@ -25,27 +25,28 @@ $project_id = $_POST['project_id'];
     $projectCountry = $_POST['projectCountry'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
-    $sdg = $_POST['sdg']; 
     $projectValue = $_POST['projectValue'];
     $fundingRequired = $_POST['fundingRequired'];
+    $sdg1 = $_POST['sdg1'];
+    $sdg2 = $_POST['sdg2']; 
+    $sdg3 = $_POST['sdg3']; 
+    $sdg4 = $_POST['sdg4']; 
+    $sdg5 = $_POST['sdg5']; 
+    $sdg6 = $_POST['sdg6']; 
+    $sdg7 = $_POST['sdg7']; 
+    $sdg8 = $_POST['sdg8']; 
+    $sdg9 = $_POST['sdg9']; 
+    $sdg10 = $_POST['sdg10']; 
+    $sdg11 = $_POST['sdg11']; 
+    $sdg12 = $_POST['sdg12'];  
+    $sdg13 = $_POST['sdg13']; 
+    $sdg14 = $_POST['sdg14']; 
+    $sdg15 = $_POST['sdg15']; 
+    $sdg16 = $_POST['sdg16']; 
+    $sdg17 = $_POST['sdg17']; 
     $userid = Auth::id();
     $project_id = $_POST['project_id'];
 
-    // Putting them into an array
-
-    $newProjectArray = array(
-        'projectTitle' => $projectTitle,
-        'projectOrganisation' => $projectOrganisation,
-        'projectLocation' => $projectLocation,
-        'projectCity' => $projectCity,
-        'projectCountry' => $projectCountry,
-        'projectDetails' => $projectDetails,
-        'projectEndDate' => $projectEndDate,
-        'sdg' => $sdg, 
-        'projectValue' => $projectValue,
-        'fundingRequired' => $fundingRequired,
-        'id' => $userid,
-    );
  
     // The flow below checks for general errors in the form, then does 
     // a loop for each image. 
@@ -68,9 +69,6 @@ $project_id = $_POST['project_id'];
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';
     } 
-    elseif (empty($sdg)){
-        echo 'Please enter an SDG.';
-    }
     elseif (empty($projectValue) and $projectValue != 0){
         echo 'Please enter a project value.';
     }
@@ -93,8 +91,24 @@ $project_id = $_POST['project_id'];
                             'projectDetails' => $projectDetails,
                             'projectEndDate' => $projectEndDate,
                             'projectValue' => $projectValue,
-                            'fundingRequired' => $fundingRequired
-                            
+                            'fundingRequired' => $fundingRequired,
+                            'sdg1' => $sdg1,
+                            'sdg2' => $sdg2, 
+                            'sdg3' => $sdg3, 
+                            'sdg4' => $sdg4, 
+                            'sdg5' => $sdg5, 
+                            'sdg6' => $sdg6, 
+                            'sdg7' => $sdg7, 
+                            'sdg8' => $sdg8, 
+                            'sdg9' => $sdg9, 
+                            'sdg10' => $sdg10, 
+                            'sdg11' => $sdg11, 
+                            'sdg12' => $sdg12, 
+                            'sdg13' => $sdg13, 
+                            'sdg14' => $sdg14, 
+                            'sdg15' => $sdg15, 
+                            'sdg16' => $sdg16, 
+                            'sdg17' => $sdg17
                         ));
 
 
