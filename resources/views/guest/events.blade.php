@@ -113,58 +113,26 @@
 <?php
   // Retrieve these from the URL
 
-  if (!isset($_GET['page'])) {
-    $curr_page = 1;
-  }
-  else {
-    $curr_page = $_GET['page'];
-  }
+  // if (!isset($_GET['page'])) {
+  //   $curr_page = 1;
+  // }
+  // else {
+  //   $curr_page = $_GET['page'];
+  // }
 
-
-
-  if(isset($_GET['search'])){
-
-    if (!isset($_GET['keyword'])) {
-      //if a keyword is not specified then we simply set it to be blank so that in the
-      //sql query, it does not filter out any auctions since all descriptions and titles of
-      //auctions will have "" in them.
-      $keyword = "";
-    }else {
-      $keyword = $_GET['keyword'];
-    }
-
-
-    if (!isset($_GET['order_by'])) {
-      $ordering = "all";
-    }else {
-      $ordering = $_GET['order_by'];
-    }
-
-// Plain SQL
-    $query = "SELECT * FROM `events`
-    WHERE (`event_description` LIKE '%$keyword%'
-    OR `event_title` LIKE '%$keyword%'
-    OR `event_call_url` LIKE '%$keyword%'
-    OR `event_video_url`  LIKE '%$keyword%')
-     ";
-
-    // The same thing but in Eloquent
-//   $query = DB::table('events')
-// ->select('*')
-// ->where(function ($query) {
-// 	$query->where('event_description','like','%$keyword%')
-// 		->orWhere('event_title','like','%$keyword%')
-// 		->orWhere('event_call_url','like','%$keyword%')
-// 		->orWhere('event_video_url','like','%$keyword%');
-// });
-// ->get();
 
 
 
-    if (isset($_GET['sdg1'])) {
-       $query .= " AND 'sdg1' = 1";
-     // $query .= "->where('sdg1','=',1)";
-}
+// Plain SQL
+    // $query = "SELECT * FROM `events`
+    // WHERE (`event_description` LIKE '%$keyword%'
+    // OR `event_title` LIKE '%$keyword%'
+    // OR `event_call_url` LIKE '%$keyword%'
+    // OR `event_video_url`  LIKE '%$keyword%')
+    //  ";
+
+
+
   
 
 //   if ($ordering === "all"){
@@ -177,7 +145,7 @@
 //   ORDER BY event_datetime DESC";
 // }
 
-  }
+  // }
 
 
 
@@ -232,11 +200,50 @@
 
 <?php
 
+if(isset($_GET['search'])){
+
+  if (!isset($_GET['keyword'])) {
+    //if a keyword is not specified then we simply set it to be blank so that in the
+    //sql query, it does not filter out any auctions since all descriptions and titles of
+    //auctions will have "" in them.
+    $keyword = "";
+  }else {
+    $keyword = $_GET['keyword'];
+  }
+}
+else{
+  $keyword = "";
+}
+
+
+
 // $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
 
 
 // $events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
 
+
+
+// $query = DB::select("SELECT 'event_id', 'event_title', 'event_description', 'event_datetime', 'event_timezone', 'event_call_url', 'event_video_url',
+// 'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17' FROM `events`". $query)->get();
+
+echo "this is a ". $keyword;
+
+$query = DB::Table('events')->select('event_id', 'event_title', 'event_description', 'event_datetime', 'event_timezone', 'event_call_url', 'event_video_url',
+'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
+// ->where(function ($intermediate) {
+//   $intermediate->where('event_description', 'like', '%'.$keyword.'%')
+// ->orWhere('event_title', 'like', '%'.$keyword.'%')
+// ->orWhere('event_video_url', 'like', '%'.$keyword.'%')
+// ->orWhere('event_call_url', 'like', '%'.$keyword.'%');})
+// ->where('sdg1','=',1)
+->where('event_title', 'like', '%'.$keyword.'%', 'or', 'where', 'event_description', 'like', '%'.$keyword.'%')
+
+
+if (isset($_GET['sdg1'])) {
+  //  $query .= " AND 'sdg1' = 1";
+ $query .= "->orWhere('sdg1','=',1)
+ ->get();";}
 
 
 function print_event_with_image($event_id, $event_title, $event_description)
@@ -274,10 +281,10 @@ $sdgs_first_strip = str_replace($array,"",$sdgs);
   
   
   $counter = 0;
-  foreach ($events as $row)
+  foreach ($query as $row)
   //while (TRUE)//$search_row = $my_projects->fetch_assoc())
   {
-    $endDateTime = new DateTime($row->event_datetime);
+    // $endDateTime = new DateTime($row->event_datetime);
     print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
     $counter +=1;
   }
