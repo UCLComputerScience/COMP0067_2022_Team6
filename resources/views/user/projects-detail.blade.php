@@ -79,6 +79,8 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                             <form action="{{ route('files.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
+                                <input type="hidden" name="project_id" value="{{ $project_id }}" />
+
                                 Title:
                                 <br>
                                 <input type="text" name="title" class="form-control">

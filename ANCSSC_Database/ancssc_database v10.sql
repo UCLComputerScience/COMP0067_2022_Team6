@@ -22,8 +22,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-USE ancssc_database;
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -96,23 +94,23 @@ CREATE TABLE `events` (
                           `event_call_url` text,
                           `event_video_url` text,
                           `image_name` varchar(100) DEFAULT NULL,
-                          `sdg1`int(20) DEFAULT NULL,
-                          `sdg2`int(20) DEFAULT NULL,
-                          `sdg3`int(20) DEFAULT NULL,
-                          `sdg4`int(20) DEFAULT NULL,
-                          `sdg5`int(20) DEFAULT NULL,
-                          `sdg6`int(20) DEFAULT NULL,
-                          `sdg7`int(20) DEFAULT NULL,
-                          `sdg8`int(20) DEFAULT NULL,
-                          `sdg9`int(20) DEFAULT NULL,
-                          `sdg10`int(20) DEFAULT NULL,
-                          `sdg11`int(20) DEFAULT NULL,
-                          `sdg12`int(20) DEFAULT NULL,
-                          `sdg13`int(20) DEFAULT NULL,
-                          `sdg14`int(20) DEFAULT NULL,
-                          `sdg15`int(20) DEFAULT NULL,
-                          `sdg16`int(20) DEFAULT NULL,
-                          `sdg17`int(20) DEFAULT NULL
+                          `sdg1` int(20) DEFAULT NULL,
+                          `sdg2` int(20) DEFAULT NULL,
+                          `sdg3` int(20) DEFAULT NULL,
+                          `sdg4` int(20) DEFAULT NULL,
+                          `sdg5` int(20) DEFAULT NULL,
+                          `sdg6` int(20) DEFAULT NULL,
+                          `sdg7` int(20) DEFAULT NULL,
+                          `sdg8` int(20) DEFAULT NULL,
+                          `sdg9` int(20) DEFAULT NULL,
+                          `sdg10` int(20) DEFAULT NULL,
+                          `sdg11` int(20) DEFAULT NULL,
+                          `sdg12` int(20) DEFAULT NULL,
+                          `sdg13` int(20) DEFAULT NULL,
+                          `sdg14` int(20) DEFAULT NULL,
+                          `sdg15` int(20) DEFAULT NULL,
+                          `sdg16` int(20) DEFAULT NULL,
+                          `sdg17` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -155,6 +153,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `files` (
                          `id` bigint(20) UNSIGNED NOT NULL,
                          `uuid` int(100) DEFAULT NULL,
+                         `project_id` int(10) DEFAULT NULL,
                          `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
                          `cover` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
                          `created_at` timestamp NULL DEFAULT NULL,
@@ -165,8 +164,9 @@ CREATE TABLE `files` (
 -- Dumping data for table `files`
 --
 
-INSERT INTO `files` (`id`, `uuid`, `title`, `cover`, `created_at`, `updated_at`) VALUES
-    (8, 47692000, 'project 1', 'project1.pdf', '2022-04-10 10:06:32', '2022-04-10 10:06:32');
+INSERT INTO `files` (`id`, `uuid`, `project_id`, `title`, `cover`, `created_at`, `updated_at`) VALUES
+                                                                                                   (8, 47692000, 6, 'project 1', 'project1.pdf', '2022-04-10 10:06:32', '2022-04-10 10:06:32'),
+                                                                                                   (24, 34143680, 6, 'project 2', 'project1.pdf', '2022-04-12 10:03:37', '2022-04-12 10:03:37');
 
 -- --------------------------------------------------------
 
@@ -370,42 +370,39 @@ CREATE TABLE `projects` (
                             `sdg` varchar(255) DEFAULT NULL,
                             `image_name` varchar(100) DEFAULT NULL,
                             `latitude` float(10,6) NOT NULL,
-                            `longitude` float(10,6) DEFAULT NULL,
-                            `country` varchar(100) NOT NULL,
-                            `address` varchar(100) NOT NULL,
-                            `sdg1`int(20) DEFAULT NULL,
-                            `sdg2`int(20) DEFAULT NULL,
-                            `sdg3`int(20) DEFAULT NULL,
-                            `sdg4`int(20) DEFAULT NULL,
-                            `sdg5`int(20) DEFAULT NULL,
-                            `sdg6`int(20) DEFAULT NULL,
-                            `sdg7`int(20) DEFAULT NULL,
-                            `sdg8`int(20) DEFAULT NULL,
-                            `sdg9`int(20) DEFAULT NULL,
-                            `sdg10`int(20) DEFAULT NULL,
-                            `sdg11`int(20) DEFAULT NULL,
-                            `sdg12`int(20) DEFAULT NULL,
-                            `sdg13`int(20) DEFAULT NULL,
-                            `sdg14`int(20) DEFAULT NULL,
-                            `sdg15`int(20) DEFAULT NULL,
-                            `sdg16`int(20) DEFAULT NULL,
-                            `sdg17`int(20) DEFAULT NULL
-                            
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `longitude` float(10,6) DEFAULT NULL,
+  `country` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `sdg1` int(20) DEFAULT NULL,
+  `sdg2` int(20) DEFAULT NULL,
+  `sdg3` int(20) DEFAULT NULL,
+  `sdg4` int(20) DEFAULT NULL,
+  `sdg5` int(20) DEFAULT NULL,
+  `sdg6` int(20) DEFAULT NULL,
+  `sdg7` int(20) DEFAULT NULL,
+  `sdg8` int(20) DEFAULT NULL,
+  `sdg9` int(20) DEFAULT NULL,
+  `sdg10` int(20) DEFAULT NULL,
+  `sdg11` int(20) DEFAULT NULL,
+  `sdg12` int(20) DEFAULT NULL,
+  `sdg13` int(20) DEFAULT NULL,
+  `sdg14` int(20) DEFAULT NULL,
+  `sdg15` int(20) DEFAULT NULL,
+  `sdg16` int(20) DEFAULT NULL,
+  `sdg17` int(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `projects`
 --
 
+INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation`, `projectLocation`, `projectCity`, `projectCountry`, `projectDetails`, `project_date_added`, `project_last_updated`, `projectEndDate`, `projectValue`, `fundingRequired`, `sdg`, `image_name`, `latitude`, `longitude`, `country`, `address`, `sdg1`, `sdg2`, `sdg3`, `sdg4`, `sdg5`, `sdg6`, `sdg7`, `sdg8`, `sdg9`, `sdg10`, `sdg11`, `sdg12`, `sdg13`, `sdg14`, `sdg15`, `sdg16`, `sdg17`) VALUES
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3', NULL, 0.000000, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2', NULL, 0.000000, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9', NULL, 0.000000, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    (6, 3, 'Improving the Efficiency of Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', 0, '0000-00-00', '2022-04-30 14:50:00', '111', '111', '1', NULL, 0.000000, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
-INSERT INTO `projects` (`project_id`, `id`, `projectTitle`, `projectOrganisation`, `projectLocation`, `projectCity`, `projectCountry`, `projectDetails`, `project_date_added`, `project_last_updated`, `projectEndDate`, `projectValue`, `fundingRequired`, `sdg`, `image_name`) VALUES
-                                                                                                                                                                                                                                                                                     (3, 1, 'serfwerwiuoiuoiu', 'iojoijiojoij', 'oijoijioj', 'oijoijoij', 'oijoijoij', 'oijoijoij', 0, '0000-00-00', '2022-04-10 14:04:00', '8787887', '77', '3', NULL),
-                                                                                                                                                                                                                                                                                     (4, 2, 'The best project', 'The better one ', 'ereoihjoje ', 'joijoijoj', 'oijoijij', 'oijoijoijoij', 0, '0000-00-00', '2022-04-30 18:16:00', '4453', '22', '2', NULL),
-                                                                                                                                                                                                                                                                                     (5, 1, 'The greatest project The greatest project', 'werwerwerwrw', 'werwrerwrwer', 'werwerrwer', 'werwrer', 'werwerwerwr', 0, '0000-00-00', '2022-04-10 13:31:00', '3243442', '3434', '9', NULL),
-                                                                                                                                                                                                                                                                                     (6, 3, 'Improving the Efficiency of Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', ' Metro Transport in India', 0, '0000-00-00', '2022-04-30 14:50:00', '111', '111', '1', NULL);
-
-
--- -- --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `project_picture`
@@ -445,7 +442,8 @@ CREATE TABLE `resources` (
 --
 
 INSERT INTO `resources` (`resource_id`, `id`, `uuid`, `resource_title`, `resource_sdg`, `resource_language`, `resource_description`, `resource_added_date`, `created_at`, `updated_at`, `cover`) VALUES
-    (6, NULL, '020fe6e0-b901-11ec-b211-cdabd4d7cad0', '', NULL, NULL, NULL, NULL, '2022-04-10 18:04:12', '2022-04-10 18:04:12', 'project1.pdf');
+                                                                                                                                                                                                     (6, NULL, '020fe6e0-b901-11ec-b211-cdabd4d7cad0', '', NULL, NULL, NULL, NULL, '2022-04-10 18:04:12', '2022-04-10 18:04:12', 'project1.pdf'),
+                                                                                                                                                                                                     (10, NULL, '4dd22b10-b9dd-11ec-8420-59e817df089d', '', NULL, NULL, NULL, NULL, '2022-04-11 20:21:08', '2022-04-11 20:21:08', 'project1.pdf');
 
 -- --------------------------------------------------------
 
@@ -634,8 +632,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `org`, `phone`, `address`, `city`, `country`, `postcode`, `latitude`, `longitude`, `number_of_employees`, `number_of_volunteers`, `website`, `role`, `created_at`, `updated_at`, `subscription_type`, `user_status`, `remember_token`, `stripe_id`, `pm_type`, `pm_last_four`, `trial_ends_at`, `sdg1`, `sdg2`, `sdg3`, `sdg4`, `sdg5`, `sdg6`, `sdg7`, `sdg8`, `sdg9`, `sdg10`, `sdg11`, `sdg12`, `sdg13`, `sdg14`, `sdg15`, `sdg16`, `sdg17`) VALUES
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             (1, 'Jack', '$2y$10$ve1u0H8n7pj9YQluGtPU4...4s1LIq9SnEGGI6PQHpEcP7Hf0wXHa', 'jack@gmail.com', 'sfefwefwef', 'kh', 'oihoih', 'oih', 'oih', 'oi', 0.000000, 0.000000, NULL, NULL, 'h', 3, '2022-03-23 13:24:31', '2022-03-23 13:24:02', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             (2, 'Marc', '$2y$10$CpEkai1mfDE7XzPOWwmk1.U5.bY9MmpN.Uj7FqYWxVxxrW.YJDkOm', 'mjwsolo@hotmail.com', 'The Best Org', '0207241 4801', 'London', 'London', 'England', 'N1 8BZ', 0.000000, 0.000000, 100, 122, '100.com', 3, '2022-03-24 17:53:12', '2022-03-24 17:52:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (3, 'Admin', '$2y$10$S4.9uPNj7iUoPCYkUVgn0OjCV.3dVIFLiXF.8jAwJKeoatI.T71yO', 'admin@gmail.com', 'test', '1234', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-10 18:44:40', '2022-04-10 09:46:44', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (4, 'test2', '$2y$10$q2Je5r75Ss4ZjzxfWj5rJev9mSPSXkGj5z.zZOaatmR5qItlZ5qCS', 'test2@gmail.com', 'ucl', '123', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-10 18:44:24', '2022-04-10 13:39:18', NULL, NULL, 'dZB6oB2nI0lukD51TP7G0ysSrVE8eS0ozHP6emqUTAvtWJXvZhpnLCuu6xSt', NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (3, 'Admin', '$2y$10$S4.9uPNj7iUoPCYkUVgn0OjCV.3dVIFLiXF.8jAwJKeoatI.T71yO', 'admin@gmail.com', 'test', '1234', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 1, '2022-04-11 21:46:03', '2022-04-10 09:46:44', NULL, NULL, 'TlXzdEx9CILgyoMPJoIBynbUTIphMIxJgeUXjZhXnWDxMAHalPjXzk6IXSxn', NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            (4, 'test2', '$2y$10$q2Je5r75Ss4ZjzxfWj5rJev9mSPSXkGj5z.zZOaatmR5qItlZ5qCS', 'test2@gmail.com', 'ucl', '123', 'London, 英国', NULL, '英国', NULL, 51.507217, -0.127586, 1, 1, '1', 2, '2022-04-11 21:49:28', '2022-04-10 13:39:18', NULL, NULL, 'ETTZmlkDLxqQcxnDsAeswFspj7TmryvmjdXH2nKcq2WvPdzhh51F4AO9OvMM', NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -842,7 +840,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+    MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -896,7 +894,7 @@ ALTER TABLE `project_picture`
 -- AUTO_INCREMENT for table `resources`
 --
 ALTER TABLE `resources`
-    MODIFY `resource_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+    MODIFY `resource_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `resource_picture`
@@ -980,12 +978,6 @@ ALTER TABLE `project_picture`
 --
 ALTER TABLE `resources`
     ADD CONSTRAINT `resource_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `resource_picture`
---
-ALTER TABLE `resource_picture`
-    ADD CONSTRAINT `resource_picture_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`resource_id`);
 
 --
 -- Constraints for table `role_user`
