@@ -56,7 +56,7 @@ $user_id = Auth::id();
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
-                                    <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
+                                    <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
                                            onclick="event.preventDefault();
                                                document.getElementById(
                                                'delete-form-{{$resource->uuid}}').submit();">
