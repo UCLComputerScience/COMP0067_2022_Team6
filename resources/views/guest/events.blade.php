@@ -122,44 +122,8 @@
 
 
 
-  if(isset($_GET['search'])){
-
-    if (!isset($_GET['keyword'])) {
-      //if a keyword is not specified then we simply set it to be blank so that in the
-      //sql query, it does not filter out any auctions since all descriptions and titles of
-      //auctions will have "" in them.
-      $keyword = "";
-    }else {
-      $keyword = $_GET['keyword'];
-    }
 
 
-
-// Plain SQL
-    $query = "SELECT * FROM `events`
-    WHERE (`event_description` LIKE '%$keyword%'
-    OR `event_title` LIKE '%$keyword%'
-    OR `event_call_url` LIKE '%$keyword%'
-    OR `event_video_url`  LIKE '%$keyword%')
-     ";
-
-    // The same thing but in Eloquent
-//   $query = DB::table('events')
-// ->select('*')
-// ->where(function ($query) {
-// 	$query->where('event_description','like','%$keyword%')
-// 		->orWhere('event_title','like','%$keyword%')
-// 		->orWhere('event_call_url','like','%$keyword%')
-// 		->orWhere('event_video_url','like','%$keyword%');
-// });
-// ->get();
-
-
-
-    if (isset($_GET['sdg1'])) {
-       $query .= " AND 'sdg1' = 1";
-     // $query .= "->where('sdg1','=',1)";
-}
   
 
 //   if ($ordering === "all"){
@@ -172,7 +136,7 @@
 //   ORDER BY event_datetime DESC";
 // }
 
-  }
+  
 
 
 
@@ -227,6 +191,13 @@
 
 <?php
 
+function strip_text($url){
+  $url = str_replace(array('"'), '', $url);
+  $url = stripslashes($url);
+
+  return $url;
+}
+
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
@@ -265,12 +236,15 @@ $query = DB::Table('events')->select('event_id', 'event_title', 'event_descripti
 // ->orWhere('event_call_url', 'like', '%'.$keyword.'%');})
 // ->where('sdg1','=',1)
 ->where('event_title', 'like', '%'.$keyword.'%', 'or', 'where', 'event_description', 'like', '%'.$keyword.'%')
+->get();
 
 
-if (isset($_GET['sdg1'])) {
+if (isset($_GET['sdg1'])){
   //  $query .= " AND 'sdg1' = 1";
- $query .= "->orWhere('sdg1','=',1)
- ->get();";}
+//  $query .= "->orWhere('sdg1','=',1)
+//  ->get();";}
+echo "this is working";}
+else{echo "nope";}
 
 
 function print_event_with_image($event_id, $event_title, $event_description)
