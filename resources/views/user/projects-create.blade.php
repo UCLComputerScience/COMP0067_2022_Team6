@@ -48,13 +48,13 @@
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The organisation of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
-                              <div class="form-group row">
+                              <!-- <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectLocation" id="projectLocation" required minlength="5" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
                                 </div>
-                              </div>
+                              </div> -->
                             </div>
                             <div class="form-group row mb-3">
                                 <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
@@ -85,20 +85,20 @@
                               </span>
                           @enderror
                       </div>
-                              <div class="form-group row">
+                              <!-- <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectCity" id="projectCity" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
-                              </div>
-                              <div class="form-group row">
+                              </div> -->
+                              <!-- <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectCountry" id="projectCountry" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="form-group row">
                                 <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
@@ -106,20 +106,7 @@
                                   <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label for="sdg" class="col-sm-2 col-form-label text-right">SDG</label>
-                                <div class="col-sm-10">
-                                  <select class="form-control" name="sdg" id="sdg" multiple> <!-- The code under this should auto-update, now working!! -->
-                                    <option value="">Choose an option</option>
-                                      <?php 
-                                    $result = DB::table('categories')->get();    ?>
-                                    @foreach ($result as $row)
-                                        <option value="{{$row->categoryID}}">{{$row->categoryName}}</option>
-                                    @endforeach 
-                                      </select>
-                                      <small id="categoryHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Select a category for this item.</small>
-                                </div>
-                              </div>
+                              
                               <div class="row mb-6">
                                 <div class="col-md-14">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>

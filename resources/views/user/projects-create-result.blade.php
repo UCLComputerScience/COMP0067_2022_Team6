@@ -20,16 +20,16 @@
     
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
-    $projectLocation = $_POST['projectLocation'];
-    $projectCity = $_POST['projectCity'];
+    // $projectLocation = $_POST['projectLocation'];
+    // $projectCity = $_POST['projectCity'];
     $address = $_POST['address'];
     $country = $_POST['country'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
-    $projectCountry = $_POST['projectCountry'];
+    // $projectCountry = $_POST['projectCountry'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
-    $sdg = $_POST['sdg']; 
+    // $sdg = $_POST['sdg']; 
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2']; 
     $sdg3 = $_POST['sdg3']; 
@@ -57,16 +57,16 @@
     $newProjectArray = array(
         'projectTitle' => $projectTitle,
         'projectOrganisation' => $projectOrganisation,
-        'projectLocation' => $projectLocation,
-        'projectCity' => $projectCity,
+        // 'projectLocation' => $projectLocation,
+        // 'projectCity' => $projectCity,
         'address' => $address,
         'country' => $country,
         'latitude' => $latitude,
         'longitude' => $longitude,
-        'projectCountry' => $projectCountry,
+        // 'projectCountry' => $projectCountry,
         'projectDetails' => $projectDetails,
         'projectEndDate' => $projectEndDate,
-        'sdg' => $sdg, 
+        // 'sdg' => $sdg, 
         'sdg1' => $sdg1,
         'sdg2' => $sdg2, 
         'sdg3' => $sdg3, 
@@ -99,21 +99,21 @@
     elseif (empty($projectOrganisation)){
         echo 'Please enter the organisation of this project.';
     } 
-    elseif (empty($projectLocation)){
-        echo 'Please enter the address of this project.';
-    } 
-    elseif (empty($projectCity)){
-        echo 'Please enter the city of this project.';
-    } 
-    elseif (empty($projectCountry)){
-        echo 'Please enter the country of this project.';
-    } 
+    // elseif (empty($projectLocation)){
+    //     echo 'Please enter the address of this project.';
+    // } 
+    // elseif (empty($projectCity)){
+    //     echo 'Please enter the city of this project.';
+    // } 
+    // elseif (empty($projectCountry)){
+    //     echo 'Please enter the country of this project.';
+    // } 
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';
     } 
-    elseif (empty($sdg)){
-        echo 'Please enter an SDG.';
-    }
+    // elseif (empty($sdg)){
+    //     echo 'Please enter an SDG.';
+    // }
     elseif (empty($projectValue) and $projectValue != 0){
         echo 'Please enter a project value.';
     }
