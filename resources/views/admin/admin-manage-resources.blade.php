@@ -48,21 +48,28 @@
                         <table class="table">
                             <tr>
                                 <th>Download resource</th>
+                                <th>Delete</th>
                             </tr>
-                            @forelse ($resources as $resource)
+                            @foreach ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
+                                    <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
+                                           onclick="event.preventDefault();
+                                           document.getElementById('delete-form-{{$resource->uuid}}').submit();">
+                                            Delete
+                                        </a>
+                                    </td>
+                                    <form uuid="delete-form-{{$resource->uuid}}"
+                                          + action="{{route('$resources.destroy', $resource->uuid)}}"
+                                          method="post">
+                                        @csrf @method('DELETE')
+                                    </form>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="2">No files found.</td>
-                                </tr>
-                            @endforelse
+                            @endforeach
                         </table>
 
                     </div>
 
-                    @if($user_id == '3')
                         <div class="card">
                             <div class="card-header">Add new resources</div>
 
@@ -83,7 +90,6 @@
 
                             </div>
                         </div>
-                @endif
 
             </section>
         </main>
