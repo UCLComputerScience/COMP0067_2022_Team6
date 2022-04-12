@@ -88,12 +88,12 @@ function strip_get($var){
 
   // Retrieve these from the URL
 
-  if (!isset($_GET['page'])) {
-    $curr_page = 1;
-  }
-  else {
-    $curr_page = $_GET['page'];
-  }
+  // if (!isset($_GET['page'])) {
+  //   $curr_page = 1;
+  // }
+  // else {
+  //   $curr_page = $_GET['page'];
+  // }
 
 
 // Processing search values inputted by user
