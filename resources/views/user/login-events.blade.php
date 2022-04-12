@@ -5,11 +5,11 @@
 @section('content')
 <div class="container">
 
-<h2 class="my-3">Events</h2>
+<h2 class='my-3'>Events</h2>
 
 <div class="container">
 <br><br>
-<h3 class="my-3">Browse events</h3>
+<h1 class="text-center mb-5 fw-bold">Browse events</h1>
   <div id="searchSpecs">
   <!-- When this form is submitted, this PHP page is what processes it.
       Search/sort specs are passed to this page through parameters in the URL
@@ -162,6 +162,12 @@
 
 $events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
 
+function strip_text($url){
+  $url = str_replace(array('[',']','"'), '', $url);
+  $url = stripslashes($url);
+
+  return $url;
+}
 
 function print_event_with_image($event_id, $event_title, $event_description)
 {
@@ -175,6 +181,11 @@ function print_event_with_image($event_id, $event_title, $event_description)
   $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
   $sdgs_first_strip = str_replace($array,"",$sdgs);
   
+  $this_event = DB::Table('events')->select('event_datetime')->where('event_id',$event_id)->get();
+  $event_datetime = $this_event->pluck('event_datetime');
+  $event_datetime = strip_text($event_datetime);
+  $event_datetime = substr($event_datetime, 0, -8);
+
   // Truncate long descriptions
   if (strlen($event_description) > 250) {
     $event_desc_shortened = substr($event_description, 0, 250) . '...';
@@ -189,7 +200,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-    <div class="p-2 mr-5"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '</div>
+    <div class="col-7"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br>Date: '.$event_datetime.'</div>
   </li>'
   );
 

@@ -1,21 +1,9 @@
 @extends('layouts.mainlayout-logged-in')
-
+@section('content')
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-
-@section('content')
-<br><br><br>
-            <!-- Page Content-->
-<section class="py-5">
-<div class="text-center mb-5">
-<h1 class="fw-bolder">Our Members</h1>
- <p class="lead fw-normal text-muted mb-0">Find and collaborate with a Member of your choice below</p>
-</div>
-<div class="text-center mb-5">
-
 <!-- Meta -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
@@ -28,9 +16,23 @@
 
 <!-- Datatables JS CDN -->
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-
 </head>
+
 <body>
+<meta charset="utf-8" />
+
+
+<br><br><br>
+            <!-- Page Content-->
+<section class="py-5">
+<div class="text-center mb-5">
+<h1 class="fw-bolder">Our Members</h1>
+ <p class="lead fw-normal text-muted mb-0">Find and collaborate with a Member of your choice below</p>
+</div>
+<div class="text-center mb-5">
+
+
+
 <table id='usersTable' width='100%'>
 <thead>
 <tr>
@@ -64,12 +66,7 @@ $(document).ready(function(){
 
 });
 </script>
-</body>
-</html>
-
-
-<body>
-
+<br>
 <!-- Map -->
 
 <div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
@@ -105,6 +102,7 @@ $(document).ready(function(){
     }
 
 </script>
-
+</section>
 </body>
+</html>
 @endsection
