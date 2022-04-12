@@ -283,4 +283,4 @@ Route::get('resources',[ResourceController::class, 'index'])->name('resources.in
 Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceController');
 Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
 Route::get('admin-manage-resources',[ResourceController::class, 'index'])->name('resources.index');
-Route::delete('admin-manage-resources', 'App\Http\Controllers\ResourceController@destroy')->name('resources.destroy');
+Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceController@destroy')->name('resources.destroy');

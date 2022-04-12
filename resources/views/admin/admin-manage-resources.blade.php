@@ -50,22 +50,27 @@
                                 <th>Download resource</th>
                                 <th>Delete</th>
                             </tr>
-                            @foreach ($resources as $resource)
+                            @forelse ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
-                                    <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
+                                    <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
                                            onclick="event.preventDefault();
-                                           document.getElementById('delete-form-{{$resource->uuid}}').submit();">
+                                               document.getElementById(
+                                               'delete-form-{{$resource->uuid}}').submit();">
                                             Delete
                                         </a>
                                     </td>
-                                    <form uuid="delete-form-{{$resource->uuid}}"
-                                          + action="{{route('$resources.destroy', $resource->uuid)}}"
+                                    <form id="delete-form-{{$resource->uuid}}"
+                                          + action="{{route('resources.destroy', $resource->uuid)}}"
                                           method="post">
                                         @csrf @method('DELETE')
                                     </form>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="2">No files found.</td>
+                                </tr>
+                            @endforelse
                         </table>
 
                     </div>
@@ -90,6 +95,7 @@
 
                             </div>
                         </div>
+                </div>
 
             </section>
         </main>
