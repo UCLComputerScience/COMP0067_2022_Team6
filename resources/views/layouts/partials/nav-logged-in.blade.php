@@ -15,6 +15,14 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li>
               <li class="nav-item"><a class="nav-link" href="/login-events">Events</a></li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Profile</a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                    <li><a class="dropdown-item" href="/user-profile">Edit My Profile</a></li>
+                      <li><a class="dropdown-item" href="/password/reset">Change Password</a></li>
+                    </ul>     
+              </li>
                 
               <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}">Log out</a></li> 
           </ul>

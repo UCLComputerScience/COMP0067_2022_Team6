@@ -18,6 +18,9 @@
             <div class="card">
          
                 <div class="card-body">
+                    <br>
+                <div class="d-grid"><a class="btn btn-primary" href="user-profile">Update my profile</a></div>
+                <br>
 
                          <div class="Welcome" role="alert">
                         </div>

@@ -87,6 +87,8 @@
                             'website' => $website,
                             'address' => $address,
                             'latitude' => $latitude,
+                            'longitude' => $longitude,
+                            'country' => $country,
                             'sdg1' => $sdg1,
                             'sdg2' => $sdg2,
                             'sdg3' => $sdg3,
