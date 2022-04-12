@@ -47,10 +47,10 @@
         <label for="sdg" class="col-sm-2 col-form-label text-right" for="sdg1">SDGs:</label>
            <div class="col-md-10">
               <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
-              <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1">
+              <!-- <input class="form-check-input" type="hidden" value="" id="sdg1" name="sdg1"> -->
               <input class="form-check-input" type="checkbox" value="1" id="sdg1" name="sdg1">
               <label class="form-check-label" for="sdg2">{{ __('2') }}</label>
-              <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2">
+              <!-- <input class="form-check-input" type="hidden" value="" id="sdg2" name="sdg2"> -->
               <input class="form-check-input" type="checkbox" value="2" id="sdg2" name="sdg2">
               <label class="form-check-label" for="sdg3">{{ __('3') }}</label>
               <input class="form-check-input" type="hidden" value="" id="sdg3" name="sdg3">
@@ -140,30 +140,42 @@
       $ordering = $_GET['order_by'];
     }
 
+// Plain SQL
+    // $query = "SELECT * FROM `events`
+    // WHERE (`event_description` LIKE '%$keyword%'
+    // OR `event_title` LIKE '%$keyword%'
+    // OR `event_call_url` LIKE '%$keyword%'
+    // OR `event_video_url`  LIKE '%$keyword%')
+    // ";
 
-    $query = "SELECT * FROM `events`
-    WHERE (`event_description` LIKE '%$keyword%'
-    OR `event_title` LIKE '%$keyword%'
-    OR `event_call_url` LIKE '%$keyword%'
-    OR `event_video_url`  LIKE '%$keyword%')
-    ";
+    // The same thing but in Eloquent
+  $query = "DB::table('events')
+->select('*')
+->where(function ($query) {
+	$query->where('event_description','like','%$keyword%')
+		->orWhere('event_title','like','%$keyword%')
+		->orWhere('event_call_url','like','%$keyword%')
+		->orWhere('event_video_url','like','%$keyword%');
+})";
+// ->get();
+
 
 
     if (isset($_GET['sdg1'])) {
-      $ordering = $_GET['sdg1'];
-      $query .= " AND 'sdg1' = 1";
+      // $query .= " AND 'sdg1' = 1";
+      $query .= "->where('sdg1','=',1)";
 }
   
 
-  if ($ordering === "all"){
-    $query .= " ORDER BY event_datetime DESC ";
-}else if ($ordering === "upcoming"){
-  $query .= " AND event_datetime >= GETDATE() 
-  ORDER BY event_datetime DESC";
-}else if($ordering === "past"){
-  $query .= " AND event_datetime < GETDATE() 
-  ORDER BY event_datetime DESC";
-}
+//   if ($ordering === "all"){
+//     $query .= " ORDER BY event_datetime DESC ";
+// }else if ($ordering === "upcoming"){
+//   $query .= " AND event_datetime >= GETDATE() 
+//   ORDER BY event_datetime DESC";
+// }else if($ordering === "past"){
+//   $query .= " AND event_datetime < GETDATE() 
+//   ORDER BY event_datetime DESC";
+// }
 
   }
 
