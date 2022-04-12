@@ -29,7 +29,7 @@ class FileController extends Controller
             $request->cover->storeAs('files', $file['cover']);
         }
         File::create($file);
-        return redirect()->route('files.index');
+        return redirect()->route('projects-detail.index');
     }
 
     public function download($uuid)

@@ -272,9 +272,9 @@ Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy
 Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
 Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
 
-Route::resource('files', 'App\Http\Controllers\FileController');
-Route::get('files/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('files.download');
-Route::get('/projects-detail/{project_id}',[FileController::class, 'index']);
+Route::resource('projects-detail', 'App\Http\Controllers\FileController');
+Route::get('projects-detail/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('projects-detail.download');
+Route::get('/projects-detail/{project_id}',[FileController::class, 'index'])->name('projects-detail.index');
 
 Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
