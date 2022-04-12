@@ -279,3 +279,7 @@ Route::get('/projects-detail/{project_id}',[FileController::class, 'index']);
 Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
 Route::get('resources',[ResourceController::class, 'index'])->name('resources.index');
+
+Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceController');
+Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
+Route::get('admin-manage-resources',[ResourceController::class, 'index'])->name('resources.index');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Resource;
 use Webpatser\Uuid\Uuid;
@@ -36,5 +37,12 @@ class ResourceController extends Controller
         $resource = Resource::where('uuid', $uuid)->firstOrFail();
         $pathToFile = storage_path('app/resources/' . $resource->cover);
         return response()->download($pathToFile);
+    }
+
+    public function destroy($uuid)
+    {
+        $resource = Resource::where('uuid', $uuid)->delete();
+        echo ("Resource deleted successfully.");
+        return redirect()->route('resources.index');
     }
 }
