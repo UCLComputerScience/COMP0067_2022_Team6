@@ -141,29 +141,29 @@
     }
 
 // Plain SQL
-    // $query = "SELECT * FROM `events`
-    // WHERE (`event_description` LIKE '%$keyword%'
-    // OR `event_title` LIKE '%$keyword%'
-    // OR `event_call_url` LIKE '%$keyword%'
-    // OR `event_video_url`  LIKE '%$keyword%')
-    // ";
+    $query = "SELECT * FROM `events`
+    WHERE (`event_description` LIKE '%$keyword%'
+    OR `event_title` LIKE '%$keyword%'
+    OR `event_call_url` LIKE '%$keyword%'
+    OR `event_video_url`  LIKE '%$keyword%')
+     ";
 
     // The same thing but in Eloquent
-  $query = "DB::table('events')
-->select('*')
-->where(function ($query) {
-	$query->where('event_description','like','%$keyword%')
-		->orWhere('event_title','like','%$keyword%')
-		->orWhere('event_call_url','like','%$keyword%')
-		->orWhere('event_video_url','like','%$keyword%');
-})";
+//   $query = DB::table('events')
+// ->select('*')
+// ->where(function ($query) {
+// 	$query->where('event_description','like','%$keyword%')
+// 		->orWhere('event_title','like','%$keyword%')
+// 		->orWhere('event_call_url','like','%$keyword%')
+// 		->orWhere('event_video_url','like','%$keyword%');
+// });
 // ->get();
 
 
 
     if (isset($_GET['sdg1'])) {
-      // $query .= " AND 'sdg1' = 1";
-      $query .= "->where('sdg1','=',1)";
+       $query .= " AND 'sdg1' = 1";
+     // $query .= "->where('sdg1','=',1)";
 }
   
 
@@ -235,7 +235,7 @@
 // $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
 
 
-$events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
+// $events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
 
 
 
