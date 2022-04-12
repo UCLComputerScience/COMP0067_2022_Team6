@@ -17,30 +17,6 @@
                         <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
 
-
-                        <div class="row mb-3">
-                            <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="{{ old('number_of_employees') }}" required autocomplete="number_of_employees" autofocus>
-
-                                @error('number_of_employees')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="{{ old('number_of_volunteers') }}" required autocomplete="number_of_volunteers" autofocus>
-                            </div>
-                        </div>
-
-
                     <div class="card-header">Resources List</div>
 
                     <div class="card-body">
@@ -53,7 +29,7 @@
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
-                                    <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
+                                    <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
                                            onclick="event.preventDefault();
                                                document.getElementById(
                                                'delete-form-{{$resource->uuid}}').submit();">

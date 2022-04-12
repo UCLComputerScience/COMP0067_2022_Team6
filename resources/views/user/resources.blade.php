@@ -51,23 +51,22 @@ $user_id = Auth::id();
                         <table class="table">
                             <tr>
                                 <th>Download resource</th>
-                                <th>Delete</th>
+                                
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
-                                    <td><a href="{{ route('admin-members.index') }}" class="btn btn-primary btn-sm"
+                                    <td><a href="{{ route('admin-members.index') }}" class=""
                                            onclick="event.preventDefault();
-                                               document.getElementById(
-                                               'delete-form-{{$resource->uuid}}').submit();">
-                                            Delete
-                                        </a>
-                                    </td>
-                                    <form id="delete-form-{{$resource->uuid}}"
+                                    //            document.getElementById(
+                                    //         //    'delete-form-{{$resource->uuid}}').submit();">
+                                       
+                            
+                                    {{-- <form id="delete-form-{{$resource->uuid}}"
                                           + action="{{route('resources.destroy', $resource->uuid)}}"
                                           method="post">
                                         @csrf @method('DELETE')
-                                    </form>
+                                    </form> --}}
                                 </tr>
                             @empty
                                 <tr>

@@ -1,20 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\ResourceAdmin;
 use App\Models\Resource;
-
 use Webpatser\Uuid\Uuid;
 use DataTables;
 
-class ResourceController extends Controller
+class ResourceControllerAdmin extends Controller
 {
     public function index()
     {
         $resources = Resource::all();
-        return view('user/resources', compact('resources'));
+        return view('admin/admin-manage-resources', compact('resources'));
     }
 
     public function create()

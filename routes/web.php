@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ResourceControllerAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -280,7 +281,7 @@ Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
 Route::get('resources',[ResourceController::class, 'index'])->name('resources.index');
 
-Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceController');
-Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
-Route::get('admin-manage-resources',[ResourceController::class, 'index'])->name('resources.index');
-Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceController@destroy')->name('resources.destroy');
+Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceControllerAdmin');
+Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceControllerAdmin@download')->name('resources.download');
+Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index');
+Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy');
