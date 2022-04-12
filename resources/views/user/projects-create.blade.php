@@ -194,7 +194,7 @@
                               <div class="form-group row">
                                 <label for="projectEndDate" class="col-sm-2 col-form-label text-right">End date</label>
                                 <div class="col-sm-10">
-                                  <input type="datetime-local" class="form-control" name="projectEndDate" id="projectEndDate" required>
+                                  <input type="date" class="form-control" name="projectEndDate" id="projectEndDate" required>
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Expected end date of the project.</small>
                                 </div>
                               </div>
