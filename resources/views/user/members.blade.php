@@ -24,7 +24,7 @@
 
 <br><br><br>
             <!-- Page Content-->
-<section class="py-5">
+<section class="py-1">
 <div class="text-center mb-5">
 <h1 class="fw-bolder">Our Members</h1>
  <p class="lead fw-normal text-muted mb-0">Find and collaborate with a Member of your choice below</p>
