@@ -1,3 +1,4 @@
+use Illuminate\Support\Facades\Storage;
 @extends('layouts.mainlayout-logged-in')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @section('content')
@@ -46,8 +47,8 @@ $sdgs_first_strip = str_replace($array,"",$sdgs);
 $projectDate = DB::Table('projects')->select('projectEndDate')->where('project_id',$project_id)->get();
 $array1 = array('[',']','{','}','"','"','projectEndDate');
 $date = str_replace($array1,"",$projectDate);
-$sdgs_second_strip = explode(',', $sdgs_first_strip);
-
+$sdgs_second_strip = trim($sdgs_first_strip, ",");
+$desc = str_replace(array( '["', '"]' ), '', $desc);
 $project_Date=$projectDate->pluck('projectEndDate');
 $project_Date = strip_text($project_Date);
 $project_Date = substr($project_Date,0,-8);
@@ -73,11 +74,12 @@ $project_Date = substr($project_Date,0,-8);
   //}
   
   // Print HTML
+  $url = Storage::url($first_image_path_stripped_second);
+  echo $first_image_path_stripped_second;
   echo('
-    
     <li class="list-group-item d-flex justify-content-between">
-    <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-    <div class="col-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br>End Date: '.$project_Date.'</div>
+    <div class="p-2 mr-5"> <img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="100" height="100"> </div>
+    <div class="col-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br>End Date: '.$project_Date.'</div>
     <div class="row align-items-center">
     <div class="col"><td>  <a class="btn btn-primary form-control" href="projects-edit/'. $project_id.'" > Edit </a></td></div>
     
