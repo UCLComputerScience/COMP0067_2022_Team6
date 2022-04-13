@@ -88,17 +88,6 @@ function strip_get($var){
 
   // Retrieve these from the URL
 
-  // if (!isset($_GET['page'])) {
-  //   $curr_page = 1;
-  // }
-  // else {
-  //   $curr_page = $_GET['page'];
-  // }
-
-
-
-  // Retrieve these from the URL
-
   if (!isset($_GET['page'])) {
     $curr_page = 1;
   }
@@ -139,24 +128,6 @@ $query1 = DB::Table('events')->select('event_id', 'event_title', 'event_descript
 
 $query = $query1->get();
 
-// Plain SQL
-    $query = "SELECT * FROM `events`
-    WHERE (`event_description` LIKE '%$keyword%'
-    OR `event_title` LIKE '%$keyword%'
-    OR `event_call_url` LIKE '%$keyword%'
-    OR `event_video_url`  LIKE '%$keyword%')
-     ";
-
-    // The same thing but in Eloquent
-//   $query = DB::table('events')
-// ->select('*')
-// ->where(function ($query) {
-// 	$query->where('event_description','like','%$keyword%')
-// 		->orWhere('event_title','like','%$keyword%')
-// 		->orWhere('event_call_url','like','%$keyword%')
-// 		->orWhere('event_video_url','like','%$keyword%');
-// });
-// ->get();
 
 if ($sdg == "1"){
 $query = $query1->where('sdg1',"1")->get();
