@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src=http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped_second?> alt="..." width="1300" height="700" /></div>
+                        <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped ?>" alt="..." width="1300" height="700" /></div>
                         <br>
                         <?php 
                              echo $event_video_url;

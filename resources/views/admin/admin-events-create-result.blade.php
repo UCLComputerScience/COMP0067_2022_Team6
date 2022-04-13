@@ -43,7 +43,8 @@
     $sdg17 = $_POST['sdg17']; 
     $userid = Auth::id();
     $filename = $_FILES["uploadfile"]["name"];
-   
+    $uuid = uniqid();
+    $uuidfilename = $uuid.$filename;
 
     // Putting them into an array
 
@@ -72,7 +73,7 @@
         'sdg15' => $sdg15, 
         'sdg16' => $sdg16, 
         'sdg17' => $sdg17, 
-        'image_name' => $filename
+        'image_name' => $uuidfilename
     );
  
     // The flow below checks for general errors in the form, then does 
@@ -94,9 +95,9 @@
 
        $event_id =  DB::table('events')->insert($newEventArray);        
        
-       $filename = $_FILES["uploadfile"]["name"];
+    //    $filename = $_FILES["uploadfile"]["name"];
        $tempname = $_FILES["uploadfile"]["tmp_name"];    
-       $folder = public_path("assets/".$filename);
+       $folder = public_path("assets/".$uuidfilename);
        // "public/assets/images/".$filename;
          
        // $insert_image = DB::table('projects')->insert('image_name',$filename);

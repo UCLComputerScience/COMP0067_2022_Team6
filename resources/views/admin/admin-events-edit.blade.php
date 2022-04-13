@@ -167,8 +167,8 @@
                               <div class="form-group row">
                               <label for="filesToUpload" class="col-sm-2 col-form-label text-right">Image upload</label>
                               <div class="col-sm-10">
-                                <input type="file" name="filesToUpload[]" id="filesToUpload">
-                                <small id="filesToUploadHelp" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span>Please upload one image for your event.</small>
+                                <input type="file" name="fileupload" id="fileupload" value="">
+                                <small id="fileupload" class="form-text text-muted" style="float:left"><span class="text-danger">* Required.</span>Please upload one image for your event.</small>
                               </div>
                               </div>
                               <div class="form-group row">

@@ -59,6 +59,12 @@
                                 <form action="{{ route('resources.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
+                                    Title:
+                                    <br>
+                                    <input type="text" name="title" class="form-control">
+    
+                                    <br>
+
                                     File:
                                     <br>
                                     <input type="file" name="cover">
