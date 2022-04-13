@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('styles')
-@extends('layouts.partials.nav-logged-in')
+@extends('layouts.mainlayout-logged-in')
 
 @section('content')
 
@@ -64,6 +62,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center mb-5">
+                <br>
                 <br>
                 <br>
                 <br>
