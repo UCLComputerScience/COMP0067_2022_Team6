@@ -75,7 +75,7 @@ $project_Date = substr($project_Date,0,-8);
   
   // Print HTML
   $url = Storage::url($first_image_path_stripped_second);
-  echo $first_image_path_stripped_second;
+
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"> <img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="100" height="100"> </div>
