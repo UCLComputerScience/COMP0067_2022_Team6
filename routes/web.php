@@ -51,6 +51,10 @@ Route::get('/login-events', function () {
 Route::get('/events-detail/{event_id}', function () {
     return view('/user/events-detail');})->where('event_id', '.*')->middleware('auth');
 
+
+Route::get('public/assets/{first_image_path_stripped_second}', function () {
+    return view('public/assets');})->where('$first_image_path_stripped_second', '.*')->middleware('auth');
+
 Route::any('/storage/app/public/images/{first_image_path_stripped}', function () {
     return view('/public/storage/app/public/images');})->where('first_image_path_stripped', '.*')->middleware('auth');
 
@@ -66,7 +70,7 @@ Route::post('/projects-create-result', function () {
     return view('/user/projects-create-result');
 })->middleware('auth');
 
-Route::post('/projects-edit-result', function () {
+Route::any('/projects-edit-result', function () {
     return view('/user/projects-edit-result');
 })->middleware('auth');
 
@@ -81,6 +85,8 @@ Route::get('/projects-my', function () {
 Route::get('/user-profile', function () {
     return view('/user/user-profile');
 })->middleware('auth');
+
+
 
 Route::post('/user-profile-result', function () {
     return view('/user/user-profile-result');

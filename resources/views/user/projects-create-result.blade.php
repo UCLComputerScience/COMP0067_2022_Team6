@@ -51,7 +51,8 @@
     $fundingRequired = $_POST['fundingRequired'];
     $userid = Auth::id();
     $filename = $_FILES["uploadfile"]["name"];
-
+    $uuid = uniqid();
+    $uuidfilename = $uuid.$filename;
     // Putting them into an array
 
     $newProjectArray = array(
@@ -87,7 +88,7 @@
         'projectValue' => $projectValue,
         'fundingRequired' => $fundingRequired,
         'id' => $userid,
-        'image_name' => $filename
+        'image_name' => $uuidfilename
     );
  
     // The flow below checks for general errors in the form, then does 
@@ -127,9 +128,10 @@
 
        $project_id =  DB::table('projects')->insert($newProjectArray); 
        
-        $filename = $_FILES["uploadfile"]["name"];
-        $tempname = $_FILES["uploadfile"]["tmp_name"];    
-        $folder = public_path("assets/".$filename);
+    //    $imageUUID = uniqid();
+    //    $filename = $_FILES["uploadfile"]["name"];
+       $tempname = $_FILES["uploadfile"]["tmp_name"];    
+       $folder = public_path("assets/".$uuidfilename);
         // "public/assets/images/".$filename;
           
         // $insert_image = DB::table('projects')->insert('image_name',$filename);
