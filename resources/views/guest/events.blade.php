@@ -1,22 +1,23 @@
-<!-- TODO: Move events into a single grid - currently they are separate sets which is not good -->
-
 @extends('layouts.mainlayout')
 
 @section('content')
 
-<div class="container">
-
-<h2 class="my-3">Events</h2>
 
 <div class="container">
 
-<h3 class="my-3">Browse events</h3>
+<h2 class="my-3 text-center">Events</h2>
+
+<div class="container">
+  <p class="lead fw-normal text-muted mb-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+<h3 class="my-3 text-center">Browse Events</h3>
   <div id="searchSpecs">
   <!-- When this form is submitted, this PHP page is what processes it.
       Search/sort specs are passed to this page through parameters in the URL
       (GET method of passing data to a page). -->
-  <form method="get" action="browse.php">
-    <div class="row">
+
+  <form method="get" action="events">
+  <div class="row">
       <div class="col-md-5 pr-0">
         <div class="form-group">
           <label for="keyword" class="sr-only">Search keyword:</label>
@@ -27,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 pr-0">
+      <div class="col-md-4 pr-0">
         <div class="form-group">
           <label for="cat" class="sr-only">Select SDG:</label>
           <select class="form-control" id="cat" name="cat">
@@ -46,7 +47,7 @@
           </select>
         </div>
       </div>
-      <div class="col-md-3 pr-0">
+      <div class="col-md-2 pr-0">
         <div class="form-inline">
           <label class="mx-2" for="order_by">Sort by:</label>
           <select class="form-control" id="order_by" name = "order_by">
@@ -57,7 +58,7 @@
         </div>
       </div>
       <div class="col-md-1 px-0">
-        <button type="submit" class="btn btn-primary" name="search"  value = "Search">Search</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 22%;" name="search"  value = "Search">Search</button>
       </div>
     </div>
   </form>
@@ -66,7 +67,25 @@
 <br \>
 
 <!-- Search results -->
+<ul class="list-group">
+
 <?php
+// Some useful variables and functions for later if/else search conditions
+
+$current_datetime = str(now());
+
+function strip_text($var){
+  $var = str_replace(array('"'), '', $var);
+  $var = stripslashes($var);
+  return $var;
+}
+
+function strip_get($var){
+  $var = str_replace(array('->get();'), '', $var);
+  return $var;
+}
+
+
   // Retrieve these from the URL
 
   if (!isset($_GET['page'])) {
@@ -77,94 +96,132 @@
   }
 
 
+// Processing search values inputted by user
+if(isset($_GET['search'])){
 
-  if(isset($_GET['search'])){
-    if (!isset($_GET['keyword'])) {
-      //if a keyword is not specified then we simply set it to be blank so that in the
-      //sql query, it does not filter out any auctions since all descriptions and titles of
-      //auctions will have "" in them.
-      $keyword = "";
-    }else {
-      $keyword = $_GET['keyword'];
-    }
-
-    if (!isset($_GET['cat'])) {
-      $category = "all";
-    }else {
-      $category = $_GET['cat'];
-    }
-
-    if (!isset($_GET['order_by'])) {
-      $ordering = "all";
-    }else {
-      $ordering = $_GET['order_by'];
-    }
-
-
-    // Calculate time to auction end
- // $now = new DateTime();
-  //if ($now > $end_time) {
-   // $time_remaining = 'This auction has ended';
-  //}
-  //else {
-    // Get interval:
-    //$time_to_end = date_diff($now, $end_time);
-   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
-  //}
-
-    //sql query to get the relevant information about the auction
-   /* $query = "SELECT tblauction.auctionID AS 'item_id',
-                         tblauction.itemName AS 'title',
-                         tblauction.itemDescription AS 'description',
-                         tblauction.endTime AS 'end_date',
-                         tblauction.startPrice AS 'start_price',
-                         tblbidding.bidPrice
-                         FROM tblAuction
-                         LEFT JOIN tblbidding
-                         ON tblauction.auctionID = tblbidding.auctionID
-                         WHERE ((tblAuction.itemDescription LIKE '%$keyword%')
-                         OR (tblAuction.itemName LIKE '%$keyword%')) ";*/
-    //if category is not set to be all then we want to filter our search further
-    //i.e. we want to add an AND statement after the above WHERE clause
-    /*if($category != "all"){
-      //the following query retrieves the itemCategoryID based on the category that was selected
-      $sql = "SELECT itemCategoryID FROM tblitemcategory WHERE itemCategory = '$category'";
-      $sql_result = mysqli_query($connection, $sql);
-      $sql_array = mysqli_fetch_assoc($sql_result);
-      $itemcategoryID = $sql_array['itemCategoryID'];
-      //filtering the search further
-      $query .= " AND tblauction.itemCategoryID = '$itemcategoryID'
-                  GROUP BY tblauction.auctionID ";
-    }else{
-      $query .= " GROUP BY tblauction.auctionID ";
-    }
-*/
-
-    //sql query for ordering the results based on datetime
-  if($ordering === "all"){
-      $query .= " ORDER BY ecent_datetime DESC ";
-  }else if ($ordering === "upcoming"){
-    $query .= " AND event_datetime >= GETDATE() ";
-  }else if($ordering === "past"){
-    $query .= " AND event_datetime < GETDATE() ";
+  if (!isset($_GET['keyword'])) {
+    //if a keyword is not specified then we simply set it to be blank so that in the
+    //sql query, it does not filter out any auctions since all descriptions and titles of
+    //auctions will have "" in them.
+    $keyword = "";
+  }else {
+    $keyword = $_GET['keyword'];
   }
+}
+else{
+  $keyword = "";
+}
+
+// Checking which SDG has been chosen
+if (!isset($_GET['cat'])) {
+  $sdg = "";
+}
+else{
+  $sdg = $_GET['cat'];
+}
+
+// Start of search query and conditions
+$query1 = DB::Table('events')->select('event_id', 'event_title', 'event_description', 'event_datetime', 'event_timezone', 'event_call_url', 'event_video_url',
+'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
+->whereRaw("(event_title like '%$keyword%' or event_description like '%$keyword%')")
+->orderBy('event_datetime', 'desc');
+
+$query = $query1->get();
 
 
+if ($sdg == "1"){
+$query = $query1->where('sdg1',"1")->get();
+}
 
-  }
-  ?>
+elseif ($sdg == "2"){
+  $query = $query1->where('sdg2',"2")->get();
+}
 
-<ul class="list-group">
+elseif ($sdg == "3"){
+  $query = $query1->where('sdg3',"3")->get();
+}
 
-<?php
+elseif ($sdg == "4"){
+  $query = $query1->where('sdg4',"4")->get();
+}
 
-// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
+elseif ($sdg == "5"){
+  $query = $query1->where('sdg5',"5")->get();
+}
+
+elseif ($sdg == "6"){
+  $query = $query1->where('sdg6',"6")->get();
+}
+
+elseif ($sdg == "7"){
+  $query = $query1->where('sdg7',"7")->get();
+}
+
+elseif ($sdg == "8"){
+  $query = $query1->where('sdg8',"8")->get();
+}
+
+elseif ($sdg == "9"){
+  $query = $query1->where('sdg9',"9")->get();
+}
+
+elseif ($sdg == "10"){
+  $query = $query1->where('sdg10',"10")->get();
+}
+
+elseif ($sdg == "11"){
+  $query = $query1->where('sdg11',"11")->get();
+}
+
+elseif ($sdg == "12"){
+  $query = $query1->where('sdg12',"12")->get();
+}
+
+elseif ($sdg == "13"){
+  $query = $query1->where('sdg13',"13")->get();
+}
+
+elseif ($sdg == "14"){
+  $query = $query1->where('sdg14',"14")->get();
+}
+
+elseif ($sdg == "15"){
+  $query = $query1->where('sdg15',"15")->get();
+}
+
+elseif ($sdg == "16"){
+  $query = $query1->where('sdg16',"16")->get();
+}
+
+elseif ($sdg == "17"){
+  $query = $query1->where('sdg17',"17")->get();
+}
 
 
-$events = DB::Table('events')->select('event_id','event_title','event_description','event_datetime', 'event_timezone')->get();
+if (!isset($_GET['order_by'])) {
+  $order_by = "all";
+}else {
+  $order_by = $_GET['order_by'];
+}
 
-
-
+  if ($order_by === "all"){
+    // $query .= " ORDER BY event_datetime DESC ";
+    $query->sortByDesc('event_datetime');
+    echo "<br>hello";
+}elseif ($order_by === "upcoming"){
+  // $query .= " AND event_datetime >= GETDATE() 
+  // ORDER BY event_datetime DESC";
+  $query = $query->where('event_datetime', '>=', $current_datetime);
+  // ->sortBy('event_datetime', 'desc');
+  // ->get();
+}elseif($order_by === "past"){
+  // $query .= " AND event_datetime < GETDATE() 
+  // -- ORDER BY event_datetime DESC";
+  $query = $query->where('event_datetime', '<', $current_datetime);
+  // ->orderBy('event_datetime', 'desc');
+  // ->get();
+}
+ 
 function print_event_with_image($event_id, $event_title, $event_description)
 {
 
@@ -200,18 +257,18 @@ $sdgs_first_strip = str_replace($array,"",$sdgs);
   
   
   $counter = 0;
-  foreach ($events as $row)
+  foreach ($query as $row)
   //while (TRUE)//$search_row = $my_projects->fetch_assoc())
   {
-    $endDateTime = new DateTime($row->event_datetime);
+    // $endDateTime = new DateTime($row->event_datetime);
     print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
     $counter +=1;
   }
   echo "</ul>";
   if ($counter > 0){
-    echo "Events: " . $counter;}
+    echo "<br>Events: " . $counter;}
   else{
-    echo "No events were found matching your search criteria";}
+    echo "<br>No events were found matching your search criteria";}
   
 ?>
 </div>

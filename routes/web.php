@@ -37,6 +37,9 @@ Route::get('/contact', function () {
 Route::get('/events', function () {
     return view('/guest/events');
 });
+Route::get('/events?*', function () {
+    return view('/guest/events?*');
+});
 Route::get('/gdpr', function () {
     return view('/guest/gdpr');
 });
