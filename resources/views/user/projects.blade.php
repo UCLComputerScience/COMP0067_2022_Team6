@@ -259,7 +259,6 @@ if (!isset($_GET['order_by'])) {
   if ($order_by === "all"){
     // $query .= " ORDER BY projectEndDate DESC ";
     $query->sortByDesc('projectEndDate');
-    echo "<br>hello";
 }elseif ($order_by === "upcoming"){
   // $query .= " AND projectEndDate >= GETDATE() 
   // ORDER BY projectEndDate DESC";
@@ -275,8 +274,8 @@ if (!isset($_GET['order_by'])) {
 }
 
 
-$my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->get();
-//echo ($my_projects);
+// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->get();
+// //echo ($my_projects);
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
 //echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
@@ -341,7 +340,7 @@ $project_Date = substr($project_Date,0,-8);
   
   
   $counter = 0;
-  foreach ($my_projects as $row)
+  foreach ($query as $row)
   //while (TRUE)//$search_row = $my_projects->fetch_assoc())
   {
     $endDateTime = new DateTime($row->projectEndDate);
@@ -349,10 +348,9 @@ $project_Date = substr($project_Date,0,-8);
     $counter +=1;
   }
   echo "</ul>";
-  echo "Projects: " . $counter;
+  echo "<br>Projects: " . $counter;
   ?>
-
-
+  
     </div>
 
             </section>
