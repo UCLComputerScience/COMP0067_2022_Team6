@@ -110,6 +110,9 @@ Route::get('/resources-detail', function () {
 Route::get('/projects', function () {
     return view('/user/projects');
 })->middleware('auth');
+Route::get('/projects*', function () {
+    return view('/user/projects*');
+})->middleware('auth');
 
 Route::get('/projects-detail/{project_id}',function (){
     return view('/user/projects-detail');})->where('project_id', '.*')->middleware('auth');
