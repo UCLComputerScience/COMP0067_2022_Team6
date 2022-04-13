@@ -51,6 +51,10 @@ Route::get('/login-events', function () {
     return view('user/login-events');
 })->middleware('auth');
 
+Route::get('/login-events?*', function () {
+    return view('/user/events?*');
+})->middleware('auth');
+
 Route::get('/events-detail/{event_id}', function () {
     return view('/user/events-detail');})->where('event_id', '.*')->middleware('auth');
 
@@ -196,6 +200,10 @@ Route::post('/admin-events-create-result', function () {
 
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
+})->middleware(['auth', 'can:accessAdmin']);
+
+Route::get('/admin-manage-events?*', function () {
+    return view('/admin/admin-manage-events?*');
 })->middleware(['auth', 'can:accessAdmin']);
 
 Route::any('/admin-events-delete/{event_id}',function (){
