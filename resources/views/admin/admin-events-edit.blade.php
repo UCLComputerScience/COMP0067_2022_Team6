@@ -83,7 +83,7 @@
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="sdg" class="col-sm-2 col-form-label text-right">SDGs</label>
+                                <label for="sdg" class="col-sm-2 col-form-label text-right"><a href="https://sdgs.un.org/goals" target="_blank">SDGs</a></label>
                         
                                 <div class="col-md-10">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
