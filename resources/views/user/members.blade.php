@@ -36,7 +36,6 @@
 <table id='usersTable' width='100%'>
 <thead>
 <tr>
-    <td>No.</td>
     <td>Organisation Name</td>
     <td>Contact E-mail</td>
     <td>SDG</td>
@@ -55,7 +54,6 @@ $(document).ready(function(){
         serverSide: true,
         ajax: "{{route('users.getUsers')}}",
         columns: [
-            { data: 'id' },
             { data: 'name' },
             { data: 'email' },
             { data: 'sdg' },
