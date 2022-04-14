@@ -24,6 +24,7 @@
                         <table class="table">
                             <tr>
                                 <th>Title</th>
+                                <th>Description</th>
                                 <th>Download resource</th>
                                 <th>Language</th>
                                 <th>SDG</th>
@@ -33,6 +34,7 @@
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td>{{ $resource->resource_title }}</td>
+                                    <td>{{ $resource->resource_description }}</td>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
                                     <td>{{ $resource->resource_language }}</td>
                                     <td>{{ $resource->resource_sdg }}</td>
@@ -70,6 +72,12 @@
                                     Title:
                                     <br>
                                     <input type="text" name="resource_title" class="form-control">
+
+                                    <br>
+
+                                    Description:
+                                    <br>
+                                    <input type="text" name="resource_description" class="form-control">
 
                                     <br>
 
