@@ -46,7 +46,7 @@ $project_id = $_POST['project_id'];
     $sdg17 = $_POST['sdg17']; 
     $userid = Auth::id();
     $project_id = $_POST['project_id'];
-    $filename = $_FILES["uploadfile"]["time()"];
+    $filename = $_FILES["uploadfile"]["name"];
     $uuid = uniqid();
     $uuidfilename = $uuid.$filename;
     
