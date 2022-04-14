@@ -23,11 +23,13 @@
 
                         <table class="table">
                             <tr>
+                                <th>Title</th>
                                 <th>Download resource</th>
                                 <th>Delete</th>
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
+                                    <td>{{ $resource->resource_title }}</td>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
                                     <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
                                            onclick="event.preventDefault();
@@ -61,8 +63,8 @@
 
                                     Title:
                                     <br>
-                                    <input type="text" name="title" class="form-control">
-    
+                                    <input type="text" name="resource_title" class="form-control">
+
                                     <br>
 
                                     File:
