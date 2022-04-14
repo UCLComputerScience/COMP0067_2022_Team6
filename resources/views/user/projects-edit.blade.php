@@ -19,13 +19,16 @@
  
                         <?php 
                       $project_id = Request::segment(2);
-                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg','projectOrganisation', 'projectValue', 'fundingRequired',
+                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg', 'address', 'latitude', 'longitude', 'country', 'projectOrganisation', 'projectValue', 'fundingRequired',
                       'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
                       ->where('project_id',$project_id)->get();
                       $project_title = $this_project->pluck('projectTitle');
                       $project_location = $this_project->pluck('projectLocation');
-                      $project_city = $this_project->pluck('projectCity');
-                      $project_country = $this_project->pluck('projectCountry');
+                      $address = $this_project->pluck('address');
+                      $latitude = $this_project->pluck('latitude');
+                      $longitude = $this_project->pluck('longitude');
+                      // $project_city = $this_project->pluck('projectCity');
+                      // $project_country = $this_project->pluck('projectCountry');
                       $project_details = $this_project->pluck('projectDetails');
                       $project_end_date = $this_project->pluck('projectEndDate');
                       $project_value = $this_project->pluck('projectValue');
@@ -69,7 +72,7 @@
                       <div class="container">
                       <br />
                       <br />
-                      <!-- Create auction form -->
+                      <!-- Edit project form -->
                       <div style="max-width: 800px; margin: 10px auto">
                       <h1 class="fw-bolder">Edit Your Project: <?php echo strip_text($project_title); ?> </h1>
                         <div class="card">
@@ -78,27 +81,56 @@
                                 @csrf <!-- {{ csrf_field() }} -->
                                 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
                                 <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
+                                <label for="projectTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" value="<?php if (isset($project_title[0])){ print_r($project_title[0]);} else { print_r(""); }?>" name="projectTitle" id="projectTitle" required minlength="10" placeholder="e.g. Well Building - Moldova">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The title of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Organisation</label>
+                                <label for="projectOrganisation" class="col-sm-2 col-form-label text-right">Organisation</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" value="<?php if (isset($project_organisation[0])){ print_r($project_organisation[0]);} else { print_r(""); } ?>" name="projectOrganisation" id="projectOrganisation" required minlength="10" placeholder="e.g. WaterAid">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The organisation of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
-                              <div class="form-group row">
+                              <div class="form-group row mb-3">
+                                <label for="address" class="col-sm-2 col-form-label text-right">{{ __('Address') }}</label>
+                                
+                                <div class="col-sm-10">
+                                    <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="<?php print_r($address[0]); ?>" required autocomplete="address" autofocus placeholder="Enter Address">
+                                </div>
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
+                            <div class="col-md-6">
+                              <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">                              
+                          </div>
+
+                          {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
+                              {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
+                              <div class="col-md-6">
+                              <input id="longitude" name="longitude" type="hidden" value=""   class="form-control">
+                              <div class="col-md-6">
+                              <input id="country" name="country" type="hidden" value="" class="form-control">
+                          </div>
+                          @error('address')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                              <!-- <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectLocation" id="projectLocation" value="<?php if (isset($project_location[0])){ print_r($project_location[0]);} else { print_r(""); } ?>" required minlength="5" placeholder="">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
                                 </div>
-                              </div>
-                              <div class="form-group row">
+                              </div> -->
+                              <!-- <div class="form-group row">
                                 <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectCity" id="projectCity" value="<?php if (isset($project_city[0])){ print_r($project_city[0]);} else { print_r(""); } ?>" placeholder="" required>
@@ -111,7 +143,7 @@
                                   <input type="text" class="form-control" name="projectCountry" id="projectCountry" value="<?php if (isset($project_country[0])){ print_r($project_country[0]);} else { print_r(""); } ?>" placeholder="" required>
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="form-group row">
                                 <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
@@ -120,7 +152,7 @@
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="sdg" class="col-sm-2 col-form-label text-right">SDGs</label>
+                                <label for="sdg" class="col-sm-2 col-form-label text-right"><a href="https://sdgs.un.org/goals" target="_blank">SDGs</a></label>
                         
                                 <div class="col-md-10">
                                     <label class="form-check-label" for="sdg1">{{ __('1') }}</label>
@@ -218,6 +250,45 @@
 
 
                               <button type="submit" id="submit" name="submit" class="btn btn-primary form-control">Edit Project</button>
+                            
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                  
+                    <script type="text/javascript"
+                        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&libraries=places" ></script>
+                    <script>
+                        $(document).ready(function () {
+                            $("#latitudeArea").addClass("d-none");
+                            $("#longtitudeArea").addClass("d-none");
+                            $("#country").addClass("d-none");
+                        });
+                    </script>
+                    <script>
+
+                        google.maps.event.addDomListener(window, 'load', initialize);
+                  
+                        function initialize() {
+                            var input = document.getElementById('address');
+                            var autocomplete = new google.maps.places.Autocomplete(input);
+                  
+                            autocomplete.addListener('place_changed', function () {
+                                var place = autocomplete.getPlace();
+                                $('#latitude').val(place.geometry['location'].lat());
+                                $('#longitude').val(place.geometry['location'].lng());
+                                $('#country').val(place.address_components.slice(-1)[0].long_name); 
+                                // $('input[name="country"]').val(place.country.long_name); 
+
+                                $("#latitudeArea").removeClass("d-none");
+                                $("#longtitudeArea").removeClass("d-none");
+                                $("#country").removeClass("d-none");
+                            });
+                        }
+                    </script>
+                </body>
+                <br>
+                </html>
+                {{-- Google autocomplete --}}
+                            
                             </form>
                           </div>
                         </div>
