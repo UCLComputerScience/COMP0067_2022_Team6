@@ -81,9 +81,9 @@
                     <div class="fst-italic text-muted">Founder</div>
                 </div>
             </div>
-            <div class="col mb-5 mb-5 mb-sm-0">
+            <div class="col mb-5 mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://www.unsouthsouth.org/wp-content/uploads/2019/07/ANCSSC-Secretariat.jpg" width="200" height="200" alt="..." />
                     <h5 class="fw-bolder">Ines Belliard</h5>
                     <div class="fst-italic text-muted">Project Manager</div>
                 </div>

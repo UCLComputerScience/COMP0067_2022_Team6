@@ -37,27 +37,27 @@
                                     <ul class="list-unstyled mb-4">
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            <strong>Unique planning resources</strong>
+                                            <strong>Lorem ipsum dolor sit amet</strong>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Form a network 
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Unlimited private projects
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Dedicated support
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Free linked domain
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="text-muted">
                                             <i class="bi bi-x"></i>
-                                            Monthly status reports
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                     </ul>
                                     <div class="d-grid"><a class="btn btn-outline-primary" href="checkoutNGO">Become a charity member</a></div>                                  </form>
@@ -74,34 +74,34 @@
                                         <span class="text-muted">/ year</span>
                                     </div>
                                     <div class="small text-camelcase fw-bold">
-                                        If your organisation is in the private sector run for profit, this is the membership for you
+                                        If your organisation is private sector, this is the membership for you
                                     </div>
                                     <br />
                                     <ul class="list-unstyled mb-4">
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            <strong>Unlimited users</strong>
+                                            <strong>Lorem ipsum dolor sit amet</strong>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            5GB storage
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Unlimited public projects
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Community access
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check text-primary"></i>
-                                            Unlimited private projects
+                                            Lorem ipsum dolor sit amet
                                         </li>
                                         <li class="text-muted">
                                             <i class="bi bi-check text-primary"></i>
-                                            Monthly status reports
-                                        </li>
+                                            Lorem ipsum dolor sit amet
+                                  
                                     </ul>
                                     <div class="d-grid"><a class="btn btn-outline-primary" href="checkoutCorporate">Become a corporate member</a></div>
                                 </div>
