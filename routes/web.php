@@ -138,8 +138,13 @@ Route::get('google-autocomplete', [GoogleController::class, 'index']);
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');})->middleware('auth');
 
-Route::get('/success', function () {
-    return view('/user/success');})->middleware('auth');
+    Route::any('/admin-events-delete/{event_id}',function (){
+        return view('/admin/admin-events-delete');})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
+
+Route::get('/success/{id}', function () {
+  
+
+    return view('/user/success');})->where('id', '.*')->middleware('auth');
 
 Route::get('/checkoutNGO', function () {
 
@@ -149,9 +154,9 @@ require '../vendor/autoload.php';
 // The price ID passed from the front end.
 //$priceId = $_POST['priceId'];
 //$priceId = '{{PRICE_ID}}';
-
+$id = Auth::user()->id;
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://127.0.0.1:8000/success',
+  'success_url' => 'http://127.0.0.1:8000/success/'.$id,
       'cancel_url' => 'http://127.0.0.1:8000/cancel',
   'mode' => 'subscription',
   'line_items' => [[
@@ -171,9 +176,9 @@ $url = $checkout_session['url'];
         // The price ID passed from the front end.
         //$priceId = $_POST['priceId'];
         //$priceId = '{{PRICE_ID}}';
-
+        $id = Auth::user()->id;
         $checkout_session = \Stripe\Checkout\Session::create([
-          'success_url' => 'http://127.0.0.1:8000/success',
+          'success_url' => 'http://127.0.0.1:8000/success/'.$id,
               'cancel_url' => 'http://127.0.0.1:8000/cancel',
           'mode' => 'subscription',
           'line_items' => [[
@@ -182,10 +187,13 @@ $url = $checkout_session['url'];
             'quantity' => 1,
           ]],
         ]);
+        
         $url = $checkout_session['url'];
 
             return redirect($url);})->middleware('auth');
-
+            // $id = Auth::user()->id;
+            // $subscriberRole = 3;
+            // DB::Table('users')->where('id',$id)->update(['role' => $subscriberRole ])
 
 // Admin views
 
