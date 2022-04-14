@@ -72,7 +72,7 @@
                       <div class="container">
                       <br />
                       <br />
-                      <!-- Create auction form -->
+                      <!-- Edit project form -->
                       <div style="max-width: 800px; margin: 10px auto">
                       <h1 class="fw-bolder">Edit Your Project: <?php echo strip_text($project_title); ?> </h1>
                         <div class="card">
@@ -81,14 +81,14 @@
                                 @csrf <!-- {{ csrf_field() }} -->
                                 <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
                                 <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
+                                <label for="projectTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" value="<?php if (isset($project_title[0])){ print_r($project_title[0]);} else { print_r(""); }?>" name="projectTitle" id="projectTitle" required minlength="10" placeholder="e.g. Well Building - Moldova">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The title of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Organisation</label>
+                                <label for="projectOrganisation" class="col-sm-2 col-form-label text-right">Organisation</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" value="<?php if (isset($project_organisation[0])){ print_r($project_organisation[0]);} else { print_r(""); } ?>" name="projectOrganisation" id="projectOrganisation" required minlength="10" placeholder="e.g. WaterAid">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The organisation of your project (minimum 10 characters).</small>
@@ -107,9 +107,9 @@
                             @enderror
                             </div>
                             <div class="col-md-6">
-                              <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">
+                              <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">                              
                           </div>
-                      
+
                           {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                               {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                               <div class="col-md-6">
