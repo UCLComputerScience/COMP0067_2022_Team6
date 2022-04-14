@@ -20,9 +20,13 @@ $project_id = $_POST['project_id'];
     
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
-    $projectLocation = $_POST['projectLocation'];
-    $projectCity = $_POST['projectCity'];
-    $projectCountry = $_POST['projectCountry'];
+    // $projectLocation = $_POST['projectLocation'];
+    // $projectCity = $_POST['projectCity'];
+    // $projectCountry = $_POST['projectCountry'];
+    $country = $_POST['country'];
+    $address = $_POST['address'];
+    $latitude = $_POST['latitude'];
+    $longitude = $_POST['longitude'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
     $projectValue = $_POST['projectValue'];
@@ -61,14 +65,8 @@ $project_id = $_POST['project_id'];
     elseif (empty($projectOrganisation)){
         echo 'Please enter the organisation of this project.';
     } 
-    elseif (empty($projectLocation)){
-        echo 'Please enter the address of this project.';
-    } 
-    elseif (empty($projectCity)){
-        echo 'Please enter the city of this project.';
-    } 
-    elseif (empty($projectCountry)){
-        echo 'Please enter the country of this project.';
+    elseif (empty($address)){
+        echo 'Please enter the primary address of this project.';
     } 
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';
@@ -89,13 +87,17 @@ $project_id = $_POST['project_id'];
                             limit(1)->
                             update(array('projectTitle' => $projectTitle,
                             'projectOrganisation' => $projectOrganisation,
-                            'projectLocation' => $projectLocation,
-                            'projectCity' => $projectCity,
-                            'projectCountry' => $projectCountry,
+                            // 'projectLocation' => $projectLocation,
+                            // 'projectCity' => $projectCity,
+                            // 'projectCountry' => $projectCountry,
                             'projectDetails' => $projectDetails,
                             'projectEndDate' => $projectEndDate,
                             'projectValue' => $projectValue,
                             'fundingRequired' => $fundingRequired,
+                            'address' => $address,
+                            'latitude' => $latitude,
+                            'longitude' => $longitude,
+                            'country' => $country,
                             'sdg1' => $sdg1,
                             'sdg2' => $sdg2, 
                             'sdg3' => $sdg3, 
