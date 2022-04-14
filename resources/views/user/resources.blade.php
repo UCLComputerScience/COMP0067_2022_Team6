@@ -52,12 +52,17 @@ $user_id = Auth::id();
                             <tr>
                                 <th>Title</th>
                                 <th>Download resource</th>
-
+                                <th>Language</th>
+                                <th>SDG</th>
+                                <th>Date Added</th>
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td>{{ $resource->resource_title }}</td>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
+                                    <td>{{ $resource->resource_language }}</td>
+                                    <td>{{ $resource->resource_sdg }}</td>
+                                    <td>{{ $resource->resource_added_date}}</td>
                                     <td><a href="{{ route('admin-members.index') }}" class=""
                                            onclick="event.preventDefault();
                                     //            document.getElementById(
