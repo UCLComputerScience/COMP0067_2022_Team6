@@ -295,11 +295,11 @@ Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUp
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
 
-Route::get('admin-members', [UserController::class, 'index']);
-Route::get('admin-members', 'App\Http\Controllers\UserController@index')->name('admin-members.index');
-Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin-members.destroy');
-Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit']);
-Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update']);
+Route::get('admin-members', [UserController::class, 'index'])->middleware(['auth', 'can:accessAdmin']);
+Route::get('admin-members', 'App\Http\Controllers\UserController@index')->name('admin-members.index')->middleware(['auth', 'can:accessAdmin']);
+Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin-members.destroy')->middleware(['auth', 'can:accessAdmin']);
+Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth', 'can:accessAdmin']);
+Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'can:accessAdmin']);
 
 Route::resource('projects-detail', 'App\Http\Controllers\FileController');
 Route::get('projects-detail/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('projects-detail.download');
@@ -309,7 +309,7 @@ Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
 Route::get('resources',[ResourceController::class, 'index'])->name('resources.index');
 
-Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceControllerAdmin');
-Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceControllerAdmin@download')->name('resources.download');
-Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index');
-Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy');
+Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceControllerAdmin')->middleware(['auth', 'can:accessAdmin']);
+Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceControllerAdmin@download')->name('resources.download')->middleware(['auth', 'can:accessAdmin']);
+Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index')->middleware(['auth', 'can:accessAdmin']);
+Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy')->middleware(['auth', 'can:accessAdmin']);
