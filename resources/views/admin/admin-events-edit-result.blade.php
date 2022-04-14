@@ -43,7 +43,7 @@
     $sdg16 = $_POST['sdg16']; 
     $sdg17 = $_POST['sdg17']; 
     $userid = Auth::id();
-    $filename = $_FILES["uploadfile"]["name"];
+    $filename = $_FILES["fileupload"]["name"];
     $uuid = uniqid();
     $uuidfilename = $uuid.$filename;
 
@@ -102,14 +102,14 @@
                                     'sdg14' => $sdg14, 
                                     'sdg15' => $sdg15, 
                                     'sdg16' => $sdg16, 
-                                    'sdg17' => $sdg17
+                                    'sdg17' => $sdg17,
                                     'image_name' => $uuidfilename
                     
                     ));
         // loop for each uploaded file begins
 
         // $filename = $_FILES["uploadfile"]["name"];
-        $tempname = $_FILES["uploadfile"]["tmp_name"];    
+        $tempname = $_FILES["fileupload"]["tmp_name"];    
        $folder = public_path("assets/".$uuidfilename);
         // "public/assets/images/".$filename;
           

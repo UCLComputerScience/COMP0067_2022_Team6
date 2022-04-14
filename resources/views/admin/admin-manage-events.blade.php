@@ -208,7 +208,7 @@ if (!isset($_GET['order_by'])) {
   if ($order_by === "all"){
     // $query .= " ORDER BY event_datetime DESC ";
     $query->sortByDesc('event_datetime');
-    echo "<br>hello";
+  ;
 }elseif ($order_by === "upcoming"){
   // $query .= " AND event_datetime >= GETDATE() 
   // ORDER BY event_datetime DESC";
@@ -241,7 +241,7 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
 $eventDate = DB::Table('events')->select('event_datetime')->where('event_id',$event_id)->get();
 $array1 = array('[',']','{','}','"','"','event_datetime');
 $date = str_replace($array1,"",$eventDate);
-$sdgs_second_strip = explode(',', $sdgs_first_strip);
+$sdgs_second_strip1 = explode(',', $sdgs_first_strip);
 $timezone = DB::Table('events')->select('event_timezone')->where('event_id',$event_id)->get();
 $array2 = array('[',']','{','}','"','"','event_timezone');
 $tz = str_replace($array2,"",$timezone);
@@ -259,8 +259,7 @@ $tz = str_replace($array2,"",$timezone);
 //   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
   echo('
     <li class="list-group-item d-flex justify-content-between">
-    <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped_second . '" width="100" height="100"></div>
-
+      <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="100" height="100"></div>
     <div class="col-4"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '<br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br>Event Date '.$date.'<br>Time Zone '.$tz.'</div>
     
     <div class="row align-items-center">
