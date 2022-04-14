@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\Model;
 class ResourceAdmin extends Model
 {
     use HasFactory;
-    protected $fillable = ['uuid', 'resource_title', 'cover', 'resource_sdg', 'resource_language', 'resource_added_date'];
+    protected $fillable = ['uuid', 'resource_title', 'cover', 'resource_description', 'resource_sdg', 'resource_language', 'resource_added_date'];
 }
