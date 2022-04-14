@@ -25,12 +25,18 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Download resource</th>
+                                <th>Language</th>
+                                <th>SDG</th>
+                                <th>Date Added</th>
                                 <th>Delete</th>
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
                                     <td>{{ $resource->resource_title }}</td>
                                     <td><a href="{{ route('resources.download', $resource->uuid) }}">{{ $resource->cover }}</a></td>
+                                    <td>{{ $resource->resource_language }}</td>
+                                    <td>{{ $resource->resource_sdg }}</td>
+                                    <td>{{ $resource->resource_added_date}}</td>
                                     <td><a href="{{ route('resources.index') }}" class="btn btn-primary btn-sm"
                                            onclick="event.preventDefault();
                                                document.getElementById(
@@ -64,6 +70,24 @@
                                     Title:
                                     <br>
                                     <input type="text" name="resource_title" class="form-control">
+
+                                    <br>
+
+                                    Language:
+                                    <br>
+                                    <input type="text" name="resource_language" class="form-control">
+
+                                    <br>
+
+                                    SDG:
+                                    <br>
+                                    <input type="text" name="resource_sdg" class="form-control">
+
+                                    <br>
+
+                                    Date:
+                                    <br>
+                                    <input type="text" name="resource_added_date" class="form-control">
 
                                     <br>
 
