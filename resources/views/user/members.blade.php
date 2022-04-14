@@ -26,6 +26,7 @@
             <!-- Page Content-->
 <section class="py-1">
 <div class="text-center mb-5">
+    <br>
 <h1 class="fw-bolder">Our Members</h1>
  <p class="lead fw-normal text-muted mb-0">Find and collaborate with a Member of your choice below</p>
 </div>
@@ -67,7 +68,8 @@ $(document).ready(function(){
 <br>
 <!-- Map -->
 
-<div id="map" style="width: 100%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
+<h2 class="fw-bolder">Member Locations</h1>
+<div id="map" style="width: 80%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
 
 <?php $userlocs = DB::table('users')
     ->select(array('org', 'latitude', 'longitude','country','sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'))
