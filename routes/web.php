@@ -49,88 +49,87 @@ Route::get('/gdpr', function () {
 
 Route::get('/login-events', function () {
     return view('user/login-events');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/login-events?*', function () {
     return view('/user/events?*');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/events-detail/{event_id}', function () {
-    return view('/user/events-detail');})->where('event_id', '.*')->middleware('auth');
+    return view('/user/events-detail');})->where('event_id', '.*')->middleware(['auth', 'can:stripeUser']);
 
 
 Route::get('public/assets/{first_image_path_stripped_second}', function () {
-    return view('public/assets');})->where('$first_image_path_stripped_second', '.*')->middleware('auth');
+    return view('public/assets');})->where('$first_image_path_stripped_second', '.*')->middleware(['auth', 'can:stripeUser']);
 
 Route::any('/storage/app/public/images/{first_image_path_stripped}', function () {
-    return view('/public/storage/app/public/images');})->where('first_image_path_stripped', '.*')->middleware('auth');
+    return view('/public/storage/app/public/images');})->where('first_image_path_stripped', '.*')->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/past-events', function () {
     return view('/user/past-events');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/projects-create', function () {
     return view('/user/projects-create');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::post('/projects-create-result', function () {
     return view('/user/projects-create-result');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::any('/projects-edit-result', function () {
     return view('/user/projects-edit-result');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/test', function () {
     return view('/user/test');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/projects-my', function () {
     return view('/user/projects-my');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/user-profile', function () {
     return view('/user/user-profile');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 
 
 Route::post('/user-profile-result', function () {
-    return view('/user/user-profile-result');
-});
+    return view('/user/user-profile-result')->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/resources', function () {
     return view('/user/resources');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 Route::get('/resources-detail', function () {
     return view('/user/resources-detail');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 Route::get('/projects', function () {
     return view('/user/projects');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 Route::get('/projects*', function () {
     return view('/user/projects*');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/projects-detail/{project_id}',function (){
-    return view('/user/projects-detail');})->where('project_id', '.*')->middleware('auth');
+    return view('/user/projects-detail');})->where('project_id', '.*')->middleware(['auth', 'can:stripeUser']);
 
 
 Route::any('/projects-delete/{project_id}',function (){
-    return view('/user/projects-delete');})->where('project_id', '.*')->middleware('auth');
+    return view('/user/projects-delete');})->where('project_id', '.*')->middleware(['auth', 'can:stripeUser']);
 
 
 Route::any('/projects-edit/{project_id}',function (){
-    return view('/user/projects-edit');})->where('project_id', '.*')->middleware('auth');
+    return view('/user/projects-edit');})->where('project_id', '.*')->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/members', function () {
     return view('/user/members');
-})->middleware('auth');
+})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/user-subscribe', function () {
-    return view('/user/user-subscribe');})->middleware('auth');
+    return view('/user/user-subscribe');})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('google-autocomplete', [GoogleController::class, 'index']);
 
