@@ -15,7 +15,7 @@ CREATE DATABASE ancssc_database
 
 GRANT ALL PRIVILEGES
     ON ancssc_database.*
-    TO 'user'@'localhost'
+    TO 'user'@'51.142.117.217'
         IDENTIFIED BY 'password';
 
     -- TO 'user'@'localhost'
