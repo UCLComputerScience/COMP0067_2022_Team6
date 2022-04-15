@@ -39,7 +39,7 @@
 <tr>
     <td>Organisation Name</td>
     <td>Contact E-mail</td>
-    <td>SDG</td>
+    {{-- <td>SDG</td> --}}
     <td>Country</td>
 </tr>
 </thead>
@@ -57,7 +57,7 @@ $(document).ready(function(){
         columns: [
             { data: 'name' },
             { data: 'email' },
-            { data: 'sdg' },
+            // { data: 'sdg' },
             { data: 'country' },
             
         ]
