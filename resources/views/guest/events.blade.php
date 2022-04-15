@@ -59,7 +59,7 @@
           <label class="mx-2" for="no_of_records_per_page">Results per page:</label>
           <select class="form-control" id="no_of_records_per_page" name = "no_of_records_per_page">
             <option value="5">5</option>
-            <option selected value="1">1</option>
+            <option selected value="2">2</option>
             <option value="25">25</option>
             <option value="100">100</option>
           </select>
@@ -312,16 +312,19 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
       <li class="page-item"><a class="page-link" href="#">'.($curr_page - 1). '?></a></li>');
     }
     ?>
-    <li class="page-item active">
-      <span class="page-link">
-        <?php echo $curr_page; ?>
-        <span class="sr-only">(current)</span>
-      </span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#"><?php echo ($curr_page + 1); ?></a></li>
-    <li class="page-item">
+        <?php if ((($curr_page - 1) != 0) and ($curr_page < $total_pages)){
+          echo ('<li class="page-item active">
+          <span class="page-link">' .$curr_page.'<span class="sr-only">(current)</span>
+          </span>
+          </li>');
+        }
+        ?>
+    <?php if($curr_page < $total_pages){ echo 
+      ('<li class="page-item"><a class="page-link" href="#"><'. ($curr_page + 1).'</a></li>
+      <li class="page-item">
       <a class="page-link" href="#">Next</a>
-    </li>
+    </li>');
+      } ?>
   </ul>
 </nav>
 
