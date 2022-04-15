@@ -543,7 +543,7 @@ CREATE TABLE `timezones` (
 -- Dumping data for table `timezones`
 --
 
-INSERT INTO `timezones` (`timezone_id`, `timezone_name`, `timezone_relative_to_gmt`) VALUES
+INSERT INTO `timezones` (`timezone_id`, `timezone_relative_to_gmt`) VALUES
                                                                                         (1,  'GMT+0:00'),
                                                                                         (2,  'GMT+1:00'),
                                                                                         (3,  'GMT+2:00'),
@@ -570,7 +570,8 @@ INSERT INTO `timezones` (`timezone_id`, `timezone_name`, `timezone_relative_to_g
                                                                                         (24,  'GMT-4:00'),
                                                                                         (25,  'GMT-3:30'),
                                                                                         (26,  'GMT-3:00'),
-                                                                                        (27,  'GMT-1:00');
+                                                                                        (27,  'GMT-2:00'),
+                                                                                        (28,  'GMT-1:00');
 
 -- --------------------------------------------------------
 
