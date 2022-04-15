@@ -127,7 +127,7 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`event_id`, `id`, `event_title`, `event_description`, `event_datetime`, `event_timezone`, `event_call_url`, `event_video_url`, `image_name`, `sdg1`, `sdg2`, `sdg3`, `sdg4`, `sdg5`, `sdg6`, `sdg7`, `sdg8`, `sdg9`, `sdg10`, `sdg11`, `sdg12`, `sdg13`, `sdg14`, `sdg15`, `sdg16`, `sdg17`) VALUES
 (2, 3, 'Women\'s Sector Initiative', 'The Women\'s Sector Initiative is Dubais only annual event focussed on networking between women working in the third and charity sector', '2022-07-03 08:42:00', 'GMT+2:00', 'https://ucl.zoom.us/j/99130509236?pwd=L3JOTlBvT2V0Y204bFFLZ2psWXBrQT09', 'https://www.youtube.com/watch?v=C5I9_IT_hnE', '6259226c2897edubai charity.jpeg', 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 15, 0, 0),
-(3, 3, 'The Motion Event - Pakistan', 'The Motion Event is Pakistan\'s only annual conference for advocating exercise as a form of preventative medicine.', '2022-03-10 08:48:00', 'GMT+2:00', '', 'https://www.youtube.com/watch?v=LWxDflVmJSA', '625923952e72epakistan.jpeg', 0, 2, 0, 0, 0, 0, 7, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0);
+(3, 3, 'The Motion Event - Pakistan', "The Motion Event is Pakistan\'s only annual conference for advocating exercise as a form of preventative medicine.", '2022-03-10 08:48:00', 'GMT+2:00', '', 'https://www.youtube.com/watch?v=LWxDflVmJSA', '625923952e72epakistan.jpeg', 0, 2, 0, 0, 0, 0, 7, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -564,7 +564,6 @@ CREATE TABLE `subscription_items` (
 
 CREATE TABLE `timezones` (
   `timezone_id` int(11) NOT NULL,
-  `timezone_name` varchar(80) NOT NULL,
   `timezone_relative_to_gmt` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -572,39 +571,35 @@ CREATE TABLE `timezones` (
 -- Dumping data for table `timezones`
 --
 
-INSERT INTO `timezones` (`timezone_id`, `timezone_name`, `timezone_relative_to_gmt`) VALUES
-(1, 'GMT', 'GMT+0:00'),
-(2, 'UTC', 'GMT+0:00'),
-(3, 'ECT', 'GMT+1:00'),
-(4, 'EET', 'GMT+2:00'),
-(5, 'ART', 'GMT+2:00'),
-(6, 'EAT', 'GMT+3:00'),
-(7, 'MET', 'GMT+3:30'),
-(8, 'NET', 'GMT+4:00'),
-(9, 'PLT', 'GMT+5:00'),
-(10, 'IST', 'GMT+5:30'),
-(11, 'BST', 'GMT+6:00'),
-(12, 'VST', 'GMT+7:00'),
-(13, 'CTT', 'GMT+8:00'),
-(14, 'JST', 'GMT+9:00'),
-(15, 'ACT', 'GMT+9:30'),
-(16, 'AET', 'GMT+10:00'),
-(17, 'SST', 'GMT+11:00'),
-(18, 'NST', 'GMT+12:00'),
-(19, 'MIT', 'GMT-11:00'),
-(20, 'HST', 'GMT-10:00'),
-(21, 'AST', 'GMT-9:00'),
-(22, 'PST', 'GMT-8:00'),
-(23, 'PNT', 'GMT-7:00'),
-(24, 'MST', 'GMT-7:00'),
-(25, 'CST', 'GMT-6:00'),
-(26, 'EST', 'GMT-5:00'),
-(27, 'IET', 'GMT-5:00'),
-(28, 'PRT', 'GMT-4:00'),
-(29, 'CNT', 'GMT-3:30'),
-(30, 'AGT', 'GMT-3:00'),
-(31, 'BET', 'GMT-3:00'),
-(32, 'CAT', 'GMT-1:00');
+INSERT INTO `timezones` (`timezone_id`, `timezone_relative_to_gmt`) VALUES
+                                                                                        (1,  'GMT+0:00'),
+                                                                                        (2,  'GMT+1:00'),
+                                                                                        (3,  'GMT+2:00'),
+                                                                                        (4,  'GMT+3:00'),
+                                                                                        (5,  'GMT+3:30'),
+                                                                                        (6,  'GMT+4:00'),
+                                                                                        (7,  'GMT+5:00'),
+                                                                                        (8,  'GMT+5:30'),
+                                                                                        (9,  'GMT+6:00'),
+                                                                                        (10,  'GMT+7:00'),
+                                                                                        (11,  'GMT+8:00'),
+                                                                                        (12,  'GMT+9:00'),
+                                                                                        (13,  'GMT+9:30'),
+                                                                                        (14,  'GMT+10:00'),
+                                                                                        (15,  'GMT+11:00'),
+                                                                                        (16,  'GMT+12:00'),
+                                                                                        (17,  'GMT-11:00'),
+                                                                                        (18,  'GMT-10:00'),
+                                                                                        (19,  'GMT-9:00'),
+                                                                                        (20,  'GMT-8:00'),
+                                                                                        (21,  'GMT-7:00'),
+                                                                                        (22,  'GMT-6:00'),
+                                                                                        (23,  'GMT-5:00'),
+                                                                                        (24,  'GMT-4:00'),
+                                                                                        (25,  'GMT-3:30'),
+                                                                                        (26,  'GMT-3:00'),
+                                                                                        (27,  'GMT-2:00'),
+                                                                                        (28,  'GMT-1:00');
 
 -- --------------------------------------------------------
 
