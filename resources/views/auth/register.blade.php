@@ -32,7 +32,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" autocomplete="off" action="{{ route('register') }}">
                         @csrf
                         
                         <div class="row mb-3">
