@@ -96,7 +96,6 @@ Route::get('/user-profile', function () {
 
 
 Route::post('/user-profile-result', function () {
-
     return view('/user/user-profile-result');})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
