@@ -59,7 +59,7 @@
           <label class="mx-2" for="no_of_records_per_page">Results per page:</label>
           <select class="form-control" id="no_of_records_per_page" name = "no_of_records_per_page">
             <option value="5">5</option>
-            <option selected value="2">2</option>
+            <option selected value="1">1</option>
             <option value="25">25</option>
             <option value="100">100</option>
           </select>
@@ -292,24 +292,11 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
   
 ?>
 
-<ul class="pagination">
-    <li><button type="submit" class="btn btn-primary" style="margin-top: 22%;" name="first"  value = "first"><a href="?curr_page=1" style="color: fff;">First</a></button></li>
-    <li class="<?php if($curr_page <= 1){ echo 'disabled'; } ?>">
-        <a href="<?php if($curr_page <= 1){ echo '#'; } else { echo "?curr_page=".($curr_page - 1); } ?>">Prev</a>
-    </li>
-    <li class="<?php if($curr_page >= $total_pages){ echo 'disabled'; } ?>">
-        <a href="<?php if($curr_page >= $total_pages){ echo '#'; } else { echo "?curr_page=".($curr_page + 1); } ?>">Next</a>
-    </li>
-    <li><a href="?curr_page=<?php echo $total_pages; ?>">Last</a></li>
-</ul>
-
 <nav aria-label="...">
   <ul class="pagination justify-content-center">
     <?php if (($curr_page - 1) > 0){
-      echo ('    <li class="page-item disabled">
-      <span class="page-link">Previous</span>
-    </li>
-      <li class="page-item"><a class="page-link" href="#">'.($curr_page - 1). '?></a></li>');
+      echo ('<span class="page-link">Previous</span>
+      <li class="page-item"><a class="page-link" href="?'. ($curr_page - 1) .'">'.($curr_page - 1). '?></a></li>');
     }
     ?>
         <?php if ((($curr_page - 1) != 0) and ($curr_page < $total_pages)){
@@ -320,11 +307,12 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
         }
         ?>
     <?php if($curr_page < $total_pages){ echo 
-      ('<li class="page-item"><a class="page-link" href="#"><'. ($curr_page + 1).'</a></li>
+      ('<li class="page-item"><a class="page-link" href="?'. ($curr_page + 1) .'"><'. ($curr_page + 1).'</a></li>
       <li class="page-item">
-      <a class="page-link" href="#">Next</a>
+      <a class="page-link" href="?'. ($curr_page + 1) .'">Next</a>
     </li>');
-      } ?>
+      } 
+      ?>
   </ul>
 </nav>
 
