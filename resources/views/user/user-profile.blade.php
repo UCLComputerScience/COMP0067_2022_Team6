@@ -219,7 +219,7 @@
                             <label for="number_of_employees" class="col-md-4 col-form-label text-md-end">{{ __('Number of Employees') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_employees" type="text" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="<?php print_r($employees[0]); ?>" autocomplete="number_of_employees" autofocus>
+                                <input id="number_of_employees" type="number" min="0" class="form-control @error('number_of_employees') is-invalid @enderror" name="number_of_employees" value="<?php print_r($employees[0]); ?>" autocomplete="number_of_employees" autofocus>
 
                                 @error('number_of_employees')
                                     <span class="invalid-feedback" role="alert">
@@ -233,7 +233,7 @@
                             <label for="number_of_volunteers" class="col-md-4 col-form-label text-md-end">{{ __('Number of Volunteers') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number_of_volunteers" type="text" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="<?php print_r($volunteers[0]); ?>" autocomplete="number_of_volunteers" autofocus>
+                                <input id="number_of_volunteers" type="number" min="0" class="form-control @error('number_of_volunteers') is-invalid @enderror" name="number_of_volunteers" value="<?php print_r($volunteers[0]); ?>" autocomplete="number_of_volunteers" autofocus>
 
                                 @error('number_of_volunteers')
                                     <span class="invalid-feedback" role="alert">
