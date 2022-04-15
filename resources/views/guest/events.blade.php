@@ -207,7 +207,7 @@ if (!isset($_GET['order_by'])) {
   if ($order_by === "all"){
     // $query .= " ORDER BY event_datetime DESC ";
     $query->sortByDesc('event_datetime');
-    echo "<br>hello";
+  
 }elseif ($order_by === "upcoming"){
   // $query .= " AND event_datetime >= GETDATE() 
   // ORDER BY event_datetime DESC";
