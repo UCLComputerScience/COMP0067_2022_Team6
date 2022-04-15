@@ -4,13 +4,10 @@
 
 
 <div class="container">
-
-<h2 class="my-3 text-center">Events</h2>
+<br>
 
 <div class="container">
-  <p class="lead fw-normal text-muted mb-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
-<h3 class="my-3 text-center">Browse Events</h3>
   <div id="searchSpecs">
   <!-- When this form is submitted, this PHP page is what processes it.
       Search/sort specs are passed to this page through parameters in the URL
@@ -28,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 pr-0">
+      <div class="col-md-3 pr-0">
         <div class="form-group">
           <label for="cat" class="sr-only">Select SDG:</label>
           <select class="form-control" id="cat" name="cat">
@@ -57,12 +54,12 @@
           </select>
         </div>
       </div>
-      <div class="col-md-1 pr-0">
+      <div class="col-md-2 pr-0">
         <div class="form-inline">
-          <label class="mx-2" for="result_num">Show:</label>
-          <select class="form-control" id="result_num" name = "result_num">
+          <label class="mx-2" for="no_of_records_per_page">Results per page:</label>
+          <select class="form-control" id="no_of_records_per_page" name = "no_of_records_per_page">
             <option value="5">5</option>
-            <option selected value="10">10</option>
+            <option selected value="1">1</option>
             <option value="25">25</option>
             <option value="100">100</option>
           </select>
@@ -97,21 +94,34 @@ function strip_get($var){
 }
 
 // Pagination - selecting how many results to show per page
-if (!isset($_GET['result_num'])) {
-  $result_num = 10;
+if (!isset($_GET['no_of_records_per_page'])) {
+  $no_of_records_per_page = 10;
 }
 else {
-  $result_num = $_GET['result_num'];
+  $no_of_records_per_page = $_GET['no_of_records_per_page'];
 }
 
-  // Retrieve these from the URL
+// Retrieve page number from the URL
 
-  if (!isset($_GET['page'])) {
-    $curr_page = 1;
-  }
-  else {
-    $curr_page = $_GET['page'];
-  }
+if (!isset($_GET['page'])) {
+  $curr_page = 1;
+}
+else {
+  $curr_page = $_GET['page'];
+}
+
+$offset = ($curr_page-1) * $no_of_records_per_page; 
+
+$total_result_count = DB::Table('events')->select('*')->count();
+$total_pages = ceil($total_result_count / $no_of_records_per_page);
+
+echo $total_result_count."<br>";
+echo $total_pages;
+
+$pagination_query = DB::Table('events')->select('*')->limit($offset, $no_of_records_per_page);
+
+
+
 
 
 // Processing search values inputted by user
@@ -222,23 +232,14 @@ if (!isset($_GET['order_by'])) {
   $order_by = $_GET['order_by'];
 }
 
-  if ($order_by === "all"){
-    // $query .= " ORDER BY event_datetime DESC ";
-    $query->sortByDesc('event_datetime');
-  
+if ($order_by === "all"){
+  $query->sortByDesc('event_datetime');
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND event_datetime >= GETDATE() 
-  // ORDER BY event_datetime DESC";
   $query = $query->where('event_datetime', '>=', $current_datetime);
-  // ->sortBy('event_datetime', 'desc');
-  // ->get();
 }elseif($order_by === "past"){
-  // $query .= " AND event_datetime < GETDATE() 
-  // -- ORDER BY event_datetime DESC";
   $query = $query->where('event_datetime', '<', $current_datetime);
-  // ->orderBy('event_datetime', 'desc');
-  // ->get();
 }
+
  
 function print_event_with_image($event_id, $event_title, $event_description)
 {
@@ -247,12 +248,9 @@ $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('ima
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null','0','"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
-  // $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
 $sdgs_second_strip = trim($sdgs_first_strip, ",");
-// TODO: Bring this back later
-// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
 
   // Truncate long descriptions
   if (strlen($event_description) > 250) {
@@ -262,9 +260,6 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
     $event_desc_shortened = $event_description;
   }
   
-  // Print HTML
-//   Need to add this line in to the line break within the echo - this is to do with image display!
-//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="100" height="100"></div>
@@ -285,11 +280,48 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
   }
   echo "</ul>";
   if ($counter > 0){
-    echo "<br>Events: " . $counter;}
+    echo "<br>Events: " . $counter;
+    if ($counter = $no_of_records_per_page){
+      echo "end";
+        }
+      }
   else{
     echo "<br>No events were found matching your search criteria";}
+
+
   
 ?>
+
+<ul class="pagination">
+    <li><button type="submit" class="btn btn-primary" style="margin-top: 22%;" name="first"  value = "first"><a href="?curr_page=1" style="color: fff;">First</a></button></li>
+    <li class="<?php if($curr_page <= 1){ echo 'disabled'; } ?>">
+        <a href="<?php if($curr_page <= 1){ echo '#'; } else { echo "?curr_page=".($curr_page - 1); } ?>">Prev</a>
+    </li>
+    <li class="<?php if($curr_page >= $total_pages){ echo 'disabled'; } ?>">
+        <a href="<?php if($curr_page >= $total_pages){ echo '#'; } else { echo "?curr_page=".($curr_page + 1); } ?>">Next</a>
+    </li>
+    <li><a href="?curr_page=<?php echo $total_pages; ?>">Last</a></li>
+</ul>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#"><?php echo ($curr_page - 1); ?></a></li>
+    <li class="page-item active">
+      <span class="page-link">
+        <?php echo $curr_page; ?>
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#"><?php echo ($curr_page + 1); ?></a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
 </div>
 
 @endsection
