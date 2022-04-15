@@ -15,10 +15,10 @@ CREATE DATABASE ancssc_database
 
 GRANT ALL PRIVILEGES
     ON ancssc_database.*
-    TO 'user'@'localhost'
+    TO 'root'@'localhost'
         IDENTIFIED BY 'password';
 
-
+    -- TO 'user'@'localhost'
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
