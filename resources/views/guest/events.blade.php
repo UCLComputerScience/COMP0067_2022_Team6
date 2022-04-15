@@ -18,7 +18,7 @@
 
   <form method="get" action="events">
   <div class="row">
-      <div class="col-md-5 pr-0">
+      <div class="col-md-4 pr-0">
         <div class="form-group">
           <label for="keyword" class="sr-only">Search keyword:</label>
         <div class="input-group">
@@ -57,6 +57,17 @@
           </select>
         </div>
       </div>
+      <div class="col-md-1 pr-0">
+        <div class="form-inline">
+          <label class="mx-2" for="result_num">Show:</label>
+          <select class="form-control" id="result_num" name = "result_num">
+            <option value="5">5</option>
+            <option selected value="10">10</option>
+            <option value="25">25</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
       <div class="col-md-1 px-0">
         <button type="submit" class="btn btn-primary" style="margin-top: 22%;" name="search"  value = "Search">Search</button>
       </div>
@@ -85,6 +96,13 @@ function strip_get($var){
   return $var;
 }
 
+// Pagination - selecting how many results to show per page
+if (!isset($_GET['result_num'])) {
+  $result_num = 10;
+}
+else {
+  $result_num = $_GET['result_num'];
+}
 
   // Retrieve these from the URL
 
