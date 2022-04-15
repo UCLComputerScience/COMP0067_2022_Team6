@@ -304,11 +304,14 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
 </ul>
 
 <nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
+  <ul class="pagination justify-content-center">
+    <?php if (($curr_page - 1) > 0){
+      echo ('    <li class="page-item disabled">
       <span class="page-link">Previous</span>
     </li>
-    <li class="page-item"><a class="page-link" href="#"><?php echo ($curr_page - 1); ?></a></li>
+      <li class="page-item"><a class="page-link" href="#">'.($curr_page - 1). '?></a></li>');
+    }
+    ?>
     <li class="page-item active">
       <span class="page-link">
         <?php echo $curr_page; ?>
