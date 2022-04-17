@@ -57,14 +57,14 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                         <h2 class="fw-bolder">Project reports</h1>
                     </div>
 
-                    <div class="card-header">Files list</div>
+                    <div class="card-header">Project report list</div>
 
                     <div class="card-body">
 
                         <table class="table">
                             <tr>
                                 <th>Title</th>
-                                <th>Download file</th>
+                                <th>Download report</th>
                             </tr>
                             @foreach ($files as $file)
 
@@ -82,7 +82,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
 
                     @if($id == $project_user_id)
                     <div class="card">
-                        <div class="card-header">Add new file</div>
+                        <div class="card-header">Add new report</div>
 
                         <div class="card-body">
 
