@@ -239,6 +239,9 @@ Route::get('/admin-manage-events?*', function () {
     return view('/admin/admin-manage-events?*');
 })->middleware(['auth', 'can:accessAdmin']);
 
+Route::get('/admin-events-detail/{event_id}', function () {
+    return view('/admin/admin-events-detail');;})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
+
 Route::any('/admin-events-delete/{event_id}',function (){
     return view('/admin/admin-events-delete');})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
 
