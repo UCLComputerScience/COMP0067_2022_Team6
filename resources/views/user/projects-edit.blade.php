@@ -19,7 +19,7 @@
  
                         <?php 
                       $project_id = Request::segment(2);
-                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg', 'address', 'latitude', 'longitude', 'country', 'projectOrganisation', 'projectValue', 'fundingRequired',
+                      $this_project = DB::Table('projects')->select('project_id','projectTitle','projectLocation', 'projectCity', 'projectCountry', 'projectDetails','projectEndDate','sdg','image_name', 'address', 'latitude', 'longitude', 'country', 'projectOrganisation', 'projectValue', 'fundingRequired',
                       'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
                       ->where('project_id',$project_id)->get();
                       $project_title = $this_project->pluck('projectTitle');
@@ -35,6 +35,7 @@
                       $project_funding_required = $this_project->pluck('fundingRequired');
                       $project_organisation = $this_project->pluck('projectOrganisation');
                       $project_description = $this_project->pluck('projectDetails');
+                      $image_name = $this_project->pluck('image_name');
                       $sdg1 = $this_project->pluck('sdg1');
                       $sdg2 = $this_project->pluck('sdg2');
                       $sdg3 = $this_project->pluck('sdg3');
@@ -107,13 +108,13 @@
                             @enderror
                             </div>
                             <div class="col-md-6">
-                              <input id="latitude" type="hidden"  value="" name="latitude" class="form-control">                              
+                              <input id="latitude" type="hidden" name="latitude" value=""<?php echo $latitude ?>" " class="form-control">                              
                           </div>
 
                           {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                               {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                               <div class="col-md-6">
-                              <input id="longitude" name="longitude" type="hidden" value=""   class="form-control">
+                              <input id="longitude" name="longitude" type="hidden" value="<?php echo $longitude ?>"   class="form-control">
                               <div class="col-md-6">
                               <input id="country" name="country" type="hidden" value="" class="form-control">
                           </div>
@@ -235,14 +236,14 @@
                               <div class="form-group row">
                                 <label for="projectEndDate" class="col-sm-2 col-form-label text-right">End date</label>
                                 <div class="col-sm-10">
-                                  <input type="date" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date_final; ?>' required>
+                                  <input type="date" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Expected end date of the project.</small>
                                 </div>
                               </div>
                               <div class="form-group row">
                               <label for="filesToUpload" class="col-sm-2 col-form-label text-right">Image upload</label>
                               <div class="col-sm-10">
-                                <input type="file" name="uploadfile"  id="uploadfile" value="" style="float:left">
+                                <input type="file" name="uploadfile"  id="uploadfile" value="<?php echo $image_name ?>" style="float:left">
                                <br>
                                 <small id="uploadfile" class="form-text text-muted" style="float:left"><span class="text-danger">* Required. </span>Please upload one to three images for your project.</small>
                               </div>
