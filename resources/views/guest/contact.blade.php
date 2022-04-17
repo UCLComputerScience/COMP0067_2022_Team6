@@ -14,7 +14,6 @@
                             <h1 class="fw-bolder">Get in Touch</h1>
                             <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
                         </div>
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <div class="d-grid">
