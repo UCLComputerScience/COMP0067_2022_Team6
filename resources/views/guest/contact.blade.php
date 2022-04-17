@@ -17,7 +17,7 @@
                             <!-- Submit Button-->
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <div class="d-grid">
-                                    <a href="mailto:info@ancssc.org" class="btn btn-primary btn-lg" id="submitButton" type="submit">Send a message</a>
+                                    <a href="mailto:info@ancssc.org" class="btn btn-primary btn-lg" id="submitButton" target="_blank">Send a message</a>
                                 </div>
                             </div>
                             </div>
