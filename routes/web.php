@@ -89,6 +89,10 @@ Route::get('/projects-my', function () {
     return view('/user/projects-my');
 })->middleware(['auth', 'can:stripeUser']);
 
+Route::get('/projects-my?*', function () {
+    return view('/user/projects-my?*');
+})->middleware(['auth', 'can:stripeUser']);
+
 Route::get('/user-profile', function () {
     return view('/user/user-profile');
 })->middleware(['auth', 'can:stripeUser']);
