@@ -19,7 +19,11 @@
          
                 <div class="card-body">
                     <br>
-                <div class="d-grid"><a class="btn btn-primary" href="user-profile">Update my profile</a></div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <div class="d-grid">
+                            <a class="btn btn-primary" href="user-profile">Edit my profile</a>
+                        </div>
+                    </div>
                 <br>
 
                          <div class="Welcome" role="alert">
