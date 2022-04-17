@@ -23,6 +23,12 @@
                       <li><a class="dropdown-item" href="/admin-manage-resources">Manage Resources</a></li>
                     </ul>     
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                      <li><a class="dropdown-item" href="/admin-projects-manage">Manage Projects</a></li>
+                    </ul>     
+                </li>
                 <li class="nav-item"><a class="nav-link" href="/admin-analytics">Analytics</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}">Log out</a></li> 
           </ul>

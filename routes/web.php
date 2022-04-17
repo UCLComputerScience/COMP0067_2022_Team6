@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageUpload;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\FileControllerAdmin;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ResourceControllerAdmin;
 
@@ -218,6 +219,18 @@ Route::post('/admin-events-create-result', function () {
     return view('/admin/admin-events-create-result');
 })->middleware(['auth', 'can:accessAdmin']);
 
+Route::get('/admin-projects-manage', function () {
+    return view('/admin/admin-projects-manage');
+})->middleware(['auth', 'can:accessAdmin']);
+
+
+Route::any('/admin-projects-delete/{project_id}',function (){
+    return view('/admin/admin-projects-delete');})->where('project_id', '.*')->middleware(['auth', 'can:accessAdmin']);
+
+
+Route::get('/admin-projects-detail/{project_id}',function (){
+    return view('/admin/admin-projects-detail');})->where('project_id', '.*')->middleware(['auth', 'can:accessAdmin']);
+    
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
 })->middleware(['auth', 'can:accessAdmin']);
@@ -307,6 +320,10 @@ Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'upd
 Route::resource('projects-detail', 'App\Http\Controllers\FileController');
 Route::get('projects-detail/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('projects-detail.download');
 Route::get('/projects-detail/{project_id}',[FileController::class, 'index'])->name('projects-detail.index');
+
+Route::resource('admin-projects-detail', 'App\Http\Controllers\FileControllerAdmin');
+Route::get('admin-projects-detail/{uuid}/download', 'App\Http\Controllers\FileControllerAdmin@download')->name('admin-projects-detail.download');
+Route::get('/admin-projects-detail/{project_id}',[FileControllerAdmin::class, 'index'])->name('admin-projects-detail.index');
 
 Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');

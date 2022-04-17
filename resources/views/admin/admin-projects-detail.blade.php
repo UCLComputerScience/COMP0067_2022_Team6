@@ -1,5 +1,5 @@
-
-@extends('layouts.mainlayout-logged-in')
+@extends('layouts.mainlayout-admin')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @section('content')
 <!DOCTYPE html>
 
@@ -7,12 +7,10 @@
 
 //$project_id = $_GET['project_id'];
 $project_id = Request::segment(2);
-echo 'hello' ;
 $this_project = DB::Table('projects')->select('project_id','id','projectTitle','projectDetails','projectEndDate','sdg')->where('project_id',$project_id)->get();
 $project_title = $this_project->pluck('projectTitle');
 $project_details = $this_project->pluck('projectDetails');
 $sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('project_id',$project_id)->get();
-echo $sdgs;
 // $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id', $project_id)->get();
 $project_user_id = $this_project->pluck('id');
 $project_details = str_replace(array( '["', '"]' ), '', $project_details);
@@ -73,7 +71,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                                 @if($file->project_id == $project_id)
                                 <tr>
                                     <td>{{ $file->title }}</td>
-                                    <td><a href="{{ route('projects-detail.download', $file->uuid) }}">{{ $file->cover }}</a></td>
+                                    <td><a href="{{ route('admin-projects-detail.download', $file->uuid) }}">{{ $file->cover }}</a></td>
                                 </tr>
                                 @endif
 
@@ -81,37 +79,6 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                         </table>
 
                     </div>
-
-                    @if($id == $project_user_id)
-                    <div class="card">
-                        <div class="card-header">Add new report</div>
-
-                        <div class="card-body">
-
-                            <form action="{{ route('projects-detail.store', $project_id) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-
-                                <input type="hidden" name="project_id" value="{{ $project_id }}" />
-
-                                Title:
-                                <br>
-                                <input type="text" name="title" class="form-control">
-
-                                <br>
-
-                                <br>
-                                <input type="file" name="cover">
-
-                                <br><br>
-
-                                <input type="submit" value=" Upload file " class="btn btn-primary">
-
-                            </form>
-
-                        </div>
-                    </div>
-                    @endif
-
                 </div>
             </section>
         </main>
