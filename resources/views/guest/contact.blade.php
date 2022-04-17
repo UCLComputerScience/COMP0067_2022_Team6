@@ -30,7 +30,11 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><a href="mailto:info@ancssc.org" class="btn btn-primary btn-lg" id="submitButton" type="submit">Send a message</a></div>
+                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                        <div class="d-grid">
+                                            <a href="mailto:info@ancssc.org" class="btn btn-primary btn-lg" id="submitButton" type="submit">Send a message</a>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -39,19 +43,16 @@
                     <div class="row gx-5 row-cols-2 row-cols-lg-3 py-5" align="center">
                         <div class="col">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-geo-alt"></i></div>
-                            <div class="h5 mb-2">Address</div>
                             <p class="text-muted mb-0">4 Gateway Mews <br>London, N11 2UT</p>
                         </div>
                         <div class="col">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <div class="h5">Email</div>
                             <p class="text-muted mb-0">info@ancssc.org</p>
                         </div>
                         
                         <div class="col">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                            <div class="h5">Phone</div>
-                            <p class="text-muted mb-0">Call us during normal business hours<br>at +44 020 8368 8231.</p>
+                            <p class="text-muted mb-0">+44 020 8368 8231</p>
                         </div>
                     </div>
                 </div>
