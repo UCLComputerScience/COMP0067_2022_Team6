@@ -31,6 +31,10 @@
                                 <input type="text" name="email" value="{{$user->email}}" class="form-control">
                             </div>
                             <div class="form-group mb-3">
+                                <label for="">User Address</label>
+                                <input type="text" name="email" value="{{$user->address}}" class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Update User</button>
                             </div>
 

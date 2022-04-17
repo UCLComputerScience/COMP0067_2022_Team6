@@ -141,7 +141,7 @@ Route::get('/user-subscribe', function () {
         return view('/admin/admin-events-delete');})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('/success/{id}', function () {
-  
+
 
     return view('/user/success');})->where('id', '.*')->middleware('auth');
 
@@ -186,7 +186,7 @@ $url = $checkout_session['url'];
             'quantity' => 1,
           ]],
         ]);
-        
+
         $url = $checkout_session['url'];
 
             return redirect($url);})->middleware('auth');
@@ -294,11 +294,14 @@ Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUp
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);
 
-Route::get('admin-members', [UserController::class, 'index'])->middleware(['auth', 'can:accessAdmin']);
-Route::get('admin-members', 'App\Http\Controllers\UserController@index')->name('admin-members.index')->middleware(['auth', 'can:accessAdmin']);
-Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin-members.destroy')->middleware(['auth', 'can:accessAdmin']);
+Route::get('admin-members-datatable', [App\Http\Controllers\UserController::class, 'index'])->middleware(['auth', 'can:accessAdmin']);
+Route::post('admin-members-datatable', 'App\Http\Controllers\UserController@index')->name('admin-members.index')->middleware(['auth', 'can:accessAdmin']);
+Route::delete('admin-members/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin-member.destroy')->middleware(['auth', 'can:accessAdmin']);
 Route::get('edit-user/{id}', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth', 'can:accessAdmin']);
 Route::put('update-user/{id}', [App\Http\Controllers\UserController::class, 'update'])->middleware(['auth', 'can:accessAdmin']);
+//Route::post('store-member', [App\Http\Controllers\UserController::class, 'store'])->middleware(['auth', 'can:accessAdmin']);
+//Route::post('edit-member', [App\Http\Controllers\UserController::class, 'edit'])->middleware(['auth', 'can:accessAdmin']);
+Route::post('delete-member', [App\Http\Controllers\UserController::class, 'delete'])->middleware(['auth', 'can:accessAdmin']);
 
 Route::resource('projects-detail', 'App\Http\Controllers\FileController');
 Route::get('projects-detail/{uuid}/download', 'App\Http\Controllers\FileController@download')->name('projects-detail.download');
