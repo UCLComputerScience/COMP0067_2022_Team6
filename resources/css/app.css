@@ -3999,7 +3999,7 @@ textarea.form-control-lg {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #0d6dfdf3;
 }
 
 .nav-fill > .nav-link,
@@ -4070,6 +4070,7 @@ textarea.form-control-lg {
 .navbar-nav .dropdown-menu {
   position: static;
 }
+
 
 .navbar-text {
   padding-top: 0.5rem;
