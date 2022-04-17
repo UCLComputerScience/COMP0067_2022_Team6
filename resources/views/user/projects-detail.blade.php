@@ -97,7 +97,6 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
 
                                 <br>
 
-                                Cover File:
                                 <br>
                                 <input type="file" name="cover">
 
