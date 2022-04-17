@@ -27,10 +27,9 @@
     <div id="map" style="width: 80%; height: 250px; margin: auto; margin-bottom: 2%;"></div>
         <div class="text-center mb-5">
             <?php $userprojs = DB::table('projects')
-                ->select(array('projectOrganisation','projectTitle', 'latitude', 'longitude','sdg'))
+                ->select(array('projectOrganisation','projectTitle', 'latitude', 'longitude','sdg'))->where('projectEndDate','>',Carbon::now())
                 ->get();?>
             
-            <?php //echo $userlocs ?>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcydguZHOGI6lNeztJdpmJTg0dp3P09vg&callback=initMap"
             type="text/javascript"></script>
     <script type="text/javascript">
