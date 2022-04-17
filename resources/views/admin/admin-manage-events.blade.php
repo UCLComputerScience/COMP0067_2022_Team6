@@ -262,7 +262,7 @@ $tz = str_replace($array2,"",$timezone);
 //   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
   echo('
     <li class="list-group-item d-flex justify-content-between">
-      <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="200" height="200"></div>
+      <div class="p-2 mr-5"><img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="250" height="250"></div>
     <div class="col-4"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '<br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br>Event Date '.$date.'<br>Time Zone '.$tz.'</div>
     
     <div class="row align-items-center">

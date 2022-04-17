@@ -261,7 +261,7 @@ $project_Date = substr($project_Date,0,-8);
 
   echo('
     <li class="list-group-item d-flex justify-content-between">
-    <div class="p-2 mr-5"> <img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="200" height="200"> </div>
+    <div class="p-2 mr-5"> <img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="250" height="250"> </div>
     <div class="col-5"><h5><a href="admin-projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br></div>
     <div class="row align-items-center">
     
