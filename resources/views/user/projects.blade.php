@@ -64,7 +64,6 @@
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
                             <h2 class="fw-bolder">Project information</h1>
-                            <p class="lead fw-normal text-muted mb-0">(explanatory text for the table below goes here)</p>
                             <br>
 
                           <form method="get" action="projects">
