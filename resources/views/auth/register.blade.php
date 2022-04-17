@@ -96,7 +96,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <input id="address" type="text" name="address"  class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
+                                    <input id="address" type="text" name="address"  autcomplete="off" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
                                 </div>
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
