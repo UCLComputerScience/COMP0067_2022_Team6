@@ -252,6 +252,12 @@
 
                               <button type="submit" id="submit" name="submit" class="btn btn-primary form-control">Edit Project</button>
                             
+                              {{-- Google  --}}
+                 <body>
+
+                        {{-- <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                   --}}
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
                   
@@ -289,12 +295,13 @@
                 <br>
                 </html>
                 {{-- Google autocomplete --}}
-                            
-                            </form>
-                          </div>
-                        </div>
                       </div>
-                      
-                      </div>
+</div>
+                      </form>
+</section>
+</main>
+</body>
+</html>
+
                        
 @endsection
