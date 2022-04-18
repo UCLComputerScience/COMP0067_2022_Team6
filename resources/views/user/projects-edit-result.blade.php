@@ -7,9 +7,6 @@
 
 <?php
 
-//require_once(app_path().'../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
-
-//require_once('resources/views/user/projects-create.blade.php');
 $project_id = $_POST['project_id'];
 @include('projects-edit/{$project_id}');
 
