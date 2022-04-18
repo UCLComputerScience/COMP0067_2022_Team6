@@ -149,13 +149,17 @@ Route::get('/success/{id}', function () {
   
 return view('/user/success');})->where('id', '.*')->middleware('auth');
 
+Route::get('/cancel', function () {
+  
+    return view('/user/cancel');})->middleware('auth');
+
 Route::get('/checkoutNGO', function () {
 
 require '../vendor/autoload.php';
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
 $id = Auth::user()->id;
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://51.142.117.217/success'.$id,
+  'success_url' => 'http://51.142.117.217/success/'.$id,
       'cancel_url' => 'http://51.142.117.217/cancel',
   'mode' => 'subscription',
   'line_items' => [[
@@ -172,7 +176,7 @@ $url = $checkout_session['url'];
         \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
         $id = Auth::user()->id;
         $checkout_session = \Stripe\Checkout\Session::create([
-          'success_url' => 'http://51.142.117.217/success'.$id,
+          'success_url' => 'http://51.142.117.217/success/'.$id,
               'cancel_url' => 'http://51.142.117.217/cancel',
           'mode' => 'subscription',
           'line_items' => [[
