@@ -27,6 +27,7 @@
                       $address = $this_project->pluck('address');
                       $latitude = $this_project->pluck('latitude');
                       $longitude = $this_project->pluck('longitude');
+                      $country = $this_project->pluck('country');
                       // $project_city = $this_project->pluck('projectCity');
                       // $project_country = $this_project->pluck('projectCountry');
                       $project_details = $this_project->pluck('projectDetails');
@@ -108,15 +109,15 @@
                             @enderror
                             </div>
                             <div class="col-md-6">
-                              <input id="latitude" type="hidden" name="latitude" value="<?php echo $latitude ?>" class="form-control">                              
+                              <input id="latitude" type="hidden" name="latitude" value="<?php print_r($latitude[0]); ?>" class="form-control">                              
                           </div>
 
                           {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
                               {{-- <label for="longtitudeArea" class="col-md-4 col-form-label text-md-end"></label> --}}
                               <div class="col-md-6">
-                              <input id="longitude" name="longitude" type="hidden" value="<?php echo $longitude ?>"   class="form-control">
+                              <input id="longitude" name="longitude" type="hidden" value="<?php print_r($longitude[0]); ?>"   class="form-control">
                               <div class="col-md-6">
-                              <input id="country" name="country" type="hidden" value="" class="form-control">
+                              <input id="country" name="country" type="hidden" value="<?php print_r($country[0]);?>" class="form-control">
                           </div>
                           @error('address')
                               <span class="invalid-feedback" role="alert">
