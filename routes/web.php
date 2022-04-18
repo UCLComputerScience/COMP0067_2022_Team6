@@ -20,6 +20,7 @@ use App\Http\Controllers\ResourceControllerAdmin;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // Guest views
 
 Route::get('/', function () {
@@ -44,7 +45,6 @@ Route::get('/events?*', function () {
 Route::get('/gdpr', function () {
     return view('/guest/gdpr');
 });
-
 
 // User views
 
@@ -99,7 +99,6 @@ Route::get('/user-profile', function () {
 })->middleware(['auth', 'can:stripeUser']);
 
 
-
 Route::post('/user-profile-result', function () {
     return view('/user/user-profile-result');})->middleware(['auth', 'can:stripeUser']);
 
@@ -108,14 +107,18 @@ Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'
 Route::get('/resources', function () {
     return view('/user/resources');
 })->middleware(['auth', 'can:stripeUser']);
+
 Route::get('/resources-detail', function () {
     return view('/user/resources-detail');
+
 })->middleware(['auth', 'can:stripeUser']);
 Route::get('/projects', function () {
     return view('/user/projects');
+
 })->middleware(['auth', 'can:stripeUser']);
 Route::get('/projects*', function () {
     return view('/user/projects*');
+
 })->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/projects-detail/{project_id}',function (){
@@ -130,8 +133,7 @@ Route::any('/projects-edit/{project_id}',function (){
     return view('/user/projects-edit');})->where('project_id', '.*')->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/members', function () {
-    return view('/user/members');
-})->middleware(['auth', 'can:stripeUser']);
+    return view('/user/members');})->middleware(['auth', 'can:stripeUser']);
 
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');})->middleware(['auth', 'can:stripeUser']);
@@ -139,25 +141,18 @@ Route::get('/user-subscribe', function () {
 Route::get('google-autocomplete', [GoogleController::class, 'index']);
 
 //Stripe
+
 Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');})->middleware('auth');
 
-    Route::any('/admin-events-delete/{event_id}',function (){
-        return view('/admin/admin-events-delete');})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
-
 Route::get('/success/{id}', function () {
   
-
-    return view('/user/success');})->where('id', '.*')->middleware('auth');
+return view('/user/success');})->where('id', '.*')->middleware('auth');
 
 Route::get('/checkoutNGO', function () {
 
 require '../vendor/autoload.php';
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
-//echo getenv('STRIPE_SECRET');
-// The price ID passed from the front end.
-//$priceId = $_POST['priceId'];
-//$priceId = '{{PRICE_ID}}';
 $id = Auth::user()->id;
 $checkout_session = \Stripe\Checkout\Session::create([
   'success_url' => 'http://127.0.0.1:8000/success/'.$id,
@@ -165,7 +160,6 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'mode' => 'subscription',
   'line_items' => [[
     'price' => 'price_1Ka7hTLbAUO2h0p7oxGVMlab',
-    // For metered billing, do not pass quantity
     'quantity' => 1,
   ]],
 ]);
@@ -176,10 +170,6 @@ $url = $checkout_session['url'];
 
         require '../vendor/autoload.php';
         \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
-        //echo getenv('STRIPE_SECRET');
-        // The price ID passed from the front end.
-        //$priceId = $_POST['priceId'];
-        //$priceId = '{{PRICE_ID}}';
         $id = Auth::user()->id;
         $checkout_session = \Stripe\Checkout\Session::create([
           'success_url' => 'http://127.0.0.1:8000/success/'.$id,
@@ -187,7 +177,6 @@ $url = $checkout_session['url'];
           'mode' => 'subscription',
           'line_items' => [[
             'price' => 'price_1Ka7h7LbAUO2h0p7Iu1EKPF8',
-            // For metered billing, do not pass quantity
             'quantity' => 1,
           ]],
         ]);
@@ -195,13 +184,13 @@ $url = $checkout_session['url'];
         $url = $checkout_session['url'];
 
             return redirect($url);})->middleware('auth');
-            // $id = Auth::user()->id;
-            // $subscriberRole = 3;
-            // DB::Table('users')->where('id',$id)->update(['role' => $subscriberRole ])
 
 // Admin views
 
 Auth::routes();
+
+Route::any('/admin-events-delete/{event_id}',function (){
+    return view('/admin/admin-events-delete');})->where('event_id', '.*')->middleware(['auth', 'can:accessAdmin']);
 
 Route::get('admin-members', function () {
     return view('/admin/admin-members');
@@ -223,10 +212,8 @@ Route::get('/admin-projects-manage', function () {
     return view('/admin/admin-projects-manage');
 })->middleware(['auth', 'can:accessAdmin']);
 
-
 Route::any('/admin-projects-delete/{project_id}',function (){
     return view('/admin/admin-projects-delete');})->where('project_id', '.*')->middleware(['auth', 'can:accessAdmin']);
-
 
 Route::get('/admin-projects-detail/{project_id}',function (){
     return view('/admin/admin-projects-detail');})->where('project_id', '.*')->middleware(['auth', 'can:accessAdmin']);
@@ -259,17 +246,11 @@ Route::get('admin-manage-resources', function () {
 Route::get('admin-analytics', function () {
     return view('/admin/admin-analytics');
 })->middleware(['auth', 'can:accessAdmin']);
-// Stripe subscription
 
 Route::get('/subscribe', 'SubscriptionController@showSubscription');
 Route::post('/seller/subscribe', 'SubscriptionController@processSubscription');
 
-// welcome page only for subscribed users
 Route::get('/welcome', 'SubscriptionController@showWelcome')->middleware('subscribed');
-
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', function () {
 
@@ -278,27 +259,23 @@ $userRole = Auth::user()->role;
 if ($userRole == 1) {
 
 return view('admin/home');
-        // Authentication was successful...
+
 } elseif ($userRole == 2 ) {
 
 return redirect('/user-subscribe');
-        // Authentication was successful...
+
 } elseif ($userRole == 3 ) {
 
 return view('user/home');
-        // Authentication was successful...
+        
         }
 else  {
 
 echo "" ;
-        // Authentication was successful...
-        }
+
+}
 
 ;})->middleware('auth');
-
-
-
-
 
 //File Upload
 Route::get('/file-upload', [FileUpload::class, 'createForm']);
@@ -307,9 +284,6 @@ Route::post('/file-upload', [FileUpload::class, 'fileUpload'])->name('fileUpload
 //Image Upload
 Route::get('/image-upload', [ImageUpload::class, 'createForm']);
 Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUpload');
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('users/getUsers', [App\Http\Controllers\AdminController::class, "getUsers"])->name('users.getUsers');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"]);

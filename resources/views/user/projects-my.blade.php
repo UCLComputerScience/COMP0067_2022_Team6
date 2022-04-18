@@ -238,8 +238,6 @@ $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"s
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('project_id',$project_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
-// $sdgs = DB::Table('projects')->select('sdg5')->where('project_id',$project_id)->whereNull('sdg5')->orWhere('sdg5','!=',0)->get();
-// 'sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')
 $projectDate = DB::Table('projects')->select('projectEndDate')->where('project_id',$project_id)->get();
 $array1 = array('[',']','{','}','"','"','projectEndDate');
 $date = str_replace($array1,"",$projectDate);
@@ -247,10 +245,7 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
 $desc = str_replace(array( '["', '"]' ), '', $desc);
 $project_Date=$projectDate->pluck('projectEndDate');
 $project_Date = strip_text($project_Date);
-$project_Date = substr($project_Date,0,-8);
-// echo $sdgs_first_strip;
-// echo $first_image_path_stripped_second;
-  // Truncate long descriptions
+
   if (strlen($desc) > 250) {
     $desc_shortened = substr($desc, 0, 250) . '...';
   }
@@ -258,17 +253,13 @@ $project_Date = substr($project_Date,0,-8);
     $desc_shortened = $desc;
   }
   
-  // Print HTML
-
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"> <img alt="" src="http://127.0.0.1:8000/assets/'. $first_image_path_stripped . '" width="250" height="250"> </div>
     <div class="col-5"><h5><a href="projects-detail/' . $project_id. '">' . $title . '</a></h5>' . $desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_first_strip . '<br></div>
     <div class="row align-items-center">
     <div class="col"><td>  <a class="btn btn-primary form-control" href="projects-edit/'. $project_id.'" > Edit </a></td></div>
-    
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
-    
     <div class="col"><td> <a href="projects-delete/'. $project_id.'" type="submit" id="submit" name="submit" class="btn btn-primary form-control" '. $project_id.'" > Delete </a> </td></div>
     <input type="hidden" name="_token" value="' . Session::token() . '?>">
     <div>

@@ -2,34 +2,22 @@
 
 @section('content')
 
-
 <div class="container my-5">
 
 <?php
-
-//require_once(app_path().'../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
-
-//require_once('resources/views/user/projects-create.blade.php');
 
 @include('projects-create');
     
     if (isset($_POST['submit']))
     {
-
-    // Extracting the variables from the POST 
-    
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
-    // $projectLocation = $_POST['projectLocation'];
-    // $projectCity = $_POST['projectCity'];
     $address = $_POST['address'];
     $country = $_POST['country'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
-    // $projectCountry = $_POST['projectCountry'];
     $projectDetails = $_POST['projectDetails'];
     $projectEndDate = $_POST['projectEndDate'];
-    // $sdg = $_POST['sdg']; 
     $sdg1 = $_POST['sdg1'];
     $sdg2 = $_POST['sdg2']; 
     $sdg3 = $_POST['sdg3']; 
@@ -53,21 +41,18 @@
     $filename = $_FILES["uploadfile"]["name"];
     $uuid = uniqid();
     $uuidfilename = $uuid.$filename;
+    
     // Putting them into an array
 
     $newProjectArray = array(
         'projectTitle' => $projectTitle,
         'projectOrganisation' => $projectOrganisation,
-        // 'projectLocation' => $projectLocation,
-        // 'projectCity' => $projectCity,
         'address' => $address,
         'country' => $country,
         'latitude' => $latitude,
         'longitude' => $longitude,
-        // 'projectCountry' => $projectCountry,
         'projectDetails' => $projectDetails,
         'projectEndDate' => $projectEndDate,
-        // 'sdg' => $sdg, 
         'sdg1' => $sdg1,
         'sdg2' => $sdg2, 
         'sdg3' => $sdg3, 
@@ -91,30 +76,17 @@
         'image_name' => $uuidfilename
     );
  
-    // The flow below checks for general errors in the form, then does 
-    // a loop for each image. 
+    // The flow below checks for errors.
     
     if (empty($projectTitle)){
-        echo 'Please enter an project title.';
+        echo 'Please enter a project title.';
     } 
     elseif (empty($projectOrganisation)){
         echo 'Please enter the organisation of this project.';
     } 
-    // elseif (empty($projectLocation)){
-    //     echo 'Please enter the address of this project.';
-    // } 
-    // elseif (empty($projectCity)){
-    //     echo 'Please enter the city of this project.';
-    // } 
-    // elseif (empty($projectCountry)){
-    //     echo 'Please enter the country of this project.';
-    // } 
     elseif (empty($projectDetails)){
         echo 'Please enter a project description.';
     } 
-    // elseif (empty($sdg)){
-    //     echo 'Please enter an SDG.';
-    // }
     elseif (empty($projectValue) and $projectValue != 0){
         echo 'Please enter a project value.';
     }
@@ -127,18 +99,8 @@
     else {
 
        $project_id =  DB::table('projects')->insert($newProjectArray); 
-       
-    //    $imageUUID = uniqid();
-    //    $filename = $_FILES["uploadfile"]["name"];
        $tempname = $_FILES["uploadfile"]["tmp_name"];    
        $folder = public_path("assets/".$uuidfilename);
-        // "public/assets/images/".$filename;
-          
-        // $insert_image = DB::table('projects')->insert('image_name',$filename);
-  
-        // Get all the submitted data from the form
-  
-               // Now let's move the uploaded image into the folder: image
         if (move_uploaded_file($tempname, $folder))  {
             $msg = "Image uploaded successfully";
         }else{
