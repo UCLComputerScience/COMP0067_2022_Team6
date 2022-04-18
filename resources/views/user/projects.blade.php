@@ -255,25 +255,13 @@ if (!isset($_GET['order_by'])) {
 }
 
   if ($order_by === "all"){
-    // $query .= " ORDER BY projectEndDate DESC ";
     $query->sortByDesc('projectEndDate');
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND projectEndDate >= GETDATE() 
-  // ORDER BY projectEndDate DESC";
   $query = $query->where('projectEndDate', '>=', $current_datetime);
-  // ->sortBy('projectEndDate', 'desc');
-  // ->get();
 }elseif($order_by === "past"){
-  // $query .= " AND projectEndDate < GETDATE() 
-  // -- ORDER BY projectEndDate DESC";
   $query = $query->where('projectEndDate', '<', $current_datetime);
-  // ->orderBy('projectEndDate', 'desc');
-  // ->get();
 }
 
-
-// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->get();
-// //echo ($my_projects);
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
 //echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
@@ -339,7 +327,6 @@ $project_Date = substr($project_Date,0,-8);
   
   $counter = 0;
   foreach ($query as $row)
-  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
   {
     $endDateTime = new DateTime($row->projectEndDate);
     print_listing_with_image($row->project_id,$row->projectTitle, $row->projectDetails,$row->projectEndDate);
