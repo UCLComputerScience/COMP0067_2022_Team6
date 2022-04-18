@@ -62,7 +62,7 @@
                     }
 
                     $project_end_date_stripped = strip_text($project_end_date);
-                    $project_end_date_final = str_replace(array(' '), 'T', $project_end_date_stripped);
+                    $project_end_date_final = str_replace(array(' 00:00:00'), '', $project_end_date_stripped);
 
 
 
@@ -108,7 +108,7 @@
                             @enderror
                             </div>
                             <div class="col-md-6">
-                              <input id="latitude" type="hidden" name="latitude" value=""<?php echo $latitude ?>" " class="form-control">                              
+                              <input id="latitude" type="hidden" name="latitude" value="<?php echo $latitude ?>" class="form-control">                              
                           </div>
 
                           {{-- <div class="form-group row mb-3" id="longtitudeArea"> --}}
@@ -236,7 +236,7 @@
                               <div class="form-group row">
                                 <label for="projectEndDate" class="col-sm-2 col-form-label text-right">End date</label>
                                 <div class="col-sm-10">
-                                  <input type="date" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date; ?>' required>
+                                  <input type="date" class="form-control" name="projectEndDate" id="projectEndDate" value='<?= $project_end_date_final; ?>' required>
                                   <small id="endDateHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> Expected end date of the project.</small>
                                 </div>
                               </div>
