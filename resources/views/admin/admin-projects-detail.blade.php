@@ -51,7 +51,7 @@ $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_pa
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img class="mx-auto d-block" src="http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped?>" alt="..." width="800" height="500"/></div>
+                        <div class="col-12"><img class="mx-auto d-block" src="http://51.142.117.217/assets/<?php echo $first_image_path_stripped?>" alt="..." width="800" height="500"/></div>
                     </div>
                     <div class="text-center mb-5">
                         <h2 class="fw-bolder">Project reports</h1>
