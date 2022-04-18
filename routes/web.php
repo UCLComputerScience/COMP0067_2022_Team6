@@ -316,4 +316,4 @@ Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->
 Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy')->middleware('auth');
 
 Route::get('info', function () {
-    return view('user/info.php');});
+    return view('/user/info');});
