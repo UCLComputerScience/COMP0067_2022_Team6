@@ -20,9 +20,6 @@ $project_id = $_POST['project_id'];
     
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
-    // $projectLocation = $_POST['projectLocation'];
-    // $projectCity = $_POST['projectCity'];
-    // $projectCountry = $_POST['projectCountry'];
     $country = $_POST['country'];
     $address = $_POST['address'];
     $latitude = $_POST['latitude'];
@@ -87,9 +84,6 @@ $project_id = $_POST['project_id'];
                             limit(1)->
                             update(array('projectTitle' => $projectTitle,
                             'projectOrganisation' => $projectOrganisation,
-                            // 'projectLocation' => $projectLocation,
-                            // 'projectCity' => $projectCity,
-                            // 'projectCountry' => $projectCountry,
                             'projectDetails' => $projectDetails,
                             'projectEndDate' => $projectEndDate,
                             'projectValue' => $projectValue,
@@ -121,7 +115,6 @@ $project_id = $_POST['project_id'];
 
         // loop for each uploaded file begins
 
-    // $filename = $_FILES["uploadfile"]["time()"];
        $tempname = $_FILES["uploadfile"]["tmp_name"];    
        $folder = public_path("assets/".$uuidfilename);
        // "public/assets/images/".$filename;
