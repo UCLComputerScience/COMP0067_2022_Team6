@@ -245,7 +245,7 @@ Route::any('/admin-events-edit-result', function () {
 
 Route::get('admin-manage-resources', function () {
     return view('/admin/admin-manage-resources');
-})->middleware(['auth', 'can:accessAdmin']);
+})->middleware('auth');
 
 Route::get('admin-analytics', function () {
     return view('/admin/admin-analytics');
@@ -310,7 +310,7 @@ Route::resource('resources', 'App\Http\Controllers\ResourceController');
 Route::get('resources/{uuid}/download', 'App\Http\Controllers\ResourceController@download')->name('resources.download');
 Route::get('resources',[ResourceController::class, 'index'])->name('resources.index');
 
-Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceControllerAdmin')->middleware(['auth', 'can:accessAdmin']);
-Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceControllerAdmin@download')->name('resources.download')->middleware(['auth', 'can:accessAdmin']);
-Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index')->middleware(['auth', 'can:accessAdmin']);
-Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy')->middleware(['auth', 'can:accessAdmin']);
+Route::resource('admin-manage-resources', 'App\Http\Controllers\ResourceControllerAdmin')->middleware('auth');
+Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\ResourceControllerAdmin@download')->name('resources.download')->middleware('auth');
+Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index')->middleware('auth');
+Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy')->middleware('auth');
