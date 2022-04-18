@@ -1,6 +1,3 @@
-<!-- TODO: 
-1. Get filtering to work for projects table
-2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
 @extends('layouts.mainlayout-logged-in')
 
 @section('content')
@@ -292,17 +289,6 @@ $project_Date = substr($project_Date,0,-8);
   else {
     $desc_shortened = $desc;
   }
-  
-  // Calculate time to auction end
- // $now = new DateTime();
-  //if ($now > $end_time) {
-   // $time_remaining = 'This auction has ended';
-  //}
-  //else {
-    // Get interval:
-    //$time_to_end = date_diff($now, $end_time);
-   // $time_remaining = display_time_remaining($time_to_end) . ' remaining';
-  //}
   
   // Print HTML
   echo('
