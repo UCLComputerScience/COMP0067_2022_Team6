@@ -16,12 +16,6 @@
     $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
     $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
     $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
-    // If time, implement this to show if an event has already ended
-    // Need to include if statement for if $now > $event_datetime to control what shows
-    // $now = new DateTime();
-    // if ($now > $event_datetime) {
-    //         $time_remaining = 'This event has ended';
-    //     }
 
 
 
@@ -83,7 +77,7 @@
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-12"><img margin-bottom: 250px class="mx-auto d-block" src="http://51.142.117.217/assets/<?php echo $first_image_path_stripped ?>" alt="..." width="800" height="500" /></div>
+                        <div class="col-12"><img margin-bottom: 250px class="mx-auto d-block" src="http://127.0.0.1:8000/assets/<?php echo $first_image_path_stripped ?>" alt="..." width="800" height="500" /></div>
                     </div>
                         <br>
                     
