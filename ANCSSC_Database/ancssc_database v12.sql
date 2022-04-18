@@ -15,7 +15,8 @@ CREATE DATABASE ancssc_database
 
 GRANT ALL PRIVILEGES
     ON ancssc_database.*
-    TO 'team6'@'localhost';
+    TO 'team6'@'localhost'
+        IDENTIFIED BY 'AncsscAdmin1@';
 
     -- TO 'user'@'localhost'
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
