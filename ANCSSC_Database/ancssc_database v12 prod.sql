@@ -13,10 +13,8 @@ CREATE DATABASE ancssc_database
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES
-    ON ancssc_database.*
-    TO 'user'@'localhost'
-     IDENTIFIED BY 'password'; 
+CREATE USER 'phpappuser' IDENTIFIED BY 'MySQLAzure2020';
+GRANT ALL PRIVILEGES ON ancssc_database.* TO 'phpappuser';
 
     -- TO 'user'@'localhost'
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
