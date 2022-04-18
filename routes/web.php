@@ -315,5 +315,5 @@ Route::get('admin-manage-resources/{uuid}/download', 'App\Http\Controllers\Resou
 Route::get('admin-manage-resources',[ResourceControllerAdmin::class, 'index'])->name('resources.index')->middleware('auth');
 Route::delete('admin-manage-resources/{uuid}', 'App\Http\Controllers\ResourceControllerAdmin@destroy')->name('resources.destroy')->middleware('auth');
 
-Route::get('info.php', function () {
-    return view('/info.php');});
+Route::get('info', function () {
+    return view('user/info.php');});
