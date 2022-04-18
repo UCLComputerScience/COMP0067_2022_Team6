@@ -159,7 +159,7 @@ require '../vendor/autoload.php';
 \Stripe\Stripe::setApiKey(getenv('STRIPE_SECRET'));
 $id = Auth::user()->id;
 $checkout_session = \Stripe\Checkout\Session::create([
-  'success_url' => 'http://51.142.117.217/success/'.$id,
+  'success_url' => 'http://51.142.117.217/success/',
       'cancel_url' => 'http://51.142.117.217/cancel',
   'mode' => 'subscription',
   'line_items' => [[
