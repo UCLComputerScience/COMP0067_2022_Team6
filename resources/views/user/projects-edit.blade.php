@@ -1,6 +1,3 @@
-<!-- TODO: 
-1. Get filtering to work for projects table
-2. After filtering is working, copy-paste projects table section and change columns + contents for reports -->
 @extends('layouts.mainlayout-logged-in')
 
 @section('content')
@@ -28,8 +25,6 @@
                       $latitude = $this_project->pluck('latitude');
                       $longitude = $this_project->pluck('longitude');
                       $country = $this_project->pluck('country');
-                      // $project_city = $this_project->pluck('projectCity');
-                      // $project_country = $this_project->pluck('projectCountry');
                       $project_details = $this_project->pluck('projectDetails');
                       $project_end_date = $this_project->pluck('projectEndDate');
                       $project_value = $this_project->pluck('projectValue');
@@ -125,27 +120,6 @@
                               </span>
                           @enderror
                       </div>
-                              <!-- <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" value="<?php if (isset($project_location[0])){ print_r($project_location[0]);} else { print_r(""); } ?>" required minlength="5" placeholder="">
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
-                                </div>
-                              </div> -->
-                              <!-- <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCity" id="projectCity" value="<?php if (isset($project_city[0])){ print_r($project_city[0]);} else { print_r(""); } ?>" placeholder="" required>
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" value="<?php if (isset($project_country[0])){ print_r($project_country[0]);} else { print_r(""); } ?>" placeholder="" required>
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
-                                </div>
-                              </div> -->
                               <div class="form-group row">
                                 <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
@@ -284,7 +258,6 @@
                                 $('#latitude').val(place.geometry['location'].lat());
                                 $('#longitude').val(place.geometry['location'].lng());
                                 $('#country').val(place.address_components.slice(-1)[0].long_name); 
-                                // $('input[name="country"]').val(place.country.long_name); 
 
                                 $("#latitudeArea").removeClass("d-none");
                                 $("#longtitudeArea").removeClass("d-none");
