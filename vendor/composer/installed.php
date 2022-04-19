@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ff544d3f54418c58f398fe85681ded381eff7057',
+        'reference' => 'bd51ffb9a21a0b76b7d042a07cb057f69beab5c6',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,6 +409,15 @@
                 0 => '*',
             ),
         ),
+        'kyslik/column-sortable' => array(
+            'pretty_version' => '6.4.2',
+            'version' => '6.4.2.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../kyslik/column-sortable',
+            'aliases' => array(),
+            'reference' => '91792a166dd02aaaeb7928417bb49d808b0c58ea',
+            'dev_requirement' => false,
+        ),
         'laravel/cashier' => array(
             'pretty_version' => 'v13.8.4',
             'version' => '13.8.4.0',
@@ -433,7 +442,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ff544d3f54418c58f398fe85681ded381eff7057',
+            'reference' => 'bd51ffb9a21a0b76b7d042a07cb057f69beab5c6',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -826,8 +835,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

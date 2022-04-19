@@ -8,10 +8,28 @@ use DataTables;
 
 class UserController extends Controller
 {
+    /*
     public function index()
     {
-        $users = User::All();
+        $users = User::sortable()->paginate(10);
         return view('admin/admin-members', ['users'=>$users]);
+    }
+    */
+
+    public function index(Request $request)
+    {
+        $filter = $request->query('filter');
+
+        if (!empty($filter)) {
+            $users = User::sortable()
+                ->where('name', 'like', '%'.$filter.'%')
+                ->paginate(10);
+        } else {
+            $users = User::sortable()
+                ->paginate(10);
+        }
+
+        return view('admin/admin-members')->with('users', $users)->with('filter', $filter);
     }
 
     public function destroy($id)
