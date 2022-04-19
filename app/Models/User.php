@@ -9,8 +9,12 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Cashier\Billable;
 use Laratrust\Traits\LaratrustUserTrait;
+use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
+
 class User extends Authenticatable
 {
+    use Sortable;
     use LaratrustUserTrait;
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
@@ -19,6 +23,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'email',
@@ -72,6 +78,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public $sortable = [
+        'name',
+        'email',
+        'address',
+        'phone'];
+
     public function role ($role) {
         $role = (array)$role;
 
@@ -80,4 +92,4 @@ class User extends Authenticatable
 
 
 
- 
+

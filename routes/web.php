@@ -146,11 +146,11 @@ Route::get('/user-subscribe', function () {
     return view('/user/user-subscribe');})->middleware('auth');
 
 Route::get('/success/{id}', function () {
-  
+
 return view('/user/success');})->where('id', '.*')->middleware('auth');
 
 Route::get('/cancel', function () {
-  
+
     return view('/user/cancel');})->middleware('auth');
 
 Route::get('/checkoutNGO', function () {
@@ -184,7 +184,7 @@ $url = $checkout_session['url'];
             'quantity' => 1,
           ]],
         ]);
-        
+
         $url = $checkout_session['url'];
 
             return redirect($url);})->middleware('auth');
@@ -221,7 +221,7 @@ Route::any('/admin-projects-delete/{project_id}',function (){
 
 Route::get('/admin-projects-detail/{project_id}',function (){
     return view('/admin/admin-projects-detail');})->where('project_id', '.*')->middleware(['auth', 'can:accessAdmin']);
-    
+
 Route::get('admin-manage-events', function () {
     return view('/admin/admin-manage-events');
 })->middleware(['auth', 'can:accessAdmin']);
@@ -271,7 +271,7 @@ return redirect('/user-subscribe');
 } elseif ($userRole == 3 ) {
 
 return view('user/home');
-        
+
         }
 else  {
 

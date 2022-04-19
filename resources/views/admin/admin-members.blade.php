@@ -13,6 +13,7 @@
 
     <!-- Datatables CSS CDN -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,12 +26,19 @@
 
 <div class="container mt-5">
     <h2 style="text-align: center;">Manage Members</h2>
-    <table class="table table-bordered yajra-datatable">
+    <form class="form-inline" method="GET">
+        <div class="form-group mb-2">
+            <label for="filter" class="col-sm-2 col-form-label">Filter</label>
+            <input type="text" class="form-control" id="filter" name="filter" value="{{$filter}}">
+        </div>
+        <button type="submit" class="btn btn-default mb-2">Filter</button>
+    </form>
+    <table class="table table-bordered table-hover">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th>@sortablelink('id', 'Id')</th>
+            <th>@sortablelink('name', 'Name')</th>
+            <th>@sortablelink('email', 'Email')</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -60,6 +68,7 @@
         <tbody>
         </tbody>
     </table>
+    {!! $users->appends(Request::except('page'))->render() !!}
 </div>
 
 </body>

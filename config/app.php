@@ -168,7 +168,7 @@ return [
          * Package Service Providers...
          */
         // PayPal
-        Srmklive\PayPal\Providers\PayPalServiceProvider::class, 
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
     ],
 
     /*
@@ -192,13 +193,13 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-    
+
     'Carbon' => 'Carbon\Carbon'
         // ...
     ])->toArray(),
     //PayPal
     'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
 
-    
+
 
 ];
