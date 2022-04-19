@@ -95,7 +95,7 @@
 
                                     Date:
                                     <br>
-                                    <input type="text" name="resource_added_date" class="form-control">
+                                    <input type="text" name="resource_added_date" placeholder="e.g. 2022-01-01" class="form-control">
 
                                     <br>
 
