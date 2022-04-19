@@ -75,7 +75,7 @@
                                 <h3><?php echo $event_datetime, "<br>", $event_timezone, "<br>" ?></h3>
                                 <?php 
                                     echo $event_call_url;
-                                    echo $first_image_path_stripped;
+                                
                                 ?>
                                 <br>
                                 <?php echo $event_description ?> 
