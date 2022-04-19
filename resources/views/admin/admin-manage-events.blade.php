@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-
+<br>
 <h1 class="text-center mb-5 fw-bold">Manage events</h1>
 
 <div class="container">
