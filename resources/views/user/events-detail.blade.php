@@ -69,7 +69,7 @@
                                 <h3><?php echo $event_datetime, "<br>", $event_timezone, "<br>" ?></h3>
                                 <?php 
                                     echo $event_call_url;
-                                 echo $first_image_path_stripped;
+                                  echo  $first_image_path_stripped_second;
                                 ?>
                                 <br>
                                 <?php echo $event_description ?> 
