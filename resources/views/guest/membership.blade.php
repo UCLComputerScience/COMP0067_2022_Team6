@@ -111,7 +111,7 @@
 
         <!-- Map-->
      
-<h1 style="fw-bolder">Where our members are located</h1>
+<h1 style="fw-bolder text-align:center">Where our members are located</h1>
 
 <body>
 <div id="map" style="width: 80%; height: 500px; margin: auto; margin-bottom: 2%;"></div>
