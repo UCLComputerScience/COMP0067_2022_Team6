@@ -84,14 +84,14 @@
             </div>
             <div class="col mb-5 mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://scontent-lhr8-1.xx.fbcdn.net/v/t31.18172-8/14889717_10154575669368911_1301596288468842370_o.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=imL3Dd1K-UwAX8Roigq&_nc_oc=AQm3rVv_SK-Y99mSfAwlxiFQ1ZgJS5UFLf2yeZ7DaWyShRFZxfVjuy4xkzs-9tRIhK0&_nc_ht=scontent-lhr8-1.xx&oh=00_AT92oe2aRW_CdKbXJlGDf9Ta2-YZuaUSQcCNyXGqEOtHwA&oe=62832A14" width="200" height="200" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="./assets/images/picture.jpg" width="200" height="200" alt="..." />
                     <h5 class="fw-bolder">Ines Belliard</h5>
                     <div class="fst-italic text-muted">Project Manager</div>
                 </div>
             </div> 
             <div class="col mb-5">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://media-exp1.licdn.com/dms/image/C4D03AQEvsOjqYB-sdA/profile-displayphoto-shrink_200_200/0/1625834408061?e=1655942400&v=beta&t=mOFNj9Mg-5urky7RBuxYZ31Z30PLjgWnzaYnfuQ_YHY" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://media-exp1.licdn.com/dms/image/C4D03AQEvsOjqYB-sdA/profile-displayphoto-shrink_200_200/0/1625834408061?e=1655942400&v=beta&t=mOFNj9Mg-5urky7RBuxYZ31Z30PLjgWnzaYnfuQ_YHY" width="200" height="200" alt="..." />
                     <h5 class="fw-bolder">Amel Lakhdari</h5>
                     <div class="fst-italic text-muted">Project Officer</div>
                 </div>
