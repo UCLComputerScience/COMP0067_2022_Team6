@@ -5,7 +5,7 @@
 
 <div class="container">
 
-<h2 class="my-3 text-center">Events</h2>
+<h2  class="fw-bolder" class="my-3 text-center">Events</h2>
 
 <div class="container">
   <p class="lead fw-normal text-muted mb-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
