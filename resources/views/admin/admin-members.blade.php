@@ -26,7 +26,7 @@
 
 <div class="container mt-5">
     <br>
-    <h1 style="text-align: center;">Manage Members</h1>
+    <h1 class="fw-bolder" style="text-align: center;">Manage Members</h1>
     <form class="form-inline" method="GET">
         <div class="form-group mb-2">
             <label for="filter" class="col-sm-2 col-form-label">Filter</label>
