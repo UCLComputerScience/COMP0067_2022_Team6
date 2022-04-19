@@ -71,7 +71,7 @@
                                         <span class="text-muted">/ year</span>
                                     </div>
                                     <div class="small text-camelcase fw-bold">
-                                        If your organisation is in the private sector run for profit, this is the membership for you
+                                        If your organisation is in the private sector, this is the membership for you
                                     </div>
                                     <br />
                                     <ul class="list-unstyled mb-4">
