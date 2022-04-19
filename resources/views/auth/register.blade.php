@@ -25,6 +25,8 @@ but not going to do that until after Stripe is implemented, since that may affec
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-center mb-5">
+            <br>
+            <br>
                         <h1 class="fw-bolder">Become an ANCSSC member today</h1>
             </div>
             <div class="card">
