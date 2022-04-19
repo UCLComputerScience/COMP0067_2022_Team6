@@ -90,8 +90,8 @@
             </div> 
             <div class="col mb-5">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
-                    <h5 class="fw-bolder">Amel </h5>
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://media-exp1.licdn.com/dms/image/C4D03AQEvsOjqYB-sdA/profile-displayphoto-shrink_200_200/0/1625834408061?e=1655942400&v=beta&t=mOFNj9Mg-5urky7RBuxYZ31Z30PLjgWnzaYnfuQ_YHY" alt="..." />
+                    <h5 class="fw-bolder">Amel Lakhdari</h5>
                     <div class="fst-italic text-muted">Project Officer</div>
                 </div>
             </div>

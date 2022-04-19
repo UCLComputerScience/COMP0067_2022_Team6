@@ -13,9 +13,9 @@
               <span class="text-white mx-1">&middot;</span>
               <a class="link-light small" href="#!">Contact</a>
               <span class="text-white mx-1">&middot;</span>
-
-                  
           </div> -->
+          <script async src="https://cse.google.com/cse.js?cx=f44adf12da156c20f"></script>
+<div class="gcse-search"></div>
       </div>
   </div>
 </footer>
