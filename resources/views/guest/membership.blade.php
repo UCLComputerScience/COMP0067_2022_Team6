@@ -103,9 +103,6 @@
                                     <div class="d-grid"><a class="btn btn-outline-primary" href="/register">Become a corporate member</a></div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
 
