@@ -6,7 +6,7 @@
 <div class="container">
 <br>
 <br>
-<h2  class="fw-bolder text-center">Events</h2>
+<h1  class="fw-bolder text-center">Events</h1>
 <br>
 <br>
 <div class="container">
