@@ -6,13 +6,11 @@
 <div class="container">
 
 <h2  class="fw-bolder text-center">Events</h2>
-
+<br>
+<br>
 <div class="container">
   <p class="lead fw-normal text-muted mb-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
   <div id="searchSpecs">
-  <!-- When this form is submitted, this PHP page is what processes it.
-      Search/sort specs are passed to this page through parameters in the URL
-      (GET method of passing data to a page). -->
 
   <form method="get" action="events">
   <div class="row">
