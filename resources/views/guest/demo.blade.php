@@ -19,8 +19,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="./assets/ANCSSClogo.jpg" width="85%" alt="..." /></div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://globalone.org.uk/wp-content/uploads/2019/06/ASSC_03.jpeg" width="85%" alt="..." /></div>
             </div>
+            {{-- src="./assets/ANCSSClogo.jpg"  --}}
         </div>
     </header>   
     <!-- Features section-->
