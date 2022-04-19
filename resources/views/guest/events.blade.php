@@ -11,6 +11,9 @@
 <br>
 <div class="container">
   <p class="lead fw-normal text-muted mb-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <br>
+  <br> 
+  
   <div id="searchSpecs">
 
   <form method="get" action="events">
