@@ -59,7 +59,7 @@ $(document).ready(function(){
             { data: 'email' },
             // { data: 'sdg' },
             { data: 'country' },
-            
+
         ]
     });
 
@@ -74,7 +74,7 @@ $(document).ready(function(){
 <?php $userlocs = DB::table('users')
     ->select(array('org', 'latitude', 'longitude','country','sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'))
     ->get();
-        
+
     $sdg_arr = array(DB::table('users')->select(['sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17'])->get());?>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"
@@ -94,7 +94,7 @@ $(document).ready(function(){
             position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
             map: map,
             title: locations[i]['org'],
-            
+
         });
     }
 

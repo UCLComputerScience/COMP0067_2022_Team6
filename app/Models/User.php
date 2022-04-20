@@ -81,8 +81,30 @@ class User extends Authenticatable
     public $sortable = [
         'name',
         'email',
+        'phone',
         'address',
-        'phone'];
+        'country',
+        'number_of_employees',
+        'number_of_volunteers',
+        'website',
+        'role',
+        'sdg1',
+        'sdg2',
+        'sdg3',
+        'sdg4',
+        'sdg5',
+        'sdg6',
+        'sdg7',
+        'sdg8',
+        'sdg9',
+        'sdg10',
+        'sdg11',
+        'sdg12',
+        'sdg13',
+        'sdg14',
+        'sdg15',
+        'sdg16',
+        'sdg17',];
 
     public function role ($role) {
         $role = (array)$role;
