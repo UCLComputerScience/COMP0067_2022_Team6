@@ -23,6 +23,7 @@ class UserController extends Controller
         if (!empty($filter)) {
             $users = User::sortable()
                 ->where('name', 'like', '%'.$filter.'%')
+                ->select(User::raw('sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17', '=', 'sdg'))
                 ->paginate(10);
         } else {
             $users = User::sortable()
