@@ -48,14 +48,22 @@ $user_id = Auth::id();
 
                     <div class="card-body">
 
-                        <table class="table">
+                        <form class="form-inline" method="GET">
+                            <div class="form-group mb-2">
+                                <label for="filter" class="col-sm-2 col-form-label">Search Title</label>
+                                <input type="text" class="form-control" id="filter" name="filter" value="{{$filter}}">
+                            </div>
+                            <button type="submit" class="btn btn-default mb-2">Filter</button>
+                        </form>
+
+                        <table class="table table-bordered table-hover">
                             <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Download resource</th>
-                                <th>Language</th>
-                                <th>SDG</th>
-                                <th>Date Added</th>
+                                <th>@sortablelink('resource_title', 'Title')</th>
+                                <th>@sortablelink('resource_description', 'Description')</th>
+                                <th>@sortablelink('cover', 'Download resource')</th>
+                                <th>@sortablelink('resource_sdg', 'Language')</th>
+                                <th>@sortablelink('resource_language', 'SDG')</th>
+                                <th>@sortablelink('resource_added_date', 'Date Added')</th>
                             </tr>
                             @forelse ($resources as $resource)
                                 <tr>
