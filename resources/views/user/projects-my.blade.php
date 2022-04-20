@@ -288,4 +288,5 @@ $project_Date = strip_text($project_Date);
   
 ?>
 </div>
+</div>
 @endsection
