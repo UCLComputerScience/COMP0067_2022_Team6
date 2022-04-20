@@ -5,7 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>ANCSSC</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3FNXXEJL4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-N3FNXXEJL4');
+    </script>
         <!-- Favicon-->
         <link rel="icon" href="assets/ANCSSClogo.jpg" type="image/x-icon">
         <!-- Bootstrap icons-->
