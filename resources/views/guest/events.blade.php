@@ -255,7 +255,7 @@ $event_datetime = substr($event_datetime, 0, -8);
 
   <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://51.142.117.217/assets/'. $first_image_path_stripped . '" width="250" height="250"></div>
-    <div class="col-7"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br>Date: '.$event_datetime.'</div>
+    <div class="col-7"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br><b>Date: '.$event_datetime.'</b></div>
   </li>'
   );
 
