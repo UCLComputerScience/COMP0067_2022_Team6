@@ -109,7 +109,7 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 <div class="col-md-6">
                                     <input id="address" type="text" name="address"  autcomplete="off" class="form-control @error('name') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="Enter Address">
                                 </div>
-                                <small id="addressHelp" class="form-text text-muted" style="float:inheret"><a>Please use the in-built Google tool to select your address</a></small>
+                                <small id="addressHelp" class="form-text text-muted" style="float:right"><a>Please use the in-built Google tool to select your address</a></small>
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
