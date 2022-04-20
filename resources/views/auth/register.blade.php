@@ -14,6 +14,7 @@ but not going to do that until after Stripe is implemented, since that may affec
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   
 <head>
+    <title>Register</title>
     {{-- <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel Google Autocomplete Address Example</title>
