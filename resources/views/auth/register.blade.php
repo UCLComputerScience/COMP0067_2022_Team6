@@ -19,6 +19,15 @@ but not going to do that until after Stripe is implemented, since that may affec
     <title>Laravel Google Autocomplete Address Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> --}}
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N3FNXXEJL4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N3FNXXEJL4');
+</script>
 </head>
 {{-- Autcomplete --}}
 <div class="container" style="margin-bottom:3%">

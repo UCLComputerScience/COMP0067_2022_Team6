@@ -1,6 +1,19 @@
 @extends('layouts.mainlayout')
 
 @section('content')
+<!DOCTYPE html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3FNXXEJL4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-N3FNXXEJL4');
+    </script>
+    
+    </head>
 <div class="container" style="margin: auto;">
     <div class="row justify-content-center">
         <div class="col-md-8">
