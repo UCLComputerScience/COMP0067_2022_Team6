@@ -10,10 +10,28 @@ use DataTables;
 
 class ResourceControllerAdmin extends Controller
 {
+    /*
     public function index()
     {
         $resources = Resource::all();
         return view('admin/admin-manage-resources', compact('resources'));
+    }
+    */
+
+    public function index(Request $request)
+    {
+        $filter = $request->query('filter');
+
+        if (!empty($filter)) {
+            $resources = Resource::sortable()
+                ->where('resource_title', 'like', '%'.$filter.'%')
+                ->paginate(10);
+        } else {
+            $resources = Resource::sortable()
+                ->paginate(10);
+        }
+
+        return view('admin/admin-manage-resources')->with('resources', $resources)->with('filter', $filter);
     }
 
     public function create()
