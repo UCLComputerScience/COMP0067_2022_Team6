@@ -75,7 +75,7 @@
 $current_datetime = str(now());
 
 function strip_text($var){
-  $var = str_replace(array('"'), '', $var);
+  $var = str_replace(array('"', '[', ']'), '', $var);
   $var = stripslashes($var);
   return $var;
 }
@@ -233,8 +233,12 @@ $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"s
 $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
 $sdgs_second_strip = trim($sdgs_first_strip, ",");
-// TODO: Bring this back later
-// $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('event_id',$event_id)->get();
+
+// Get datetime for each event
+$this_event = DB::Table('events')->select('event_datetime')->where('event_id',$event_id)->get();
+$event_datetime = $this_event->pluck('event_datetime');
+$event_datetime = strip_text($event_datetime);
+$event_datetime = substr($event_datetime, 0, -8);
 
   // Truncate long descriptions
   if (strlen($event_description) > 250) {
@@ -251,7 +255,7 @@ $sdgs_second_strip = trim($sdgs_first_strip, ",");
 
   <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://51.142.117.217/assets/'. $first_image_path_stripped . '" width="250" height="250"></div>
-    <div class="col-7"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br></div>
+    <div class="col-7"><h5><a href="events-detail/' . $event_id. '">' . $event_title . '</a></h5>' . $event_desc_shortened . '</a></h5> <br><b> SDGs:</b> ' .  $sdgs_second_strip . '<br>Date: '.$event_datetime.'</div>
   </li>'
   );
 

@@ -76,7 +76,7 @@
 $current_datetime = str(now());
 
 function strip_text($var){
-  $var = str_replace(array('"'), '', $var);
+  $var = str_replace(array('"', '[', ']'), '', $var);
   $var = stripslashes($var);
   return $var;
 }
