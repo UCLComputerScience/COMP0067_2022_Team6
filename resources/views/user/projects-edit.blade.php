@@ -121,7 +121,7 @@
                           @enderror
                       </div>
                               <div class="form-group row">
-                                <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
+                                <label for="countryDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
                                   <textarea class="form-control" name="projectDetails" value="<?php if (isset($project_description[0])){ print_r($project_description[0]);} else { print_r(""); } ?>" id="projectDetails" rows="4"><?php if (isset($project_description[0])){ print_r($project_description[0]);} else { print_r(""); } ?></textarea>
                                   <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>

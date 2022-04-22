@@ -101,9 +101,7 @@ function strip_get($var){
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
-    //if a keyword is not specified then we simply set it to be blank so that in the
-    //sql query, it does not filter out any auctions since all descriptions and titles of
-    //auctions will have "" in them.
+   
     $keyword = "";
   }else {
     $keyword = $_GET['keyword'];

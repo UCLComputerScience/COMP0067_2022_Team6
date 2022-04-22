@@ -59,7 +59,7 @@
                     ?>
                         <div class="container">
                       
-                      <!-- Create auction form -->
+                   
                       <div class="text-center mb-5">
                         <h1 class="fw-bolder">Edit event: <?php echo strip_text($event_title) ?> </h1>
                       <div style="max-width: 800px; margin: 10px auto">

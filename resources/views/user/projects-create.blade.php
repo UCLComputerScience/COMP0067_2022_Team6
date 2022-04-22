@@ -27,7 +27,7 @@
                     
                       <div class="container">
                       
-                      <!-- Create auction form -->
+               
                       <div style="max-width: 800px; margin: 10px auto">
                         <h2 class="my-3">Create new project </h2>
                         <div class="card">
@@ -35,26 +35,20 @@
                             <form method="post" enctype="multipart/form-data" action="projects-create-result">
                                 @csrf <!-- {{ csrf_field() }} -->
                                 <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
+                                <label for="projectTitle" class="col-sm-2 col-form-label text-right">Project Title</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectTitle" id="projectTitle" required minlength="10" placeholder="e.g. Well Building - Moldova">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The title of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Organisation</label>
+                                <label for="orgTitle" class="col-sm-2 col-form-label text-right">Organisation</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" name="projectOrganisation" id="projectOrganisation" required minlength="10" placeholder="e.g. WaterAid">
                                   <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span> The organisation of your project (minimum 10 characters).</small>
                                 </div>
                               </div>
-                              <!-- <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Address Line 1</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectLocation" id="projectLocation" required minlength="5" placeholder="">
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span>(maximum 5 characters)</small>
-                                </div>
-                              </div> -->
+                  
                             </div>
                             <div class="form-group row mb-3">
                                 <label for="address" class="col-sm-2 col-form-label text-right">{{ __('Address') }}</label>
@@ -85,22 +79,8 @@
                               </span>
                           @enderror
                       </div>
-                              <!-- <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">City</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCity" id="projectCity" placeholder="">
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
-                                </div>
-                              </div> -->
-                              <!-- <div class="form-group row">
-                                <label for="auctionTitle" class="col-sm-2 col-form-label text-right">Country</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="projectCountry" id="projectCountry" placeholder="">
-                                  <small id="titleHelp" class="form-text text-muted"><span class="text-danger">* Required.</span></small>
-                                </div>
-                              </div> -->
                               <div class="form-group row">
-                                <label for="auctionDetails" class="col-sm-2 col-form-label text-right">Description</label>
+                                <label for="descDetails" class="col-sm-2 col-form-label text-right">Description</label>
                                 <div class="col-sm-10">
                                   <textarea class="form-control" name="projectDetails" id="projectDetails" rows="4"></textarea>
                                   <small id="detailsHelp" class="form-text text-muted">Detailed description of your project to give insight to members.</small>

@@ -20,7 +20,7 @@
                     
                       <div class="container">
                       
-                      <!-- Create auction form -->
+                     
                       <div style="max-width: 800px; margin: 10px auto">
                         <div class="card">
                           <div class="card-body">

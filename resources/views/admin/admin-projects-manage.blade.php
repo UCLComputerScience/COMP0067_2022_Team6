@@ -64,11 +64,7 @@
 <ul class="list-group">
 
 <?php
-  // This page is for showing a user the auction listings they've made.
-  // It will be pretty similar to browse.php, except there is no search bar.
-  // This can be started after browse.php is working with a database.
-  // Feel free to extract out useful functions from browse.php and put them in
-  // the shared "utilities.php" where they can be shared by multiple files.
+
   
 $userid = Auth::id();
 
@@ -100,9 +96,7 @@ function strip_get($var){
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
-    //if a keyword is not specified then we simply set it to be blank so that in the
-    //sql query, it does not filter out any auctions since all descriptions and titles of
-    //auctions will have "" in them.
+   
     $keyword = "";
   }else {
     $keyword = $_GET['keyword'];
