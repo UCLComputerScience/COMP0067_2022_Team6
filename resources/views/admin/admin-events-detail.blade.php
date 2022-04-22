@@ -16,13 +16,6 @@
     $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
     $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
     $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
-    // If time, implement this to show if an event has already ended
-    // Need to include if statement for if $now > $event_datetime to control what shows
-    // $now = new DateTime();
-    // if ($now > $event_datetime) {
-    //         $time_remaining = 'This event has ended';
-    //     }
-
 
 
     function strip_text($url){
