@@ -1,11 +1,3 @@
-<!-- TODO: 
-implement country code and phone number validation
-(see here: https://stackoverflow.com/questions/68540349/laravel-country-code-and-phone-number-validation)
-
-TODO: 
-Radio buttons are currently not part of the same set so you can select both. Need to merge to the same list,
-but not going to do that until after Stripe is implemented, since that may affect exactly how the membership types are implemented-->
-
 @extends('layouts.mainlayout')
 
 @section('content')
@@ -51,12 +43,6 @@ but not going to do that until after Stripe is implemented, since that may affec
 
                             <div class="col-md-6">
                                 <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
-
-                                <!-- @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror -->
                             </div>
                         </div>
 
@@ -393,8 +379,6 @@ but not going to do that until after Stripe is implemented, since that may affec
                                 $('#latitude').val(place.geometry['location'].lat());
                                 $('#longitude').val(place.geometry['location'].lng());
                                 $('#country').val(place.address_components.slice(-1)[0].long_name); 
-                                // $('input[name="country"]').val(place.country.long_name); 
-
                                 $("#latitudeArea").removeClass("d-none");
                                 $("#longtitudeArea").removeClass("d-none");
                                 $("#country").removeClass("d-none");

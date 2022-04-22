@@ -13,7 +13,7 @@
       <h1 class="fw-bolder">Welcome, administrator <?php echo Auth::user()->name ?>!</h1>
       <p class="lead fw-normal text-muted mb-0"></p>
      </div>
-    <div class="ro
+    <div class="row">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

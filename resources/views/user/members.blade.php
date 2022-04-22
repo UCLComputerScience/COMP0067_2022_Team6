@@ -57,7 +57,6 @@ $(document).ready(function(){
         columns: [
             { data: 'name' },
             { data: 'email' },
-            // { data: 'sdg' },
             { data: 'country' },
 
         ]
