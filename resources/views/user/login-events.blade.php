@@ -13,9 +13,7 @@
 
 <h3 class="my-3 text-center">Browse Events</h3>
   <div id="searchSpecs">
-  <!-- When this form is submitted, this PHP page is what processes it.
-      Search/sort specs are passed to this page through parameters in the URL
-      (GET method of passing data to a page). -->
+  
 
   <form method="get" action="/login-events">
   <div class="row">
@@ -67,11 +65,11 @@
 </div>
 <br \>
 
-<!-- Search results -->
+
 <ul class="list-group">
 
 <?php
-// Some useful variables and functions for later if/else search conditions
+
 
 $current_datetime = str(now());
 
@@ -87,7 +85,7 @@ function strip_get($var){
 }
 
 
-  // Retrieve these from the URL
+  
 
   if (!isset($_GET['page'])) {
     $curr_page = 1;
@@ -97,7 +95,7 @@ function strip_get($var){
   }
 
 
-// Processing search values inputted by user
+
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
@@ -111,7 +109,7 @@ else{
   $keyword = "";
 }
 
-// Checking which SDG has been chosen
+
 if (!isset($_GET['cat'])) {
   $sdg = "";
 }
@@ -119,7 +117,7 @@ else{
   $sdg = $_GET['cat'];
 }
 
-// Start of search query and conditions
+
 $query1 = DB::Table('events')->select('event_id', 'event_title', 'event_description', 'event_datetime', 'event_timezone', 'event_call_url', 'event_video_url',
 'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
 ->whereRaw("(event_title like '%$keyword%' or event_description like '%$keyword%')")
@@ -204,31 +202,27 @@ if (!isset($_GET['order_by'])) {
 }
 
   if ($order_by === "all"){
-    // $query .= " ORDER BY event_datetime DESC ";
+    
     $query->sortByDesc('event_datetime');
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND event_datetime >= GETDATE() 
-  // ORDER BY event_datetime DESC";
+
   $query = $query->where('event_datetime', '>=', $current_datetime);
-  // ->sortBy('event_datetime', 'desc');
-  // ->get();
+
 }elseif($order_by === "past"){
-  // $query .= " AND event_datetime < GETDATE() 
-  // -- ORDER BY event_datetime DESC";
+ 
   $query = $query->where('event_datetime', '<', $current_datetime);
-  // ->orderBy('event_datetime', 'desc');
-  // ->get();
+ 
 }
 
 function print_event_with_image($event_id, $event_title, $event_description)
 {
 
-    // TODO: Bring this back later
+    
   $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
   $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
   $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
   $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null','0','"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
-  // $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+  
   $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
   $sdgs_first_strip = str_replace($array,"",$sdgs);
   $sdgs_second_strip = trim($sdgs_first_strip, ",");
@@ -238,7 +232,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
   $event_datetime = strip_text($event_datetime);
   $event_datetime = substr($event_datetime, 0, -8);
 
-  // Truncate long descriptions
+
   if (strlen($event_description) > 250) {
     $event_desc_shortened = substr($event_description, 0, 250) . '...';
   }
@@ -246,9 +240,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
     $event_desc_shortened = $event_description;
   }
   
-  // Print HTML
-//   Need to add this line in to the line break within the echo - this is to do with image display!
-//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
+  
   echo('
     <li class="list-group-item d-flex justify-content-between">
     <div class="p-2 mr-5"><img alt="" src="http://51.142.117.217/assets/'. $first_image_path_stripped . '" width="250" height="250"></div>
@@ -261,7 +253,7 @@ function print_event_with_image($event_id, $event_title, $event_description)
   
   $counter = 0;
   foreach ($query as $row)
-  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+
   {
     $endDateTime = new DateTime($row->event_datetime);
     print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
