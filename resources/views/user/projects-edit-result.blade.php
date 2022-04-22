@@ -13,7 +13,7 @@ $project_id = $_POST['project_id'];
     if (isset($_POST['submit']))
     {
 
-    // Extracting the variables from the POST 
+    
     
     $projectTitle = $_POST['projectTitle'];
     $projectOrganisation = $_POST['projectOrganisation'];
@@ -50,8 +50,7 @@ $project_id = $_POST['project_id'];
     
 
  
-    // The flow below checks for general errors in the form, then does 
-    // a loop for each image. 
+  
     
     if (empty($projectTitle)){
         echo 'Please enter an project title.';
@@ -110,17 +109,11 @@ $project_id = $_POST['project_id'];
                         ));
 
 
-        // loop for each uploaded file begins
+       
 
        $tempname = $_FILES["uploadfile"]["tmp_name"];    
        $folder = public_path("assets/".$uuidfilename);
-       // "public/assets/images/".$filename;
-         
-       // $insert_image = DB::table('projects')->insert('image_name',$filename);
- 
-       // Get all the submitted data from the form
- 
-              // Now let's move the uploaded image into the folder: image
+       
        if (move_uploaded_file($tempname, $folder))  {
            $msg = "Image uploaded successfully";
        }else{
