@@ -21,7 +21,7 @@
     {
 
 
-    // Extracting the variables from the POST 
+  
     
     $userid = $_POST['id'];
     $name = $_POST['name'];
@@ -55,8 +55,7 @@
 
 
  
-    // The flow below checks for general errors in the form, then does 
-    // a loop for each image. 
+    
     
     if (empty($name)){
         echo 'Please enter your name.';

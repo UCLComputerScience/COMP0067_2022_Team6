@@ -111,7 +111,7 @@
                             </div>
                         </div>
 
-                        <!-- <input id="email" type="email" class="form-control" name="email" value="" required="" autocomplete="email"> -->
+                        
 
 
                         <div class="row mb-3">
@@ -262,7 +262,7 @@
                             </label> 
                             <div class="col-md-6">
                             {{-- <div class="col-md-6">
-                                <select class="form-control" name="sdg" id="sdg" required> <!-- The code under this should auto-update, now working!! -->
+                                <select class="form-control" name="sdg" id="sdg" required> 
                                     <option value="">Choose an option</option>
                                       <?php 
                                     $result = DB::table('categories')->get();    ?>
@@ -376,7 +376,7 @@
                                 $('#latitude').val(place.geometry['location'].lat());
                                 $('#longitude').val(place.geometry['location'].lng());
                                 $('#country').val(place.address_components.slice(-1)[0].long_name); 
-                                // $('input[name="country"]').val(place.country.long_name); 
+                             
 
                                 $("#latitudeArea").removeClass("d-none");
                                 $("#longtitudeArea").removeClass("d-none");

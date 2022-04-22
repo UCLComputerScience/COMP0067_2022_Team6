@@ -74,9 +74,7 @@ $user_id = Auth::id();
                                     <td>{{ $resource->resource_sdg }}</td>
                                     <td>{{ $resource->resource_added_date}}</td>
                                     <td><a href="{{ route('admin-members.index') }}" class=""
-                                           onclick="event.preventDefault();
-                                    //            document.getElementById(
-                                    //         //    'delete-form-{{$resource->uuid}}').submit();">
+                                           onclick="event.preventDefault();">
 
 
                                     {{-- <form id="delete-form-{{$resource->uuid}}"

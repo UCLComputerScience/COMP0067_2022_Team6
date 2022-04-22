@@ -8,9 +8,7 @@
 <html lang="en">
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
             
-            <!-- Pricing section-->
             <section class="bg-light py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
@@ -19,7 +17,7 @@
                     </div>
                     <div class="row gx-5 justify-content-center">
  
-                        <!-- Pricing card charity-->
+                        
                         <div class="col-lg-6 col-xl-4">
                             <div class="card mb-5 mb-xl-0">
                                 <div class="card-body p-5">
@@ -64,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Pricing card corporate-->
+                        
                         <div class="col-lg-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body p-5">

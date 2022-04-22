@@ -52,11 +52,11 @@
     </form>
 </div>
 
-<!-- jQuery -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script>
     $(function() {
-        // Multiple images preview with JavaScript
+     
         var multiImgPreview = function(input, imgPreviewPlaceholder) {
             if (input.files) {
                 var filesAmount = input.files.length;
