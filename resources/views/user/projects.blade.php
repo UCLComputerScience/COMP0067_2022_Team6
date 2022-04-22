@@ -116,7 +116,7 @@
 
 <?php
 
-// Some useful variables and functions for later if/else search conditions
+
 $userid = Auth::id();
 
 $current_datetime = str(now());
@@ -133,7 +133,7 @@ function strip_get($var){
 }
 
 
-  // Retrieve these from the URL
+ 
 
   if (!isset($_GET['page'])) {
     $curr_page = 1;
@@ -143,7 +143,7 @@ function strip_get($var){
   }
 
 
-// Processing search values inputted by user
+
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
@@ -157,7 +157,7 @@ else{
   $keyword = "";
 }
 
-// Checking which SDG has been chosen
+
 if (!isset($_GET['cat'])) {
   $sdg = "";
 }
@@ -165,7 +165,7 @@ else{
   $sdg = $_GET['cat'];
 }
 
-// Start of search query and conditions
+
 $query1 = DB::Table('projects')->select('project_id', 'projectTitle', 'projectOrganisation', 'projectDetails', 'projectEndDate', 'image_name',
 'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
 ->whereRaw("(projectTitle like '%$keyword%' or projectOrganisation like '%$keyword%' or projectDetails like '%$keyword%' or image_name like '%$keyword%')")
@@ -259,7 +259,7 @@ if (!isset($_GET['order_by'])) {
 
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
-//echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+
 
 function print_listing_with_image($project_id, $title, $desc)
 {
@@ -268,7 +268,7 @@ $first_image_path = DB::Table('projects')->where('project_id',$project_id)->pluc
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null','0','"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
-// $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
+
 $sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('project_id',$project_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
 $projectDate = DB::Table('projects')->select('projectEndDate')->where('project_id',$project_id)->get();
@@ -280,7 +280,7 @@ $project_Date=$projectDate->pluck('projectEndDate');
 $project_Date = strip_text($project_Date);
 $project_Date = substr($project_Date,0,-8);
 
-  // Truncate long descriptions
+  
   if (strlen($desc) > 250) {
     $desc_shortened = substr($desc, 0, 250) . '...';
   }
@@ -288,7 +288,7 @@ $project_Date = substr($project_Date,0,-8);
     $desc_shortened = $desc;
   }
   
-  // Print HTML
+  
   echo('
     
     <li class="list-group-item d-flex justify-content-between">
