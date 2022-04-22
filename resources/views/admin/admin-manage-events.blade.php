@@ -1,4 +1,4 @@
-<!-- TODO: Move events into a single grid - currently they are separate sets which is not good -->
+
 
 @extends('layouts.mainlayout-admin')
 
@@ -16,9 +16,7 @@
 </div>
 <br>
   <div id="searchSpecs">
-  <!-- When this form is submitted, this PHP page is what processes it.
-      Search/sort specs are passed to this page through parameters in the URL
-      (GET method of passing data to a page). -->
+
 
   <form method="get" action="/admin-manage-events">
   <div class="row">
@@ -74,7 +72,7 @@
 <ul class="list-group">
 
 <?php
-// Some useful variables and functions for later if/else search conditions
+
 
 $current_datetime = str(now());
 
@@ -207,28 +205,24 @@ if (!isset($_GET['order_by'])) {
 }
 
   if ($order_by === "all"){
-    // $query .= " ORDER BY event_datetime DESC ";
+
     $query->sortByDesc('event_datetime');
   ;
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND event_datetime >= GETDATE() 
-  // ORDER BY event_datetime DESC";
+  
   $query = $query->where('event_datetime', '>=', $current_datetime);
-  // ->sortBy('event_datetime', 'desc');
-  // ->get();
+  
 }elseif($order_by === "past"){
-  // $query .= " AND event_datetime < GETDATE() 
-  // -- ORDER BY event_datetime DESC";
+  
   $query = $query->where('event_datetime', '<', $current_datetime);
-  // ->orderBy('event_datetime', 'desc');
-  // ->get();
+  
 }
 
 
 function print_event_with_image($event_id, $event_title, $event_description)
 {
 
-    // TODO: Bring this back later
+
 $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('image_name');
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
@@ -255,9 +249,7 @@ $tz = str_replace($array2,"",$timezone);
     $event_desc_shortened = $event_description;
   }
   
-  // Print HTML
-//   Need to add this line in to the line break within the echo - this is to do with image display!
-//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
+  
   echo('
     <li class="list-group-item d-flex justify-content-between">
       <div class="p-2 mr-5"><img alt="" src="http://51.142.117.217/assets/'. $first_image_path_stripped . '" width="250" height="250"></div>
@@ -279,7 +271,7 @@ $tz = str_replace($array2,"",$timezone);
   
   $counter = 0;
   foreach ($query as $row)
-  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+  
   {
     $endDateTime = new DateTime($row->event_datetime);
     print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
