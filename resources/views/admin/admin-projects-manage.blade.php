@@ -82,7 +82,7 @@ function strip_get($var){
 }
 
 
-  // Retrieve these from the URL
+  
 
   if (!isset($_GET['page'])) {
     $curr_page = 1;
@@ -92,7 +92,7 @@ function strip_get($var){
   }
 
 
-// Processing search values inputted by user
+
 if(isset($_GET['search'])){
 
   if (!isset($_GET['keyword'])) {
@@ -106,7 +106,7 @@ else{
   $keyword = "";
 }
 
-// Checking which SDG has been chosen
+
 if (!isset($_GET['cat'])) {
   $sdg = "";
 }
@@ -114,7 +114,7 @@ else{
   $sdg = $_GET['cat'];
 }
 
-// Start of search query and conditions
+
 $query1 = DB::Table('projects')->select('id', 'project_id', 'projectTitle', 'projectOrganisation', 'projectDetails', 'projectEndDate', 'image_name',
 'sdg1', 'sdg2', 'sdg3', 'sdg4', 'sdg5', 'sdg6', 'sdg7', 'sdg8', 'sdg9', 'sdg10', 'sdg11', 'sdg12', 'sdg13', 'sdg14', 'sdg15', 'sdg16', 'sdg17')
 
@@ -200,27 +200,22 @@ if (!isset($_GET['order_by'])) {
 }
 
   if ($order_by === "all"){
-    // $query .= " ORDER BY projectEndDate DESC ";
+    
     $query->sortByDesc('projectEndDate');
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND projectEndDate >= GETDATE() 
-  // ORDER BY projectEndDate DESC";
+  
   $query = $query->where('projectEndDate', '>=', $current_datetime);
-  // ->sortBy('projectEndDate', 'desc');
-  // ->get();
+  
 }elseif($order_by === "past"){
-  // $query .= " AND projectEndDate < GETDATE() 
-  // -- ORDER BY projectEndDate DESC";
+  
   $query = $query->where('projectEndDate', '<', $current_datetime);
-  // ->orderBy('projectEndDate', 'desc');
-  // ->get();
+ 
 }
 
-// $my_projects = DB::Table('projects')->select('project_id','projectTitle','projectDetails','projectEndDate')->where('id',$userid)->get();
-//echo ($my_projects);
+
 
 $first_image_path = DB::Table('ImagePaths')->select('imageUUID','extension')->where('project_id',1)->get();
-//echo str_replace(array ('[{"','"}]'),'' ,$first_image_path);
+
 
 function print_listing_with_image($project_id, $title, $desc)
 {
@@ -231,8 +226,7 @@ $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"s
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $sdgs = DB::Table('projects')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('project_id',$project_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
-// $sdgs = DB::Table('projects')->select('sdg5')->where('project_id',$project_id)->whereNull('sdg5')->orWhere('sdg5','!=',0)->get();
-// 'sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')
+
 $projectDate = DB::Table('projects')->select('projectEndDate')->where('project_id',$project_id)->get();
 $array1 = array('[',']','{','}','"','"','projectEndDate');
 $date = str_replace($array1,"",$projectDate);
@@ -241,9 +235,7 @@ $desc = str_replace(array( '["', '"]' ), '', $desc);
 $project_Date=$projectDate->pluck('projectEndDate');
 $project_Date = strip_text($project_Date);
 $project_Date = substr($project_Date,0,-8);
-// echo $sdgs_first_strip;
-// echo $first_image_path_stripped_second;
-  // Truncate long descriptions
+
   if (strlen($desc) > 250) {
     $desc_shortened = substr($desc, 0, 250) . '...';
   }
@@ -274,7 +266,7 @@ $project_Date = substr($project_Date,0,-8);
   
   $counter = 0;
   foreach ($query as $row)
-  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
+  
   {
     $endDateTime = new DateTime($row->projectEndDate);
     print_listing_with_image($row->project_id,$row->projectTitle, $row->projectDetails,$row->projectEndDate);
