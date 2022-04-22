@@ -7,10 +7,6 @@
 
 <?php
 
-//require_once(app_path().'../vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php');
-
-//require_once('resources/views/user/projects-create.blade.php');
-
 @include('admin-events-edit');
     
     if (isset($_POST['submit']))
@@ -106,18 +102,10 @@
                                     'image_name' => $uuidfilename
                     
                     ));
-        // loop for each uploaded file begins
 
-        // $filename = $_FILES["uploadfile"]["name"];
-        $tempname = $_FILES["fileupload"]["tmp_name"];    
+       $tempname = $_FILES["fileupload"]["tmp_name"];    
        $folder = public_path("assets/".$uuidfilename);
-        // "public/assets/images/".$filename;
-          
-        // $insert_image = DB::table('projects')->insert('image_name',$filename);
-  
-        // Get all the submitted data from the form
-  
-               // Now let's move the uploaded image into the folder: image
+
         if (move_uploaded_file($tempname, $folder))  {
             $msg = "Image uploaded successfully";
         }else{
