@@ -69,11 +69,6 @@ use Illuminate\Support\Facades\Storage;
 <ul class="list-group">
 
 <?php
-  // This page is for showing a user the auction listings they've made.
-  // It will be pretty similar to browse.php, except there is no search bar.
-  // This can be started after browse.php is working with a database.
-  // Feel free to extract out useful functions from browse.php and put them in
-  // the shared "utilities.php" where they can be shared by multiple files.
   
 $userid = Auth::id();
 
