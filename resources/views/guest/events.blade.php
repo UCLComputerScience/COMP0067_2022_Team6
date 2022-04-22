@@ -215,21 +215,12 @@ if (!isset($_GET['order_by'])) {
 }
 
   if ($order_by === "all"){
-    // $query .= " ORDER BY event_datetime DESC ";
     $query->sortByDesc('event_datetime');
   
 }elseif ($order_by === "upcoming"){
-  // $query .= " AND event_datetime >= GETDATE() 
-  // ORDER BY event_datetime DESC";
   $query = $query->where('event_datetime', '>=', $current_datetime);
-  // ->sortBy('event_datetime', 'desc');
-  // ->get();
 }elseif($order_by === "past"){
-  // $query .= " AND event_datetime < GETDATE() 
-  // -- ORDER BY event_datetime DESC";
   $query = $query->where('event_datetime', '<', $current_datetime);
-  // ->orderBy('event_datetime', 'desc');
-  // ->get();
 }
  
 function print_event_with_image($event_id, $event_title, $event_description)
@@ -239,7 +230,6 @@ $first_image_path = DB::Table('events')->where('event_id',$event_id)->pluck('ima
 $first_image_path_stripped = str_replace(array( '["', '"]' ), '', $first_image_path);
 $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $array = array('"sdg1"','"sdg2"','"sdg3"','"sdg4"','"sdg5"','"sdg6"','"sdg7','"sdg8"','"sdg9"','"sdg10"','"sdg11"','"sdg12"','"sdg13"','"sdg14"','"sdg15"','"sdg16"','"sdg17"','null',"0",'"',':','{','[','}',']',',,',',,,',',,,,',',,,,,',',,,,,,',',,,,,,,',',,,,,,,,',',,,,,,,,,',',,,,,,,,,,',',,,,,,,,,,,',',,,,,,,,,,,,',',,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,',',,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,',',,,,,,,,,,,,,,,,,');
-  // $first_image_path_stripped_second = str_replace(array( ' '), '', $first_image_path_stripped);
 $sdgs = DB::Table('events')->select('sdg1','sdg2','sdg3','sdg4','sdg5','sdg6','sdg7','sdg8','sdg9','sdg10','sdg11','sdg12','sdg13','sdg14','sdg15','sdg16','sdg17')->where('event_id',$event_id)->get();
 $sdgs_first_strip = str_replace($array,"",$sdgs);
 $sdgs_second_strip = trim($sdgs_first_strip, ",");
@@ -259,8 +249,6 @@ $event_datetime = substr($event_datetime, 0, -8);
   }
   
   // Print HTML
-//   Need to add this line in to the line break within the echo - this is to do with image display!
-//   <div class="p-2 mr-5"><img alt="" src="'. $first_image_path . '" width="100" height="100"></div>
   echo('
 
   <li class="list-group-item d-flex justify-content-between">
@@ -274,9 +262,7 @@ $event_datetime = substr($event_datetime, 0, -8);
   
   $counter = 0;
   foreach ($query as $row)
-  //while (TRUE)//$search_row = $my_projects->fetch_assoc())
   {
-    // $endDateTime = new DateTime($row->event_datetime);
     print_event_with_image($row->event_id,$row->event_title, $row->event_description,$row->event_datetime, $row->event_timezone);
     $counter +=1;
   }

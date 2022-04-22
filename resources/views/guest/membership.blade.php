@@ -129,7 +129,6 @@
 <?php $userlocs = DB::table('users')->select(array('org', 'latitude', 'longitude','sdg1','country'))->get();
 ?>
 
-<?php //echo $userlocs ?>
 <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"
         type="text/javascript"></script>
 <script type="text/javascript">
