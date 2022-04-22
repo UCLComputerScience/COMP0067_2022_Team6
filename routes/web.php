@@ -98,7 +98,6 @@ Route::get('/user-profile', function () {
     return view('/user/user-profile');
 })->middleware(['auth', 'can:stripeUser']);
 
-
 Route::post('/user-profile-result', function () {
     return view('/user/user-profile-result');})->middleware(['auth', 'can:stripeUser']);
 
@@ -281,11 +280,10 @@ echo "" ;
 
 ;})->middleware('auth');
 
-//File Upload
+//File upload, download and delete
 Route::get('/file-upload', [FileUpload::class, 'createForm']);
 Route::post('/file-upload', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
-//Image Upload
 Route::get('/image-upload', [ImageUpload::class, 'createForm']);
 Route::post('/image-upload', [ImageUpload::class, 'imageUpload'])->name('imageUpload');
 
