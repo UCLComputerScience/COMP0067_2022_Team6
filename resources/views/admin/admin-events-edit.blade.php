@@ -42,11 +42,8 @@
                         $this_event_timezone_unstripped = DB::Table('events')->select('event_timezone')->where('event_id',$event_id)->get();
                         $this_event_timezone = strip_text($this_event_timezone_unstripped);
                         $this_event_timezone = str_replace(array('{event_timezone:', '}'), '', $this_event_timezone);
-
                         $event_datetime_stripped = strip_text($event_datetime);
                         $event_timezone_stripped = strip_text($event_timezone);
-
-                        // Changing datetime to correct format for HTML to parse in datetime-local
                         $event_datetime_final = str_replace(array(' '), 'T', $event_datetime_stripped);
 
 
