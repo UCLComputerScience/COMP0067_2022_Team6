@@ -6,14 +6,7 @@
           <div class="col"><div class="small m-0 text-white">Copyright &copy; ANCSSC 2022</div></div>
           <div class="col"><div class="small m-0 text-white">PHONE: +44 020 8368 8231</div></div>
           <div class="col"><div class="small m-0 text-white">EMAIL: info@ancssc.org</div></div>
-          <!-- <div class="col-auto">
-              <a class="link-light small" href="#!">Privacy</a>
-              <span class="text-white mx-1">&middot;</span>
-              <a class="link-light small" href="#!">Terms</a>
-              <span class="text-white mx-1">&middot;</span>
-              <a class="link-light small" href="#!">Contact</a>
-              <span class="text-white mx-1">&middot;</span>
-          </div> -->
+          
           <div class="col">
               <script async src="https://cse.google.com/cse.js?cx=f44adf12da156c20f"></script>
           </div>
